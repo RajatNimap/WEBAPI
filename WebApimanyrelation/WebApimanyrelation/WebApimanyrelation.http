@@ -1,0 +1,6 @@
+@WebApimanyrelation_HostAddress = http://localhost:5120
+
+GET {{WebApimanyrelation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

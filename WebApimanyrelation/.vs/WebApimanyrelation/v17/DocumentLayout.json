@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapimanyrelation\\webapimanyrelation\\model\\entities\\adress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|solutionrelative:webapimanyrelation\\model\\entities\\adress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapimanyrelation\\webapimanyrelation\\model\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|solutionrelative:webapimanyrelation\\model\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapimanyrelation\\webapimanyrelation\\model\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|solutionrelative:webapimanyrelation\\model\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapimanyrelation\\webapimanyrelation\\webapimanyrelation.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|solutionrelative:webapimanyrelation\\webapimanyrelation.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapimanyrelation\\webapimanyrelation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46EC869C-48AE-47D9-9C99-05E246880660}|WebApimanyrelation\\WebApimanyrelation.csproj|solutionrelative:webapimanyrelation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\Model\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "WebApimanyrelation\\Model\\Entities\\Product.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\Model\\Entities\\Product.cs",
+              "RelativeToolTip": "WebApimanyrelation\\Model\\Entities\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T12:36:03.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Adress.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\Model\\Entities\\Adress.cs",
+              "RelativeDocumentMoniker": "WebApimanyrelation\\Model\\Entities\\Adress.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\Model\\Entities\\Adress.cs",
+              "RelativeToolTip": "WebApimanyrelation\\Model\\Entities\\Adress.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T12:28:32.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\Model\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "WebApimanyrelation\\Model\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\Model\\Entities\\User.cs",
+              "RelativeToolTip": "WebApimanyrelation\\Model\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T12:24:21.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WebApimanyrelation",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\WebApimanyrelation.csproj",
+              "RelativeDocumentMoniker": "WebApimanyrelation\\WebApimanyrelation.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\WebApimanyrelation.csproj",
+              "RelativeToolTip": "WebApimanyrelation\\WebApimanyrelation.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-10T12:21:51.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\Program.cs",
+              "RelativeDocumentMoniker": "WebApimanyrelation\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApimanyrelation\\WebApimanyrelation\\Program.cs",
+              "RelativeToolTip": "WebApimanyrelation\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T12:21:32.599Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapi3\\webapi3\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|solutionrelative:webapi3\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapi3\\webapi3\\model\\entities\\superhero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|solutionrelative:webapi3\\model\\entities\\superhero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapi3\\webapi3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|solutionrelative:webapi3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapi3\\webapi3\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|solutionrelative:webapi3\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapi3\\webapi3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|solutionrelative:webapi3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Migrations\\20250410094806_initila migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebApi3\\Migrations\\20250410094806_initila migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Migrations\\20250410093624_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebApi3\\Migrations\\20250410093624_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\webapi3\\webapi3\\webapi3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{4450B378-13BB-4CC7-A619-1538A678F5AF}|WebApi3\\WebApi3.csproj|solutionrelative:webapi3\\webapi3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20250410094806_initila migration.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Migrations\\20250410094806_initila migration.cs",
+              "RelativeDocumentMoniker": "WebApi3\\Migrations\\20250410094806_initila migration.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Migrations\\20250410094806_initila migration.cs",
+              "RelativeToolTip": "WebApi3\\Migrations\\20250410094806_initila migration.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:48:07.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApi3\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\appsettings.json",
+              "RelativeToolTip": "WebApi3\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-10T09:37:31.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "WebApi3\\Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Data\\DataContext.cs",
+              "RelativeToolTip": "WebApi3\\Data\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:21:15.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Superhero.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Model\\Entities\\Superhero.cs",
+              "RelativeDocumentMoniker": "WebApi3\\Model\\Entities\\Superhero.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Model\\Entities\\Superhero.cs",
+              "RelativeToolTip": "WebApi3\\Model\\Entities\\Superhero.cs",
+              "ViewState": "AgIAAAIAAACAMjMzMzMbwAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:18:52.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Program.cs",
+              "RelativeDocumentMoniker": "WebApi3\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Program.cs",
+              "RelativeToolTip": "WebApi3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:11:40.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ValuesController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Controllers\\ValuesController.cs",
+              "RelativeDocumentMoniker": "WebApi3\\Controllers\\ValuesController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Controllers\\ValuesController.cs*",
+              "RelativeToolTip": "WebApi3\\Controllers\\ValuesController.cs*",
+              "ViewState": "AgIAAD0AAAAAz8zMzMwuwEsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:14:51.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20250410093624_initial migration.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Migrations\\20250410093624_initial migration.cs",
+              "RelativeDocumentMoniker": "WebApi3\\Migrations\\20250410093624_initial migration.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\Migrations\\20250410093624_initial migration.cs",
+              "RelativeToolTip": "WebApi3\\Migrations\\20250410093624_initial migration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:36:24.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WebApi3",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\WebApi3.csproj",
+              "RelativeDocumentMoniker": "WebApi3\\WebApi3.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\WebApi3\\WebApi3\\WebApi3.csproj",
+              "RelativeToolTip": "WebApi3\\WebApi3.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-10T09:11:35.066Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
