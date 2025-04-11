@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApimanyrelation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c0fb858697fcc845d45442ea123ce973aee5200")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42c3cfc5b927b5dd19cc69c835fa91028ccefb0c")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApimanyrelation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApimanyrelation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

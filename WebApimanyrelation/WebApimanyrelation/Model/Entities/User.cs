@@ -5,6 +5,9 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public  Address Address {get; set;}
-        public List<Product>
+        public int AddressId { get; set;}    
+        public List<Product> Products { get; set; }
+        public List<Coupon> Coupons { get; set; }
+
     }
 }

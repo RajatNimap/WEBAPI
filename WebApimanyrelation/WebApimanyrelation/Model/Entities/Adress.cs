@@ -2,7 +2,9 @@
 {
     public class Address
     {
-       public int Id { get; set; }
-        public string streename { get; set; }  
+        public int Id { get; set; }
+        public string streetname { get; set; }
+       
+
     }
 }
