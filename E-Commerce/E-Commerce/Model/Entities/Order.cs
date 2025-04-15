@@ -8,8 +8,9 @@
             
         //Foreign key
         public int UserId { get; set; }
-        public User User { get; set; }
-
+        public User? User { get; set; }
+        //Foreign key for user
+        
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
     }

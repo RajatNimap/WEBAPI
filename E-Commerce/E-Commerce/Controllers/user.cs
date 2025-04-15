@@ -19,13 +19,15 @@ namespace E_Commerce.Controllers
 
         }
         [HttpGet]
-        public async Task<IActionResult> GetData()
+        public async Task<IActionResult> GetData(int page=1,int pagesize=10)
         {
             var data =  await Database.users.ToListAsync();
 
             if (data == null) {
                 return NotFound(); 
              }
+
+            data=data.Skip((page-1)*pagesize).Take(pagesize).ToList();
             return Ok(data);    
         }
         [HttpGet]

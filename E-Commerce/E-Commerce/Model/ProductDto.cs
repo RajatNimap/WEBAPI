@@ -8,6 +8,6 @@
         public int stock_quantity { get; set; }
 
         //foreign key
-        public int SubCategoryID { get; set; }
+        public int CategoryID { get; set; }
     }
 }

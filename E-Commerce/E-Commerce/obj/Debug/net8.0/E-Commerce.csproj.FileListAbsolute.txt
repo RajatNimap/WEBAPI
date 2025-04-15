@@ -132,10 +132,10 @@ C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\sta
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.E-Commerce.props
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.E-Commerce.props
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.csproj.Up2Date
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.dll
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\refint\E-Commerce.dll
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.pdb
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.genruntimeconfig.cache
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\ref\E-Commerce.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

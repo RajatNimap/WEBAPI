@@ -19,18 +19,10 @@ namespace E_Commerce.Controllers
         [HttpGet]
         public async Task<IActionResult> GetData()
         {
-            var data = await Database.categories.Include(x => x.SubCategories).Select(x => new CategoryDto
-            {
-                Name = x.Name,
-                SubCategories = x.SubCategories
-                .Select(sc => new SubCategoryDto
-                {
-                    Name = sc.Name,
-                    CategoryId = sc.CategoryId 
-                }).ToList()
+            
+            var data = await Database.categories.Include(x => x.products)
+                .ToListAsync();
 
-            })
-               .ToListAsync();
             if (data == null)
             {
                 return NotFound();
@@ -42,7 +34,7 @@ namespace E_Commerce.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetDataParticular(int id)
         {
-            var data = await Database.categories.FirstOrDefaultAsync(x => x.Id == id);
+            var data = await Database.categories.Include(x=>x.products).FirstOrDefaultAsync(x => x.Id == id);
             if (data == null)
             {
 

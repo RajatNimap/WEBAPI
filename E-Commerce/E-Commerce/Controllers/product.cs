@@ -18,28 +18,20 @@ namespace E_Commerce.Controllers
             Database = Datbase; 
         }
         [HttpGet]
-        public async Task<IActionResult> Getdata()
+        public async Task<IActionResult> Getdata(int page=1,int pagesize=5)
         {
-            var data=await Database.products.Select(x=>new ProductDto
-            {
-                Name = x.Name,
-                Description = x.Description,
-                price = x.price,
-                stock_quantity = x.stock_quantity,
-                SubCategoryID = x.SubCategoryID,
-
-            }).ToListAsync();
+            var data = await Database.products.ToListAsync();
             if (data == null) { 
                 return NotFound();  
             }
+            data = data.Skip((page - 1) * pagesize).Take(pagesize).ToList();
             return Ok(data);    
         }
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> Getdata(int id)
         {
-            var data=await Database.products
-                .Include(x=>x.subCategory).FirstOrDefaultAsync(x=>x.Id == id);  
+            var data=await Database.products.FirstOrDefaultAsync(x=>x.Id == id);  
                 
             if (data == null) {
                 return NotFound();
@@ -54,8 +46,8 @@ namespace E_Commerce.Controllers
                 Name = productdto.Name,
                 Description = productdto.Description,   
                 price=productdto.price,
-                stock_quantity=productdto.stock_quantity,   
-                SubCategoryID = productdto.SubCategoryID,
+                stock_quantity=productdto.stock_quantity, 
+                CategoryID=productdto.CategoryID,
             };
             await Database.products.AddAsync(data);
             Database.SaveChanges();
@@ -71,7 +63,7 @@ namespace E_Commerce.Controllers
             data.price = productdto.price;
             data.Description = productdto.Description;
             data.stock_quantity = productdto.stock_quantity;
-            data.SubCategoryID = productdto.SubCategoryID;
+            data.CategoryID = productdto.CategoryID;
             await Database.SaveChangesAsync();
             return Ok(data);
         }
