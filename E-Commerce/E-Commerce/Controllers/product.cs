@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using E_Commerce.Model.Entities;
 using E_Commerce.Model;
+using Microsoft.VisualBasic;
 
 namespace E_Commerce.Controllers
 {
@@ -24,17 +25,23 @@ namespace E_Commerce.Controllers
             if (data == null) { 
                 return NotFound();  
             }
-            data = data.Skip((page - 1) * pagesize).Take(pagesize).ToList();
+            data = data.Where(x=>x.Soft_delete==0)
+                .Skip((page - 1) * pagesize)
+                .Take(pagesize)
+                .ToList();           
             return Ok(data);    
         }
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> Getdata(int id)
         {
-            var data=await Database.products.FirstOrDefaultAsync(x=>x.Id == id);  
-                
-            if (data == null) {
-                return NotFound();
+            var data=await Database.products.FirstOrDefaultAsync(x=>x.Id == id && x.Soft_delete==0);  
+            
+            
+            if (data == null)
+            {
+                //return NotFound("data not found");
+                throw new Exception("Data not Found");
             }
             return Ok(data);
         }
@@ -49,6 +56,11 @@ namespace E_Commerce.Controllers
                 stock_quantity=productdto.stock_quantity, 
                 CategoryID=productdto.CategoryID,
             };
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             await Database.products.AddAsync(data);
             Database.SaveChanges();
             return Ok(data);    
@@ -64,6 +76,11 @@ namespace E_Commerce.Controllers
             data.Description = productdto.Description;
             data.stock_quantity = productdto.stock_quantity;
             data.CategoryID = productdto.CategoryID;
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             await Database.SaveChangesAsync();
             return Ok(data);
         }
@@ -73,9 +90,15 @@ namespace E_Commerce.Controllers
         public async Task<IActionResult> DeleteData(int id)
         {
             var data=await Database.products.FindAsync(id);
-            Database.products.Remove(data); 
+            if(data == null)
+            {
+                return NotFound();
+            }
+            data.Soft_delete = 1;
+            //Database.products.Remove(data); 
             Database.SaveChanges(); 
             return Ok(data+" data are deleted");
         }
+       
     }
 }

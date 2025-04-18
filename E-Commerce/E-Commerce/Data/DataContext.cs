@@ -6,7 +6,7 @@ namespace E_Commerce.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { 
         
-       
+
         }
         public DbSet<User>users{ get; set; }
         public DbSet<Category>categories{ get; set; }   

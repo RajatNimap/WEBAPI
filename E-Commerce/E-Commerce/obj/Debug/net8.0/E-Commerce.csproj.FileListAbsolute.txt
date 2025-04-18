@@ -139,3 +139,8 @@ C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\E-C
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\E-Commerce.genruntimeconfig.cache
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\ref\E-Commerce.dll
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

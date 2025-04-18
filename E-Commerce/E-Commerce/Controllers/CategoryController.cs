@@ -22,9 +22,9 @@ namespace E_Commerce.Controllers
             
             var data = await Database.categories.Include(x => x.products)
                 .ToListAsync();
-
             if (data == null)
             {
+               
                 return NotFound();
             }
             return Ok(data);
@@ -46,10 +46,22 @@ namespace E_Commerce.Controllers
         [HttpPost]
         public async Task<IActionResult> PostData([FromBody] CategoryDto catedto)
         {
-            var data = new Category { Name = catedto.Name };
-            if (data == null) {
-                return BadRequest();
+
+            var IsExist=Database.categories.FirstOrDefault(x=>x.Name == catedto.Name);   
+            if(IsExist != null)
+            {
+                return Conflict(new {message="category already exits"});
             }
+            var data = new Category { Name = catedto.Name };
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); 
+            }
+            //if (data == null) {
+            //    return BadRequest();
+            //}
+
             await Database.categories.AddAsync(data);
             Database.SaveChanges();
             return Ok(data);
@@ -61,7 +73,10 @@ namespace E_Commerce.Controllers
         public async Task<IActionResult> UpdataDatabase(int id, [FromBody] CategoryDto catedto)
         {
             var data = await Database.categories.FindAsync(id);
-            if (data == null) { return NotFound(); }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             data.Name = catedto.Name;
             Database.SaveChanges();
             return Ok(data);    

@@ -16,7 +16,7 @@ namespace E_Commerce.Controllers
         private readonly DataContext Database;
 
         public OrderController(DataContext Data) {
-           Database = Data; 
+            Database = Data;
         }
 
         [HttpPost("placeorder")]
@@ -27,7 +27,7 @@ namespace E_Commerce.Controllers
                 return BadRequest("order request in invalied");
             }
 
-            var user =await Database.users.FindAsync(orderRequest.UserId);
+            var user = await Database.users.FindAsync(orderRequest.UserId);
             if (user == null) {
 
                 return BadRequest("User Not Found");
@@ -35,19 +35,19 @@ namespace E_Commerce.Controllers
 
             var order = new Order
             {
-                UserId=orderRequest.UserId, 
+                UserId = orderRequest.UserId,
                 OrderDate = DateTime.Now,
             };
             Database.orders.Add(order);
             await Database.SaveChangesAsync();
-            var orderItems=new List<OrderItem>();
+            var orderItems = new List<OrderItem>();
             double TotalPrice = 0;
-            foreach (var item in orderRequest.Items) { 
-                var product =await Database.products.FindAsync(item.ProductId);
+            foreach (var item in orderRequest.Items) {
+                var product = await Database.products.FindAsync(item.ProductId);
                 if (product == null) {
                     return BadRequest("Product Not found");
                 }
-                if(product.stock_quantity < item.Quantity)
+                if (product.stock_quantity < item.Quantity)
                 {
                     return BadRequest("not enough of stock for product");
                 }
@@ -56,23 +56,23 @@ namespace E_Commerce.Controllers
 
                 orderItems.Add(new OrderItem
                 {
-                    ProductId=item.ProductId,
-                    Quantity=item.Quantity,
-                    Price=product.price,
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
+                    Price = product.price,
                     OrderId = order.Id
                 });
             }
             order.TotalPrice = TotalPrice;
-           
+
 
             Database.orderitems.AddRange(orderItems);
             await Database.SaveChangesAsync();
 
-            return Ok(new 
+            return Ok(new
             {
                 OrderId = order.Id,
-                TotalPrice=order.TotalPrice,
-                OrderDate=order.OrderDate,
+                TotalPrice = order.TotalPrice,
+                OrderDate = order.OrderDate,
 
             });
 
@@ -80,8 +80,20 @@ namespace E_Commerce.Controllers
         [HttpGet]
         public async Task<IActionResult> GetData()
         {
-            var data = Database.orders.Include(a=>a.OrderItems).ToList();
+            var data = await Database.orders.Include(a => a.OrderItems).ToListAsync();
             return Ok(data);
         }
+        [HttpGet]
+        [Route("{id}")]
+        public async Task <IActionResult> GetData(int id)
+        {
+            var data = await Database.orders.Include(x=>x.OrderItems).FirstOrDefaultAsync(x => x.Id == id);
+                if (data == null)
+            {
+                return NotFound();
+            }
+            return Ok(data);
+        }
+
     }
 }

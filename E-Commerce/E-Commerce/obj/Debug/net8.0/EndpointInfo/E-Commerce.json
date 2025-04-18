@@ -172,6 +172,29 @@
         }
       }
     },
+    "/api/Order/{id}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/product": {
       "get": {
         "tags": [
@@ -471,8 +494,9 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 20,
+            "minLength": 3,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -510,23 +534,30 @@
       },
       "ProductDto": {
         "required": [
-          "name"
+          "description",
+          "name",
+          "price",
+          "stock_quantity"
         ],
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 20,
+            "minLength": 3,
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 500,
+            "minLength": 10,
+            "type": "string"
           },
           "price": {
             "type": "number",
             "format": "float"
           },
           "stock_quantity": {
+            "maximum": 100000,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
@@ -538,27 +569,40 @@
         "additionalProperties": false
       },
       "UserDto": {
+        "required": [
+          "age",
+          "email",
+          "name",
+          "password"
+        ],
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 30,
+            "minLength": 3,
+            "type": "string"
           },
           "age": {
+            "maximum": 150,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
           "phone": {
+            "maximum": 9999999999,
+            "minimum": 1000000000,
             "type": "integer",
             "format": "int64"
           },
           "email": {
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
           },
           "password": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 20,
+            "minLength": 8,
+            "type": "string"
           }
         },
         "additionalProperties": false

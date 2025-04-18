@@ -7,7 +7,8 @@
         public  required int age { get; set; }
         public long Phone { get; set; }
         public required string Email { get; set; }
-        public required string Password { get; set;}        
+        public required string Password { get; set;}
+        public int Soft_delete { get; set; } = 0;
         
     }
 }

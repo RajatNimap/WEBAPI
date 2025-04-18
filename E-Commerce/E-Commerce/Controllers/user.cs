@@ -12,7 +12,6 @@ namespace E_Commerce.Controllers
     public class User : ControllerBase
     {
         private readonly DataContext Database;
-
         public User(DataContext _Data1)
         {
             Database = _Data1;
@@ -25,24 +24,37 @@ namespace E_Commerce.Controllers
 
             if (data == null) {
                 return NotFound(); 
-             }
+            }
 
-            data=data.Skip((page-1)*pagesize).Take(pagesize).ToList();
+            data=data.Where(x=>x.Soft_delete==0)
+                .Skip((page-1)*pagesize).Take(pagesize).ToList();
             return Ok(data);    
         }
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetDataParticular(int id)
         {
-            var data =await Database.users.FirstOrDefaultAsync(x => x.Id == id);
+            var data =await Database.users.FirstOrDefaultAsync(x => x.Id == id && x.Soft_delete ==0);
             if (data == null) { 
                 return NotFound();
             }
+            
             return Ok(data);
         }
         [HttpPost]
         public async Task<IActionResult> PostData([FromBody]UserDto newDto)
         {
+
+            var IsExist = Database.users.FirstOrDefault(x => x.Email == newDto.Email || x.Phone == newDto.Phone);
+            if (IsExist != null) {
+
+                return Conflict(new { message ="User already exits"});
+            
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var data = new Model.Entities.User
             {   Name = newDto.Name,
                 Email = newDto.Email,
@@ -50,7 +62,9 @@ namespace E_Commerce.Controllers
                 age= newDto.age,
                 Password= newDto.Password,
             };
-             await Database.users.AddAsync(data);
+
+            
+            await Database.users.AddAsync(data);
              Database.SaveChanges(); 
              return Ok(data);
         }
@@ -58,13 +72,19 @@ namespace E_Commerce.Controllers
         [Route("{id}")]
         public async Task<IActionResult>UpdateData(int id, [FromBody]UserDto newDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var data = await Database.users.FindAsync(id);
             if (data == null) { return NotFound(); }
             data.Name = newDto.Name;
             data.Email = newDto.Email;
             data.Phone = newDto.Phone;  
             data.age = newDto.age;  
-            data.Password = newDto.Password;    
+            data.Password = newDto.Password;
+
+           
             Database.SaveChanges();
             return Ok(data);    
         }
@@ -73,8 +93,9 @@ namespace E_Commerce.Controllers
         public async Task<IActionResult> DeleteData(int id)
         {
             var data = await Database.users.FindAsync(id);
+            data.Soft_delete = 1;
             if (data == null) { return NotFound(); }
-            Database.users.Remove(data); ;
+            //Database.users.Remove(data); ;
             Database.SaveChanges();
             return Ok(data+" This data are deleted ");
         }
