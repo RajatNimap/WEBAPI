@@ -1,4 +1,6 @@
-﻿namespace E_Commerce.Model.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace E_Commerce.Model.Entities
 {
     public class User
     {
@@ -8,6 +10,7 @@
         public long Phone { get; set; }
         public required string Email { get; set; }
         public required string Password { get; set;}
+        [JsonIgnore]
         public int Soft_delete { get; set; } = 0;
         
     }

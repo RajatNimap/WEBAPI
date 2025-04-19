@@ -29,6 +29,7 @@ namespace E_Commerce.Controllers
             }
             return Ok(data);
         }
+       
 
         [HttpGet]
         [Route("{id}")]
@@ -42,6 +43,15 @@ namespace E_Commerce.Controllers
             }
 
             return Ok(data);
+        }
+        [HttpGet]
+        [Route("{id}/products")]
+        public async Task<IActionResult> GetProductCategory(int id)
+        {
+            var data = await Database.categories.AnyAsync(x => x.Id == id);
+            var newdata =await Database.products.Where(x => x.CategoryID == id).ToListAsync();
+            return Ok(newdata);
+
         }
         [HttpPost]
         public async Task<IActionResult> PostData([FromBody] CategoryDto catedto)
@@ -61,13 +71,10 @@ namespace E_Commerce.Controllers
             //if (data == null) {
             //    return BadRequest();
             //}
-
             await Database.categories.AddAsync(data);
             Database.SaveChanges();
             return Ok(data);
-
         }
-
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdataDatabase(int id, [FromBody] CategoryDto catedto)
@@ -86,7 +93,7 @@ namespace E_Commerce.Controllers
         public async Task<IActionResult> DeleteData(int id)
         {
             var data=await Database.categories.FindAsync(id);
-            if (data == null) { return NotFound();  };
+            if (data == null) { return NotFound("category not exist");  };
             Database.categories.Remove(data);
             Database.SaveChanges();
             return Ok("category are deleted");

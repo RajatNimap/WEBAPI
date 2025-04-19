@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "E_Commerce.Controllers.BasicAuthenticateController",
+    "Method": "BasicAuthication",
+    "RelativePath": "api/BasicAuthenticate/Authentication",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userauth",
+        "Type": "E_Commerce.Model.UserBasicAuth",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce.Controllers.CategoryController",
     "Method": "GetData",
     "RelativePath": "api/Category",
@@ -79,6 +95,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Commerce.Controllers.CategoryController",
+    "Method": "GetProductCategory",
+    "RelativePath": "api/Category/{id}/products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce.Controllers.OrderController",
     "Method": "GetData",
     "RelativePath": "api/Order",
@@ -92,6 +124,22 @@
     "ContainingType": "E_Commerce.Controllers.OrderController",
     "Method": "GetData",
     "RelativePath": "api/Order/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce.Controllers.OrderController",
+    "Method": "GetOrdeItemData",
+    "RelativePath": "api/Order/{id}/orderItems",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -211,9 +259,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.User",
+    "ContainingType": "E_Commerce.Controllers.UserCntrl",
     "Method": "GetData",
-    "RelativePath": "api/User",
+    "RelativePath": "api/UserCntrl",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -232,9 +280,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.User",
+    "ContainingType": "E_Commerce.Controllers.UserCntrl",
     "Method": "PostData",
-    "RelativePath": "api/User",
+    "RelativePath": "api/UserCntrl",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -248,9 +296,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.User",
+    "ContainingType": "E_Commerce.Controllers.UserCntrl",
     "Method": "DeleteData",
-    "RelativePath": "api/User",
+    "RelativePath": "api/UserCntrl",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -264,9 +312,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.User",
+    "ContainingType": "E_Commerce.Controllers.UserCntrl",
     "Method": "GetDataParticular",
-    "RelativePath": "api/User/{id}",
+    "RelativePath": "api/UserCntrl/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -280,9 +328,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.User",
+    "ContainingType": "E_Commerce.Controllers.UserCntrl",
     "Method": "UpdateData",
-    "RelativePath": "api/User/{id}",
+    "RelativePath": "api/UserCntrl/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

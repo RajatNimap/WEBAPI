@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
+using System.Text.Json;
+using System.Net;
+
 
 namespace E_Commerce
 {
@@ -7,11 +10,17 @@ namespace E_Commerce
         public async ValueTask<bool>TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
 
+            var response = new ErrorResponse
+            {
+                StatusCode = StatusCodes.Status500InternalServerError,
+                Message = "Something went wrong Please try again ",
+                Timestamp = DateTime.UtcNow,    
+            };
+                httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                httpContext.Response.ContentType = "application/json";
 
-           
-            httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            await httpContext.Response.WriteAsJsonAsync("something went wrong");
-            return true;
+                await httpContext.Response.WriteAsJsonAsync(response,cancellationToken);
+                return true;
         }
 
         

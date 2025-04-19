@@ -9,21 +9,29 @@ namespace E_Commerce.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class User : ControllerBase
+    public class UserCntrl : ControllerBase
     {
         private readonly DataContext Database;
-        public User(DataContext _Data1)
+        public UserCntrl(DataContext _Data1)
         {
             Database = _Data1;
-
         }
         [HttpGet]
         public async Task<IActionResult> GetData(int page=1,int pagesize=10)
         {
-            var data =  await Database.users.ToListAsync();
+            List<User> data;
+            try
+            {
+                data = await Database.users.ToListAsync();
+            }
+            catch (Exception ex) {
+
+                return StatusCode(500,"An error occur while fetching the data");
+            
+            }
 
             if (data == null) {
-                return NotFound(); 
+                return NotFound("data not found"); 
             }
 
             data=data.Where(x=>x.Soft_delete==0)
@@ -34,39 +42,57 @@ namespace E_Commerce.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetDataParticular(int id)
         {
-            var data =await Database.users.FirstOrDefaultAsync(x => x.Id == id && x.Soft_delete ==0);
-            if (data == null) { 
-                return NotFound();
+            try
+            {
+
+                var data = await Database.users.FirstOrDefaultAsync(x => x.Id == id && x.Soft_delete == 0);
+                if (data == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(data);
             }
-            
-            return Ok(data);
+            catch (Exception ex) {
+                return StatusCode(500,"An error occured while fetching the data");
+            }
         }
         [HttpPost]
         public async Task<IActionResult> PostData([FromBody]UserDto newDto)
         {
-
-            var IsExist = Database.users.FirstOrDefault(x => x.Email == newDto.Email || x.Phone == newDto.Phone);
-            if (IsExist != null) {
-
-                return Conflict(new { message ="User already exits"});
-            
-            }
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
-            var data = new Model.Entities.User
-            {   Name = newDto.Name,
-                Email = newDto.Email,
-                Phone = newDto.Phone,   
-                age= newDto.age,
-                Password= newDto.Password,
-            };
+                var IsExist = Database.users.FirstOrDefault(x => x.Email == newDto.Email || x.Phone == newDto.Phone);
+                if (IsExist != null)
+                {
 
-            
-            await Database.users.AddAsync(data);
-             Database.SaveChanges(); 
-             return Ok(data);
+                    return Conflict(new { message = "User already exits" });
+
+                }
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                string HasedPassword = BCrypt.Net.BCrypt.HashPassword(newDto.Password);
+
+                var data = new Model.Entities.User
+                {
+                    Name = newDto.Name,
+                    Email = newDto.Email,
+                    Phone = newDto.Phone,
+                    age = newDto.age,
+                    Password = HasedPassword,
+                };
+
+                await Database.users.AddAsync(data);
+                Database.SaveChanges();
+                return Ok(data);
+
+            }
+            catch (Exception ex) {
+                return StatusCode(500, "An error occured while feteching the data");
+            }
         }
         [HttpPut]
         [Route("{id}")]
@@ -76,28 +102,52 @@ namespace E_Commerce.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var data = await Database.users.FindAsync(id);
-            if (data == null) { return NotFound(); }
-            data.Name = newDto.Name;
-            data.Email = newDto.Email;
-            data.Phone = newDto.Phone;  
-            data.age = newDto.age;  
-            data.Password = newDto.Password;
+            try
+            {
+                var data = await Database.users.FindAsync(id);
+                if (data == null) { return NotFound(); }
+                data.Name = newDto.Name;
+                data.Email = newDto.Email;
+                data.Phone = newDto.Phone;
+                data.age = newDto.age;
 
-           
-            Database.SaveChanges();
-            return Ok(data);    
+                if (data.Password == newDto.Password)
+                {
+                    return Conflict(new { code = 409, error = "Password conflict", message = "Your password same as previous one please enter the new password" });
+                }
+                data.Password = newDto.Password;
+
+
+                Database.SaveChanges();
+                return Ok(data);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, "An error occured while fetching the data");
+            }
         }
 
-        [HttpDelete]    
+        [HttpDelete]
         public async Task<IActionResult> DeleteData(int id)
         {
-            var data = await Database.users.FindAsync(id);
-            data.Soft_delete = 1;
-            if (data == null) { return NotFound(); }
-            //Database.users.Remove(data); ;
-            Database.SaveChanges();
-            return Ok(data+" This data are deleted ");
+            try
+            {
+                var data = await Database.users.FindAsync(id);
+                if (data == null) { return NotFound("User not existed"); }
+                //Database.users.Remove(data); 
+                if (data.Soft_delete == 1)
+                {
+                    return NotFound("User not existed");
+                }
+
+                data.Soft_delete = 1;
+
+                Database.SaveChanges();
+                return Ok(" This data are deleted ");
+            }
+            catch (Exception ex) {
+                return StatusCode(500, "An error occure while feteching the data");
+            }
         }
 
     }

@@ -1,4 +1,6 @@
-﻿namespace E_Commerce.Model.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace E_Commerce.Model.Entities
 {
     public class Order
     {
@@ -8,6 +10,7 @@
             
         //Foreign key
         public int UserId { get; set; }
+        [JsonIgnore]
         public User? User { get; set; }
         //Foreign key for user
         

@@ -52,13 +52,13 @@ namespace E_Commerce.Controllers
                     return BadRequest("not enough of stock for product");
                 }
                 product.stock_quantity -= item.Quantity;
-                TotalPrice += product.price * item.Quantity;
+                TotalPrice += Math.Round(product.price * item.Quantity, 2);
 
                 orderItems.Add(new OrderItem
                 {
                     ProductId = item.ProductId,
                     Quantity = item.Quantity,
-                    Price = product.price,
+                    Price = Math.Round(product.price, 2),
                     OrderId = order.Id
                 });
             }
@@ -73,7 +73,6 @@ namespace E_Commerce.Controllers
                 OrderId = order.Id,
                 TotalPrice = order.TotalPrice,
                 OrderDate = order.OrderDate,
-
             });
 
         }
@@ -85,15 +84,33 @@ namespace E_Commerce.Controllers
         }
         [HttpGet]
         [Route("{id}")]
-        public async Task <IActionResult> GetData(int id)
+        public async Task<IActionResult> GetData(int id)
         {
-            var data = await Database.orders.Include(x=>x.OrderItems).FirstOrDefaultAsync(x => x.Id == id);
-                if (data == null)
+            var data = await Database.orders.Include(x => x.OrderItems).FirstOrDefaultAsync(x => x.Id == id);
+            if (data == null)
             {
-                return NotFound();
+                return NotFound("Order not found");
             }
             return Ok(data);
         }
+        [HttpGet]
+        [Route("{id}/orderItems")]
+        public async Task<IActionResult> GetOrdeItemData(int id)
+        {
+            var data = await Database.orders.AnyAsync(x=>x.Id==id);
+            if(data == null)
+            {
+                return NotFound("Order item not found");
+            }
+            var newdata= await Database.orderitems.Where(x=>x.OrderId==id).ToListAsync();
+            if (newdata == null)
+            {
+                return NotFound("Order item not found");
+            }
+            return Ok(newdata);
 
+        }
+
+       
     }
 }

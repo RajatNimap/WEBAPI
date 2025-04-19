@@ -92,12 +92,17 @@ namespace E_Commerce.Controllers
             var data=await Database.products.FindAsync(id);
             if(data == null)
             {
-                return NotFound();
+                return NotFound("Product not exist");
+            }
+
+            if (data.Soft_delete == 1)
+            {
+                return NotFound("Product not exist");
             }
             data.Soft_delete = 1;
             //Database.products.Remove(data); 
             Database.SaveChanges(); 
-            return Ok(data+" data are deleted");
+            return Ok("Product are deleted");
         }
        
     }

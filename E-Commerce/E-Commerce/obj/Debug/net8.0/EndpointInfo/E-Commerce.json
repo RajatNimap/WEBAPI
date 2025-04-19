@@ -5,6 +5,37 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/BasicAuthenticate/Authentication": {
+      "post": {
+        "tags": [
+          "BasicAuthenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserBasicAuth"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserBasicAuth"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserBasicAuth"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Category": {
       "get": {
         "tags": [
@@ -129,6 +160,29 @@
         }
       }
     },
+    "/api/Category/{id}/products": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Order/placeorder": {
       "post": {
         "tags": [
@@ -173,6 +227,29 @@
       }
     },
     "/api/Order/{id}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Order/{id}/orderItems": {
       "get": {
         "tags": [
           "Order"
@@ -340,10 +417,10 @@
         }
       }
     },
-    "/api/User": {
+    "/api/UserCntrl": {
       "get": {
         "tags": [
-          "User"
+          "UserCntrl"
         ],
         "parameters": [
           {
@@ -373,7 +450,7 @@
       },
       "post": {
         "tags": [
-          "User"
+          "UserCntrl"
         ],
         "requestBody": {
           "content": {
@@ -402,7 +479,7 @@
       },
       "delete": {
         "tags": [
-          "User"
+          "UserCntrl"
         ],
         "parameters": [
           {
@@ -421,10 +498,10 @@
         }
       }
     },
-    "/api/User/{id}": {
+    "/api/UserCntrl/{id}": {
       "get": {
         "tags": [
-          "User"
+          "UserCntrl"
         ],
         "parameters": [
           {
@@ -445,7 +522,7 @@
       },
       "put": {
         "tags": [
-          "User"
+          "UserCntrl"
         ],
         "parameters": [
           {
@@ -564,6 +641,25 @@
           "categoryID": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserBasicAuth": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
