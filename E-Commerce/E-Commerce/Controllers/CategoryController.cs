@@ -19,9 +19,15 @@ namespace E_Commerce.Controllers
         [HttpGet]
         public async Task<IActionResult> GetData()
         {
-            
-            var data = await Database.categories.Include(x => x.products)
-                .ToListAsync();
+
+            // var data = await Database.categories.Include(x => x.products)
+            //  .ToListAsync();
+
+            var data = await Database.categories.Select(c => new {
+                c.Id,
+                c.Name,
+                product = c.products.Where(x => x.Soft_delete == 0).ToList()
+            }).ToListAsync();
             if (data == null)
             {
                
@@ -35,7 +41,9 @@ namespace E_Commerce.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetDataParticular(int id)
         {
-            var data = await Database.categories.Include(x=>x.products).FirstOrDefaultAsync(x => x.Id == id);
+            var data = await Database.categories.Include(x => x.products.Where(p=>p.Soft_delete==0)).FirstOrDefaultAsync(x => x.Id == id);
+           // var newdata = await Database.categories.Select(x => x.Id == id);
+           
             if (data == null)
             {
 
@@ -45,11 +53,14 @@ namespace E_Commerce.Controllers
             return Ok(data);
         }
         [HttpGet]
-        [Route("{id}/products")]
+        [Route("products/{id}")]
         public async Task<IActionResult> GetProductCategory(int id)
         {
-            var data = await Database.categories.AnyAsync(x => x.Id == id);
-            var newdata =await Database.products.Where(x => x.CategoryID == id).ToListAsync();
+            //var data = await Database.categories.AnyAsync(x => x.Id == id);
+
+         
+            var newdata =await Database.products.Where(x => x.CategoryID == id && x.Soft_delete==0).ToListAsync();
+
             return Ok(newdata);
 
         }
@@ -97,7 +108,6 @@ namespace E_Commerce.Controllers
             Database.categories.Remove(data);
             Database.SaveChanges();
             return Ok("category are deleted");
-
         }
     }
 }

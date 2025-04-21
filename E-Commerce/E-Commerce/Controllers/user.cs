@@ -1,4 +1,5 @@
-﻿using E_Commerce.Data;
+﻿using System.Runtime.CompilerServices;
+using E_Commerce.Data;
 using E_Commerce.Model;
 using E_Commerce.Model.Entities;
 using Microsoft.AspNetCore.Http;
@@ -17,19 +18,12 @@ namespace E_Commerce.Controllers
             Database = _Data1;
         }
         [HttpGet]
-        public async Task<IActionResult> GetData(int page=1,int pagesize=10)
+        public async Task<IActionResult> GetData(int page=1,int pagesize = 10)
         {
-            List<User> data;
-            try
-            {
-                data = await Database.users.ToListAsync();
-            }
-            catch (Exception ex) {
-
-                return StatusCode(500,"An error occur while fetching the data");
             
-            }
-
+            
+               var data = await Database.users.ToListAsync();
+            
             if (data == null) {
                 return NotFound("data not found"); 
             }
@@ -57,6 +51,13 @@ namespace E_Commerce.Controllers
                 return StatusCode(500,"An error occured while fetching the data");
             }
         }
+        [HttpGet("orders/{id}")]
+        public async Task<IActionResult> OrderItem(int id)
+        {
+            
+            var data = await Database.orders.Include(x => x.OrderItems).Where(x=>x.UserId==id).ToListAsync();
+            return Ok(data);    
+        }
         [HttpPost]
         public async Task<IActionResult> PostData([FromBody]UserDto newDto)
         {
@@ -65,9 +66,7 @@ namespace E_Commerce.Controllers
                 var IsExist = Database.users.FirstOrDefault(x => x.Email == newDto.Email || x.Phone == newDto.Phone);
                 if (IsExist != null)
                 {
-
                     return Conflict(new { message = "User already exits" });
-
                 }
 
                 if (!ModelState.IsValid)
@@ -76,7 +75,7 @@ namespace E_Commerce.Controllers
                 }
                 string HasedPassword = BCrypt.Net.BCrypt.HashPassword(newDto.Password);
 
-                var data = new Model.Entities.User
+                var data = new User
                 {
                     Name = newDto.Name,
                     Email = newDto.Email,
@@ -104,18 +103,17 @@ namespace E_Commerce.Controllers
             }
             try
             {
-                var data = await Database.users.FindAsync(id);
+                string HashedPassword=BCrypt.Net.BCrypt.HashPassword(newDto.Password);  
+                
+                var data = await Database.users.FirstOrDefaultAsync(x=>x.Id==id && x.Soft_delete==0);
                 if (data == null) { return NotFound(); }
                 data.Name = newDto.Name;
                 data.Email = newDto.Email;
                 data.Phone = newDto.Phone;
                 data.age = newDto.age;
 
-                if (data.Password == newDto.Password)
-                {
-                    return Conflict(new { code = 409, error = "Password conflict", message = "Your password same as previous one please enter the new password" });
-                }
-                data.Password = newDto.Password;
+               
+                data.Password = HashedPassword;
 
 
                 Database.SaveChanges();

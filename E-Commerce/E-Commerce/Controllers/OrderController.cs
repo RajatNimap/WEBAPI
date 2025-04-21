@@ -27,7 +27,7 @@ namespace E_Commerce.Controllers
                 return BadRequest("order request in invalied");
             }
 
-            var user = await Database.users.FindAsync(orderRequest.UserId);
+            var user = await Database.users.FirstOrDefaultAsync(x=>x.Id==orderRequest.UserId && x.Soft_delete==0);
             if (user == null) {
 
                 return BadRequest("User Not Found");
@@ -38,14 +38,20 @@ namespace E_Commerce.Controllers
                 UserId = orderRequest.UserId,
                 OrderDate = DateTime.Now,
             };
+
             Database.orders.Add(order);
             await Database.SaveChangesAsync();
             var orderItems = new List<OrderItem>();
             double TotalPrice = 0;
+
             foreach (var item in orderRequest.Items) {
-                var product = await Database.products.FindAsync(item.ProductId);
+                var product = await Database.products.FirstOrDefaultAsync(x=>x.Id==item.ProductId && x.Soft_delete==0);
                 if (product == null) {
                     return BadRequest("Product Not found");
+                }
+                if(item.Quantity < 1)
+                {
+                    return BadRequest("stock quantity at least 1");
                 }
                 if (product.stock_quantity < item.Quantity)
                 {
@@ -94,14 +100,14 @@ namespace E_Commerce.Controllers
             return Ok(data);
         }
         [HttpGet]
-        [Route("{id}/orderItems")]
+        [Route("orderItems/{id}")]
         public async Task<IActionResult> GetOrdeItemData(int id)
         {
-            var data = await Database.orders.AnyAsync(x=>x.Id==id);
-            if(data == null)
-            {
-                return NotFound("Order item not found");
-            }
+           // var data = await Database.orders.AnyAsync(x=>x.Id==id);
+           //if(data == null)
+           // {
+           //     return NotFound("Order item not found");
+           // }
             var newdata= await Database.orderitems.Where(x=>x.OrderId==id).ToListAsync();
             if (newdata == null)
             {

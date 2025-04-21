@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using E_Commerce.Model.Entities;
 using E_Commerce.Model;
 using Microsoft.VisualBasic;
+using System.Collections.Immutable;
 
 namespace E_Commerce.Controllers
 {
@@ -34,17 +35,41 @@ namespace E_Commerce.Controllers
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> Getdata(int id)
-        {
+        {   
             var data=await Database.products.FirstOrDefaultAsync(x=>x.Id == id && x.Soft_delete==0);  
-            
             
             if (data == null)
             {
-                //return NotFound("data not found");
-                throw new Exception("Data not Found");
+                return NotFound("data not found");
+                //throw new Exception("Data not Found");
             }
             return Ok(data);
         }
+        [HttpGet("filter")]
+        public async Task<IActionResult> Getfilterdata([FromQuery] string ProductFilter, [FromQuery] float? minprice, [FromQuery] float? maxprice)
+        {
+                  
+            var query = Database.products.AsQueryable();
+            if (!string.IsNullOrEmpty(ProductFilter))
+            {
+                query = query.Where(x => x.Name.ToLower() == ProductFilter.ToLower());
+            }
+
+            if (minprice.HasValue)
+            {
+                query = query.Where(x => x.price > minprice);
+
+            }
+
+            if (maxprice.HasValue) { 
+                    query=query.Where(x => x.price < maxprice); 
+            }
+            query = query.Where(x => x.Soft_delete == 0);
+          var data= await query.ToListAsync();  
+
+            return Ok(data);    
+        }
+       
         [HttpPost]  
         public async Task<IActionResult> PostData([FromBody]ProductDto productdto)
         {
@@ -53,7 +78,7 @@ namespace E_Commerce.Controllers
                 Name = productdto.Name,
                 Description = productdto.Description,   
                 price=productdto.price,
-                stock_quantity=productdto.stock_quantity, 
+                stock_quantity=productdto.stock_quantity  > 0 ? productdto.stock_quantity:1, 
                 CategoryID=productdto.CategoryID,
             };
 
@@ -68,21 +93,32 @@ namespace E_Commerce.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public async Task<IActionResult> UpdateData(int id, [FromBody]ProductDto productdto)
+        public async Task<IActionResult> UpdateData(int id, [FromBody] ProductDto productdto)
         {
-            var data = await Database.products.FindAsync(id);
-            data.Name = productdto.Name;
-            data.price = productdto.price;
-            data.Description = productdto.Description;
-            data.stock_quantity = productdto.stock_quantity;
-            data.CategoryID = productdto.CategoryID;
-
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                var data = await Database.products.FirstOrDefaultAsync(x => x.Id == id && x.Soft_delete == 0);
+
+                data.Name = productdto.Name;
+                data.price = productdto.price;
+                data.Description = productdto.Description;
+                data.stock_quantity = productdto.stock_quantity;
+                data.CategoryID = productdto.CategoryID;
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                await Database.SaveChangesAsync();
+                return Ok(data);
+
+
             }
-            await Database.SaveChangesAsync();
-            return Ok(data);
+            catch (Exception ex)
+            {
+
+                return BadRequest("data not found");
+            }
         }
 
         [HttpDelete]
@@ -100,7 +136,7 @@ namespace E_Commerce.Controllers
                 return NotFound("Product not exist");
             }
             data.Soft_delete = 1;
-            //Database.products.Remove(data); 
+            //Database.products.Remove(data);
             Database.SaveChanges(); 
             return Ok("Product are deleted");
         }

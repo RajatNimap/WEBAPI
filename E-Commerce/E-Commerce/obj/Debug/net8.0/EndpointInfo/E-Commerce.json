@@ -160,7 +160,7 @@
         }
       }
     },
-    "/api/Category/{id}/products": {
+    "/api/Category/products/{id}": {
       "get": {
         "tags": [
           "Category"
@@ -249,7 +249,7 @@
         }
       }
     },
-    "/api/Order/{id}/orderItems": {
+    "/api/Order/orderItems/{id}": {
       "get": {
         "tags": [
           "Order"
@@ -417,6 +417,43 @@
         }
       }
     },
+    "/api/product/filter": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "parameters": [
+          {
+            "name": "ProductFilter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "minprice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "maxprice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/UserCntrl": {
       "get": {
         "tags": [
@@ -554,6 +591,29 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UserCntrl/orders/{id}": {
+      "get": {
+        "tags": [
+          "UserCntrl"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
