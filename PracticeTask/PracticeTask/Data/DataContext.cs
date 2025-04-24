@@ -10,5 +10,7 @@ namespace PracticeTask.Data
         
         }
         public DbSet<UserDetail>userDetails { get; set; }
+        public DbSet<Category>categories { get; set; }  
+        public DbSet<Product> products { get; set; }        
     }
 }

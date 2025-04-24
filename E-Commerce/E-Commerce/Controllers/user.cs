@@ -2,6 +2,7 @@
 using E_Commerce.Data;
 using E_Commerce.Model;
 using E_Commerce.Model.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,12 +19,10 @@ namespace E_Commerce.Controllers
             Database = _Data1;
         }
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetData(int page=1,int pagesize = 10)
         {
-            
-            
-               var data = await Database.users.ToListAsync();
-            
+            var data = await Database.users.ToListAsync();   
             if (data == null) {
                 return NotFound("data not found"); 
             }
@@ -34,6 +33,8 @@ namespace E_Commerce.Controllers
         }
         [HttpGet]
         [Route("{id}")]
+        [Authorize]
+
         public async Task<IActionResult> GetDataParticular(int id)
         {
             try
@@ -124,7 +125,6 @@ namespace E_Commerce.Controllers
                 return StatusCode(500, "An error occured while fetching the data");
             }
         }
-
         [HttpDelete]
         public async Task<IActionResult> DeleteData(int id)
         {

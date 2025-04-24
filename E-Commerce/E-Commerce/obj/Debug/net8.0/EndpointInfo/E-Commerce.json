@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/BasicAuthenticate/Authentication": {
+    "/api/BasicAuthenticate/JWTAuthentication": {
       "post": {
         "tags": [
           "BasicAuthenticate"

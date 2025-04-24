@@ -2,7 +2,7 @@
   {
     "ContainingType": "E_Commerce.Controllers.BasicAuthenticateController",
     "Method": "BasicAuthication",
-    "RelativePath": "api/BasicAuthenticate/Authentication",
+    "RelativePath": "api/BasicAuthenticate/JWTAuthentication",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
