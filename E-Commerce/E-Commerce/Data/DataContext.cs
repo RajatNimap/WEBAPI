@@ -14,5 +14,9 @@ namespace E_Commerce.Data
         public DbSet<OrderItem> orderitems{ get; set; } 
         public DbSet<Order> orders{ get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Product>().HasQueryFilter(p => p.Soft_delete == 0);
+        }
     }
 }

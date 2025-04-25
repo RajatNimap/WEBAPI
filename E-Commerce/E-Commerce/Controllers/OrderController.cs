@@ -36,6 +36,7 @@ namespace E_Commerce.Controllers
             var order = new Order
             {
                 UserId = orderRequest.UserId,
+                Address=orderRequest.Address,   
                 OrderDate = DateTime.Now,
             };
 

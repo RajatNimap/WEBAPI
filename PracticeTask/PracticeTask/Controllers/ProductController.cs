@@ -54,8 +54,6 @@ namespace PracticeTask.Controllers
             }
             
             return Ok(data);    
-
-
         }
         [HttpPut] 
         public async Task<IActionResult> GetupdateData(int id, [FromBody] ProductDto productDto)

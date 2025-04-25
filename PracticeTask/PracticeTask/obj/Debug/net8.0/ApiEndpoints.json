@@ -79,6 +79,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PracticeTask.Controllers.OrderItemsController",
+    "Method": "OrderPlacing",
+    "RelativePath": "api/OrderItems/OrderPlaced",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "OrderReq",
+        "Type": "PracticeTask.Model.OrderRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PracticeTask.Controllers.ProductController",
     "Method": "GetData",
     "RelativePath": "api/Product",

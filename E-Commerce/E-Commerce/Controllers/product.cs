@@ -36,7 +36,7 @@ namespace E_Commerce.Controllers
         [Route("{id}")]
         public async Task<IActionResult> Getdata(int id)
         {   
-            var data=await Database.products.FirstOrDefaultAsync(x=>x.Id == id && x.Soft_delete==0);  
+            var data=await Database.products.FirstOrDefaultAsync(x=>x.Id == id);  
             
             if (data == null)
             {
