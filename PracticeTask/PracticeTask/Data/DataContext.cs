@@ -13,6 +13,14 @@ namespace PracticeTask.Data
         public DbSet<Category>categories { get; set; }  
         public DbSet<Product> products { get; set; }      
         public DbSet<OrderItems> orderItems { get; set; }   
-        public DbSet<Orders> orders { get; set; }   
+        public DbSet<Orders> orders { get; set; }
+        public DbSet<EmployeeService> employeeServices { get; set; }    
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Product>().HasQueryFilter(x => !x.SoftDelete);  
+        }
+
     }
+   
 }

@@ -79,6 +79,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PracticeTask.Controllers.EmployeController",
+    "Method": "Getalldata",
+    "RelativePath": "api/Employe",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PracticeTask.Controllers.EmployeController",
+    "Method": "Postdata",
+    "RelativePath": "api/Employe",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "emp",
+        "Type": "PracticeTask.Model.EmployeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PracticeTask.Controllers.EmployeController",
+    "Method": "Delete",
+    "RelativePath": "api/Employe",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PracticeTask.Controllers.EmployeController",
+    "Method": "Getdetail",
+    "RelativePath": "api/Employe/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PracticeTask.Controllers.EmployeController",
+    "Method": "UpdateData",
+    "RelativePath": "api/Employe/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "emp",
+        "Type": "PracticeTask.Model.EmployeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PracticeTask.Controllers.OrderItemsController",
     "Method": "OrderPlacing",
     "RelativePath": "api/OrderItems/OrderPlaced",

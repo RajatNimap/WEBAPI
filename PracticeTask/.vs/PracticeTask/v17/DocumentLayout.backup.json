@@ -3,32 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\controllers\\employecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\controllers\\employecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\centralexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\centralexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\interfacesservice\\employeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\interfacesservice\\employeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\userdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\userdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\controllers\\orderitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\controllers\\orderitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\excetiton model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\excetiton model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\interfacesservice\\employeimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\interfacesservice\\employeimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,24 +23,64 @@
       "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\orderrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\orderrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\controllers\\orderitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\controllers\\orderitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\entities\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\entities\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\employedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\employedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\userdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\userdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250425040510_runmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PracticeTask\\Migrations\\20250425040510_runmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\entities\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\entities\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250426070719_hkfdjk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PracticeTask\\Migrations\\20250426070719_hkfdjk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\centralexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\centralexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\excetiton model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\excetiton model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\orderrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\orderrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\entities\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\model\\entities\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\model\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -93,6 +117,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\migrations\\20250424071110_new.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\migrations\\20250424071110_new.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practicetask\\practicetask\\migrations\\20250425040510_runmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F706AD5F-D1E5-4B08-84FF-AD1F82D0D5F8}|PracticeTask\\PracticeTask.csproj|solutionrelative:practicetask\\migrations\\20250425040510_runmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -106,7 +134,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "UserDetaildto.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\UserDetaildto.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Model\\UserDetaildto.cs",
@@ -120,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Model\\Entities\\Product.cs",
@@ -134,59 +162,72 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\ProductController.cs*",
+              "RelativeToolTip": "PracticeTask\\Controllers\\ProductController.cs*",
+              "ViewState": "AgIAABwAAAAACAAAAAD2v1UAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T10:57:06.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CentralException.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\CentralException.cs",
-              "RelativeDocumentMoniker": "PracticeTask\\CentralException.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\CentralException.cs",
-              "RelativeToolTip": "PracticeTask\\CentralException.cs",
-              "ViewState": "AgIAAAoAAABwmZmZmZkxwBoAAAAFAAAAAAAAAA==",
+              "Title": "EmployeInterface.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\InterfacesService\\EmployeInterface.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\InterfacesService\\EmployeInterface.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\InterfacesService\\EmployeInterface.cs",
+              "RelativeToolTip": "PracticeTask\\InterfacesService\\EmployeInterface.cs",
+              "ViewState": "AgIAAAYAAABAmZmZmZkdwA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T06:58:54.66Z",
+              "WhenOpened": "2025-04-26T06:53:16.313Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Excetiton Model.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Excetiton Model.cs",
-              "RelativeDocumentMoniker": "PracticeTask\\Model\\Excetiton Model.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Excetiton Model.cs",
-              "RelativeToolTip": "PracticeTask\\Model\\Excetiton Model.cs",
-              "ViewState": "AgIAAAAAAABAMzMzMzMLwAUAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "EmployeImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\InterfacesService\\EmployeImplementation.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\InterfacesService\\EmployeImplementation.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\InterfacesService\\EmployeImplementation.cs",
+              "RelativeToolTip": "PracticeTask\\InterfacesService\\EmployeImplementation.cs",
+              "ViewState": "AgIAAD8AAAAAzszMzIwgwAcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T07:04:58.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Program.cs",
-              "RelativeDocumentMoniker": "PracticeTask\\Program.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Program.cs",
-              "RelativeToolTip": "PracticeTask\\Program.cs",
-              "ViewState": "AgIAABcAAACA/////z8lwB0AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:46:16.351Z",
+              "WhenOpened": "2025-04-26T07:14:53.34Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\appsettings.json",
-              "RelativeDocumentMoniker": "PracticeTask\\appsettings.json",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\appsettings.json",
-              "RelativeToolTip": "PracticeTask\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-21T11:46:45.444Z",
+              "Title": "EmployeController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\EmployeController.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Controllers\\EmployeController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\EmployeController.cs*",
+              "RelativeToolTip": "PracticeTask\\Controllers\\EmployeController.cs*",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAADkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T08:34:00.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\UserController.cs",
+              "RelativeToolTip": "PracticeTask\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:06:40.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "OrderItemsController.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\OrderItemsController.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Controllers\\OrderItemsController.cs",
@@ -200,6 +241,84 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Program.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Program.cs*",
+              "RelativeToolTip": "PracticeTask\\Program.cs*",
+              "ViewState": "AgIAAAgAAAAAzMzMzIwjwBAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:46:16.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmployeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\EmployeDto.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Model\\EmployeDto.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\EmployeDto.cs",
+              "RelativeToolTip": "PracticeTask\\Model\\EmployeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T07:10:23.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\ProductDto.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Model\\ProductDto.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\ProductDto.cs",
+              "RelativeToolTip": "PracticeTask\\Model\\ProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T07:11:04.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Data\\DataContext.cs",
+              "RelativeToolTip": "PracticeTask\\Data\\DataContext.cs",
+              "ViewState": "AgIAAAMAAADAZGZmZmYGwBAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:51:18.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20250426070719_hkfdjk.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250426070719_hkfdjk.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Migrations\\20250426070719_hkfdjk.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250426070719_hkfdjk.cs",
+              "RelativeToolTip": "PracticeTask\\Migrations\\20250426070719_hkfdjk.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T07:07:20.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Entities\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Model\\Entities\\EmployeeService.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Entities\\EmployeeService.cs",
+              "RelativeToolTip": "PracticeTask\\Model\\Entities\\EmployeeService.cs",
+              "ViewState": "AgIAAAIAAAAUMzMzMzMrwAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T06:50:32.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Categorydto.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Categorydto.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Model\\Categorydto.cs",
@@ -212,33 +331,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "PracticeTask\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "PracticeTask\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAEsAAAAAzMzMzIwowDYAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "CentralException.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\CentralException.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\CentralException.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\CentralException.cs",
+              "RelativeToolTip": "PracticeTask\\CentralException.cs",
+              "ViewState": "AgIAAAYAAABQZmZmZmY0wBQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T10:57:06.702Z",
+              "WhenOpened": "2025-04-25T06:58:54.66Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "PracticeTask\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Controllers\\UserController.cs",
-              "RelativeToolTip": "PracticeTask\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "Excetiton Model.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Excetiton Model.cs",
+              "RelativeDocumentMoniker": "PracticeTask\\Model\\Excetiton Model.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Excetiton Model.cs",
+              "RelativeToolTip": "PracticeTask\\Model\\Excetiton Model.cs",
+              "ViewState": "AgIAAAAAAABAMzMzMzMLwAUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T07:06:40.451Z",
+              "WhenOpened": "2025-04-25T07:04:58.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\appsettings.json",
+              "RelativeDocumentMoniker": "PracticeTask\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\appsettings.json",
+              "RelativeToolTip": "PracticeTask\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-21T11:46:45.444Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "OrderRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\OrderRequestDto.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Model\\OrderRequestDto.cs",
@@ -246,12 +377,11 @@
               "RelativeToolTip": "PracticeTask\\Model\\OrderRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T04:01:00.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T04:01:00.313Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "OrderItems.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Entities\\OrderItems.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Model\\Entities\\OrderItems.cs",
@@ -259,12 +389,11 @@
               "RelativeToolTip": "PracticeTask\\Model\\Entities\\OrderItems.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAADwvxAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T03:44:16.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T03:44:16.866Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 29,
               "Title": "20250425040510_runmigration.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250425040510_runmigration.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Migrations\\20250425040510_runmigration.cs",
@@ -272,12 +401,11 @@
               "RelativeToolTip": "PracticeTask\\Migrations\\20250425040510_runmigration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T04:05:10.957Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T04:05:10.957Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Model\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Model\\Entities\\Category.cs",
@@ -285,25 +413,11 @@
               "RelativeToolTip": "PracticeTask\\Model\\Entities\\Category.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T08:39:55.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T08:39:55.383Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "PracticeTask\\Data\\DataContext.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Data\\DataContext.cs",
-              "RelativeToolTip": "PracticeTask\\Data\\DataContext.cs",
-              "ViewState": "AgIAAAUAAABQZmZmZmY0wA8AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:51:18.514Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "20250424122742_adhe.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250424122742_adhe.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Migrations\\20250424122742_adhe.cs",
@@ -315,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "20250424095643_hell.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250424095643_hell.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Migrations\\20250424095643_hell.cs",
@@ -327,7 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "20250424093606_fhh.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250424093606_fhh.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Migrations\\20250424093606_fhh.cs",
@@ -339,7 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "20250424093509_newmigrate.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250424093509_newmigrate.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Migrations\\20250424093509_newmigrate.cs",
@@ -351,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "DataContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\DataContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Migrations\\DataContextModelSnapshot.cs",
@@ -363,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 28,
               "Title": "20250424071110_new.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250424071110_new.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Migrations\\20250424071110_new.cs",
@@ -375,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "20250421115745_initialmigration.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250421115745_initialmigration.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Migrations\\20250421115745_initialmigration.cs",
@@ -387,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "20250421121036_dskjfb.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\PracticeTask\\PracticeTask\\Migrations\\20250421121036_dskjfb.cs",
               "RelativeDocumentMoniker": "PracticeTask\\Migrations\\20250421121036_dskjfb.cs",

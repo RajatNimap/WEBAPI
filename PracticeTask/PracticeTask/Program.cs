@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using PracticeTask;
 using PracticeTask.Data;
+using PracticeTask.InterfacesService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddExceptionHandler<CentralException>();
+builder.Services.AddTransient<IEmployeeCrud, EmployeImplementation>();
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {

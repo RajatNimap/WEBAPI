@@ -80,8 +80,6 @@ namespace PracticeTask.Controllers
             await Database.SaveChangesAsync();
 
             return Ok(data);
-            
-
         }
     }
 }
