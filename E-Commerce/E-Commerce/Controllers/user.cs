@@ -60,6 +60,7 @@ namespace E_Commerce.Controllers
             return Ok(data);    
         }
         [HttpPost]
+
         public async Task<IActionResult> PostData([FromBody]UserDto newDto)
         {
             try
@@ -96,6 +97,7 @@ namespace E_Commerce.Controllers
         }
         [HttpPut]
         [Route("{id}")]
+        [Authorize]
         public async Task<IActionResult>UpdateData(int id, [FromBody]UserDto newDto)
         {
             if (!ModelState.IsValid)
@@ -126,6 +128,7 @@ namespace E_Commerce.Controllers
             }
         }
         [HttpDelete]
+        [Authorize]
         public async Task<IActionResult> DeleteData(int id)
         {
             try

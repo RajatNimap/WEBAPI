@@ -1,0 +1,205 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\controllers\\basiccrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\controllers\\basiccrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502052955_sfddf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Crudoperation\\Migrations\\20250502052955_sfddf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502051150_dfsd;.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Crudoperation\\Migrations\\20250502051150_dfsd;.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502045301_dsjksd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Crudoperation\\Migrations\\20250502045301_dsjksd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\model\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\model\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502043348_kdjsfls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Crudoperation\\Migrations\\20250502043348_kdjsfls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\crudoperation.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\crudoperation.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\migrations\\20250502041353_sfdjkh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\migrations\\20250502041353_sfdjkh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20250502052955_sfddf.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502052955_sfddf.cs",
+              "RelativeDocumentMoniker": "Crudoperation\\Migrations\\20250502052955_sfddf.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502052955_sfddf.cs",
+              "RelativeToolTip": "Crudoperation\\Migrations\\20250502052955_sfddf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T05:29:56.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BasicCrud.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Controllers\\BasicCrud.cs",
+              "RelativeDocumentMoniker": "Crudoperation\\Controllers\\BasicCrud.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Controllers\\BasicCrud.cs*",
+              "RelativeToolTip": "Crudoperation\\Controllers\\BasicCrud.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswBYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T05:24:36.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20250502051150_dfsd;.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502051150_dfsd;.cs",
+              "RelativeDocumentMoniker": "Crudoperation\\Migrations\\20250502051150_dfsd;.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502051150_dfsd;.cs",
+              "RelativeToolTip": "Crudoperation\\Migrations\\20250502051150_dfsd;.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T05:11:50.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Crudoperation\\Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Data\\DataContext.cs",
+              "RelativeToolTip": "Crudoperation\\Data\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T05:05:14.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20250502045301_dsjksd.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502045301_dsjksd.cs",
+              "RelativeDocumentMoniker": "Crudoperation\\Migrations\\20250502045301_dsjksd.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502045301_dsjksd.cs",
+              "RelativeToolTip": "Crudoperation\\Migrations\\20250502045301_dsjksd.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T04:53:01.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Emp.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Model\\Emp.cs",
+              "RelativeDocumentMoniker": "Crudoperation\\Model\\Emp.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Model\\Emp.cs",
+              "RelativeToolTip": "Crudoperation\\Model\\Emp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T04:44:28.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20250502043348_kdjsfls.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502043348_kdjsfls.cs",
+              "RelativeDocumentMoniker": "Crudoperation\\Migrations\\20250502043348_kdjsfls.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502043348_kdjsfls.cs",
+              "RelativeToolTip": "Crudoperation\\Migrations\\20250502043348_kdjsfls.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T04:33:48.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\appsettings.json",
+              "RelativeDocumentMoniker": "Crudoperation\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\appsettings.json",
+              "RelativeToolTip": "Crudoperation\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-02T04:00:45.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Program.cs",
+              "RelativeDocumentMoniker": "Crudoperation\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Program.cs",
+              "RelativeToolTip": "Crudoperation\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAACMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T03:50:46.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20250502041353_sfdjkh.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502041353_sfdjkh.cs",
+              "RelativeDocumentMoniker": "Crudoperation\\Migrations\\20250502041353_sfdjkh.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Migrations\\20250502041353_sfdjkh.cs",
+              "RelativeToolTip": "Crudoperation\\Migrations\\20250502041353_sfdjkh.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T04:13:53.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Crudoperation.http",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Crudoperation.http",
+              "RelativeDocumentMoniker": "Crudoperation\\Crudoperation.http",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Crudoperation.http",
+              "RelativeToolTip": "Crudoperation\\Crudoperation.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-05-02T03:53:39.555Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

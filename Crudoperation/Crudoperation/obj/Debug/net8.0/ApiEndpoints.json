@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "Crudoperation.Controllers.BasicCrud",
+    "Method": "GetData",
+    "RelativePath": "api/BasicCrud",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

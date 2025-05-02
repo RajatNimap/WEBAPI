@@ -140,3 +140,4 @@ C:\Users\Nimap\Desktop\Nimap-Learning\PracticeTask\PracticeTask\obj\Debug\net8.0
 C:\Users\Nimap\Desktop\Nimap-Learning\PracticeTask\PracticeTask\obj\Debug\net8.0\PracticeTask.genruntimeconfig.cache
 C:\Users\Nimap\Desktop\Nimap-Learning\PracticeTask\PracticeTask\obj\Debug\net8.0\ref\PracticeTask.dll
 C:\Users\Nimap\Desktop\Nimap-Learning\PracticeTask\PracticeTask\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\PracticeTask\PracticeTask\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

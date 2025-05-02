@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PracticeTask.Data;
@@ -18,6 +19,7 @@ namespace PracticeTask.Controllers
                Database = database;
         }
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Getdata(int page=1,int limit=5)
         {
             var data = await Database.userDetails.Where(x=>x.SoftDelete==false)
@@ -34,6 +36,7 @@ namespace PracticeTask.Controllers
 
         [HttpGet]
         [Route("{id}")]
+        [Authorize]
 
         public async Task<IActionResult> GetResId(int id)
         {

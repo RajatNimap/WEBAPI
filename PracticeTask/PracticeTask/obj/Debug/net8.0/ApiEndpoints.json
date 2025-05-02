@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "PracticeTask.Controllers.AuthController",
+    "Method": "LoginAuth",
+    "RelativePath": "api/Auth/LoginAuth",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "logindto",
+        "Type": "PracticeTask.Model.LoginReqDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PracticeTask.Controllers.CategoryController",
     "Method": "GetData",
     "RelativePath": "api/Category",
