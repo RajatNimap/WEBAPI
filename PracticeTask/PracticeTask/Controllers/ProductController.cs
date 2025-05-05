@@ -18,9 +18,9 @@ namespace PracticeTask.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetData()
+        public async Task<IActionResult> GetData(int PageNumber = 1,int PageSize=5)
         {
-            var data = await Database.products.Where(x=>x.SoftDelete==false).ToListAsync();
+            var data = await Database.products.Where(x=>x.SoftDelete==false).Skip((PageNumber -1) * PageSize).Take(PageSize).ToListAsync();
           // var newdata=data.Select(x=>x.SoftDelete==false).ToList();
             
             if (data == null) { 
