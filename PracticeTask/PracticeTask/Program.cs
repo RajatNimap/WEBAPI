@@ -6,6 +6,10 @@ using PracticeTask.Data;
 using PracticeTask.InterfacesService;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using PracticeTask.Interfaces;
+using System.ComponentModel.Design;
+using Microsoft.Identity.Client;
+using Microsoft.AspNetCore.Mvc.Authorization;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,6 +20,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddExceptionHandler<CentralException>();
 builder.Services.AddTransient<IEmployeeCrud, EmployeImplementation>();
+builder.Services.AddTransient<IAuthService, AuthService>(); 
+builder.Services.AddTransient<ITokenService, TokenService>();
+builder.Services.AddTransient<IRefeshTokenService, RefreshOtherService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters()
@@ -24,10 +31,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidateAudience = true,
         ValidateIssuerSigningKey = true,
         ValidateLifetime = true,
+        ClockSkew=TimeSpan.Zero,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
+});
+builder.Services.AddControllers(options => {
+    options.Filters.Add(new AuthorizeFilter());
 });
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -46,7 +57,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
-app.UseExceptionHandler(_ => { });
+//app.UseExceptionHandler(_ => { });
 app.UseAuthorization();
 app.UseAuthorization();
 app.MapControllers();

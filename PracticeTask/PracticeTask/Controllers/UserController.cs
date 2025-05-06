@@ -10,7 +10,8 @@ namespace PracticeTask.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-       
+
+    [Authorize(Roles ="Admin")]
     public class UserController : ControllerBase
     {
         private readonly DataContext Database;
@@ -19,7 +20,7 @@ namespace PracticeTask.Controllers
                Database = database;
         }
         [HttpGet]
-        [Authorize]
+        
         public async Task<IActionResult> Getdata(int page=1,int limit=5)
         {
             var data = await Database.userDetails.Where(x=>x.SoftDelete==false)
@@ -36,7 +37,7 @@ namespace PracticeTask.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        [Authorize]
+        
 
         public async Task<IActionResult> GetResId(int id)
         {
@@ -49,7 +50,8 @@ namespace PracticeTask.Controllers
             return Ok(data);    
         } 
 
-        [HttpPost]  
+        [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> PostData(UserDetaildto userdto)
         {
 

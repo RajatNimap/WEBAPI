@@ -14,11 +14,13 @@ namespace PracticeTask.Data
         public DbSet<Product> products { get; set; }      
         public DbSet<OrderItems> orderItems { get; set; }   
         public DbSet<Orders> orders { get; set; }
-        public DbSet<EmployeeService> employeeServices { get; set; }    
+        public DbSet<EmployeeService> employeeServices { get; set; }   
+        public DbSet<RefreshToken> refreshTokens { get; set; }  
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>().HasQueryFilter(x => !x.SoftDelete);  
+           
         }
 
     }

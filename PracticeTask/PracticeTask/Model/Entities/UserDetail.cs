@@ -9,6 +9,7 @@ namespace PracticeTask.Model.Entities
         public int Age { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Roles { get; set; }   
         [JsonIgnore]
         public bool SoftDelete { get; set; }=false;
        
