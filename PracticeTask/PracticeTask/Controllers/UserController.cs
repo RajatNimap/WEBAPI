@@ -20,7 +20,6 @@ namespace PracticeTask.Controllers
                Database = database;
         }
         [HttpGet]
-        
         public async Task<IActionResult> Getdata(int page=1,int limit=5)
         {
             var data = await Database.userDetails.Where(x=>x.SoftDelete==false)

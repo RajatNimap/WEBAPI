@@ -10,6 +10,7 @@ using PracticeTask.Interfaces;
 using System.ComponentModel.Design;
 using Microsoft.Identity.Client;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -40,6 +41,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.AddControllers(options => {
     options.Filters.Add(new AuthorizeFilter());
 });
+builder.Services.AddResponseCaching();  
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -59,7 +61,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 //app.UseExceptionHandler(_ => { });
 app.UseAuthorization();
-app.UseAuthorization();
+app.UseResponseCaching();
 app.MapControllers();
 
 app.Run();

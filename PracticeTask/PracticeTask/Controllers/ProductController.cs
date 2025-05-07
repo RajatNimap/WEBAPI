@@ -21,6 +21,7 @@ namespace PracticeTask.Controllers
         }
 
         [HttpGet]
+        [ResponseCache(Duration = 60)]
         public async Task<IActionResult> GetData(int PageNumber = 1,int PageSize=5)
         {
             var data = await Database.products.Where(x=>x.SoftDelete==false).Skip((PageNumber -1) * PageSize).Take(PageSize).ToListAsync();
