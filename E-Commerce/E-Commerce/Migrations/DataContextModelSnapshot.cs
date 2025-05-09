@@ -131,6 +131,33 @@ namespace E_Commerce.Migrations
                     b.ToTable("products");
                 });
 
+            modelBuilder.Entity("E_Commerce.Model.Entities.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ExpiryTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRevoked")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("refreshTokens");
+                });
+
             modelBuilder.Entity("E_Commerce.Model.Entities.User", b =>
                 {
                     b.Property<int>("Id")

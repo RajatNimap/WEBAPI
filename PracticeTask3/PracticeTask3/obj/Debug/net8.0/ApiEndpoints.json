@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "PracticeTask3.Controllers.BasicCrudController",
+    "Method": "GetData",
+    "RelativePath": "api/BasicCrud/Getstudent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PracticeTask3.Controllers.BasicCrudController",
+    "Method": "PostData",
+    "RelativePath": "api/BasicCrud/student",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stu",
+        "Type": "PracticeTask3.Model.Studentdto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Practice3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B9280C8C-3F1D-400F-9812-CC8D9927E34D}|Practice3\\Practice3.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\practice3\\practice3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9280C8C-3F1D-400F-9812-CC8D9927E34D}|Practice3\\Practice3.csproj|solutionrelative:practice3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Practice3\\Practice3\\Program.cs",
+              "RelativeDocumentMoniker": "Practice3\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Practice3\\Practice3\\Program.cs",
+              "RelativeToolTip": "Practice3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T12:04:05.143Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

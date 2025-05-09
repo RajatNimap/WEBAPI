@@ -104,11 +104,7 @@ namespace E_Commerce.Controllers
         [Route("orderItems/{id}")]
         public async Task<IActionResult> GetOrdeItemData(int id)
         {
-           // var data = await Database.orders.AnyAsync(x=>x.Id==id);
-           //if(data == null)
-           // {
-           //     return NotFound("Order item not found");
-           // }
+           
             var newdata= await Database.orderitems.Where(x=>x.OrderId==id).ToListAsync();
             if (newdata == null)
             {

@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using E_Commerce.Data;
 using E_Commerce.Model;
+using E_Commerce.Model.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -46,12 +47,56 @@ namespace E_Commerce.Controllers
             if (isValid)
             {
                 var tokenstring = GenerateWebToken(userauth);
-                return Ok(new { token = tokenstring } + " User successfully login");
+                var RefreshToken = GenerateRefreshToken();
+
+                var ExistingEntry = await Database.refreshTokens.Where(x => x.Email == userauth.Email && !x.IsRevoked).ToListAsync();
+                foreach (var entry in ExistingEntry)
+                {
+
+                    entry.IsRevoked = true;
+                }
+                var TokenData = new RefreshToken
+                {
+                    Token = RefreshToken,
+                    Email = userauth.Email,
+                    ExpiryTime = DateTime.UtcNow.AddMinutes(10),
+                    IsRevoked = false,  
+                };
+               
+                await Database.refreshTokens.AddAsync(TokenData);
+                Database.SaveChanges();
+
+                return Ok(new { token = tokenstring , refresh=RefreshToken} + " User successfully login");
             }
             else
             {
                 return BadRequest("Invalid Credential");
             }
+        }
+        [HttpPost("RefreshToken")]
+        public async Task<IActionResult>GetAuthentication(RefreshTokenDto refresh)
+        {
+            
+            var data = await Database.refreshTokens.FirstOrDefaultAsync(x => x.Token == refresh.RefreshToken && !x.IsRevoked && x.ExpiryTime > DateTime.UtcNow);
+            if (data == null) { return Unauthorized("Invalid or expired token"); }
+
+            var User = await Database.users.FirstOrDefaultAsync(x => x.Email == data.Email);
+            if (User == null) { return Unauthorized("User Not found"); }
+
+            var NewAccessToken = GenerateWebToken(new UserBasicAuth {Email=User.Email} );
+            var NewRefreshToken = GenerateRefreshToken();
+
+            var tokendata = new RefreshToken
+            {
+                Token = NewRefreshToken,
+                Email= User.Email,  
+                ExpiryTime= DateTime.UtcNow.AddMinutes(10),
+                IsRevoked = false,
+
+            };
+
+           await Database.refreshTokens.AddAsync(tokendata);
+           Database.SaveChanges(); return Ok(new {NewAccessToken,NewRefreshToken });
         }
 
         private String GenerateWebToken(UserBasicAuth userInfo)
@@ -67,26 +112,21 @@ namespace E_Commerce.Controllers
             _config["Jwt:Issuer"],
             _config["Jwt:Audience"],
             claims,
-            expires: DateTime.Now.AddMinutes(120),
+            expires: DateTime.Now.AddMinutes(5),
             signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-        //[HttpPost("BasicAuthenticataion")]
-        //public async Task<IActionResult> BasiscAuthenticate(UserBasicAuth userInfo)
-        //{
-        //    var data =await Database.users.FirstOrDefaultAsync(x=>x.Email==userInfo.Email);
-        //    if (data == null) {
-        //        return NotFound("User Not found");
-        //    }
-        //    bool isValid =BCrypt.Net.BCrypt.Verify(data.Password, userInfo.Password);
 
-        //    if (!isValid) {
+        private string GenerateRefreshToken()
+        {
+           var RandomBytes=new byte[32];
+            using var Range = RandomNumberGenerator.Create();
+            Range.GetBytes(RandomBytes);    
+            return Convert.ToBase64String(RandomBytes);
+        }
 
-        //        return NotFound("Invalid Credential");
-        //    }
-        //    return Ok("User login Succefully");
 
-        //}
+        
     }
 }

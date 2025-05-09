@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Commerce.Controllers.BasicAuthenticateController",
+    "Method": "GetAuthentication",
+    "RelativePath": "api/BasicAuthenticate/RefreshToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "refresh",
+        "Type": "E_Commerce.Model.RefreshTokenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce.Controllers.CategoryController",
     "Method": "GetData",
     "RelativePath": "api/Category",
@@ -169,9 +185,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.product",
+    "ContainingType": "E_Commerce.Controllers.ProductController",
     "Method": "Getdata",
-    "RelativePath": "api/product",
+    "RelativePath": "api/Product",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -190,9 +206,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.product",
+    "ContainingType": "E_Commerce.Controllers.ProductController",
     "Method": "PostData",
-    "RelativePath": "api/product",
+    "RelativePath": "api/Product",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -206,9 +222,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.product",
+    "ContainingType": "E_Commerce.Controllers.ProductController",
     "Method": "Getdata",
-    "RelativePath": "api/product/{id}",
+    "RelativePath": "api/Product/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -222,9 +238,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.product",
+    "ContainingType": "E_Commerce.Controllers.ProductController",
     "Method": "UpdateData",
-    "RelativePath": "api/product/{id}",
+    "RelativePath": "api/Product/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -243,9 +259,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.product",
+    "ContainingType": "E_Commerce.Controllers.ProductController",
     "Method": "DeleteData",
-    "RelativePath": "api/product/{id}",
+    "RelativePath": "api/Product/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -259,9 +275,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "E_Commerce.Controllers.product",
+    "ContainingType": "E_Commerce.Controllers.ProductController",
     "Method": "Getfilterdata",
-    "RelativePath": "api/product/filter",
+    "RelativePath": "api/Product/filter",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

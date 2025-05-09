@@ -1,87 +1,9 @@
 [
   {
-    "ContainingType": "Practice2.Controllers.RouteController",
-    "Method": "getdata",
-    "RelativePath": "api/Route/{id}",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Practice2.Controllers.RouteController",
-    "Method": "getdatastring",
-    "RelativePath": "api/Route/{id}",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Practice2.Controllers.RouteController",
-    "Method": "getdatastring2",
-    "RelativePath": "api/Route/hi/{str}",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "str",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Int32",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Practice2.Controllers.ValuesController",
-    "Method": "getAll",
-    "RelativePath": "data",
-    "HttpMethod": "",
+    "ContainingType": "Practice2.Controllers.ActionController",
+    "Method": "GetData",
+    "RelativePath": "api/Action/Emp",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
@@ -98,166 +20,16 @@
     ]
   },
   {
-    "ContainingType": "Practice2.Controllers.ValuesController",
-    "Method": "actionm",
-    "RelativePath": "Values/actionm",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Practice2.Controllers.ValuesController",
-    "Method": "get",
-    "RelativePath": "Values/get/{id}",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Practice2.Controllers.ValuesController",
-    "Method": "getbook",
-    "RelativePath": "Values/getbook",
-    "HttpMethod": "",
+    "ContainingType": "Practice2.Controllers.ActionController",
+    "Method": "empdetail",
+    "RelativePath": "api/Action/Empdetail",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Practice2.Controllers.ValuesController",
-    "Method": "getbookbyId",
-    "RelativePath": "Values/getbookbyId/{id}",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Practice2.Controllers.ValuesController",
-    "Method": "getbookbyidandName",
-    "RelativePath": "Values/getbookbyidandName/{id}/author/{name}",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "name",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Practice2.Controllers.ValuesController",
-    "Method": "SearchBooks",
-    "RelativePath": "Values/SearchBooks/search",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "rating",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "price",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
+        "Type": "Practice2.Model.Entities.EmployeeModel",
         "MediaTypes": [
           "text/plain",
           "application/json",
