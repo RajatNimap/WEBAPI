@@ -9,7 +9,6 @@ namespace E_Commerce.Model
             public string Name { get; set; }
         [Required, Range(1, 150, ErrorMessage = "Please Enter the valid age")]
         public int age { get; set; }
-        [Range(1000000000, 9999999999, ErrorMessage = "Phone number must be exactly 10 digits")]
         public long Phone { get; set; }
         [Required,EmailAddress(ErrorMessage="Error Please enter valid email")]
             public string Email { get; set; }

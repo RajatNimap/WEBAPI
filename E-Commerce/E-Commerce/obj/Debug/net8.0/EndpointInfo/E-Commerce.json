@@ -790,8 +790,6 @@
             "format": "int32"
           },
           "phone": {
-            "maximum": 9999999999,
-            "minimum": 1000000000,
             "type": "integer",
             "format": "int64"
           },

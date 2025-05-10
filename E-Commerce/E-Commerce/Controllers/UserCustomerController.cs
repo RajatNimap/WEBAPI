@@ -115,11 +115,7 @@ namespace E_Commerce.Controllers
                 data.Email = newDto.Email;
                 data.Phone = newDto.Phone;
                 data.age = newDto.age;
-
-               
                 data.Password = HashedPassword;
-
-
                 Database.SaveChanges();
                 return Ok(data);
             }
