@@ -15,7 +15,7 @@ namespace PracticeTask.Interfaces
     {
         private readonly DataContext Database;  
         public AuthService(DataContext Database) {
-                this.Database = Database;       
+                this.Database = Database;   
         }    
         public async Task<bool> ValidateUser(string username, string password)
         {

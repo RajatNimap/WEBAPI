@@ -81,7 +81,6 @@ namespace PracticeTask.InterfacesService
             data.Name   = emp.Name;
             data.email = emp.email;
             data.Password = HashedPassword;
-            Database.SaveChanges();
             return data;
         }
     }
