@@ -41,6 +41,7 @@ namespace Hospital_Management.Interfaces.Implementation
                 Email = Doctors.Email,
                 Phoneno = Doctors.Phoneno,
                 Specialization = Doctors.Specialization,
+                DepartmentId = Doctors.DepartmentId,    
                 IsCreated = DateTime.UtcNow
             };
 
@@ -59,12 +60,22 @@ namespace Hospital_Management.Interfaces.Implementation
             Data.Email = Doctorss.Email;
             Data.Phoneno = Doctorss.Phoneno;
             Data.Specialization = Doctorss.Specialization;
+            Data.DepartmentId = Doctorss.DepartmentId;
+
+            await Database.SaveChangesAsync();
 
             return Data;
         }
-        public Task<bool> DeleteDoctorsDetail(int id)
+        public async Task<bool> DeleteDoctorsDetail(int id)
         {
-            throw new NotImplementedException();
+            var Data = await Database.doctors.FirstOrDefaultAsync(x=>x.Id==id);
+            if(Data == null)
+            {
+                return false;   
+            }
+            Database.doctors.Remove(Data);
+            Database.SaveChanges(); 
+            return true;
         }
     }
 }

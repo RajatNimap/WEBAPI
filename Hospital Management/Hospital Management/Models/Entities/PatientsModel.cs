@@ -5,17 +5,17 @@ namespace Hospital_Management.Models.Entities
     public class PatientsModel
     {
         [Key]
-        public int Id { get; set; } 
-        [Required]
+        public int Id { get; set; }
         public string Name { get; set; }
-        [Required]
         public int Age { get; set; }
-        [Required]
         public string Gender { get; set; }
-        [Required]
         public string Address { get; set; }
-        [Required]
         public string Disease { get; set; }
+        public string DiseaseHistory { get; set; }
+        public DateTime Createdate { get; set; }
+        public ICollection<Appointment> Appointment { get; set; } = new List<Appointment>();
 
     }
+
+    
 }

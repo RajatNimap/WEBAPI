@@ -11,6 +11,5 @@ namespace Hospital_Management.Models.Entities
         public string Password { get; set; }    
         public string Role { get; set; }
 
-
     }
 }

@@ -4,6 +4,7 @@ using Hospital_Management.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital_Management.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20250524090536_doctor")]
+    partial class doctor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,9 +32,6 @@ namespace Hospital_Management.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("DayOfWeek")
                         .HasColumnType("int");
@@ -50,9 +50,6 @@ namespace Hospital_Management.Migrations
 
                     b.Property<TimeSpan>("StartTime")
                         .HasColumnType("time");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -78,61 +75,6 @@ namespace Hospital_Management.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("department");
-                });
-
-            modelBuilder.Entity("Hospital_Management.Models.Entities.DocotorLeave", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DoctorsId")
-                        .HasColumnType("int");
-
-                    b.Property<DateOnly>("Leave")
-                        .HasColumnType("date");
-
-                    b.Property<string>("Reason")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DoctorsId");
-
-                    b.ToTable("docotorLeaves");
-                });
-
-            modelBuilder.Entity("Hospital_Management.Models.Entities.DoctorAvailability", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DayOfWeek")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DoctorId")
-                        .HasColumnType("int");
-
-                    b.Property<TimeSpan>("EndTime")
-                        .HasColumnType("time");
-
-                    b.Property<bool>("IsAvailable")
-                        .HasColumnType("bit");
-
-                    b.Property<TimeSpan>("StartTime")
-                        .HasColumnType("time");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DoctorId");
-
-                    b.ToTable("doctorAvailabilities");
                 });
 
             modelBuilder.Entity("Hospital_Management.Models.Entities.Doctors", b =>
@@ -286,28 +228,6 @@ namespace Hospital_Management.Migrations
                     b.Navigation("Doctors");
 
                     b.Navigation("Patients");
-                });
-
-            modelBuilder.Entity("Hospital_Management.Models.Entities.DocotorLeave", b =>
-                {
-                    b.HasOne("Hospital_Management.Models.Entities.Doctors", "Doctors")
-                        .WithMany()
-                        .HasForeignKey("DoctorsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Doctors");
-                });
-
-            modelBuilder.Entity("Hospital_Management.Models.Entities.DoctorAvailability", b =>
-                {
-                    b.HasOne("Hospital_Management.Models.Entities.Doctors", "Doctors")
-                        .WithMany()
-                        .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Doctors");
                 });
 
             modelBuilder.Entity("Hospital_Management.Models.Entities.Doctors", b =>

@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using Hospital_Management.Data;
 using Hospital_Management.Interfaces.Implementation;
@@ -33,6 +34,16 @@ builder.Services.AddScoped<TokenImplementation>();
 builder.Services.AddScoped<RefreshTokenImplementation>();
 builder.Services.AddScoped<PatientsImplementation>();
 builder.Services.AddScoped<DepartmentImplement>();
+builder.Services.AddScoped<DoctorImplementation>();
+builder.Services.AddScoped<DefaulSessionClassfier>();
+builder.Services.AddScoped<SlotGenerator>();
+builder.Services.AddScoped<AvailabilityRepository>();
+builder.Services.AddScoped<AppointmentRepository>();
+builder.Services.AddScoped<DoctorSlotService>();
+
+
+
+
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddSwaggerGen(c =>
 {
@@ -68,6 +79,8 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

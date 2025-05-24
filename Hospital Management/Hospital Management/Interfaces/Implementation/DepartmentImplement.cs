@@ -64,4 +64,5 @@ namespace Hospital_Management.Interfaces.Implementation
             return true;
         }
     }
+
 }

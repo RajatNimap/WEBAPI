@@ -9,6 +9,7 @@ namespace Hospital_Management.Models.EntitiesDto
         public long Phoneno { get; set; }
         public string Specialization { get; set; }
         public bool IsActive { get; set; } = true;
+        public int DepartmentId { get; set; }
         public DateTime IsCreated { get; set; }
 
        
