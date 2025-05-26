@@ -1,6 +1,8 @@
 ﻿using Hospital_Management.Data;
 using Hospital_Management.Interfaces.Services;
+using Hospital_Management.Migrations;
 using Hospital_Management.Models.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -15,7 +17,7 @@ namespace Hospital_Management.Interfaces.Implementation
         } 
         public async Task<List<PatientsModel>> GetPatientsModelsDetails()
         {
-            var PatientDetail = await Database.patients.ToListAsync();
+            var PatientDetail = await Database.patients.Include(x => x.Appointment).ToListAsync();
 
             if (PatientDetail == null) {
                 return null;
@@ -26,7 +28,7 @@ namespace Hospital_Management.Interfaces.Implementation
        
         public async Task<PatientsModel> GetPatientsById(int id)
         {
-            var PatientDetailById = await Database.patients.FirstOrDefaultAsync(x => x.Id == id);
+            var PatientDetailById = await Database.patients.Include(x=>x.Appointment).FirstOrDefaultAsync(x => x.Id == id);
             if (PatientDetailById == null) { }
 
             if (PatientDetailById == null) { return null; }
@@ -53,6 +55,7 @@ namespace Hospital_Management.Interfaces.Implementation
         public async Task<PatientsModel> UpdatePatientDetail(int id, PatientsDto patients)
         {
             var Data=await Database.patients.FirstOrDefaultAsync(x=>x.Id == id);
+           
 
             if (Data == null)
             {
@@ -79,6 +82,32 @@ namespace Hospital_Management.Interfaces.Implementation
              Database.patients.Remove(Data);
             await Database.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<Appointment> GetAppointmentDetail(int id)
+        {
+
+            var Data =await Database.appointments.FirstOrDefaultAsync(x=>x.PatientId==id);
+            if (Data == null) {
+
+                return null;
+            }
+
+            return Data;    
+        }
+        
+        public async Task<List<PatientsModel>> Searching([FromQuery]string value)
+        {
+            var Query= Database.patients.AsQueryable();
+            // var Data= await Database.patients.FirstOrDefaultAsync(x=>x.)
+
+
+            if (!string.IsNullOrEmpty(value))
+            {
+                Query=Query.Where(x=>x.Name.ToLower() == value.ToLower());
+            }
+             
+            throw new NotImplementedException();
         }
     }
 }

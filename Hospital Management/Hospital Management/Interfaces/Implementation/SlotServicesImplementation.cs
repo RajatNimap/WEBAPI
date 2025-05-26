@@ -9,19 +9,7 @@ using static Hospital_Management.Interfaces.Implementation.AppointmentRepository
 namespace Hospital_Management.Interfaces.Implementation
 {
 
-    public class DefaulSessionClassfier : Classifier
-    {
-        public string Classify(TimeSpan startTime)
-        {
-            if (startTime >= TimeSpan.FromHours(8) && startTime < TimeSpan.FromHours(12))
-                return "morning";
 
-            return (startTime >= TimeSpan.FromHours(17) && startTime < TimeSpan.FromHours(21)) ? "evening" : "";
-
-
-        }
-
-    }
 
     public class AppointmentRepository : IAppointmentRepo
     {
@@ -35,7 +23,7 @@ namespace Hospital_Management.Interfaces.Implementation
 
         public async Task<List<Appointment>> GetBookedSlot(int DoctorId, DateTime Date)
         {
-            var data = await Database.appointments.Where(x => x.DoctorId == DoctorId && x.Created == Date.Date).ToListAsync();
+            var data = await Database.appointments.Where(x => x.DoctorId == DoctorId && x.DateofAppointment == Date.Date).ToListAsync();
 
             if (data == null)
             {
@@ -44,73 +32,84 @@ namespace Hospital_Management.Interfaces.Implementation
             return data;
         }
     }
-        public class AvailabilityRepository : IAvailability
+    public class AvailabilityRepository : IAvailability
+    {
+        private readonly DataContext Database;
+
+        public AvailabilityRepository(DataContext context)
         {
-            private readonly DataContext Database;
+            Database = context;
+        }
 
-            public AvailabilityRepository(DataContext context)
+        public async Task<List<DoctorAvailability>> GetAvailability(int DoctorId, DateTime dateTime)
+        {
+            var dayofWeek = (int)dateTime.DayOfWeek;
+          //  var dayofWeek = ((int)dateTime.DayOfWeek == 0) ? 7 :(int)dateTime.DayOfWeek;
+            var Data = await Database.doctorAvailabilities.Where(x => x.DoctorId == DoctorId && x.DayOfWeek == dayofWeek && x.IsAvailable).ToListAsync();
+            if (Data == null)
             {
-                Database = context;
+                return null;
             }
+            return Data;
+        }
+       
 
-            public async Task<List<DoctorAvailability>> GetAvailability(int DoctorId, DateTime dateTime)
-            {
-                    var dayofWeek=(int)dateTime.DayOfWeek;
-                var Data = await Database.doctorAvailabilities.Where(x => x.DoctorId == DoctorId && x.DayOfWeek == dayofWeek && x.IsAvailable).ToListAsync();
-                if (Data == null) {
-                    return null;
-                }
-                return Data;
-            }
+    }
+
+    public class SlotGenerator : ISLotGenerator
+    {
+        public Dictionary<string, List<TimeSlotDto>> GenerateSlotes(List<DoctorAvailability> availabilities, List<Appointment> bookings)
+        {
+            var groupedSlots = new Dictionary<string, List<TimeSlotDto>>();
 
            
-        }
 
-        public class SlotGenerator : ISLotGenerator
-        {
-            private readonly DefaulSessionClassfier _classifier;
-
-            public SlotGenerator(DefaulSessionClassfier classifier)
+            foreach (var availability in availabilities)
             {
-                _classifier = classifier;
-            }
-
-            public Dictionary<string, List<TimeSlotDto>> GenerateSlotes(List<DoctorAvailability> availabilities, List<Appointment> bookings)
-            {
-                var groupedSlots = new Dictionary<string, List<TimeSlotDto>>();
-
-                foreach (var availability in availabilities)
+                
+                // MORNING SLOTS
+                var current = availability.MorningStartTime;
+                while (current < availability.MorningEndTime)
                 {
-                    var current = availability.StartTime;
-                    while (current < availability.EndTime)
+                    var slotEnd = current.Add(TimeSpan.FromMinutes(30));
+                    var isBooked = bookings.Any(b => b.StartTime == current && b.EndTime == slotEnd);
+
+                    if (!groupedSlots.ContainsKey("Morning"))
+                        groupedSlots["Morning"] = new List<TimeSlotDto>();
+
+                    groupedSlots["Morning"].Add(new TimeSlotDto
                     {
-                        var slotEnd = current.Add(TimeSpan.FromMinutes(30));
-                        var isBooked = bookings.Any(b => b.StartTime == current && b.EndTime == slotEnd);
+                        StartTime = current.ToString(@"hh\:mm"),
+                        EndTime = slotEnd.ToString(@"hh\:mm"),
+                        Status = isBooked ? "booked" : "available"
+                    });
 
-                        var session = _classifier.Classify(current);
-                        if (!groupedSlots.ContainsKey(session))
-                            groupedSlots[session] = new List<TimeSlotDto>();
-
-                        groupedSlots[session].Add(new TimeSlotDto
-                        {
-                            StartTime = current.ToString(@"hh\:mm"),
-                            EndTime = slotEnd.ToString(@"hh\:mm"),
-                            Status = isBooked ? "booked" : "available"
-                        });
-
-                        current = slotEnd;
-                    }
+                    current = slotEnd;
                 }
 
-                return groupedSlots;
+                // EVENING SLOTS
+                current = availability.EveningStartTime;
+                while (current < availability.EveningEndTime)
+                {
+                    var slotEnd = current.Add(TimeSpan.FromMinutes(30));
+                    var isBooked = bookings.Any(b => b.StartTime == current && b.EndTime == slotEnd);
 
+                    if (!groupedSlots.ContainsKey("Evening"))
+                        groupedSlots["Evening"] = new List<TimeSlotDto>();
+
+                    groupedSlots["Evening"].Add(new TimeSlotDto
+                    {
+                        StartTime = current.ToString(@"hh\:mm"),
+                        EndTime = slotEnd.ToString(@"hh\:mm"),
+                        Status = isBooked ? "booked" : "available"
+                    });
+
+                    current = slotEnd;
+                }
             }
 
-            
+            return groupedSlots;
         }
-
-
-    
-
-
+    }
 }
+

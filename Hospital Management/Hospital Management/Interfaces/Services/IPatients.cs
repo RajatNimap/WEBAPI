@@ -9,6 +9,8 @@ namespace Hospital_Management.Interfaces.Services
         Task<PatientsModel> InsertPatientDetail(PatientsDto patients);
         Task<PatientsModel> UpdatePatientDetail(int id,PatientsDto patients);
         Task<bool> DeletePatientDetail(int id);
+        Task<Appointment> GetAppointmentDetail(int id);
+        Task<List<PatientsModel>> Searching(string value);
 
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Hospital_Management.Interfaces.Implementation;
+using Hospital_Management.Migrations;
 using Hospital_Management.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Hospital_Management.Controllers
 {
@@ -12,11 +14,11 @@ namespace Hospital_Management.Controllers
     {
         private readonly PatientsImplementation patientIm;
 
-        public PatientsController(PatientsImplementation patientIm)
+        public PatientsController(PatientsImplementation patientIm )
         {
             this.patientIm = patientIm;
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet("Patients")]
         public async Task<IActionResult> GetPatientsList()
         {
@@ -28,7 +30,7 @@ namespace Hospital_Management.Controllers
             }
             return Ok(Data);    
         }
-        [Authorize]
+       // [Authorize]
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetPatientsById(int id)
@@ -40,6 +42,19 @@ namespace Hospital_Management.Controllers
 
             return Ok(Data);
         }
+
+        [HttpGet]
+        [Route("app/{id}")]
+        public async Task<IActionResult> GetAppointmentDetail(int id)
+        {
+            var Data = await patientIm.GetAppointmentDetail(id);
+            if (Data == null) {
+                return BadRequest("Data Not Found");
+            }
+            return Ok(Data);
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> PatientsPost([FromBody] PatientsDto patientsDto)
         {

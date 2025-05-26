@@ -10,12 +10,15 @@ namespace Hospital_Management.Models.Entities
         public int Id { get; set; }
         public int DoctorId { get; set; }
         public int PatientId { get; set; }
-        public int DayOfWeek { get; set; } // 0 = Sunday ... 6 = Saturday
+
+        public  Session Session { get; set; }   
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
-        public bool IsAvailable { get; set; }
-        public AppointmentStatus Status { get; set; }
+        public AppointmentStatus StatusId { get; set; }
+        public DateTime DateofAppointment { get; set; }
+
         public DateTime Created { get; set; }
+
         [ForeignKey("DoctorId")]
         public Doctors Doctors { get; set; }
 
@@ -31,4 +34,10 @@ namespace Hospital_Management.Models.Entities
         Cancelled,
         Rescheduled
     }
+
+    public enum Session {
+            Morning,
+            Evening
+    }
+
 }

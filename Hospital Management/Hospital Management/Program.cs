@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Text.Json.Serialization;
 using Hospital_Management.Data;
 using Hospital_Management.Interfaces.Implementation;
 using Hospital_Management.Interfaces.Services;
@@ -15,6 +16,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
@@ -35,13 +41,11 @@ builder.Services.AddScoped<RefreshTokenImplementation>();
 builder.Services.AddScoped<PatientsImplementation>();
 builder.Services.AddScoped<DepartmentImplement>();
 builder.Services.AddScoped<DoctorImplementation>();
-builder.Services.AddScoped<DefaulSessionClassfier>();
 builder.Services.AddScoped<SlotGenerator>();
 builder.Services.AddScoped<AvailabilityRepository>();
 builder.Services.AddScoped<AppointmentRepository>();
 builder.Services.AddScoped<DoctorSlotService>();
-
-
+builder.Services.AddScoped<AppointmentImplementation>();
 
 
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

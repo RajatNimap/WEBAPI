@@ -14,10 +14,7 @@ namespace Hospital_Management.Interfaces.Services
         Task<List<Appointment>> GetBookedSlot(int DoctorId,DateTime Date);
     
     }
-    public interface Classifier
-    {
-        string Classify(TimeSpan startTime);
-    }
+  
     public interface ISLotGenerator
     {
         Dictionary<String, List<TimeSlotDto>> GenerateSlotes(List<DoctorAvailability> availabilities, List<Appointment> bookings);

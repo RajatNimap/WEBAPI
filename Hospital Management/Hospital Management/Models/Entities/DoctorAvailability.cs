@@ -7,8 +7,11 @@ namespace Hospital_Management.Models.Entities
         public int Id { get; set; }
         public int DoctorId { get; set; }
         public int DayOfWeek { get; set; } // 0 = Sunday ... 6 = Saturday
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
+        public TimeSpan MorningStartTime { get; set; }
+        public TimeSpan MorningEndTime { get; set; }
+
+        public TimeSpan EveningStartTime { get; set; }
+        public TimeSpan EveningEndTime { get; set; }
         public bool IsAvailable { get; set; }
 
         [ForeignKey("DoctorId")]

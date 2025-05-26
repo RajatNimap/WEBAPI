@@ -3,16 +3,100 @@
   "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250526125445_checking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Migrations\\20250526125445_checking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\slotservicesimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\slotservicesimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\docotorleave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\docotorleave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\medicalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\medicalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\controllers\\doctorslotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\controllers\\doctorslotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\doctorslotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\doctorslotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\doctorimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\doctorimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\departmentimplement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\departmentimplement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\authenticationimplementaion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\authenticationimplementaion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\appointmentimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\appointmentimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\doctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\doctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\departmentimplement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\departmentimplement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\departmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\departmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\patientsimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\patientsimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\patientsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\patientsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\ipatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\ipatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\controllers\\appointmentbookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\controllers\\appointmentbookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250526120141_newadded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Migrations\\20250526120141_newadded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,76 +107,56 @@
       "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\doctoravailability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\controllers\\doctorslotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\controllers\\doctorslotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\refreshtokenimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\refreshtokenimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\timeslotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\timeslotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250526114045_appointment updated.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Migrations\\20250526114045_appointment updated.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\doctorslotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\doctorslotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\tokenimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\tokenimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524110111_date added.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Migrations\\20250524110111_date added.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\iappointmentbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\iappointmentbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\islotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\islotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\idoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\idoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524091154_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Migrations\\20250524091154_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090750_appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Migrations\\20250524090750_appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090625_availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Migrations\\20250524090625_availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090536_doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Migrations\\20250524090536_doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\authenticationimplementaion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\authenticationimplementaion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\patientsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\patientsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\idepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\idepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\doctors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\doctors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\islotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\islotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entities\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\timeslotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\timeslotdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\patientsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -103,52 +167,8 @@
       "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\refreshtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\refreshtokenimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\refreshtokenimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\tokenimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\tokenimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\departmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\departmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\doctorimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\doctorimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\doctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\doctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\idepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\idepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\idoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\idoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\iauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\iauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\implementation\\patientsimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\implementation\\patientsimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\interfaces\\services\\ipatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\interfaces\\services\\ipatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -157,10 +177,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\models\\entitiesdto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\migrations\\20250522122324_refreshtokenadded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -179,16 +195,28 @@
       "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\migrations\\20250523061428_paitientstableadded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\MedicalRecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Models\\Entities\\MedicalRecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\migrations\\20250524110111_date added.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\migrations\\20250524110111_date added.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\DocotorLeave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Models\\Entities\\DocotorLeave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\migrations\\20250524090750_appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\migrations\\20250524090750_appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DoctorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Hospital Management\\Controllers\\DoctorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\migrations\\20250524091154_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\migrations\\20250524091154_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\migrations\\20250524090658_doctoreleaves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\migrations\\20250524090658_doctoreleaves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\migrations\\20250524090625_availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\migrations\\20250524090625_availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospital management\\hospital management\\migrations\\20250524090536_doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\migrations\\20250524090536_doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -198,235 +226,254 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250526125445_checking.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250526125445_checking.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250526125445_checking.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250526125445_checking.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250526125445_checking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T12:54:45.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DoctorController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DoctorController.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Controllers\\DoctorController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DoctorController.cs",
+              "RelativeToolTip": "Hospital Management\\Controllers\\DoctorController.cs",
+              "ViewState": "AgIAAB0AAADgMDMzMzMhwA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T04:12:02.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "MedicalRecord.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\MedicalRecord.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\MedicalRecord.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\MedicalRecord.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\Entities\\MedicalRecord.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAABUPRMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T07:09:54.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DocotorLeave.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\DocotorLeave.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\DocotorLeave.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\DocotorLeave.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\Entities\\DocotorLeave.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T08:56:39.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Appointment.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\Appointment.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Appointment.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\Entities\\Appointment.cs",
+              "ViewState": "AgIAAAsAAABAyszMzMwUwBEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T10:13:34.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppointmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\AppointmentDto.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\AppointmentDto.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\AppointmentDto.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\AppointmentDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T10:20:46.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SlotServicesImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\SlotServicesImplementation.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\SlotServicesImplementation.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\SlotServicesImplementation.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\SlotServicesImplementation.cs",
+              "ViewState": "AgIAAA8AAACAWmZmZuYjwBcAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:30:52.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Controllers\\DepartmentController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "Hospital Management\\Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAABUAAACAyczMzMwUwDgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T11:11:49.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "DoctorSlotController.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DoctorSlotController.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Controllers\\DoctorSlotController.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DoctorSlotController.cs",
               "RelativeToolTip": "Hospital Management\\Controllers\\DoctorSlotController.cs",
-              "ViewState": "AgIAAAYAAACAMDMzMzMbwBgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAABAMjMzMzMYwA8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T11:33:25.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\AuthenticationController.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Controllers\\AuthenticationController.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\AuthenticationController.cs",
-              "RelativeToolTip": "Hospital Management\\Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAAD8AAACAyMzMzMwlwEkAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "PatientsController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\PatientsController.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Controllers\\PatientsController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\PatientsController.cs",
+              "RelativeToolTip": "Hospital Management\\Controllers\\PatientsController.cs",
+              "ViewState": "AgIAAFoAAABAZmZmZmYgwD8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T10:22:29.124Z",
+              "WhenOpened": "2025-05-23T06:58:47.328Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DoctorAvailability.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\DoctorAvailability.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\DoctorAvailability.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\DoctorAvailability.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\Entities\\DoctorAvailability.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "DoctorSlotService.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DoctorSlotService.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\DoctorSlotService.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DoctorSlotService.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\DoctorSlotService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T06:55:23.72Z",
+              "WhenOpened": "2025-05-26T11:31:29.823Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SlotServicesImplementation.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\SlotServicesImplementation.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\SlotServicesImplementation.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\SlotServicesImplementation.cs",
-              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\SlotServicesImplementation.cs",
-              "ViewState": "AgIAAAEAAACAMjMzMzMrwBIAAABuAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "DoctorImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DoctorImplementation.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\DoctorImplementation.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DoctorImplementation.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\DoctorImplementation.cs",
+              "ViewState": "AgIAADsAAADAv8zMzMwMwD4AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T10:48:29.4Z",
+              "WhenOpened": "2025-05-23T12:55:27.963Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
+              "Title": "DepartmentImplement.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DepartmentImplement.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\DepartmentImplement.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DepartmentImplement.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\DepartmentImplement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:31:05.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthenticationImplementaion.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\AuthenticationImplementaion.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\AuthenticationImplementaion.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\AuthenticationImplementaion.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\AuthenticationImplementaion.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvyUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:19:42.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AppointmentImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\AppointmentImplementation.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\AppointmentImplementation.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\AppointmentImplementation.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\AppointmentImplementation.cs",
+              "ViewState": "AgIAABEAAAAAKpqZmZnZvx8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T10:18:42.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\appsettings.json",
+              "RelativeDocumentMoniker": "Hospital Management\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\appsettings.json",
+              "RelativeToolTip": "Hospital Management\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-22T11:29:00.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DoctorDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\DoctorDto.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\DoctorDto.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\DoctorDto.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\DoctorDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwPQsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T12:31:38.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Program.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Program.cs",
               "RelativeToolTip": "Hospital Management\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T11:28:16.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DepartmentImplement.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DepartmentImplement.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\DepartmentImplement.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DepartmentImplement.cs",
-              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\DepartmentImplement.cs",
-              "ViewState": "AgIAAD8AAACAzszMzMwUwEIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "DepartmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\DepartmentDto.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\DepartmentDto.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\DepartmentDto.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\DepartmentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T10:19:38.706Z",
+              "WhenOpened": "2025-05-23T10:16:01.135Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TimeSlotDto.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\TimeSlotDto.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\TimeSlotDto.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\TimeSlotDto.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\TimeSlotDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T06:57:35.528Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Appointment.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Appointment.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\Appointment.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Appointment.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\Entities\\Appointment.cs",
-              "ViewState": "AgIAAA8AAACymJmZmZk4wBEAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T06:52:14.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DoctorSlotService.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DoctorSlotService.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\DoctorSlotService.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DoctorSlotService.cs",
-              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\DoctorSlotService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T11:25:41.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "20250524110111_date added.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524110111_date added.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524110111_date added.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524110111_date added.cs",
-              "RelativeToolTip": "Hospital Management\\Migrations\\20250524110111_date added.cs",
-              "ViewState": "AgIAAA8AAADAZmZmZmYSwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T11:01:11.463Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ISlotService.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\ISlotService.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Services\\ISlotService.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\ISlotService.cs",
-              "RelativeToolTip": "Hospital Management\\Interfaces\\Services\\ISlotService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T10:35:15.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "20250524090750_appointment.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090750_appointment.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524090750_appointment.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090750_appointment.cs",
-              "RelativeToolTip": "Hospital Management\\Migrations\\20250524090750_appointment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T09:07:50.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20250524091154_status.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524091154_status.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524091154_status.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524091154_status.cs",
-              "RelativeToolTip": "Hospital Management\\Migrations\\20250524091154_status.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T09:11:54.463Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "20250524090658_doctoreleaves.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs",
-              "RelativeToolTip": "Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T09:06:59.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "20250524090625_availability.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090625_availability.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524090625_availability.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090625_availability.cs",
-              "RelativeToolTip": "Hospital Management\\Migrations\\20250524090625_availability.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T09:06:25.333Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Data\\DataContext.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Data\\DataContext.cs",
-              "RelativeToolTip": "Hospital Management\\Data\\DataContext.cs",
-              "ViewState": "AgIAABAAAACwzMzMzMwowBQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T10:27:43.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "20250524090536_doctor.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090536_doctor.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524090536_doctor.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090536_doctor.cs",
-              "RelativeToolTip": "Hospital Management\\Migrations\\20250524090536_doctor.cs",
-              "ViewState": "AgIAABoAAACgAAAAAEAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T09:05:36.497Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "MedicalRecord.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\MedicalRecord.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\MedicalRecord.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\MedicalRecord.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\Entities\\MedicalRecord.cs",
-              "ViewState": "AgIAAAwAAAAwZ2ZmZmYkwBMAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T07:09:54.237Z"
             },
             {
               "$type": "Document",
@@ -436,117 +483,88 @@
               "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\PatientsModel.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\PatientsModel.cs",
               "RelativeToolTip": "Hospital Management\\Models\\Entities\\PatientsModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:02:40.941Z"
+              "WhenOpened": "2025-05-23T06:02:40.941Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "RefreshToken.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\RefreshToken.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\RefreshToken.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\RefreshToken.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\Entities\\RefreshToken.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "PatientsImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAdwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T12:19:27.244Z"
+              "WhenOpened": "2025-05-23T06:26:43.672Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "Doctors.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Doctors.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\Doctors.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Doctors.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\Entities\\Doctors.cs",
-              "ViewState": "AgIAAAUAAACAmJmZmZkOwBAAAAAAAAAAAAAAAA==",
+              "Title": "IPatients.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IPatients.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Services\\IPatients.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IPatients.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Services\\IPatients.cs",
+              "ViewState": "AgIAAAAAAACAMTMzMzMLwAsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T12:20:36.451Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Register.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Register.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\Register.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Register.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\Entities\\Register.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAowAsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T10:54:09.441Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AuthenticationImplementaion.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\AuthenticationImplementaion.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\AuthenticationImplementaion.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\AuthenticationImplementaion.cs",
-              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\AuthenticationImplementaion.cs",
-              "ViewState": "AgIAABQAAAAAmpmZmRkTwCUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T10:19:42.828Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "DocotorLeave.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\DocotorLeave.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\DocotorLeave.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\DocotorLeave.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\Entities\\DocotorLeave.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T08:56:39.685Z"
+              "WhenOpened": "2025-05-23T06:15:29.369Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Department.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\Department.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Department.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\Entities\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Title": "AppointmentBookingController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\AppointmentBookingController.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Controllers\\AppointmentBookingController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\AppointmentBookingController.cs",
+              "RelativeToolTip": "Hospital Management\\Controllers\\AppointmentBookingController.cs",
+              "ViewState": "AgIAAAoAAABAzMzMzMwXwAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T09:55:46.515Z"
+              "WhenOpened": "2025-05-26T11:03:37.764Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "PatientsDto.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\PatientsDto.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\PatientsDto.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\PatientsDto.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\PatientsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "Title": "20250526120141_newadded.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250526120141_newadded.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250526120141_newadded.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250526120141_newadded.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250526120141_newadded.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:16:36.781Z"
+              "WhenOpened": "2025-05-26T12:01:41.279Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "RefreshTokenDto.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\RefreshTokenDto.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\RefreshTokenDto.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\RefreshTokenDto.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\RefreshTokenDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "Hospital Management\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAAC8AAABwZmZmZqYwwEkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T13:01:24.478Z"
+              "WhenOpened": "2025-05-22T10:22:29.124Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "DepartmentController.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DepartmentController.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Controllers\\DepartmentController.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DepartmentController.cs",
-              "RelativeToolTip": "Hospital Management\\Controllers\\DepartmentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAgAAAAAAAAAA==",
+              "Title": "DoctorAvailability.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\DoctorAvailability.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\DoctorAvailability.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\DoctorAvailability.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\Entities\\DoctorAvailability.cs",
+              "ViewState": "AgIAAAgAAADgmZmZmXk2wA4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T11:11:49.016Z"
+              "WhenOpened": "2025-05-26T10:21:20.711Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -556,81 +574,75 @@
               "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\RefreshTokenImplementation.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\RefreshTokenImplementation.cs",
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\RefreshTokenImplementation.cs",
-              "ViewState": "AgIAABkAAABA/////z8wwEIAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAnszMzMzgv0IAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T12:26:31.379Z"
+              "WhenOpened": "2025-05-22T12:26:31.379Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
+              "Title": "20250526114045_appointment updated.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250526114045_appointment updated.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250526114045_appointment updated.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250526114045_appointment updated.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250526114045_appointment updated.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:40:45.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Department.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\Department.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Department.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\Entities\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T09:55:46.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
               "Title": "TokenImplementation.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\TokenImplementation.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\TokenImplementation.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\TokenImplementation.cs",
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\TokenImplementation.cs",
-              "ViewState": "AgIAAA8AAACA/v///38YwBoAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:01:36.74Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "DepartmentDto.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\DepartmentDto.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\DepartmentDto.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\DepartmentDto.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\DepartmentDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T10:16:01.135Z"
+              "WhenOpened": "2025-05-22T11:01:36.74Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 30,
-              "Title": "DoctorDto.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\DoctorDto.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\DoctorDto.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\DoctorDto.cs",
-              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\DoctorDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAwPQsAAAAtAAAAAAAAAA==",
+              "Title": "IAppointmentBooking.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IAppointmentBooking.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Services\\IAppointmentBooking.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IAppointmentBooking.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Services\\IAppointmentBooking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T12:31:38.65Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "DoctorController.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DoctorController.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Controllers\\DoctorController.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\DoctorController.cs",
-              "RelativeToolTip": "Hospital Management\\Controllers\\DoctorController.cs",
-              "ViewState": "AgIAACgAAABANTMzMzM6wDIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T04:12:02.274Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "DoctorImplementation.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DoctorImplementation.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\DoctorImplementation.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\DoctorImplementation.cs",
-              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\DoctorImplementation.cs",
-              "ViewState": "AgIAACwAAAAwAAAAAIAqwD4AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T12:55:27.963Z"
+              "WhenOpened": "2025-05-26T10:16:12.865Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "PatientsController.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\PatientsController.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Controllers\\PatientsController.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Controllers\\PatientsController.cs",
-              "RelativeToolTip": "Hospital Management\\Controllers\\PatientsController.cs",
-              "ViewState": "AgIAAC8AAACAaWZmZmYWwDsAAAAAAAAAAAAAAA==",
+              "Title": "IDoctor.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IDoctor.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Services\\IDoctor.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IDoctor.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Services\\IDoctor.cs",
+              "ViewState": "AgIAAAMAAACYMjMzMzMbwAsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:58:47.328Z"
+              "WhenOpened": "2025-05-23T12:30:41.215Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -642,23 +654,184 @@
               "RelativeToolTip": "Hospital Management\\Interfaces\\Services\\IDepartment.cs",
               "ViewState": "AgIAAAAAAACQMzMzMzMLwAkAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T10:04:15.541Z"
+              "WhenOpened": "2025-05-23T10:04:15.541Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 33,
-              "Title": "IDoctor.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IDoctor.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Services\\IDoctor.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IDoctor.cs",
-              "RelativeToolTip": "Hospital Management\\Interfaces\\Services\\IDoctor.cs",
-              "ViewState": "AgIAAAMAAACYMjMzMzMbwAsAAAAvAAAAAAAAAA==",
+              "Title": "Doctors.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Doctors.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\Doctors.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Doctors.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\Entities\\Doctors.cs",
+              "ViewState": "AgIAAAUAAACAmJmZmZkOwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T12:30:41.215Z"
+              "WhenOpened": "2025-05-23T12:20:36.451Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 34,
+              "Title": "ISlotService.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\ISlotService.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Services\\ISlotService.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\ISlotService.cs",
+              "RelativeToolTip": "Hospital Management\\Interfaces\\Services\\ISlotService.cs",
+              "ViewState": "AgIAAAcAAAAAmZmZmZklwBAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T10:35:15.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\RefreshToken.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\RefreshToken.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\Entities\\RefreshToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:19:27.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Register.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Register.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\Register.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\Entities\\Register.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\Entities\\Register.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:54:09.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "TimeSlotDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\TimeSlotDto.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\TimeSlotDto.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\TimeSlotDto.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\TimeSlotDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T06:57:35.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "20250524110111_date added.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524110111_date added.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524110111_date added.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524110111_date added.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250524110111_date added.cs",
+              "ViewState": "AgIAAA8AAADAZmZmZmYSwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T11:01:11.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "20250524090750_appointment.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090750_appointment.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524090750_appointment.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090750_appointment.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250524090750_appointment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T09:07:50.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "20250524091154_status.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524091154_status.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524091154_status.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524091154_status.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250524091154_status.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T09:11:54.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "20250524090658_doctoreleaves.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250524090658_doctoreleaves.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T09:06:59.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "20250524090625_availability.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090625_availability.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524090625_availability.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090625_availability.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250524090625_availability.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T09:06:25.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Data\\DataContext.cs",
+              "RelativeToolTip": "Hospital Management\\Data\\DataContext.cs",
+              "ViewState": "AgIAABAAAACwzMzMzMwowBQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T10:27:43.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "20250524090536_doctor.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090536_doctor.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250524090536_doctor.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250524090536_doctor.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250524090536_doctor.cs",
+              "ViewState": "AgIAABoAAACgAAAAAEAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T09:05:36.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "PatientsDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\PatientsDto.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\PatientsDto.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\PatientsDto.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\PatientsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T06:16:36.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "RefreshTokenDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\RefreshTokenDto.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\RefreshTokenDto.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\RefreshTokenDto.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\RefreshTokenDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:01:24.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
               "Title": "20250523124942_Doctor table addes.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250523124942_Doctor table addes.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250523124942_Doctor table addes.cs",
@@ -670,7 +843,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "IAuthentication.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IAuthentication.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Services\\IAuthentication.cs",
@@ -682,31 +855,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "PatientsImplementation.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
-              "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
-              "ViewState": "AgIAACwAAADAzMzMzCwwwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:26:43.672Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "IPatients.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IPatients.cs",
-              "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Services\\IPatients.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Services\\IPatients.cs",
-              "RelativeToolTip": "Hospital Management\\Interfaces\\Services\\IPatients.cs",
-              "ViewState": "AgIAAAAAAACAMTMzMzMLwAoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:15:29.369Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 46,
               "Title": "20250523102528_department.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250523102528_department.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250523102528_department.cs",
@@ -718,7 +867,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 47,
               "Title": "20250523061428_PaitientsTableAdded.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250523061428_PaitientsTableAdded.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250523061428_PaitientsTableAdded.cs",
@@ -730,7 +879,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 42,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\RegisterDto.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\RegisterDto.cs",
@@ -742,7 +891,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 44,
               "Title": "20250522122324_Refreshtokenadded.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Migrations\\20250522122324_Refreshtokenadded.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250522122324_Refreshtokenadded.cs",
@@ -754,7 +903,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 43,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Models\\EntitiesDto\\LoginDto.cs",
               "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\LoginDto.cs",
@@ -763,18 +912,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T10:54:07.211Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\appsettings.json",
-              "RelativeDocumentMoniker": "Hospital Management\\appsettings.json",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\appsettings.json",
-              "RelativeToolTip": "Hospital Management\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-22T11:29:00.269Z"
             }
           ]
         }

@@ -24,18 +24,15 @@ namespace Hospital_Management.Controllers
             if (Data == null) {
                 return NotFound("Data Not found");
             }
-
             return Ok(Data);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDatabyId(int id)
         {
-
             var Data = await DoctorIm.GetDoctorssById(id);
             if (Data == null) { return NotFound("Data Not Found"); }
             return Ok(Data);    
-
         }
         [HttpPost]  
         public async Task<IActionResult> PostData(DoctorDto doctorDto)

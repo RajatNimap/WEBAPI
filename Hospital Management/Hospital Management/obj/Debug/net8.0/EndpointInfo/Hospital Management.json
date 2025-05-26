@@ -6,6 +6,37 @@
     "version": "v1"
   },
   "paths": {
+    "/api/AppointmentBooking": {
+      "post": {
+        "tags": [
+          "AppointmentBooking"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppointmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppointmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppointmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Authentication/Register": {
       "post": {
         "tags": [
@@ -454,6 +485,29 @@
         }
       }
     },
+    "/api/Patients/app/{id}": {
+      "get": {
+        "tags": [
+          "Patients"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Patients": {
       "post": {
         "tags": [
@@ -508,6 +562,48 @@
   },
   "components": {
     "schemas": {
+      "AppointmentDto": {
+        "type": "object",
+        "properties": {
+          "doctorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "session": {
+            "$ref": "#/components/schemas/Session"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "dateofAppointment": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AppointmentStatus"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AppointmentStatus": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "DepartmentDto": {
         "required": [
           "departmentName"
@@ -631,6 +727,14 @@
           }
         },
         "additionalProperties": false
+      },
+      "Session": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
       }
     },
     "securitySchemes": {

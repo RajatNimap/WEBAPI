@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "Hospital_Management.Controllers.AppointmentBookingController",
+    "Method": "AppointmentBooking",
+    "RelativePath": "api/AppointmentBooking",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "appointmentDto",
+        "Type": "Hospital_Management.Models.EntitiesDto.AppointmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Hospital_Management.Controllers.AuthenticationController",
     "Method": "JWTRefresh",
     "RelativePath": "api/Authentication/JWtRefresh",
@@ -290,6 +306,22 @@
       {
         "Name": "patientsDto",
         "Type": "Hospital_Management.Models.Entities.PatientsDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.PatientsController",
+    "Method": "GetAppointmentDetail",
+    "RelativePath": "api/Patients/app/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
