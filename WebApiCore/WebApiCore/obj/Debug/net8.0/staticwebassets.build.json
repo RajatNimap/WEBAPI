@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "VPvLFiBXo3raXwClJwyWf9AZJkbM3p71WJkE59n5nmU=",
+  "Source": "WebApiCore",
+  "BasePath": "_content/WebApiCore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -234,8 +234,7 @@
               "RelativeToolTip": "Hospital Management\\Controllers\\DoctorController.cs",
               "ViewState": "AgIAACAAAAAAmJmZmZkGwBoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T04:12:02.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T04:12:02.274Z"
             },
             {
               "$type": "Document",
@@ -283,8 +282,7 @@
               "RelativeToolTip": "Hospital Management\\Interfaces\\Services\\IPatients.cs",
               "ViewState": "AgIAAAAAAACAMTMzMzMLwAsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:15:29.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T06:15:29.369Z"
             },
             {
               "$type": "Document",
@@ -294,7 +292,7 @@
               "RelativeDocumentMoniker": "Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
-              "ViewState": "AgIAAFcAAADAMzMzMzMjwGwAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAgAAAEAswB4AAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T06:26:43.672Z",
               "EditorCaption": ""

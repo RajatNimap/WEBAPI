@@ -28,7 +28,6 @@ C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\ob
 C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Hospital Management.props
 C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Hospital Management.props
 C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\Hospital.5CE43CB6.Up2Date
 C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\Hospital Management.dll
 C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\refint\Hospital Management.dll
