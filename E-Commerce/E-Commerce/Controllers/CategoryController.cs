@@ -1,4 +1,5 @@
-﻿using E_Commerce.Data;
+﻿using AutoMapper;
+using E_Commerce.Data;
 using E_Commerce.Model;
 using E_Commerce.Model.Entities;
 using Microsoft.AspNetCore.Http;
@@ -12,14 +13,16 @@ namespace E_Commerce.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly DataContext Database;
-        public CategoryController(DataContext data)
+        private readonly IMapper mapper;
+        public CategoryController(DataContext data,IMapper mapper)
         {
             Database = data;
+            this.mapper = mapper;   
         }
+
         [HttpGet]
         public async Task<IActionResult> GetData()
         {
-
             // var data = await Database.categories.Include(x => x.products)
             //  .ToListAsync();
 
@@ -67,13 +70,13 @@ namespace E_Commerce.Controllers
         [HttpPost]
         public async Task<IActionResult> PostData([FromBody] CategoryDto catedto)
         {
-
             var IsExist=Database.categories.FirstOrDefault(x=>x.Name == catedto.Name);   
             if(IsExist != null)
             {
                 return Conflict(new {message="category already exits"});
             }
-            var data = new Category { Name = catedto.Name };
+            var data =mapper.Map<Category>(catedto); 
+            //var data = new Category { Name = catedto.Name };
 
             if (!ModelState.IsValid)
             {
@@ -85,6 +88,7 @@ namespace E_Commerce.Controllers
             await Database.categories.AddAsync(data);
             Database.SaveChanges();
             return Ok(data);
+
         }
         [HttpPut]
         [Route("{id}")]

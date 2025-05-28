@@ -108,7 +108,6 @@ namespace E_Commerce.Controllers
             try
             {
                 string HashedPassword=BCrypt.Net.BCrypt.HashPassword(newDto.Password);  
-                
                 var data = await Database.users.FirstOrDefaultAsync(x=>x.Id==id && x.Soft_delete==0);
                 if (data == null) { return NotFound(); }
                 data.Name = newDto.Name;

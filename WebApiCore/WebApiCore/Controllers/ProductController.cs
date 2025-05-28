@@ -12,33 +12,28 @@ namespace WebApiCore.Controllers
     {
 
         private readonly IConfiguration _configuration;
-        
+
         public ProductController(IConfiguration configuration)
         {
-            _configuration = configuration; 
+            _configuration = configuration;
         }
+
+        private SqlConnection GetConnetion()
+        {
+            return new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+
+        }  
 
         [HttpGet]
         public IActionResult Getdata()
         {
-            var Data=new List<Product>(); 
-            
-            DataTable  dt=new DataTable();
-            SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            var Data = new List<Product>();
+            DataTable dt = new DataTable();
+            var conn = GetConnetion();
             SqlCommand sqlCommand = new SqlCommand("Select * from ListOfProduct", conn);
             SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
             adapter.Fill(dt);
 
-            //for(int i = 0; i < dt.Rows.Count; i++)
-            //{
-            //    Product Product = new Product();
-            //    Product.ProductId = Convert.ToInt32(dt.Rows[i]["ID"]);
-            //    Product.ProductName = dt.Rows[i]["Pname"].ToString();
-            //    Product.ProductPrice = Convert.ToDecimal(dt.Rows[i]["Price"]);
-            //    Product.dateTime = Convert.ToDateTime(dt.Rows[i]["DateOfOrder"]);
-
-            //    Data.Add(Product);
-            //}
             foreach (DataRow row in dt.Rows) {
 
                 Product product = new Product()
@@ -51,30 +46,18 @@ namespace WebApiCore.Controllers
                 };
 
                 Data.Add(product);
-            
+
             }
 
-            return Ok(Data);    
+            return Ok(Data);
 
         }
         [HttpPost]
         public IActionResult Postdata(ProductDto product) {
-            //try
-            //{
-
-            //    SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-
-            //    SqlCommand sqlCommand = new SqlCommand("Insert into ListOfProduct value ('" + product.ProductName + "," + product.ProductPrice + ",getdate()')", conn);
-            //}
-            //catch (Exception ex) { 
-
-
-            //            return BadRequest(ex.Message);  
-            //}
-            //return Ok(product);
+         
             try
             {
-                using (SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+                using (var conn= GetConnetion())
                 {
                     conn.Open();
 
@@ -102,5 +85,94 @@ namespace WebApiCore.Controllers
 
 
         }
-    }
+        [HttpPut("{id}")]
+        public IActionResult Putdata(int id, ProductDto product) {
+
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+                {
+                    conn.Open();
+
+                    string queryforupdateion = "Select * from ListOfProduct Where Id=@id";
+                    string query = "Update ListOfProduct Set Pname=@ProductName,Price=@ProductPrice,DateOfOrder=GETDATE() where Id=@id";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, conn))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@ProductName", product.ProductName);
+                        sqlCommand.Parameters.AddWithValue("@ProductPrice", product.ProductPrice);
+                        sqlCommand.Parameters.AddWithValue("@id", id);
+
+
+                        int rowAffected = sqlCommand.ExecuteNonQuery();
+                        if (rowAffected > 0)
+                        {
+
+                            return Ok("Product Successfully Updated");
+                        }
+                        else
+                        {
+                            return StatusCode(500, "Failed to Insert");
+                        }
+                    }
+                }
+
+
+            } catch (Exception ex)
+            {
+
+                return BadRequest(ex);
+            }
+
+
+        }
+        [HttpDelete("Id")]
+        public IActionResult Deletedata(int id) {
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+                {
+
+                    conn.Open();
+                    string query = "Delete from ListOfProduct Where Id=@id";
+
+                    using (SqlCommand sqlCommand = new SqlCommand(query,conn))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@id",id);
+
+                        int rowAffected = sqlCommand.ExecuteNonQuery();
+                        if (rowAffected > 0)
+                        {
+
+                            return Ok("Product Successfully Deleted");
+                        }
+                        else
+                        {
+                            return StatusCode(500, "Failed to Insert");
+                        }
+
+                    }
+                   
+
+                }
+
+
+            } catch (Exception ex) {
+            
+                    return BadRequest(ex);  
+            
+            
+            }
+
+
+        
+        }
+
+    } 
+
+        
+        
+       
+    
 }

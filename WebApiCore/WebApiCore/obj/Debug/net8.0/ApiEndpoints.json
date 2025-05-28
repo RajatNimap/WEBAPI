@@ -26,6 +26,122 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApiCore.Controllers.ProductController",
+    "Method": "Putdata",
+    "RelativePath": "api/Product/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "product",
+        "Type": "WebApiCore.Model.ProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiCore.Controllers.ProductController",
+    "Method": "Deletedata",
+    "RelativePath": "api/Product/Id",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiCore.Controllers.StoreprocedureController",
+    "Method": "Get",
+    "RelativePath": "api/Storeprocedure",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiCore.Controllers.StoreprocedureController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/Storeprocedure",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "WebApiCore.Model.ProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiCore.Controllers.StoreprocedureController",
+    "Method": "Deletedata",
+    "RelativePath": "api/Storeprocedure/Deletedata/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiCore.Controllers.StoreprocedureController",
+    "Method": "GetDataById",
+    "RelativePath": "api/Storeprocedure/GetDataById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiCore.Controllers.StoreprocedureController",
+    "Method": "Post",
+    "RelativePath": "api/Storeprocedure/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "product",
+        "Type": "WebApiCore.Model.ProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApiCore.Controllers.WeatherForecastController",
     "Method": "Display",
     "RelativePath": "WeatherForecast",

@@ -26,6 +26,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddExceptionHandler<AppExceptionalHandler>();
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
@@ -54,7 +55,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 
-app.UseExceptionHandler(_ => { });
+//app.UseExceptionHandler(_ => { });
 
 app.UseAuthorization();
 
