@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h1>My Name is Rajat Pandit</h1>
+</div>
+<div>
+
+    <h1> The current Date and time @DateTime.Now</h1>
+    <h1> The current Year @DateTime.Now.Year</h1>
+
+    <h1>@ViewData["Data1"]</h1>
+
+    <h1>
+        @ViewData["Data2"]
+    </h1>
+    <h1>
+        @ViewData["Data3"]
+    </h1>
+
+
+    @{
+        foreach(var data in (string[])ViewData["Data4"])
+        {
+            <p>@data</p>
+        }
+
+    }
+    @{
+
+        foreach(var data in (List<string>)ViewData["Data5"]){
+                
+            <p>@data</p>
+        }
+    }
+    @*
+    @{
+        var Name = "Rajat Pandit";
+        var age = 20;
+        <h2> your name is @Name and your age is @age</h2>
+        if (age >= 18)
+        {
+            <h4> You are valid of driveing</h4>
+        }
+        else
+        {
+            <h4> Your age is not valid of driveing</h4>
+        }
+        for(int i = 1; i <= 20; i++)
+        {
+            <p>@i</p>
+        }
+    }
+     *@
+
+     
+
+
+   
+
+    
+
+</div>

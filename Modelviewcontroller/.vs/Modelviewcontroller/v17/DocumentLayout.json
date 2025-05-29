@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\modelviewcontroller\\modelviewcontroller\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|solutionrelative:modelviewcontroller\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\modelviewcontroller\\modelviewcontroller\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|solutionrelative:modelviewcontroller\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\modelviewcontroller\\modelviewcontroller\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|solutionrelative:modelviewcontroller\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\modelviewcontroller\\modelviewcontroller\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|solutionrelative:modelviewcontroller\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\modelviewcontroller\\modelviewcontroller\\views\\shared\\_layout1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|solutionrelative:modelviewcontroller\\views\\shared\\_layout1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\modelviewcontroller\\modelviewcontroller\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|solutionrelative:modelviewcontroller\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\modelviewcontroller\\modelviewcontroller\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|solutionrelative:modelviewcontroller\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\modelviewcontroller\\modelviewcontroller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|solutionrelative:modelviewcontroller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\modelviewcontroller\\modelviewcontroller\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D50E9C40-9F1C-433F-B3C5-53ADFB8A87DB}|Modelviewcontroller\\Modelviewcontroller.csproj|solutionrelative:modelviewcontroller\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout1.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Shared\\_Layout1.cshtml",
+              "RelativeDocumentMoniker": "Modelviewcontroller\\Views\\Shared\\_Layout1.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Shared\\_Layout1.cshtml",
+              "RelativeToolTip": "Modelviewcontroller\\Views\\Shared\\_Layout1.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T09:11:03.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "Modelviewcontroller\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "Modelviewcontroller\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T09:02:41.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Modelviewcontroller\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Modelviewcontroller\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T09:00:30.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Modelviewcontroller\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Modelviewcontroller\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T07:18:53.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "Modelviewcontroller\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "Modelviewcontroller\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T07:11:02.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Modelviewcontroller\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Modelviewcontroller\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAA0AAADgZGZmZmYkwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T05:20:50.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Modelviewcontroller\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Modelviewcontroller\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAsAAAD4mJmZmZkxwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T05:16:47.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Program.cs",
+              "RelativeDocumentMoniker": "Modelviewcontroller\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\Program.cs",
+              "RelativeToolTip": "Modelviewcontroller\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T05:12:44.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\appsettings.json",
+              "RelativeDocumentMoniker": "Modelviewcontroller\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Modelviewcontroller\\Modelviewcontroller\\appsettings.json",
+              "RelativeToolTip": "Modelviewcontroller\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-29T05:12:42.717Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
