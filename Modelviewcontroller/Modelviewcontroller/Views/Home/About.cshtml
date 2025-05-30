@@ -6,4 +6,24 @@
 
 <div>
 	<h1>This Is about page</h1>
+	<h1>@TempData["name"]</h1>
+	<h1>@TempData["time"]</h1>
+
+
+	@{
+
+
+        foreach (var data in ViewBag.emp)
+        {
+            <div>
+                <h4>@data.EmpId</h4>
+                <h4>@data.EmpName</h4>
+                <h4>@data.EmpDept</h4>
+
+
+            </div>
+
+        }
+	}
 </div>
+

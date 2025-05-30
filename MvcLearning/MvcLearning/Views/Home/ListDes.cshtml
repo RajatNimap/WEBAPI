@@ -1,0 +1,27 @@
+﻿@model MvcLearning.Model.Entities.TodoModel
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    @{
+
+        <div class="card bg-dark text-light  mt-5" style="width:50rem">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.Description</p>
+                <a href="#" class="card-link">Delete Card</a>
+                <a href="#" class="card-link"> Edit</a>
+                <p> Date @Model.CreatedDate.Date Time @Model.CreatedDate.TimeOfDay</p>
+                
+            </div>
+        </div>
+
+    }
+   
+</body>
+</html>

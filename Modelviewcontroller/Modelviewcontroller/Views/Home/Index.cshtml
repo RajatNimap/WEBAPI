@@ -1,6 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    <h1>@ViewData["Title"] </h1>
+    // Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="text-center">
@@ -27,12 +27,10 @@
         {
             <p>@data</p>
         }
-
     }
-    @{
 
-        foreach(var data in (List<string>)ViewData["Data5"]){
-                
+    @{
+        foreach(var data in (List<string>)ViewData["Data5"]){          
             <p>@data</p>
         }
     }
@@ -55,10 +53,30 @@
         }
     }
      *@
+    <h1>@ViewBag.data1</h1>
+    <h1>@ViewBag.data2</h1>
+    <h1>@ViewBag.data3</h1>
 
-     
+    @{
+        foreach(var i in ViewBag.data4)
+        {
+            <p>@i</p>
+        }
+
+        foreach(var j in ViewBag.data5)
+        {
+            <p>@j</p>
+        }
+    }
+
+    <h1>@TempData["name"]</h1>
+    <h1>@TempData["time"]</h1>
+
+    @{
+      
 
 
+    }
    
 
     
