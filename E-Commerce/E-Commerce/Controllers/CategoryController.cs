@@ -5,6 +5,8 @@ using E_Commerce.Model.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.IdentityModel.Tokens;
 
 namespace E_Commerce.Controllers
 {
@@ -14,32 +16,52 @@ namespace E_Commerce.Controllers
     {
         private readonly DataContext Database;
         private readonly IMapper mapper;
-        public CategoryController(DataContext data,IMapper mapper)
+        private readonly IMemoryCache _cache;
+        private readonly TimeSpan cacheExpiration = TimeSpan.FromMinutes(1);
+        private readonly ILogger<CategoryController> _logger;
+
+        public CategoryController(DataContext data,IMapper mapper,IMemoryCache cache,ILogger<CategoryController> logger)
         {
             Database = data;
             this.mapper = mapper;   
+            _cache = cache;
+            _logger = logger;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetData()
         {
-            // var data = await Database.categories.Include(x => x.products)
-            //  .ToListAsync();
+            //var data = await Database.categories.Include(x => x.products)
+            //.ToListAsync();
 
-            var data = await Database.categories.Select(c => new {
-                c.Id,
-                c.Name,
-                product = c.products.Where(x => x.Soft_delete == 0).ToList()
-            }).ToListAsync();
-            if (data == null)
+            var cacheKey = "Category";
+            if(_cache.TryGetValue(cacheKey, out var result)) {
+                _logger.LogInformation("this is retrive from the cache");
+                return Ok( new {res= result,sources="Cache"}); 
+            } 
+            
+
+                var data = await Database.categories.Select(c => new
+                {
+                    c.Id,
+                    c.Name,
+                    product = c.products.Where(x => x.Soft_delete == 0).ToList()
+                }).ToListAsync();
+                if (data == null)
+                {
+
+                    return NotFound();
+                }
+            _logger.LogInformation("This is from the Datbase");
+             _cache.Set(cacheKey, data, cacheExpiration);
+
+
+            return Ok(new
             {
-               
-                return NotFound();
-            }
-            return Ok(data);
+                data1 = data,
+                sources = "Database"
+            });
         }
-       
-
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetDataParticular(int id)

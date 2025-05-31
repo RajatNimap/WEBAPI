@@ -19,7 +19,6 @@ namespace MvcLearning.Controllers
             _todoListCrud = todolist;
         }
         [HttpGet("~/")]
-
         public async Task<IActionResult> Index()
         {
 
@@ -51,6 +50,15 @@ namespace MvcLearning.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> UpdateTodo(int id, TodoModelDto todoModel)
+        {
+
+            await _todoListCrud.GetTodoUpdate(id, todoModel);
+            return RedirectToAction("Index");
+
+        }
+
         public IActionResult Privacy()
         {
             
@@ -62,6 +70,8 @@ namespace MvcLearning.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
         public int Detail(int id)
         {
             return id;
