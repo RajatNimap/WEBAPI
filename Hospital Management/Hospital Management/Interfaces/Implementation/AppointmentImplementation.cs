@@ -18,9 +18,7 @@ namespace Hospital_Management.Interfaces.Implementation
 
         public async Task<Appointment> AppointmentBooking(AppointmentDto availability)
         {
-            //var CheckData = Database.appointments.Any(x => x.StartTime == availability.StartTime && x.Created.Date < availability.Created.Date);
-
-
+            //var CheckData = Database.appointments.Any(x => x.StartTime == availability.StartTime && x.Created.Date < availability.Created.Date)
             
                 var EndTime = availability.StartTime + TimeSpan.FromMinutes(30);
                 var Data = new Appointment

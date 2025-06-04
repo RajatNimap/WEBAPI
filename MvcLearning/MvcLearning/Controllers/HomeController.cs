@@ -12,8 +12,8 @@ namespace MvcLearning.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ITodoListCrud _todoListCrud;   
-        public HomeController(ILogger<HomeController> logger,ITodoListCrud todolist)
+        private readonly ITodoListCrud _todoListCrud;
+        public HomeController(ILogger<HomeController> logger, ITodoListCrud todolist)
         {
             _logger = logger;
             _todoListCrud = todolist;
@@ -31,18 +31,17 @@ namespace MvcLearning.Controllers
         public async Task<IActionResult> ListDes(int id)
         {
             var data = await _todoListCrud.GetListbyId(id);
-
             return View(data);
         }
         [HttpGet("create")]
-        public  async Task<IActionResult> AddTodolIst()
+        public async Task<IActionResult> AddTodolIst()
         {
 
             return View();
-           
+
         }
 
-        [HttpPost("post")]  
+        [HttpPost("post")]
         public async Task<IActionResult> create(TodoModelDto todoModel)
         {
 
@@ -50,15 +49,39 @@ namespace MvcLearning.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public async Task<IActionResult> UpdateTodo(int id, TodoModelDto todoModel)
+        [HttpGet("edit/{id}")]
+        public async Task<IActionResult> Edit(int id)
         {
+            var data = await _todoListCrud.GetListbyId(id);
 
-            await _todoListCrud.GetTodoUpdate(id, todoModel);
-            return RedirectToAction("Index");
+            //await _todoListCrud.GetTodoUpdate(id, todoModel);
+            //return RedirectToAction("ListDes")
+            return View(data);
 
         }
 
+        [HttpPost("UpdateTodo")]
+        public async Task<IActionResult> UpdateTodo(TodoModel todoModel)
+        {
+
+            await _todoListCrud.GetTodoUpdate(todoModel.Id, todoModel);
+
+            return RedirectToAction("ListDes", new { id = todoModel.Id });
+        }
+        [HttpGet("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _todoListCrud.GetTodoListDelete(id);
+            return RedirectToAction("Index");   
+
+        }
+
+        [HttpGet("serach")]
+        public async Task<IActionResult> Search(string query)
+        {
+            var result = await _todoListCrud.Serach(query);
+            return View("Index",result);    
+        }
         public IActionResult Privacy()
         {
             

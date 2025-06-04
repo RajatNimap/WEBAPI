@@ -6,13 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo Details</title>
-    <script>
-        function toggleEdit() {
-            const isEditing = document.getElementById("editMode").style.display === "block";
-            document.getElementById("viewMode").style.display = isEditing ? "block" : "none";
-            document.getElementById("editMode").style.display = isEditing ? "none" : "block";
-        }
-    </script>
+  
 </head>
 <body>
     <div class="card bg-dark text-light mt-5" style="width:50rem">
@@ -22,31 +16,10 @@
             <div id="viewMode">
                 <h5 class="card-title">@Model.Title</h5>
                 <p class="card-text">@Model.Description</p>
-                <a href="#" class="card-link">Delete Card</a>
-                <a href="javascript:void(0)" onclick="toggleEdit()" class="card-link">Edit</a>
+                <a href="delete/@Model.Id" class="card-link">Delete Card</a>
+                <a href="edit/@Model.Id"  class="card-link">Edit</a>
                 <p>Date @Model.CreatedDate.Date Time @Model.CreatedDate.TimeOfDay</p>
             </div>
-
-            <!-- Edit Mode -->
-            <div id="editMode" style="display:none;">
-                <form method="post" asp-action="UpdateTodo" asp-controller="TodoList">
-                    <input type="hidden" name="Id" value="@Model.Id" />
-
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input type="text" name="Title" value="@Model.Title" class="form-control" />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea name="Description" class="form-control">@Model.Description</textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-success mt-2">Save</button>
-                    <button type="button" onclick="toggleEdit()" class="btn btn-secondary mt-2">Cancel</button>
-                </form>
-            </div>
-
         </div>
     </div>
 </body>

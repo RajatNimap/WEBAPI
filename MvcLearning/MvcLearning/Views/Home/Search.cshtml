@@ -1,0 +1,34 @@
+﻿@model List<MvcLearning.Model.Entities.TodoModel>
+@{
+    ViewData["Title"] = "Todo App";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <a href="/create"><button type="button" class="btn btn-dark mt-3">Add TodoList</button></a>
+    @{
+        if (Model != null)
+        {
+            foreach (var list in Model)
+            {
+
+                <ul class="list-group mt-2 bg-dark text-white">
+                    <li class="list-group-item bg-dark text-white">
+                        <a href="@list.Id" class="text-white text-decoration-none d-block" style="display:block;"><h3>  @list.Title @list.CreatedDate.Date  </h3> </a>
+                        <a href="delete/@list.Id" class="card-link"> Delete
+                    </li>
+
+                </ul>
+            }
+        }
+
+    }
+
+</body>
+</html>
