@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GpzwY253ntM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\ODBC_CONN\\ODBC_CONN\\ODBC_CONN.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nimap\\.nuget\\packages\\system.data.odbc\\9.0.5\\system.data.odbc.9.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
