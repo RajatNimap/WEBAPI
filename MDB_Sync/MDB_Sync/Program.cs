@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.OleDb;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace ContinuousAccessDbSync
@@ -12,16 +10,15 @@ namespace ContinuousAccessDbSync
     class Program
     {
         private static bool _syncRunning = true;
-        private static string _lastClientSyncTime;
-        private static string _lastServerSyncTime;
+        private static DateTime _lastClientSyncTime;
+        private static DateTime _lastServerSyncTime;
 
         static async Task Main()
         {
             string clientDbPath = @"C:\Users\Nimap\Documents\mdbfile\rajat.mdb";
-            string serverDbPath = @"\\192.168.1.87\MDB\suraj.mdb";
+            string serverDbPath = @"\\192.168.1.128\mdb\yash.mdb";
             const string tableName = "People";
 
-            // Verify file existence
             if (!VerifyDatabaseFiles(clientDbPath, serverDbPath))
             {
                 Console.ReadKey();
@@ -31,24 +28,20 @@ namespace ContinuousAccessDbSync
             string clientConnStr = $"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={clientDbPath};";
             string serverConnStr = $"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={serverDbPath};";
 
-            // Initial connection tests
             if (!TestConnection("Client DB", clientConnStr) || !TestConnection("Server DB", serverConnStr))
             {
                 Console.ReadKey();
                 return;
             }
 
-            // Initialize last sync times
-            _lastClientSyncTime = GetCurrentDatabaseTime(clientConnStr);
-            _lastServerSyncTime = GetCurrentDatabaseTime(serverConnStr);
+            _lastClientSyncTime = GetMaxLastModified(serverConnStr, tableName);
+            _lastServerSyncTime = GetMaxLastModified(clientConnStr, tableName);
 
             Console.WriteLine("\nStarting continuous synchronization...");
             Console.WriteLine("Press 'Q' then Enter to stop synchronization.\n");
 
-            // Start the sync loop in background
             var syncTask = Task.Run(() => ContinuousSync(serverConnStr, clientConnStr, tableName));
 
-            // Monitor for 'Q' key press
             while (true)
             {
                 var input = Console.ReadLine();
@@ -64,6 +57,7 @@ namespace ContinuousAccessDbSync
             }
 
             await syncTask;
+
             Console.WriteLine("Synchronization stopped. Press any key to exit.");
             Console.ReadKey();
         }
@@ -90,205 +84,255 @@ namespace ContinuousAccessDbSync
             Console.WriteLine($"Testing {name} connection...");
             try
             {
-                using (var connection = new OleDbConnection(connectionString))
-                {
-                    connection.Open();
-                    Console.WriteLine($"{name} connection successful.");
-                    return true;
-                }
+                using var connection = new OleDbConnection(connectionString);
+                connection.Open();
+                Console.WriteLine($"{name} connection successful.");
+                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"{name} connection failed: {ex.Message}");
-                if (ex is OleDbException oleEx)
-                {
-                    foreach (OleDbError error in oleEx.Errors)
-                    {
-                        Console.WriteLine($"  OleDb Error: {error.Message}");
-                    }
-                }
                 return false;
             }
         }
 
-        static string GetCurrentDatabaseTime(string connectionString)
+        static DateTime GetMaxLastModified(string connectionString, string tableName)
         {
             try
             {
-                using (var conn = new OleDbConnection(connectionString))
-                {
-                    conn.Open();
-                    using (var cmd = new OleDbCommand("SELECT MAX(LastModified) FROM People", conn))
-                    {
-                        var result = cmd.ExecuteScalar();
-                        return result != DBNull.Value ? result.ToString() : DateTime.MinValue.ToString();
-                    }
-                }
+                using var conn = new OleDbConnection(connectionString);
+                conn.Open();
+                using var cmd = new OleDbCommand($"SELECT MAX(LastModified) FROM [{tableName}]", conn);
+                var result = cmd.ExecuteScalar();
+                if (result != DBNull.Value && result != null)
+                    return Convert.ToDateTime(result);
             }
-            catch
+            catch (Exception ex)
             {
-                return DateTime.MinValue.ToString();
+                Console.WriteLine($"Error fetching max LastModified: {ex.Message}");
             }
+            return DateTime.MinValue;
         }
 
         static async Task ContinuousSync(string serverConnStr, string clientConnStr, string tableName)
         {
+            const string pkColumn = "ID";
+
             while (_syncRunning)
             {
                 try
                 {
-                    // Sync from server to client
                     Console.WriteLine($"[{DateTime.Now:T}] Syncing Server → Client...");
-                    var serverChanges = SyncDirection(serverConnStr, clientConnStr, tableName, ref _lastServerSyncTime);
-                    Console.WriteLine($"[{DateTime.Now:T}] Server → Client: {serverChanges} changes applied");
+                    using var serverConn = new OleDbConnection(serverConnStr);
+                    using var clientConn = new OleDbConnection(clientConnStr);
+                    serverConn.Open();
+                    clientConn.Open();
 
-                    // Sync from client to server
+                    int serverToClientChanges = SyncDirection(serverConnStr, clientConnStr, tableName, ref _lastServerSyncTime);
+                    Console.WriteLine($"[{DateTime.Now:T}] Server → Client: {serverToClientChanges} changes applied");
+
                     Console.WriteLine($"[{DateTime.Now:T}] Syncing Client → Server...");
-                    var clientChanges = SyncDirection(clientConnStr, serverConnStr, tableName, ref _lastClientSyncTime);
-                    Console.WriteLine($"[{DateTime.Now:T}] Client → Server: {clientChanges} changes applied");
+                    int clientToServerChanges = SyncDirection(clientConnStr, serverConnStr, tableName, ref _lastClientSyncTime);
+                    Console.WriteLine($"[{DateTime.Now:T}] Client → Server: {clientToServerChanges} changes applied");
 
-                    //    // Display current state
-                    //    DisplayCurrentRecords(clientConnStr, "Client Database");
-                    //    DisplayCurrentRecords(serverConnStr, "Server Database");
+                    SyncDeletions(serverConn, clientConn, tableName, pkColumn);
+                    SyncDeletions(clientConn, serverConn, tableName, pkColumn);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"[{DateTime.Now:T}] Sync error: {ex.Message}");
                 }
 
-                // Wait 5 seconds before next sync
                 await Task.Delay(5000);
             }
         }
 
-        static int SyncDirection(string sourceConnStr, string targetConnStr, string tableName, ref string lastSyncTime)
+        static int SyncDirection(string sourceConnStr, string targetConnStr, string tableName, ref DateTime lastSyncTime)
         {
             int changesApplied = 0;
+            DateTime maxTimestamp = lastSyncTime;
 
-            using (var sourceConn = new OleDbConnection(sourceConnStr))
-            using (var targetConn = new OleDbConnection(targetConnStr))
+            using var sourceConn = new OleDbConnection(sourceConnStr);
+            using var targetConn = new OleDbConnection(targetConnStr);
+
+            sourceConn.Open();
+            targetConn.Open();
+
+            string lastSyncFormatted = lastSyncTime.ToString("MM/dd/yyyy hh:mm:ss tt");
+            string getChangesQuery = $@"
+                SELECT * FROM [{tableName}] 
+                WHERE LastModified > ? 
+                ORDER BY LastModified";
+
+            using var cmd = new OleDbCommand(getChangesQuery, sourceConn);
+            cmd.Parameters.AddWithValue("@LastModified", lastSyncFormatted);
+
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                sourceConn.Open();
-                targetConn.Open();
-
-                // Get changes since last sync
-                string getChangesQuery = $@"
-                    SELECT * FROM [{tableName}] 
-                    WHERE LastModified > #{lastSyncTime}# 
-                    ORDER BY LastModified";
-
-                using (var cmd = new OleDbCommand(getChangesQuery, sourceConn))
-                using (var reader = cmd.ExecuteReader())
+                var row = new Dictionary<string, object>();
+                for (int i = 0; i < reader.FieldCount; i++)
                 {
-                    while (reader.Read())
-                    {
-                        var row = new Dictionary<string, object>();
-                        for (int i = 0; i < reader.FieldCount; i++)
-                        {
-                            row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
-                        }
+                    row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                }
 
-                        // Apply change to target
-                        if (ApplyChange(targetConn, tableName, row))
-                        {
-                            changesApplied++;
-                            // Update last sync time to this record's timestamp
-                            lastSyncTime = row["LastModified"].ToString();
-                        }
-                    }
+                if (ApplyChange(targetConn, tableName, row))
+                {
+                    changesApplied++;
+                    var rowTimestamp = Convert.ToDateTime(row["LastModified"]);
+                    if (rowTimestamp > maxTimestamp)
+                        maxTimestamp = rowTimestamp;
                 }
             }
 
+            lastSyncTime = maxTimestamp;
             return changesApplied;
         }
 
         static bool ApplyChange(OleDbConnection targetConn, string tableName, Dictionary<string, object> row)
         {
             string pkColumn = "ID";
-            bool exists = RecordExists(targetConn, tableName, pkColumn, row[pkColumn]);
+            var pkValue = row[pkColumn];
+            var incomingLastModified = Convert.ToDateTime(row["LastModified"]);
 
-            var columns = row.Keys.Where(k => k != pkColumn).ToList();
-            var columnList = string.Join(", ", columns.Select(c => $"[{c}]"));
-            var valuePlaceholders = string.Join(", ", columns.Select(_ => "?"));
-            if (!columns.Contains("LastModified"))
-            {
-                columns.Add("LastModified");
-                row["LastModified"] = DateTime.Now;
-            }
-
-            var updateSet = string.Join(", ", columns.Select(c => $"[{c}] = ?"));
+            bool exists = RecordExists(targetConn, tableName, pkColumn, pkValue);
 
             if (exists)
             {
-                // Update existing record
+                var targetLastModified = GetLastModified(targetConn, tableName, pkColumn, pkValue);
+
+                if (incomingLastModified <= targetLastModified)
+                    return false;
+
+                if (IsDataDifferent(targetConn, tableName, pkColumn, pkValue, row))
+                {
+                    // Clone with new ID before update
+                    var newRow = new Dictionary<string, object>(row);
+                    newRow["ID"] = GetNewId(targetConn, tableName, pkColumn);
+                    InsertRow(targetConn, tableName, newRow);
+                }
+
+                var columns = row.Keys.Where(k => k != pkColumn).ToList();
+                var updateSet = string.Join(", ", columns.Select(c => $"[{c}] = ?"));
+
                 string updateQuery = $@"
                     UPDATE [{tableName}] 
                     SET {updateSet}
                     WHERE [{pkColumn}] = ?";
 
-                using (var cmd = new OleDbCommand(updateQuery, targetConn))
-                {
-                    foreach (var col in columns)
-                    {
-                        cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
-                    }
-                    cmd.Parameters.AddWithValue($"@{pkColumn}", row[pkColumn]);
+                using var cmd = new OleDbCommand(updateQuery, targetConn);
 
-                    return cmd.ExecuteNonQuery() > 0;
-                }
+                foreach (var col in columns)
+                    cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
+
+                cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
+
+                return cmd.ExecuteNonQuery() > 0;
             }
             else
             {
-                // Insert new record
-                string insertQuery = $@"
-                    INSERT INTO [{tableName}] ({columnList}) 
-                    VALUES ({valuePlaceholders})";
-
-                using (var cmd = new OleDbCommand(insertQuery, targetConn))
-                {
-                    foreach (var col in columns)
-                    {
-                        cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
-                    }
-
-                    return cmd.ExecuteNonQuery() > 0;
-                }
+                InsertRow(targetConn, tableName, row);
+                return true;
             }
+        }
+
+        static bool IsDataDifferent(OleDbConnection conn, string tableName, string pkColumn, object pkValue, Dictionary<string, object> incomingRow)
+        {
+            string query = $"SELECT * FROM [{tableName}] WHERE [{pkColumn}] = ?";
+            using var cmd = new OleDbCommand(query, conn);
+            cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
+
+            using var reader = cmd.ExecuteReader();
+            if (!reader.Read()) return true;
+
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                string colName = reader.GetName(i);
+                if (colName == pkColumn) continue;
+
+                object existingValue = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                object incomingValue = incomingRow.ContainsKey(colName) ? incomingRow[colName] : null;
+
+                if (!object.Equals(existingValue, incomingValue))
+                    return true;
+            }
+
+            return false;
+        }
+
+        static void InsertRow(OleDbConnection conn, string tableName, Dictionary<string, object> row)
+        {
+            var columns = row.Keys.ToList();
+            var columnList = string.Join(", ", columns.Select(c => $"[{c}]"));
+            var valuePlaceholders = string.Join(", ", columns.Select(_ => "?"));
+
+            string insertQuery = $@"
+                INSERT INTO [{tableName}] ({columnList}) 
+                VALUES ({valuePlaceholders})";
+
+            using var cmd = new OleDbCommand(insertQuery, conn);
+            foreach (var col in columns)
+                cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        static int GetNewId(OleDbConnection conn, string tableName, string pkColumn)
+        {
+            string query = $"SELECT MAX([{pkColumn}]) FROM [{tableName}]";
+            using var cmd = new OleDbCommand(query, conn);
+            var result = cmd.ExecuteScalar();
+            return (result != DBNull.Value && result != null) ? Convert.ToInt32(result) + 1 : 1;
+        }
+
+        static DateTime GetLastModified(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
+        {
+            string query = $"SELECT LastModified FROM [{tableName}] WHERE [{pkColumn}] = ?";
+            using var cmd = new OleDbCommand(query, conn);
+            cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
+            var result = cmd.ExecuteScalar();
+            return (result != DBNull.Value && result != null) ? Convert.ToDateTime(result) : DateTime.MinValue;
         }
 
         static bool RecordExists(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
         {
             string query = $"SELECT COUNT(*) FROM [{tableName}] WHERE [{pkColumn}] = ?";
-            using (var cmd = new OleDbCommand(query, conn))
+            using var cmd = new OleDbCommand(query, conn);
+            cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
+            return (int)cmd.ExecuteScalar() > 0;
+        }
+
+        static void SyncDeletions(OleDbConnection sourceConn, OleDbConnection targetConn, string tableName, string pkColumn)
+        {
+            var sourceIds = GetAllIds(sourceConn, tableName, pkColumn);
+            var targetIds = GetAllIds(targetConn, tableName, pkColumn);
+
+            var toDeleteInTarget = targetIds.Except(sourceIds).ToList();
+
+            foreach (var id in toDeleteInTarget)
             {
-                cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
-                return (int)cmd.ExecuteScalar() > 0;
+                string deleteQuery = $"DELETE FROM [{tableName}] WHERE [{pkColumn}] = ?";
+                using var cmd = new OleDbCommand(deleteQuery, targetConn);
+                cmd.Parameters.AddWithValue($"@{pkColumn}", id);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine($"Deleted ID {id} from target.");
             }
         }
 
-        static void DisplayCurrentRecords(string connectionString, string dbName)
+        static List<int> GetAllIds(OleDbConnection conn, string tableName, string pkColumn)
         {
-            Console.WriteLine($"\nCurrent records in {dbName}:");
+            var ids = new List<int>();
+            string query = $"SELECT [{pkColumn}] FROM [{tableName}]";
 
-            try
+            using var cmd = new OleDbCommand(query, conn);
+            using var reader = cmd.ExecuteReader();
+
+            while (reader.Read())
             {
-                using (var conn = new OleDbConnection(connectionString))
-                {
-                    conn.Open();
-                    using (var cmd = new OleDbCommand("SELECT ID, Name, LastModified FROM People ORDER BY ID", conn))
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            Console.WriteLine($"  ID: {reader["ID"]}, Name: {reader["Name"]}, Last Modified: {reader["LastModified"]}");
-                        }
-                    }
-                }
+                ids.Add(reader.GetInt32(0));
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"  Error displaying records: {ex.Message}");
-            }
+
+            return ids;
         }
     }
 }
