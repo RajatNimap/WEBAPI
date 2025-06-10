@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mdb_sync\\mdb_sync\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mdb_sync\\mdb_sync\\mdb_sync.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\mdb_sync.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -18,12 +22,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MDB_Sync",
+              "Title": "test.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\test.cs",
+              "RelativeDocumentMoniker": "MDB_Sync\\test.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\test.cs",
+              "RelativeToolTip": "MDB_Sync\\test.cs",
+              "ViewState": "AgIAAIkBAAAAAAAAAAAiwKoBAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T13:34:50.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MDB_Sync.csproj",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\MDB_Sync.csproj",
               "RelativeDocumentMoniker": "MDB_Sync\\MDB_Sync.csproj",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\MDB_Sync.csproj",
@@ -41,7 +58,7 @@
               "RelativeDocumentMoniker": "MDB_Sync\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\Program.cs",
               "RelativeToolTip": "MDB_Sync\\Program.cs",
-              "ViewState": "AgIAAGgAAAAANjMzM7MowHoAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAAAPwAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T10:46:48.87Z",
               "EditorCaption": ""

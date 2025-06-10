@@ -1,23 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Data.OleDb;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace ContinuousAccessDbSync
+namespace RobustAccessDbSync
 {
     class Program
     {
         private static bool _syncRunning = true;
         private static DateTime _lastClientSyncTime;
         private static DateTime _lastServerSyncTime;
+        private const string ConflictSuffix = "_CONFLICT_RESOLVED";
 
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static async Task Main()
         {
             string clientDbPath = @"C:\Users\Nimap\Documents\mdbfile\rajat.mdb";
             string serverDbPath = @"\\192.168.1.128\mdb\yash.mdb";
             const string tableName = "People";
+            const string pkColumn = "ID";
 
             if (!VerifyDatabaseFiles(clientDbPath, serverDbPath))
             {
@@ -34,34 +33,31 @@ namespace ContinuousAccessDbSync
                 return;
             }
 
+            // Initialize last sync times
             _lastClientSyncTime = GetMaxLastModified(serverConnStr, tableName);
             _lastServerSyncTime = GetMaxLastModified(clientConnStr, tableName);
 
             Console.WriteLine("\nStarting continuous synchronization...");
             Console.WriteLine("Press 'Q' then Enter to stop synchronization.\n");
 
-            var syncTask = Task.Run(() => ContinuousSync(serverConnStr, clientConnStr, tableName));
+            var syncTask = Task.Run(() => ContinuousSync(serverConnStr, clientConnStr, tableName, pkColumn));
 
-            while (true)
+            while (_syncRunning)
             {
-                var input = Console.ReadLine();
-                if (string.Equals(input, "Q", StringComparison.OrdinalIgnoreCase))
+                if (Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Q)
                 {
                     _syncRunning = false;
-                    break;
+                    Console.WriteLine("Stopping synchronization...");
                 }
-                else
-                {
-                    Console.WriteLine("Invalid input. Press 'Q' then Enter to stop synchronization.");
-                }
+                await Task.Delay(100);
             }
 
             await syncTask;
-
             Console.WriteLine("Synchronization stopped. Press any key to exit.");
             Console.ReadKey();
         }
 
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static bool VerifyDatabaseFiles(string clientPath, string serverPath)
         {
             if (!File.Exists(clientPath))
@@ -79,6 +75,7 @@ namespace ContinuousAccessDbSync
             return true;
         }
 
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static bool TestConnection(string name, string connectionString)
         {
             Console.WriteLine($"Testing {name} connection...");
@@ -96,6 +93,7 @@ namespace ContinuousAccessDbSync
             }
         }
 
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static DateTime GetMaxLastModified(string connectionString, string tableName)
         {
             try
@@ -114,29 +112,43 @@ namespace ContinuousAccessDbSync
             return DateTime.MinValue;
         }
 
-        static async Task ContinuousSync(string serverConnStr, string clientConnStr, string tableName)
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+        static async Task ContinuousSync(string serverConnStr, string clientConnStr, string tableName, string pkColumn)
         {
-            const string pkColumn = "ID";
-
             while (_syncRunning)
             {
                 try
                 {
-                    Console.WriteLine($"[{DateTime.Now:T}] Syncing Server → Client...");
                     using var serverConn = new OleDbConnection(serverConnStr);
                     using var clientConn = new OleDbConnection(clientConnStr);
                     serverConn.Open();
                     clientConn.Open();
 
-                    int serverToClientChanges = SyncDirection(serverConnStr, clientConnStr, tableName, ref _lastServerSyncTime);
+                    // Server → Client sync (server wins, but preserve client data)
+                    Console.WriteLine($"[{DateTime.Now:T}] Syncing Server → Client...");
+                    int serverToClientChanges = SyncDirection(
+                        sourceConn: serverConn,
+                        targetConn: clientConn,
+                        tableName: tableName,
+                        lastSyncTime: ref _lastServerSyncTime,
+                        isServerToClient: true,
+                        pkColumn: pkColumn);
                     Console.WriteLine($"[{DateTime.Now:T}] Server → Client: {serverToClientChanges} changes applied");
 
+                    // Client → Server sync (server wins, but preserve client data)
                     Console.WriteLine($"[{DateTime.Now:T}] Syncing Client → Server...");
-                    int clientToServerChanges = SyncDirection(clientConnStr, serverConnStr, tableName, ref _lastClientSyncTime);
+                    int clientToServerChanges = SyncDirection(
+                        sourceConn: clientConn,
+                        targetConn: serverConn,
+                        tableName: tableName,
+                        lastSyncTime: ref _lastClientSyncTime,
+                        isServerToClient: false,
+                        pkColumn: pkColumn);
                     Console.WriteLine($"[{DateTime.Now:T}] Client → Server: {clientToServerChanges} changes applied");
 
-                    SyncDeletions(serverConn, clientConn, tableName, pkColumn);
-                    SyncDeletions(clientConn, serverConn, tableName, pkColumn);
+                    // Handle deletions
+                    //SyncDeletions(serverConn, clientConn, tableName, pkColumn);
+                    //SyncDeletions(clientConn, serverConn, tableName, pkColumn);
                 }
                 catch (Exception ex)
                 {
@@ -147,21 +159,18 @@ namespace ContinuousAccessDbSync
             }
         }
 
-        static int SyncDirection(string sourceConnStr, string targetConnStr, string tableName, ref DateTime lastSyncTime)
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+        static int SyncDirection(OleDbConnection sourceConn, OleDbConnection targetConn,
+                              string tableName, ref DateTime lastSyncTime,
+                              bool isServerToClient, string pkColumn)
         {
             int changesApplied = 0;
             DateTime maxTimestamp = lastSyncTime;
 
-            using var sourceConn = new OleDbConnection(sourceConnStr);
-            using var targetConn = new OleDbConnection(targetConnStr);
-
-            sourceConn.Open();
-            targetConn.Open();
-
             string lastSyncFormatted = lastSyncTime.ToString("MM/dd/yyyy hh:mm:ss tt");
             string getChangesQuery = $@"
-                SELECT * FROM [{tableName}] 
-                WHERE LastModified > ? 
+                SELECT * FROM [{tableName}]
+                WHERE LastModified > ?
                 ORDER BY LastModified";
 
             using var cmd = new OleDbCommand(getChangesQuery, sourceConn);
@@ -176,7 +185,8 @@ namespace ContinuousAccessDbSync
                     row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
                 }
 
-                if (ApplyChange(targetConn, tableName, row))
+                if (ApplyChangeWithConflictResolution(
+                    targetConn, tableName, row, isServerToClient, pkColumn))
                 {
                     changesApplied++;
                     var rowTimestamp = Convert.ToDateTime(row["LastModified"]);
@@ -189,102 +199,168 @@ namespace ContinuousAccessDbSync
             return changesApplied;
         }
 
-        static bool ApplyChange(OleDbConnection targetConn, string tableName, Dictionary<string, object> row)
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+        static bool ApplyChangeWithConflictResolution(OleDbConnection targetConn,
+                                                    string tableName,
+                                                    Dictionary<string, object> row,
+                                                    bool isServerToClient,
+                                                    string pkColumn)
         {
-            string pkColumn = "ID";
             var pkValue = row[pkColumn];
             var incomingLastModified = Convert.ToDateTime(row["LastModified"]);
 
+            // Check if record exists in target
             bool exists = RecordExists(targetConn, tableName, pkColumn, pkValue);
 
-            if (exists)
+            if (!exists)
             {
-                var targetLastModified = GetLastModified(targetConn, tableName, pkColumn, pkValue);
+                // Simple insert for new records
+                return InsertRecord(targetConn, tableName, row);
+            }
 
-                if (incomingLastModified <= targetLastModified)
-                    return false;
+            // Handle existing record
+            var targetLastModified = GetLastModified(targetConn, tableName, pkColumn, pkValue);
 
-                if (IsDataDifferent(targetConn, tableName, pkColumn, pkValue, row))
+            // If incoming record is older or same, skip
+            //if (incomingLastModified <= targetLastModified)
+            //return false;
+
+            // Get the target record before overwriting
+            var targetRecord = GetRecord(targetConn, tableName, pkColumn, pkValue);
+
+            // Server always wins in conflicts
+            if (isServerToClient)
+            {
+                // Preserve client data before overwriting
+                if (!IsConflictResolvedRecord(targetRecord))
                 {
-                    // Clone with new ID before update
-                    var newRow = new Dictionary<string, object>(row);
-                    newRow["ID"] = GetNewId(targetConn, tableName, pkColumn);
-                    InsertRow(targetConn, tableName, newRow);
+                    int newId = GetNextAvailableId(targetConn, tableName, pkColumn);
+                    targetRecord[pkColumn] = newId;
+                    targetRecord["Notes"] = AddConflictNote(targetRecord,
+                        $"Preserved client data (original ID: {pkValue}) before server overwrite");
+                    targetRecord["LastModified"] = GetSafeFutureTimestamp();
+
+                    InsertRecord(targetConn, tableName, targetRecord);
+                    Console.WriteLine($"Preserved client data for ID {pkValue} as new ID {newId}");
                 }
 
-                var columns = row.Keys.Where(k => k != pkColumn).ToList();
-                var updateSet = string.Join(", ", columns.Select(c => $"[{c}] = ?"));
-
-                string updateQuery = $@"
-                    UPDATE [{tableName}] 
-                    SET {updateSet}
-                    WHERE [{pkColumn}] = ?";
-
-                using var cmd = new OleDbCommand(updateQuery, targetConn);
-
-                foreach (var col in columns)
-                    cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
-
-                cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
-
-                return cmd.ExecuteNonQuery() > 0;
+                // Now update with server data
+                return UpdateRecord(targetConn, tableName, row, pkColumn);
             }
             else
             {
-                InsertRow(targetConn, tableName, row);
-                return true;
+                // Client → Server: DO NOT preserve client data or apply it
+                Console.WriteLine($"Skipped client record for ID {pkValue}; server version retained");
+                return false;
             }
+
+        }
+        static DateTime GetSafeFutureTimestamp()
+        {
+            var now = DateTime.Now;
+            // Remove milliseconds and add 1 second to ensure it's picked up in next sync
+            return new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second).AddSeconds(5);
         }
 
-        static bool IsDataDifferent(OleDbConnection conn, string tableName, string pkColumn, object pkValue, Dictionary<string, object> incomingRow)
+        static string AddConflictNote(Dictionary<string, object> record, string note)
         {
+            if (record.ContainsKey("Notes") && record["Notes"] != null)
+            {
+                return record["Notes"].ToString() + "; " + note;
+            }
+            return note;
+        }
+
+        static bool IsConflictResolvedRecord(Dictionary<string, object> record)
+        {
+            return record.ContainsKey("Notes") &&
+                   record["Notes"] != null &&
+                   record["Notes"].ToString().Contains("CONFLICT_RESOLVED");
+        }
+
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+        static Dictionary<string, object> GetRecord(OleDbConnection conn, string tableName,
+                                                  string pkColumn, object pkValue)
+        {
+            var record = new Dictionary<string, object>();
             string query = $"SELECT * FROM [{tableName}] WHERE [{pkColumn}] = ?";
+
             using var cmd = new OleDbCommand(query, conn);
             cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
 
             using var reader = cmd.ExecuteReader();
-            if (!reader.Read()) return true;
-
-            for (int i = 0; i < reader.FieldCount; i++)
+            if (reader.Read())
             {
-                string colName = reader.GetName(i);
-                if (colName == pkColumn) continue;
-
-                object existingValue = reader.IsDBNull(i) ? null : reader.GetValue(i);
-                object incomingValue = incomingRow.ContainsKey(colName) ? incomingRow[colName] : null;
-
-                if (!object.Equals(existingValue, incomingValue))
-                    return true;
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    record[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                }
             }
-
-            return false;
+            return record;
         }
 
-        static void InsertRow(OleDbConnection conn, string tableName, Dictionary<string, object> row)
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+        static bool UpdateRecord(OleDbConnection conn, string tableName,
+                               Dictionary<string, object> row, string pkColumn)
+        {
+            var columns = row.Keys.Where(k => k != pkColumn).ToList();
+            var updateSet = string.Join(", ", columns.Select(c => $"[{c}] = ?"));
+
+            string updateQuery = $@"
+                UPDATE [{tableName}]
+                SET {updateSet}
+                WHERE [{pkColumn}] = ?";
+
+            using var cmd = new OleDbCommand(updateQuery, conn);
+
+            foreach (var col in columns)
+                cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
+
+            cmd.Parameters.AddWithValue($"@{pkColumn}", row[pkColumn]);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+        static bool InsertRecord(OleDbConnection conn, string tableName, Dictionary<string, object> row)
         {
             var columns = row.Keys.ToList();
             var columnList = string.Join(", ", columns.Select(c => $"[{c}]"));
             var valuePlaceholders = string.Join(", ", columns.Select(_ => "?"));
 
             string insertQuery = $@"
-                INSERT INTO [{tableName}] ({columnList}) 
+                INSERT INTO [{tableName}] ({columnList})
                 VALUES ({valuePlaceholders})";
 
             using var cmd = new OleDbCommand(insertQuery, conn);
+
             foreach (var col in columns)
                 cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
 
-            cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery() > 0;
         }
 
-        static int GetNewId(OleDbConnection conn, string tableName, string pkColumn)
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+        static int GetNextAvailableId(OleDbConnection conn, string tableName, string pkColumn)
         {
             string query = $"SELECT MAX([{pkColumn}]) FROM [{tableName}]";
             using var cmd = new OleDbCommand(query, conn);
             var result = cmd.ExecuteScalar();
-            return (result != DBNull.Value && result != null) ? Convert.ToInt32(result) + 1 : 1;
+            int maxId = (result != DBNull.Value && result != null) ? Convert.ToInt32(result) : 0;
+            return maxId + 1;
         }
 
+
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+        static bool RecordExists(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
+        {
+            string query = $"SELECT COUNT(*) FROM [{tableName}] WHERE [{pkColumn}] = ?";
+            using var cmd = new OleDbCommand(query, conn);
+            cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
+            return (int)cmd.ExecuteScalar() > 0;
+        }
+
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static DateTime GetLastModified(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
         {
             string query = $"SELECT LastModified FROM [{tableName}] WHERE [{pkColumn}] = ?";
@@ -294,14 +370,7 @@ namespace ContinuousAccessDbSync
             return (result != DBNull.Value && result != null) ? Convert.ToDateTime(result) : DateTime.MinValue;
         }
 
-        static bool RecordExists(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
-        {
-            string query = $"SELECT COUNT(*) FROM [{tableName}] WHERE [{pkColumn}] = ?";
-            using var cmd = new OleDbCommand(query, conn);
-            cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
-            return (int)cmd.ExecuteScalar() > 0;
-        }
-
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static void SyncDeletions(OleDbConnection sourceConn, OleDbConnection targetConn, string tableName, string pkColumn)
         {
             var sourceIds = GetAllIds(sourceConn, tableName, pkColumn);
@@ -309,16 +378,34 @@ namespace ContinuousAccessDbSync
 
             var toDeleteInTarget = targetIds.Except(sourceIds).ToList();
 
+
             foreach (var id in toDeleteInTarget)
             {
+                if (IsConflictPreservedRecord(targetConn, tableName, pkColumn, id))
+                {
+                    // Skip conflict-preserved rows
+                    continue;
+                }
+
                 string deleteQuery = $"DELETE FROM [{tableName}] WHERE [{pkColumn}] = ?";
                 using var cmd = new OleDbCommand(deleteQuery, targetConn);
-                cmd.Parameters.AddWithValue($"@{pkColumn}", id);
+                cmd.Parameters.AddWithValue("?", id);
                 cmd.ExecuteNonQuery();
                 Console.WriteLine($"Deleted ID {id} from target.");
             }
+
+        }
+        static bool IsConflictPreservedRecord(OleDbConnection conn, string tableName, string pkColumn, int id)
+        {
+            string query = $"SELECT Notes FROM [{tableName}] WHERE [{pkColumn}] = ?";
+            using var cmd = new OleDbCommand(query, conn);
+            cmd.Parameters.AddWithValue("?", id);
+            var result = cmd.ExecuteScalar();
+            return result != DBNull.Value && result != null && result.ToString().Contains("Preserved");
         }
 
+
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static List<int> GetAllIds(OleDbConnection conn, string tableName, string pkColumn)
         {
             var ids = new List<int>();
