@@ -12,7 +12,6 @@ namespace E_Commerce.Model.Entities
         public int ProductId { get; set; }
         [JsonIgnore]
         public Product? Product { get; set; }  
-
         
         //Foreign key for  order
         public int OrderId { get; set; }

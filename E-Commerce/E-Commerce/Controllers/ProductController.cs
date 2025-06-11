@@ -58,14 +58,12 @@ namespace E_Commerce.Controllers
             if (minprice.HasValue)
             {
                 query = query.Where(x => x.price > minprice);
-
             }
-
             if (maxprice.HasValue) { 
                     query=query.Where(x => x.price < maxprice); 
             }
             query = query.Where(x => x.Soft_delete == 0);
-          var data= await query.ToListAsync();  
+            var data= await query.ToListAsync();  
 
             return Ok(data);    
         }
