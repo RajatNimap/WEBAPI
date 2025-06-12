@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{67FEE3A2-38D3-4CDC-88BA-B16D2BABA755}|SynchronizeMDB\\SynchronizeMDB.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\synchronizemdb\\synchronizemdb\\synchronizemdb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{67FEE3A2-38D3-4CDC-88BA-B16D2BABA755}|SynchronizeMDB\\SynchronizeMDB.csproj|solutionrelative:synchronizemdb\\synchronizemdb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67FEE3A2-38D3-4CDC-88BA-B16D2BABA755}|SynchronizeMDB\\SynchronizeMDB.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\synchronizemdb\\synchronizemdb\\sync_metadata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{67FEE3A2-38D3-4CDC-88BA-B16D2BABA755}|SynchronizeMDB\\SynchronizeMDB.csproj|solutionrelative:synchronizemdb\\sync_metadata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,20 +22,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "sync_metadata.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\SynchronizeMDB\\SynchronizeMDB\\sync_metadata.json",
+              "RelativeDocumentMoniker": "SynchronizeMDB\\sync_metadata.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\SynchronizeMDB\\SynchronizeMDB\\sync_metadata.json",
+              "RelativeToolTip": "SynchronizeMDB\\sync_metadata.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-12T04:01:20.588Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SynchronizeMDB",
+              "Title": "SynchronizeMDB.csproj",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\SynchronizeMDB\\SynchronizeMDB\\SynchronizeMDB.csproj",
               "RelativeDocumentMoniker": "SynchronizeMDB\\SynchronizeMDB.csproj",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\SynchronizeMDB\\SynchronizeMDB\\SynchronizeMDB.csproj",
               "RelativeToolTip": "SynchronizeMDB\\SynchronizeMDB.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-09T09:00:36.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-09T09:00:36.387Z"
             },
             {
               "$type": "Document",
@@ -41,7 +56,7 @@
               "RelativeDocumentMoniker": "SynchronizeMDB\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\SynchronizeMDB\\SynchronizeMDB\\Program.cs",
               "RelativeToolTip": "SynchronizeMDB\\Program.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAIAXwCYAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAFgBAACAAQAAAAAqwGMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-09T09:00:21.591Z",
               "EditorCaption": ""

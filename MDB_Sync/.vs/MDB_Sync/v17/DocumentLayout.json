@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mdb_sync\\mdb_sync\\sync_metadata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\sync_metadata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mdb_sync\\mdb_sync\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mdb_sync\\mdb_sync\\mdb_sync.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\mdb_sync.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mdb_sync\\mdb_sync\\sync_metadata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\sync_metadata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,44 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "sync_metadata.json",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\sync_metadata.json",
-              "RelativeDocumentMoniker": "MDB_Sync\\sync_metadata.json",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\sync_metadata.json",
-              "RelativeToolTip": "MDB_Sync\\sync_metadata.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-11T04:30:44.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "test.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\test.cs",
-              "RelativeDocumentMoniker": "MDB_Sync\\test.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\test.cs",
-              "RelativeToolTip": "MDB_Sync\\test.cs",
-              "ViewState": "AgIAAHIBAACAZWZmZmYWwHUBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T13:34:50.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MDB_Sync.csproj",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\MDB_Sync.csproj",
-              "RelativeDocumentMoniker": "MDB_Sync\\MDB_Sync.csproj",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\MDB_Sync.csproj",
-              "RelativeToolTip": "MDB_Sync\\MDB_Sync.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-09T07:31:13.228Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -72,10 +32,34 @@
               "RelativeDocumentMoniker": "MDB_Sync\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\Program.cs",
               "RelativeToolTip": "MDB_Sync\\Program.cs",
-              "ViewState": "AgIAADsBAAAAxszMzIwrwBoAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T10:46:48.87Z",
+              "WhenOpened": "2025-06-12T04:18:53.774Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "test.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\test.cs",
+              "RelativeDocumentMoniker": "MDB_Sync\\test.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\test.cs",
+              "RelativeToolTip": "MDB_Sync\\test.cs",
+              "ViewState": "AgIAADQDAAAAAAAAAAAowE0DAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T04:18:19.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "sync_metadata.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\sync_metadata.json",
+              "RelativeDocumentMoniker": "MDB_Sync\\sync_metadata.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\sync_metadata.json",
+              "RelativeToolTip": "MDB_Sync\\sync_metadata.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-11T04:30:44.55Z"
             }
           ]
         }
