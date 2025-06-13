@@ -1,0 +1,347 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 using System;\par
+using System.Linq;\par
+public class program\{\par
+    \par
+    // Function of getting second largest number\par
+    public static int SecondLarge(int[] arr)\{\par
+        // basic approch \par
+        int Large=int.MinValue;\par
+        int SecLarge=int.MinValue;\par
+        \par
+        for(int i=0;i<arr.Length;i++)\{\par
+            \par
+            if(arr[i] > Large)\{\par
+                Large=arr[i];\par
+            \}\par
+        \}\par
+        for(int i=0;i<arr.Length;i++)\{\par
+            \par
+            if(arr[i] > SecLarge && arr[i]  < Large)\{\par
+                \par
+                SecLarge=arr[i];\par
+            \}\par
+        \}\par
+\par
+        return SecLarge;\par
+    \}\par
+    \par
+    // By foreachloop\par
+    \par
+    public static int SecondLarge1(int[] arr)\{\par
+        \par
+        int Large=int.MinValue;\par
+        int Small=int.MinValue;\par
+        foreach(int num in arr)\{\par
+            \par
+            if(num > Large)\{\par
+                Small=Large;\par
+                Large=num;\par
+            \}else if(num > Small && num !=Large)\{\par
+                \par
+                Small=num;\par
+            \}\par
+            \par
+        \}\par
+        \par
+        return Small;\par
+    \}\par
+    \par
+        //BY Linq\par
+        public static int SecondLarge2(int[] arr)\{\par
+            \par
+            var res=arr.Distinct().OrderByDescending(x=>x).Skip(1).FirstOrDefault();\par
+            return res;\par
+            \par
+        \}\par
+\par
+        public static void Main(String[] args)\{\par
+            int[] arr=new int[]\{1,2,-3,-4,-5\};\par
+            Console.WriteLine(SecondLarge(arr));\par
+            Console.WriteLine(SecondLarge1(arr));\par
+                        Console.WriteLine(SecondLarge2(arr));\par
+  \par
+        \}\par
+\}\par
+\par
+//REverse Integer\par
+// Online C# Editor for free\par
+// Write, Edit and Run your C# code using C# Online Compiler\par
+\par
+using System;\par
+\par
+public class HelloWorld\par
+\{\par
+    \par
+    // Reverse the integer \par
+    public static int Reverse(int n)\{\par
+        int num=Math.Abs(n);\par
+        int rev=0;\par
+        while( num > 0 )\{\par
+            int Digit = num%10;\par
+            rev=rev*10+Digit;\par
+            num=num/10;\par
+        \}\par
+        if(n > 0)\{\par
+        return rev;\par
+        \}else\{\par
+            return -rev;\par
+        \}\par
+    \}\par
+    //Reverse the Integer by recursion\par
+    \par
+    public static int Rev(int num,int result=0)\{\par
+        if(num  == 0)\{\par
+            return result;\par
+        \}\par
+        return Rev(num/10,result*10+num%10);\par
+    \}\par
+    \par
+    public static void Main(string[] args)\par
+    \{\par
+        Console.WriteLine (Reverse(-874));\par
+        Console.WriteLine(Rev(1234));\par
+    \}\par
+\}\par
+\par
+\par
+// Online C# Editor for free\par
+// Write, Edit and Run your C# code using C# Online Compiler\par
+\par
+using System;\par
+\par
+public class HelloWorld\par
+\{\par
+    public static void Main(string[] args)\par
+    \{\par
+        int a=10;\par
+        int b=20;\par
+        a=a+b;\par
+        b=a-b;\par
+        a=a-b;\par
+        Console.WriteLine(a+" "+b);\par
+        int c=10;\par
+        int d=20;\par
+        c=c^d;\par
+        d=c^d;\par
+        c=c^d;\par
+        Console.WriteLine(c+" "+d);\par
+\par
+    \}\par
+\}\par
+\par
+Anagram\par
+// Online C# Editor for free\par
+// Write, Edit and Run your C# code using C# Online Compiler\par
+using System;\par
+using System.Linq;\par
+public class HelloWorld\par
+\{\par
+    \par
+    public static bool IsAnagram(string str1,string str2)\{\par
+        \par
+        if(str1.Length != str2.Length)\{\par
+            return false;\par
+        \}\par
+        var char1=str1.ToLower().ToCharArray();\par
+        var char2=str2.ToLower().ToCharArray();\par
+        Array.Sort(char1);\par
+        Array.Sort(char2);\par
+        \par
+        string newstr1=new string(char1);\par
+        string newstr2=new string(char2);\par
+        if(newstr1.Equals(newstr2))\{\par
+            return true;\par
+        \}\par
+      \par
+        return false;\par
+     \par
+    \}\par
+     \par
+    public static bool IsAnagram1(string str1,string str2)\{\par
+        \par
+         int[] arr=new int[256];\par
+        \par
+        for(int i=0;i<str1.Length;i++)\{\par
+            \par
+              arr[str1[i]]++;\par
+              arr[str2[i]]--;\par
+              \par
+        \}\par
+       \par
+        foreach(var i in arr)\{\par
+            if(i != 0)\{\par
+                return false;\par
+            \}\par
+        \}\par
+        return true;\par
+    \}\par
+    // by linq\par
+    public static void Main(string[] args)\par
+    \{\par
+        Console.WriteLine(IsAnagram("rajat","tajar"));\par
+        Console.WriteLine(IsAnagram1("rajat","tajar"));\par
+        string st1="happy";\par
+        string newstr2=new string(st1.OrderBy(x=>x).ToArray());\par
+        Console.WriteLine(newstr2);\par
+    \}\par
+\}\par
+\par
+//Reverse the string \par
+// Online C# Editor for free\par
+// Write, Edit and Run your C# code using C# Online Compiler\par
+\par
+using System;\par
+\par
+public class HelloWorld\par
+\{\par
+    \par
+    public static string Reverse(string str)\{\par
+            string rev="";\par
+           for(int i=str.Length-1;i>=0;i--)\{\par
+                rev=rev+str[i];\par
+           \}\par
+            return rev;\par
+    \}\par
+    public static string Rev(string str)\{\par
+        if(str.Length < 1)\{\par
+            return str;\par
+        \}\par
+        return Rev(str.Substring(1))+str[0];\par
+    \}\par
+    public static void Main(string[] args)\par
+    \{\par
+        Console.WriteLine(Reverse("Rajat"));\par
+        Console.WriteLine(Rev("Rajat"));\par
+\par
+    \}\par
+\}\par
+\par
+// Online C# Editor for free\par
+// Write, Edit and Run your C# code using C# Online Compiler\par
+//Fibanacci series\par
+\par
+using System;\par
+\par
+public class HelloWorld\par
+\{\par
+    public static bool Ispalindrome(string str)\{\par
+        \par
+        string newstr="";\par
+        for(int i=str.Length-1;i>=0;i--)\{\par
+            \par
+            newstr+=str[i];\par
+        \}\par
+        if(str == newstr)\{\par
+            return true;\par
+        \}else\{\par
+            return false;\par
+        \}\par
+    \}\par
+    public static void Main(string[] args)\par
+    \{\par
+       \par
+        Console.WriteLine(Ispalindrome("LeveL"));\par
+        string str="Level";\par
+        \par
+    \}\par
+\}\par
+\par
+//\par
+// Online C# Editor for free\par
+// Write, Edit and Run your C# code using C# Online Compiler\par
+\par
+using System;\par
+using System.Collections.Genric;\par
+public class HelloWorld\par
+\{\par
+    \par
+    public static void FindMissing(int[] arr)\{\par
+        \par
+        for(int i=1;i<=10;i++)\{\par
+            int flag=0;\par
+            for(int j=0;j<arr.Length;j++)\{\par
+                \par
+                if(i == arr[j])\{\par
+                      flag=1;\par
+                      break;\par
+                \}\par
+            \}\par
+            if(flag == 0)\{\par
+                Console.WriteLine(i);\par
+            \}\par
+        \}\par
+        \par
+    \}\par
+   public static void FindMissing(int[] arr)\{\par
+       \par
+       for(int i=1;i<)\par
+   \}\par
+    public static void Main(string[] args)\par
+    \{\par
+            int[] arr=new int[]\{1,2,3,4,5,7,10\};\par
+            FindMissing(arr);\par
+            int[] arr1=new int[]\{0,1,1,2,3,4,5,7\};\par
+\par
+    \}\par
+\}\par
+Fiba\par
+// Online C# Editor for free\par
+// Write, Edit and Run your C# code using C# Online Compiler\par
+\par
+using System;\par
+\par
+public class HelloWorld\par
+\{\par
+    \par
+    public static void Fibanacci(int n)\{\par
+        \par
+        int a=0;\par
+        int b=1;\par
+        for(int i=1;i<=n;i++)\{\par
+            int c=a+b;\par
+            Console.WriteLine(c);\par
+            a=b;\par
+            b=c;\par
+        \}\par
+        \par
+    \}\par
+    public static int Fiba(int n)\{\par
+        \par
+        if(n==0) return 0;\par
+        if(n==1)return 1;\par
+        return Fiba(n-1) + Fiba(n-2);\par
+    \}\par
+    public static void Main(string[] args)\par
+    \{\par
+         Fibanacci(10);\par
+         for(int i=1;i<10;i++)\{\par
+            Console.WriteLine(Fiba(i));\par
+         \}\par
+     \par
+    \}\par
+\}\par
+// Online C# Editor for free\par
+// Write, Edit and Run your C# code using C# Online Compiler\par
+\par
+using System;\par
+using System.Linq;\par
+using System.Collections.Generic;\par
+public class HelloWorld\par
+\{\par
+    \par
+\par
+    public static void Main(string[] args)\par
+    \{   \par
+        List<int> list=new List<int>()\{1,2,3,4,5,6,7,8\};\par
+        var even=list.Where(x=>x%2!=0).ToList();\par
+        foreach(var i in even)\{\par
+            Console.WriteLine(i);\par
+        \}\par
+    \}\par
+\}\par
+\par
+\par
+}
+ 
