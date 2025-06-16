@@ -15,7 +15,7 @@ namespace Hospital_Management.Controllers
         {
             _slotService = slotService;
         }
-
+        
         [HttpGet("{doctorId}/slots")]
         public async Task<IActionResult> GetAvailableSlots(int doctorId, [FromQuery] DateTime date)
         {

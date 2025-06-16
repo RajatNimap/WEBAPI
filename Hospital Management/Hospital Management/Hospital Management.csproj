@@ -6,7 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Hospital_Management</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />

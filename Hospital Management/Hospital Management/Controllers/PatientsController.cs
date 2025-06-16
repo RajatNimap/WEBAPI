@@ -18,7 +18,7 @@ namespace Hospital_Management.Controllers
         {
             this.patientIm = patientIm;
         }
-        //[Authorize]
+        [Authorize(Roles ="admin")]
         [HttpGet("Patients")]
         public async Task<IActionResult> GetPatientsList()
         {
@@ -30,7 +30,7 @@ namespace Hospital_Management.Controllers
             }
             return Ok(Data);    
         }
-       // [Authorize]
+       [Authorize(Roles = "receptionist")] 
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetPatientsById(int id)

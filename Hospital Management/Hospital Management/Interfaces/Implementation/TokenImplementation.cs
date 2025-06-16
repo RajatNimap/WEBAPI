@@ -48,7 +48,7 @@ namespace Hospital_Management.Interfaces.Implementation
             var token = new JwtSecurityToken(_config["JWT:Issuer"],
                 _config["JWT:Audiance"],
                 claims,
-                expires: DateTime.Now.AddMinutes(2),
+                expires: DateTime.Now.AddMinutes(10),
                 signingCredentials: Credential
 
             );

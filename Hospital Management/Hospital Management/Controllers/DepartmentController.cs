@@ -2,6 +2,7 @@
 using Hospital_Management.Interfaces.Implementation;
 using Hospital_Management.Models.Entities;
 using Hospital_Management.Models.EntitiesDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,7 @@ namespace Hospital_Management.Controllers
         }
 
         [HttpGet]
+        [Authorize (Roles = "admin,receptionist")]
         public async Task<IActionResult> GetDepartment()
         {
             var Data = await DepartmenIm.GetDepartment();
