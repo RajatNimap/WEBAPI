@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "bBgTOZi08lc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\OledbConnection\\OledbConnection\\OledbConnection.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nimap\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.6\\system.configuration.configurationmanager.9.0.6.nupkg.sha512",
+    "C:\\Users\\Nimap\\.nuget\\packages\\system.data.oledb\\9.0.6\\system.data.oledb.9.0.6.nupkg.sha512",
+    "C:\\Users\\Nimap\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.6\\system.diagnostics.eventlog.9.0.6.nupkg.sha512",
+    "C:\\Users\\Nimap\\.nuget\\packages\\system.diagnostics.performancecounter\\9.0.6\\system.diagnostics.performancecounter.9.0.6.nupkg.sha512",
+    "C:\\Users\\Nimap\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.6\\system.security.cryptography.protecteddata.9.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}

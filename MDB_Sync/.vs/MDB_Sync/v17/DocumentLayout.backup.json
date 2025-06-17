@@ -17,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mdb_sync\\mdb_sync\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mdb_sync\\mdb_sync\\mdb_sync.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{57279979-017F-405C-BADE-89C10722F7A6}|MDB_Sync\\MDB_Sync.csproj|solutionrelative:mdb_sync\\mdb_sync.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,20 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MDB_Sync.csproj",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\MDB_Sync.csproj",
-              "RelativeDocumentMoniker": "MDB_Sync\\MDB_Sync.csproj",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\MDB_Sync.csproj",
-              "RelativeToolTip": "MDB_Sync\\MDB_Sync.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-13T08:17:57.885Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -64,7 +48,7 @@
               "RelativeDocumentMoniker": "MDB_Sync\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MDB_Sync\\MDB_Sync\\Program.cs",
               "RelativeToolTip": "MDB_Sync\\Program.cs",
-              "ViewState": "AgIAAFEAAAAAMjMzMzMowBAAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAEDMzMzPbv7QAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-12T04:18:53.774Z",
               "EditorCaption": ""
@@ -91,8 +75,7 @@
               "RelativeToolTip": "MDB_Sync\\sync_metadata.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-11T04:30:44.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T04:30:44.55Z"
             }
           ]
         }
