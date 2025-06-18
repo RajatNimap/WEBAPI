@@ -33,14 +33,12 @@ namespace E_Commerce.Controllers
         {
             //var data = await Database.categories.Include(x => x.products)
             //.ToListAsync();
-
+           
             var cacheKey = "Category";
             if(_cache.TryGetValue(cacheKey, out var result)) {
                 _logger.LogInformation("this is retrive from the cache");
                 return Ok( new {res= result,sources="Cache"}); 
             } 
-            
-
                 var data = await Database.categories.Select(c => new
                 {
                     c.Id,

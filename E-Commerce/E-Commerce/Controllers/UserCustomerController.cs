@@ -19,7 +19,7 @@ namespace E_Commerce.Controllers
             Database = _Data1;
         }
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> GetData(int page=1,int pagesize = 10)
         {
             var data = await Database.users.ToListAsync();   
@@ -33,7 +33,7 @@ namespace E_Commerce.Controllers
         }
         [HttpGet]
         [Route("{id}")]
-        [Authorize]
+      //  [Authorize]
 
         public async Task<IActionResult> GetDataParticular(int id)
         {

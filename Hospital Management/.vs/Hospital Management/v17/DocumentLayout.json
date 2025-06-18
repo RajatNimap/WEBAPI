@@ -238,8 +238,7 @@
               "RelativeToolTip": "Hospital Management\\Controllers\\DoctorController.cs",
               "ViewState": "AgIAAA0AAAAAFDMzMzPjvx4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T04:12:02.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T04:12:02.274Z"
             },
             {
               "$type": "Document",
@@ -251,8 +250,7 @@
               "RelativeToolTip": "Hospital Management\\Controllers\\DoctorSlotController.cs",
               "ViewState": "AgIAAAQAAACA/P////8AwBwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T11:33:25.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T11:33:25.27Z"
             },
             {
               "$type": "Document",
@@ -264,8 +262,7 @@
               "RelativeToolTip": "Hospital Management\\Controllers\\PatientsController.cs",
               "ViewState": "AgIAABgAAAAAqszMzMz8vyIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:58:47.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T06:58:47.328Z"
             },
             {
               "$type": "Document",
@@ -277,8 +274,7 @@
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\TokenImplementation.cs",
               "ViewState": "AgIAABwAAACAyszMzMwQwDAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:01:36.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T11:01:36.74Z"
             },
             {
               "$type": "Document",
@@ -290,8 +286,7 @@
               "RelativeToolTip": "Hospital Management\\Controllers\\DepartmentController.cs",
               "ViewState": "AgIAACcAAAAAkpmZmZkGwBQAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T11:11:49.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T11:11:49.016Z"
             },
             {
               "$type": "Document",
@@ -301,7 +296,7 @@
               "RelativeDocumentMoniker": "Hospital Management\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Program.cs",
               "RelativeToolTip": "Hospital Management\\Program.cs",
-              "ViewState": "AgIAAEgAAAAAaGZmZmYEwBYAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAwAAAAAMAtwFMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T11:28:16.109Z",
               "EditorCaption": ""
@@ -316,8 +311,7 @@
               "RelativeToolTip": "Hospital Management\\Controllers\\AuthenticationController.cs",
               "ViewState": "AgIAACoAAABAmZmZmVkjwBgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T10:22:29.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T10:22:29.124Z"
             },
             {
               "$type": "Document",
@@ -329,8 +323,7 @@
               "RelativeToolTip": "Hospital Management\\Controllers\\AppointmentBookingController.cs",
               "ViewState": "AgIAAAoAAADAZWZmZmYkwBkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T11:03:37.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T11:03:37.764Z"
             },
             {
               "$type": "Document",
@@ -342,8 +335,7 @@
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\SlotServicesImplementation.cs",
               "ViewState": "AgIAABsAAABAi5mZmdkowBcAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T11:30:52.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T11:30:52.136Z"
             },
             {
               "$type": "Document",
@@ -355,8 +347,7 @@
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\AuthenticationImplementaion.cs",
               "ViewState": "AgIAACsAAAAAYmZmZiYvwCUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T10:19:42.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T10:19:42.828Z"
             },
             {
               "$type": "Document",
@@ -368,8 +359,7 @@
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\AppointmentImplementation.cs",
               "ViewState": "AgIAABgAAACAyszMzMwuwBQAAACRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T10:18:42.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T10:18:42.738Z"
             },
             {
               "$type": "Document",
@@ -381,8 +371,7 @@
               "RelativeToolTip": "Hospital Management\\Models\\Entities\\Register.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAowAsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T10:54:09.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T10:54:09.441Z"
             },
             {
               "$type": "Document",
@@ -394,8 +383,7 @@
               "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\RegisterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T12:23:51.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T12:23:51.154Z"
             },
             {
               "$type": "Document",
@@ -407,21 +395,19 @@
               "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\PatientsDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:16:36.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T06:16:36.781Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "Hospital Management",
+              "Title": "Hospital Management.csproj",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Hospital Management.csproj",
               "RelativeDocumentMoniker": "Hospital Management\\Hospital Management.csproj",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Hospital Management.csproj",
               "RelativeToolTip": "Hospital Management\\Hospital Management.csproj",
               "ViewState": "AgIAAAUAAAAgMzMzMzMrwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-16T04:39:39.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T04:39:39.245Z"
             },
             {
               "$type": "Document",

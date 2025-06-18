@@ -2,6 +2,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using E_Commerce;
 using E_Commerce.Data;
+using E_Commerce.Filters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,9 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddScoped<ResourceFilter>();
+builder.Services.AddScoped<AuditLog>();
+builder.Services.AddScoped<ResultFIlter>();
 
 builder.Services.AddExceptionHandler<AppExceptionalHandler>();
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

@@ -1,4 +1,5 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿using System.ComponentModel.DataAnnotations;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -101,12 +102,14 @@ namespace E_Commerce.Controllers
 
         private String GenerateWebToken(UserBasicAuth userInfo)
         {
+            var Data = Database.users.FirstOrDefault(x => x.Email == userInfo.Email);
             var securitykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
 
             var credentials = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
             var claims = new[]
             {
-               new Claim(JwtRegisteredClaimNames.Email,userInfo.Email)
+               new Claim(JwtRegisteredClaimNames.Email,userInfo.Email),
+               new Claim("Age",Data.age.ToString()),
             };
             var token = new JwtSecurityToken(
             _config["Jwt:Issuer"],

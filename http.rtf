@@ -1,0 +1,268 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}{\f2\fnil\fcharset1 Cambria Math;}{\f3\fnil\fcharset1 Segoe UI Symbol;}}
+{\*\generator Riched20 10.0.19041}{\*\mmathPr\mmathFont2\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sl240\slmult1\f0\fs22\lang9 In ASP.NET Web API, the HttpContext class provides access to the HTTP request and response context. Below is a list of commonly used methods and properties associated with HttpContext (and related classes like HttpContextBase, HttpRequest, HttpResponse):\par
+\par
+1. HttpContext Properties (Core Properties)\par
+HttpContext.Request \f1\endash  Gets the HttpRequest object for the current HTTP request.\par
+\par
+HttpContext.Response \endash  Gets the HttpResponse object for the current HTTP response.\par
+\par
+HttpContext.Server \endash  Provides methods for server-side processing (HttpServerUtility).\par
+\par
+HttpContext.Session \endash  Provides access to session state (if enabled).\par
+\par
+HttpContext.User \endash  Gets or sets the current user principal (for authentication).\par
+\par
+HttpContext.Items \endash  A key-value collection for storing data during a request.\par
+\par
+HttpContext.Application \endash  Provides access to application-level state.\par
+\par
+HttpContext.Cache \endash  Provides access to the ASP.NET cache.\par
+\par
+2. HttpRequest Methods & Properties\par
+Request.Headers \endash  Gets the HTTP headers collection.\par
+\par
+Request.QueryString \endash  Gets the query string parameters.\par
+\par
+Request.Form \endash  Gets form data (for POST requests).\par
+\par
+Request.Params \endash  Combines QueryString, Form, Cookies, and ServerVariables.\par
+\par
+Request.Cookies \endash  Gets the cookies sent by the client.\par
+\par
+Request.Files \endash  Gets uploaded files.\par
+\par
+Request.InputStream \endash  Gets the raw request body.\par
+\par
+Request.Url \endash  Gets the full request URL.\par
+\par
+Request.HttpMethod \endash  Gets the HTTP method (GET, POST, etc.).\par
+\par
+Request.IsAuthenticated \endash  Checks if the request is authenticated.\par
+\par
+Request.UserAgent \endash  Gets the client's user agent.\par
+\par
+Request.ContentType \endash  Gets the request content type.\par
+\par
+3. HttpResponse Methods & Properties\par
+Response.Write() \endash  Writes text directly to the response.\par
+\par
+Response.Output.Write() \endash  Writes formatted output.\par
+\par
+Response.Redirect(url) \endash  Redirects to a new URL.\par
+\par
+Response.StatusCode \endash  Sets the HTTP status code (e.g., 200, 404).\par
+\par
+Response.StatusDescription \endash  Sets the status description.\par
+\par
+Response.Headers \endash  Gets or sets response headers.\par
+\par
+Response.Cookies \endash  Manages response cookies.\par
+\par
+Response.ContentType \endash  Sets the response content type (e.g., "application/json").\par
+\par
+Response.ContentEncoding \endash  Sets the response encoding.\par
+\par
+Response.End() \endash  Ends the response execution (avoid in Web API).\par
+\par
+Response.Flush() \endash  Sends buffered output to the client.\par
+\par
+4. HttpContext Utility Methods\par
+HttpContext.GetOwinContext() \endash  Gets the OWIN context (if using OWIN middleware).\par
+\par
+HttpContext.AddError(Exception) \endash  Adds an error to the request.\par
+\par
+HttpContext.ClearError() \endash  Clears all errors for the request.\par
+\par
+HttpContext.RewritePath(path) \endash  Rewrites the request path.\par
+\par
+5. Async Methods (ASP.NET Core / Modern Web API)\par
+In ASP.NET Core, HttpContext is different and has async methods:\par
+\par
+Request.ReadFormAsync() \endash  Reads form data asynchronously.\par
+\par
+Response.WriteAsync() \endash  Writes to the response stream asynchronously.\par
+\par
+Response.StartAsync() \endash  Starts sending the response.\par
+\par
+Response.CompleteAsync() \endash  Completes the response.\par
+\par
+In ASP.NET Web API, filters allow you to add pre- and post-processing logic to controller actions. Filters are executed at different stages of the request pipeline. Below is a breakdown of the key filter types and their associated methods:\par
+\par
+1. Authentication Filters\par
+Purpose: Handle authentication before executing an action.\par
+Interface: System.Web.Http.Filters.IAuthenticationFilter\par
+Methods:\par
+\par
+AuthenticateAsync() \f2\u8594?\f0  Validates credentials (e.g., JWT, API key).\par
+\par
+ChallengeAsync() \f2\u8594?\f0  Sends an authentication challenge (e.g., 401 Unauthorized).\par
+\par
+Example:\par
+\par
+csharp\par
+public class CustomAuthFilter : IAuthenticationFilter\par
+\{\par
+    public async Task AuthenticateAsync(HttpAuthenticationContext context, CancellationToken cancellationToken)\par
+    \{\par
+        if (context.Request.Headers.Authorization == null)\par
+        \{\par
+            context.ErrorResult = new UnauthorizedResult(new AuthenticationHeaderValue[0], context.Request);\par
+        \}\par
+    \}\par
+\par
+    public async Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken)\par
+    \{\par
+        var result = await context.Result.ExecuteAsync(cancellationToken);\par
+        if (result.StatusCode == HttpStatusCode.Unauthorized)\par
+        \{\par
+            result.Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue("Bearer"));\par
+        \}\par
+        context.Result = new ResponseMessageResult(result);\par
+    \}\par
+\}\par
+2. Authorization Filters\par
+Purpose: Check if a user is authorized to access an action.\par
+Interface: System.Web.Http.Filters.IAuthorizationFilter\par
+Method:\par
+\par
+OnAuthorization() \f2\u8594?\f0  Runs before the action to verify permissions.\par
+\par
+Example:\par
+\par
+csharp\par
+public class CustomAuthorizeAttribute : AuthorizationFilterAttribute\par
+\{\par
+    public override void OnAuthorization(HttpActionContext actionContext)\par
+    \{\par
+        if (actionContext.Request.Headers.Authorization == null)\par
+        \{\par
+            actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);\par
+        \}\par
+    \}\par
+\}\par
+3. Action Filters\par
+Purpose: Run logic before/after an action executes.\par
+Interface: System.Web.Http.Filters.IActionFilter\par
+Methods:\par
+\par
+OnActionExecuting() \f2\u8594?\f0  Runs before the action.\par
+\par
+OnActionExecuted() \f2\u8594?\f0  Runs after the action.\par
+\par
+Example:\par
+\par
+csharp\par
+public class LogActionFilter : ActionFilterAttribute\par
+\{\par
+    public override void OnActionExecuting(HttpActionContext actionContext)\par
+    \{\par
+        Log("Before action: " + actionContext.ActionDescriptor.ActionName);\par
+    \}\par
+\par
+    public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)\par
+    \{\par
+        Log("After action: " + actionExecutedContext.ActionContext.ActionDescriptor.ActionName);\par
+    \}\par
+\}\par
+4. Exception Filters\par
+Purpose: Handle exceptions thrown in actions.\par
+Interface: System.Web.Http.Filters.IExceptionFilter\par
+Method:\par
+\par
+OnException() \f2\u8594?\f0  Catches exceptions and modifies the response.\par
+\par
+Example:\par
+\par
+csharp\par
+public class CustomExceptionFilter : ExceptionFilterAttribute\par
+\{\par
+    public override void OnException(HttpActionExecutedContext context)\par
+    \{\par
+        if (context.Exception is UnauthorizedAccessException)\par
+        \{\par
+            context.Response = new HttpResponseMessage(HttpStatusCode.Forbidden);\par
+        \}\par
+    \}\par
+\}\par
+5. Result Filters (ASP.NET Core)\par
+Purpose: Modify the result before it\rquote s sent to the client.\par
+Interface: System.Web.Http.Filters.IResultFilter\par
+Methods:\par
+\par
+OnResultExecuting() \f2\u8594?\f0  Runs before the result is executed.\par
+\par
+OnResultExecuted() \f2\u8594?\f0  Runs after the result is executed.\par
+\par
+Example:\par
+\par
+csharp\par
+public class CustomResultFilter : ActionFilterAttribute\par
+\{\par
+    public override void OnResultExecuting(ResultExecutingContext context)\par
+    \{\par
+        // Modify response before sending\par
+        context.HttpContext.Response.Headers.Add("X-Custom-Header", "Processed");\par
+    \}\par
+\}\par
+6. Override Filters\par
+Purpose: Override default filter behavior.\par
+Interface: System.Web.Http.Filters.IOverrideFilter\par
+Method:\par
+\par
+FiltersToOverride \f2\u8594?\f0  Specifies which filters to override.\par
+\par
+Example:\par
+\par
+csharp\par
+public class NoLoggingOverride : IOverrideFilter\par
+\{\par
+    public Type FiltersToOverride => typeof(LogActionFilter);\par
+\}\par
+Filter Execution Order\par
+Authentication Filters \f2\u8594?\f0  (IAuthenticationFilter)\par
+\par
+Authorization Filters \f2\u8594?\f0  (IAuthorizationFilter)\par
+\par
+Action Filters (Before) \f2\u8594?\f0  (OnActionExecuting)\par
+\par
+Controller Action Execution\par
+\par
+Action Filters (After) \f2\u8594?\f0  (OnActionExecuted)\par
+\par
+Exception Filters \f2\u8594?\f0  (IExceptionFilter)\par
+\par
+Result Filters \f2\u8594?\f0  (IResultFilter)\par
+\par
+Applying Filters\par
+Filters can be applied at:\par
+\par
+Global level (for all controllers):\par
+\par
+csharp\par
+GlobalConfiguration.Configuration.Filters.Add(new CustomAuthFilter());\par
+Controller level:\par
+\par
+csharp\par
+[CustomAuthorize]\par
+public class UsersController : ApiController \{ ... \}\par
+Action level:\par
+\par
+csharp\par
+[LogActionFilter]\par
+public IHttpActionResult Get() \{ ... \}\par
+ASP.NET Core Differences\par
+In ASP.NET Core, filters work similarly but with slight changes:\par
+\par
+IActionFilter \f2\u8594?\f0  Microsoft.AspNetCore.Mvc.Filters.IActionFilter\par
+\par
+IExceptionFilter \f2\u8594?\f0  Microsoft.AspNetCore.Mvc.Filters.IExceptionFilter\par
+\par
+IAsyncActionFilter \f2\u8594?\f0  For async support.\par
+\par
+Would you like a deeper dive into any specific filter type? \f3\u-10179?\u-8576?\f0\par
+\par
+\f1\lang9\par
+\par
+}
+ 

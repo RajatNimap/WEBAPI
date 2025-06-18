@@ -1,4 +1,5 @@
 ﻿using E_Commerce.Data;
+using E_Commerce.Filters;
 using E_Commerce.Model;
 using E_Commerce.Model.Entities;
 using Microsoft.AspNetCore.Http;
@@ -83,6 +84,7 @@ namespace E_Commerce.Controllers
             });
 
         }
+        [ServiceFilter(typeof(AuditLog))]
         [HttpGet]
         public async Task<IActionResult> GetData()
         {

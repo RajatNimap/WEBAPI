@@ -6,6 +6,7 @@ using E_Commerce.Model.Entities;
 using E_Commerce.Model;
 using Microsoft.VisualBasic;
 using System.Collections.Immutable;
+using E_Commerce.Filters;
 
 namespace E_Commerce.Controllers
 {
@@ -20,6 +21,11 @@ namespace E_Commerce.Controllers
             Database = Datbase; 
         }
         [HttpGet]
+        // [AgeauthorizationFilter(5)]
+        // [TypeFilter(typeof(ResourceFilter))]
+        [ServiceFilter(typeof(ResultFIlter))]
+
+
         public async Task<IActionResult> Getdata(int page=1,int pagesize=5)
         {
             var data = await Database.products.ToListAsync();
@@ -32,8 +38,10 @@ namespace E_Commerce.Controllers
                 .ToList();           
             return Ok(data);    
         }
+
         [HttpGet]
         [Route("{id}")]
+        [TypeFilter(typeof(ResourceFilter))]
         public async Task<IActionResult> Getdata(int id)
         {   
             var data=await Database.products.FirstOrDefaultAsync(x=>x.Id == id);  
