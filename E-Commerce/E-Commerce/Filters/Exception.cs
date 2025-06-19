@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace E_Commerce.Filters
 {
-    public class Exception : IExceptionFilter
+    public class Exception :Attribute, IExceptionFilter
     {
         public void OnException(ExceptionContext context)
         {

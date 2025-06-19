@@ -21,7 +21,6 @@ namespace MvcLearning.Controllers
         [HttpGet("~/")]
         public async Task<IActionResult> Index()
         {
-
             var data = await _todoListCrud.GettodoListData();
             return View(data);
 
@@ -36,9 +35,7 @@ namespace MvcLearning.Controllers
         [HttpGet("create")]
         public async Task<IActionResult> AddTodolIst()
         {
-
             return View();
-
         }
 
         [HttpPost("post")]
@@ -93,7 +90,6 @@ namespace MvcLearning.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
 
         public int Detail(int id)
         {
