@@ -23,7 +23,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SyncDatabase",
+              "Title": "SyncDatabase.csproj",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\SyncDatabase\\SyncDatabase\\SyncDatabase.csproj",
               "RelativeDocumentMoniker": "SyncDatabase\\SyncDatabase.csproj",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\SyncDatabase\\SyncDatabase\\SyncDatabase.csproj",
@@ -41,7 +41,7 @@
               "RelativeDocumentMoniker": "SyncDatabase\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\SyncDatabase\\SyncDatabase\\Program.cs*",
               "RelativeToolTip": "SyncDatabase\\Program.cs*",
-              "ViewState": "AgIAABgAAAAAAAAAAAAmwC0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T05:26:54.463Z",
               "EditorCaption": ""

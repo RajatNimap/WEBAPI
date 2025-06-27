@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MDB_Sync")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51cf0b7c4c7b063346d4261c6a71ad0fa9afb093")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fd8f3b8a36e97648dc9735a9768ede687be2f33")]
 [assembly: System.Reflection.AssemblyProductAttribute("MDB_Sync")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MDB_Sync")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
