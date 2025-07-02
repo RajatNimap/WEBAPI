@@ -425,6 +425,7 @@ namespace RobustAccessDbSync
             PrintSuccess("\nStarting optimized synchronization...");
             PrintInfo("Press 'Q' then Enter to stop synchronization.\n");
 
+            await ContinuousSync(serverConnStr, clientConnStr, syncMetaFile, metadata);
             var syncTask = Task.Run(() => ContinuousSync(serverConnStr, clientConnStr, syncMetaFile, metadata));
 
             while (_syncRunning)
@@ -809,10 +810,10 @@ namespace RobustAccessDbSync
                     foreach (var table in allTables)
                     {
                         // Client → Server
-                        SyncTableStructure(clientConnStr, serverConnStr, table);
+                       // SyncTableStructure(clientConnStr, serverConnStr, table);
 
                         // Server → Client
-                        SyncTableStructure(serverConnStr, clientConnStr, table);
+                        //SyncTableStructure(serverConnStr, clientConnStr, table);
                         _cycleTimer.Restart();
                         PrintInfo($"Starting sync cycle at {DateTime.Now:T}");
 
@@ -1074,6 +1075,7 @@ namespace RobustAccessDbSync
             SyncMetadata metadata)
         {
             int changesApplied = 0;
+            
             DateTime maxTimestamp = lastSync;
 
             try
@@ -1107,12 +1109,12 @@ namespace RobustAccessDbSync
                     // Modified query with DESC and optional TOP clause for better performance
 
                     string query = $@"SELECT * FROM [{tableName}] 
-                                                WHERE Serverzeit >= @lastSync
+                                                WHERE Serverzeit >= ?
                                                 ORDER BY Serverzeit DESC";  // Newest first
 
                     using (var cmd = new OleDbCommand(query, sourceConn))
                     {
-                        cmd.Parameters.AddWithValue("@lastSync", lastSync);
+                        cmd.Parameters.AddWithValue("?", lastSync); // Order matters — name is ignored
 
                         using (var reader = cmd.ExecuteReader())
                         {
