@@ -993,7 +993,7 @@ namespace RobustAccessDbSync
                     using (var conn = new OleDbConnection(clientConnStr))
                     {
                         conn.Open();
-                        string query = $@"SELECT * FROM [{tableName}] WHERE Serverzeit > @lastSync";
+                        string query = $@"SELECT * FROM [{tableName}] WHERE Serverzeit >= @lastSync";
 
                         using (var cmd = new OleDbCommand(query, conn))
                         {
@@ -1107,7 +1107,7 @@ namespace RobustAccessDbSync
                     // Modified query with DESC and optional TOP clause for better performance
 
                     string query = $@"SELECT * FROM [{tableName}] 
-                                                WHERE Serverzeit > @lastSync
+                                                WHERE Serverzeit >= @lastSync
                                                 ORDER BY Serverzeit DESC";  // Newest first
 
                     using (var cmd = new OleDbCommand(query, sourceConn))
