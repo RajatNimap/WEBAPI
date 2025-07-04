@@ -1,8 +1,32 @@
 {
   "TableLastSync": {
-    "Analyse": "2025-07-03T06:38:27.6648949Z",
-    "Employee": "2025-07-03T17:41:30",
-    "Nimap": "2025-07-03T17:54:37"
+    "Analyse": "2025-07-04T13:04:01",
+    "Anfahrstellen": "0001-01-01T00:00:00",
+    "Anfragen": "2025-07-03T09:33:15",
+    "Anfragen_Notizen": "2025-07-02T15:58:24",
+    "Ansprechpartner": "2025-07-02T16:23:27",
+    "DB_Const": "2025-07-04T11:08:23.0337765Z",
+    "Firmen": "2025-07-02T16:35:47",
+    "Frachten": "2025-07-02T14:27:47",
+    "Kuerzel": "2025-07-04T11:08:23.3658296Z",
+    "Kursbewertung": "0001-01-01T00:00:00",
+    "Kurse": "1899-12-30T00:00:01",
+    "loeschen": "0001-01-01T00:00:00",
+    "Mails": "2025-07-02T14:26:32",
+    "Nutzer": "2025-07-02T14:28:23",
+    "Preisinfos_Basis": "2025-01-27T16:48:41",
+    "Preisinfos_Einstellungen": "2025-02-06T09:46:10",
+    "Preisinfos_Firmen": "2025-02-06T09:46:28",
+    "Preisinfos_Frachten": "2025-01-27T16:50:21",
+    "Preisinfos_Frachten_km": "2025-01-27T16:50:22",
+    "Preisinfos_Quellen_Ausschluss": "2025-01-27T16:50:11",
+    "Preisinfos_Standartliste": "2025-02-06T09:36:46",
+    "Relations": "2025-06-05T14:10:20",
+    "Standardsorten": "2025-01-27T16:50:23",
+    "todo": "2025-07-02T12:23:22",
+    "todo_notiz": "2025-06-14T11:10:56",
+    "Werkstoffe": "2025-07-01T11:55:24",
+    "Werkstoffe_Alias": "2025-06-02T13:33:38"
   },
   "QueuedChanges": []
 }

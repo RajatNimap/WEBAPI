@@ -45,10 +45,9 @@
             static string clientDbPath;
             static string serverDbPath;
             static string filePath = "user_data.txt"; // File to save the input
+            static string syncMetaFile = "sync_metadata.json";
 
-
-
-            static void GetClinetServerPath()
+        static void GetClinetServerPath()
             {
                 Console.Title = "Database Synchronization Tool";
                 Console.CursorVisible = false;
@@ -337,7 +336,7 @@
                     }
                 }
 
-                string syncMetaFile = "sync_metadata.json";
+                 
                 SyncMetadata metadata = null;
 
                 if (!File.Exists(clientDbPath))
@@ -442,6 +441,7 @@
             using (var command = new OleDbCommand(query, connection))
             {
                 DateTime nowUtc = SafeTimestamp(DateTime.UtcNow);
+                nowUtc = nowUtc.AddSeconds(-1);
                 command.Parameters.AddWithValue("?", nowUtc);
                 try
                 {
@@ -589,6 +589,7 @@
                     .Distinct(StringComparer.OrdinalIgnoreCase)
                     .ToList();
 
+
                 foreach (var table in allTables)
                 {
 
@@ -598,7 +599,12 @@
                     SyncTableStructure(serverConnStr, clientConnStr, table);
                 }
 
-                foreach (var table in allTables)
+
+            var allTables1 = GetAllTableNames(serverConnStr);
+
+
+
+            foreach (var table in allTables1)
                 {
                     if (!metadata.TableLastSync.ContainsKey(table))
                     {
@@ -792,153 +798,167 @@
                 }
             }
 
-            static async Task ContinuousSync(
-                string serverConnStr,
-                string clientConnStr,
-                string syncMetaFile,
-                SyncMetadata metadata)
+        
+        static async Task ContinuousSync(
+string serverConnStr,
+string clientConnStr,
+string syncMetaFile,
+SyncMetadata metadata)
+        {
+            while (_syncRunning)
             {
-
-                while (_syncRunning)
+                
+                try
                 {
-                    try
-                    {
-                        var clientTables = GetAllTableNames(clientConnStr);
-                        var serverTables = GetAllTableNames(serverConnStr);
-                        var allTables = clientTables.Union(serverTables).ToList();
+                    var clientTables = GetAllTableNames(clientConnStr);
+                    var serverTables = GetAllTableNames(serverConnStr);
+                    var allTables = clientTables.Union(serverTables).ToList();
 
-                        // Bi-directional table structure sync
-                        foreach (var table in allTables)
+                    foreach (var table in allTables)
+                    {
+                        _cycleTimer.Restart();
+                        PrintInfo($"Starting sync cycle at {DateTime.Now:T}");
+
+                        _isOnline = CheckNetworkConnection(SERVER_IP);
+
+                        if (_isOnline)
                         {
-                            // Client → Server
-                           // SyncTableStructure(clientConnStr, serverConnStr, table);
-
-                            // Server → Client
-                            //SyncTableStructure(serverConnStr, clientConnStr, table);
-                            _cycleTimer.Restart();
-                            PrintInfo($"Starting sync cycle at {DateTime.Now:T}");
-
-                            _isOnline = CheckNetworkConnection(SERVER_IP);
-
-                            if (_isOnline)
+                            if (_lastOnlineTime == DateTime.MinValue)
                             {
-                                if (_lastOnlineTime == DateTime.MinValue)
-                                {
-                                    PrintSuccess("Connection restored");
-                                }
-                                _lastOnlineTime = DateTime.Now;
+                                PrintSuccess("Connection restored");
+                            }
+                            _lastOnlineTime = DateTime.Now;
 
-                                if (metadata.QueuedChanges.Count > 0)
-                                {
-                                    PrintInfo($"Processing {metadata.QueuedChanges.Count} queued changes");
-                                    await ProcessQueuedChanges(metadata, clientConnStr, serverConnStr);
-                                    SaveSyncMetadata(syncMetaFile, metadata);
-                                }
+                            if (metadata.QueuedChanges.Count > 0)
+                            {
+                                PrintInfo($"Processing {metadata.QueuedChanges.Count} queued changes");
+                                await ProcessQueuedChanges(metadata, clientConnStr, serverConnStr);
+                                SaveSyncMetadata(syncMetaFile, metadata);
+                            }
 
-                                int totalChanges = 0;
-                                foreach (var tableName in allTables)
-                                {
-                                 totalChanges = 0;
-                                    try
-                                    {
+                            int totalChanges = 0;
 
-                                        DateTime lastSync = metadata.TableLastSync.ContainsKey(tableName)
-                                            ? metadata.TableLastSync[tableName]
-                                            : DateTime.MinValue;
+                            foreach (var tableName in allTables)
+                            {
+                                try
+                                {
+                                    // Ensure no null Serverzeit entries
+                                    UpdateNullServerzeitForTable(clientConnStr, tableName);
+                                    UpdateNullServerzeitForTable(serverConnStr, tableName);
+
+                                    // Load last sync timestamp from metadata
+                                    DateTime lastSync = metadata.TableLastSync.TryGetValue(tableName, out var syncTime)
+                                        ? syncTime
+                                        : DateTime.MinValue;
+
                                     PrintInfo($"Syncing {tableName} since {lastSync:yyyy-MM-dd HH:mm:ss}");
-                                        int serverToClient = await SyncDirection(
-                                            sourceConnStr: serverConnStr,
-                                            targetConnStr: clientConnStr,
-                                            tableName: tableName,
-                                            lastSync: lastSync,
-                                            isServerToClient: true,
-                                            metadata: metadata
-                                        );
 
-                                        if (serverToClient > 0)
-                                        {
-                                            PrintSuccess($"{tableName} sync: Server→Client: {serverToClient}");
-                                            totalChanges += serverToClient;
-                                        }
-                                        int clientToServer = await SyncDirection(
-                                            sourceConnStr: clientConnStr,
-                                            targetConnStr: serverConnStr,
-                                            tableName: tableName,
-                                            lastSync: lastSync,
-                                            isServerToClient: false,
-                                            metadata: metadata
-                                        );
+                                    // Sync Server → Client
+                                    int serverToClient = await SyncDirection(
+                                        sourceConnStr: serverConnStr,
+                                        targetConnStr: clientConnStr,
+                                        tableName: tableName,
+                                        lastSync: lastSync,
+                                        isServerToClient: true,
+                                        metadata: metadata
+                                    );
 
-                                        if (clientToServer > 0)
-                                        {
-                                            PrintSuccess($"{tableName} sync: client→Server: {clientToServer}");
-                                            totalChanges += clientToServer;
-
-                                        }
-
-                                        //if (serverToClient > 0 || clientToServer > 0)
-                                        //{
-                                        //   // PrintSuccess($"{tableName} sync: Server→Client: {serverToClient}, Client→Server: {clientToServer}");// Do not overwrite metadata.TableLastSync here
-                                        //    totalChanges += serverToClient + clientToServer;
-                                        //}
-
-                                        else
-                                        {
-                                            PrintInfo($"No changes for {tableName}");
-                                        }
-                                    }
-                                    catch (Exception ex)
+                                    if (serverToClient > 0)
                                     {
-                                        PrintError($"Error syncing table {tableName}: {ex.Message}");
+                                        PrintSuccess($"{tableName} sync: Server → Client: {serverToClient}");
+                                        totalChanges += serverToClient;
+                                    }
+
+                                    // Refresh last sync from metadata in case it was updated
+                    
+                                    // Sync Client → Server
+                                    int clientToServer = await SyncDirection(
+                                        sourceConnStr: clientConnStr,
+                                        targetConnStr: serverConnStr,
+                                        tableName: tableName,
+                                        lastSync: lastSync,
+                                        isServerToClient: false,
+                                        metadata: metadata
+                                    );
+
+                                    if (clientToServer > 0)
+                                    {
+                                        PrintSuccess($"{tableName} sync: Client → Server: {clientToServer}");
+                                        totalChanges += clientToServer;
+                                    }
+
+                                    if (serverToClient > 0 || clientToServer > 0)
+                                    {
+                                        //PrintSuccess($"{tableName} sync: Server→Client: {serverToClient}, Client→Server: {clientToServer}");// Do not overwrite metadata.TableLastSync here
+                                        //totalChanges += serverToClient + clientToServer;
+
+                                        //metadata.TableLastSync[tableName] = lastSync;
+                                        //SaveSyncMetadata(syncMetaFile, metadata);
+
+
+                                    }
+                                    if (serverToClient == 0 && clientToServer == 0)
+                                    {
+                                        PrintInfo($"No changes for {tableName}");
+                                    }
+
+                                    // Optional: show updated sync timestamp
+                                    if (metadata.TableLastSync.TryGetValue(tableName, out var updatedSyncTime))
+                                    {
+                                        //PrintInfo($"Updated sync time for {tableName}: {updatedSyncTime:yyyy-MM-dd HH:mm:ss}");
                                     }
                                 }
-
-                                _cycleTimer.Stop();
-                                PrintSuccess($"Sync cycle completed in {_cycleTimer.Elapsed.TotalSeconds:0.00} seconds. Total changes: {totalChanges}");
-
-                                if (totalChanges == 0)
+                                catch (Exception ex)
                                 {
-                                    PrintInfo("No changes detected in this cycle");
+                                   // PrintError($"Error syncing table {tableName}: {ex.Message}");
                                 }
                             }
-                            else
+
+                            _cycleTimer.Stop();
+                            PrintSuccess($"Sync cycle completed in {_cycleTimer.Elapsed.TotalSeconds:0.00} seconds. Total changes: {totalChanges}");
+
+                            if (totalChanges == 0)
                             {
-                                if (_lastOnlineTime != DateTime.MinValue)
-                                {
-                                    PrintWarning("Connection lost - entering offline mode");
-                                    _lastOnlineTime = DateTime.MinValue;
-                                }
-
-                                await QueueLocalChanges(metadata, clientConnStr);
+                                PrintInfo("No changes detected in this cycle");
                             }
-
-                            // Wait for next cycle with countdown
-                            _nextSyncTime = DateTime.Now.AddMinutes(_syncCycleWaitMinutes);
-                            PrintInfo($"Next sync at {_nextSyncTime:T}");
-
-                            while (DateTime.Now < _nextSyncTime && _syncRunning)
-                            {
-                                TimeSpan remaining = _nextSyncTime - DateTime.Now;
-                                Console.Write($"\rWaiting for next sync in {remaining.Minutes}:{remaining.Seconds:00}...");
-                                await Task.Delay(1000);
-                            }
-
-                            Console.WriteLine();
                         }
-                    }
+                        else
+                        {
+                            if (_lastOnlineTime != DateTime.MinValue)
+                            {
+                                PrintWarning("Connection lost - entering offline mode");
+                                _lastOnlineTime = DateTime.MinValue;
+                            }
 
-                    catch (Exception ex)
-                    {
-                        PrintError($"Sync cycle error: {ex.Message}");
-                    }
-                    finally
-                    {
-                        SaveSyncMetadata(syncMetaFile, metadata);
+                            await QueueLocalChanges(metadata, clientConnStr);
+                        }
+
+                        // Wait until the next sync cycle
+                        _nextSyncTime = DateTime.Now.AddMinutes(_syncCycleWaitMinutes);
+                        PrintInfo($"Next sync at {_nextSyncTime:T}");
+
+                        while (DateTime.Now < _nextSyncTime && _syncRunning)
+                        {
+                            TimeSpan remaining = _nextSyncTime - DateTime.Now;
+                            Console.Write($"\rWaiting for next sync in {remaining.Minutes}:{remaining.Seconds:00}...");
+                            await Task.Delay(1000);
+                        }
+
+                        Console.WriteLine();
                     }
                 }
+                catch (Exception ex)
+                {
+                    PrintError($"Sync cycle error: {ex.Message}");
+                }
+                finally
+                {
+                    SaveSyncMetadata(syncMetaFile, metadata);
+                }
             }
+        }
 
-            static async Task ProcessQueuedChanges(
+        static async Task ProcessQueuedChanges(
                 SyncMetadata metadata,
                 string clientConnStr,
                 string serverConnStr)
@@ -1093,35 +1113,78 @@
 
                 try
                 {
-                         UpdateNullServerzeitForTable(sourceConnStr, tableName);
-                    using (var sourceConn = new OleDbConnection(sourceConnStr))
-                    {
-                        sourceConn.Open();
-                   
-                        string pkColumn = GetPrimaryKeyColumn(sourceConnStr, tableName);
-                        if (string.IsNullOrEmpty(pkColumn))
-                        {
-                            ExecuteNonQuery(sourceConn, $"ALTER TABLE [{tableName}] ADD COLUMN [DefaultSynCID] GUID");
-                            ExecuteNonQuery(sourceConn, $"ALTER TABLE [{tableName}] ADD CONSTRAINT pk_{tableName}_DefaultSynCID PRIMARY KEY ([DefaultSynCID])");
-                        }
+                using (var sourceConn = new OleDbConnection(sourceConnStr))
+                {
+                    sourceConn.Open();
 
-                        using (var targetconn = new OleDbConnection(targetConnStr))
+                    string pkColumn = GetPrimaryKeyColumn(sourceConnStr, tableName);
+                    if (string.IsNullOrEmpty(pkColumn))
+                    {
+                        ExecuteNonQuery(sourceConn, $"ALTER TABLE [{tableName}] ADD COLUMN [DefaultSynCID] GUID");
+                        ExecuteNonQuery(sourceConn, $"ALTER TABLE [{tableName}] ADD CONSTRAINT pk_{tableName}_DefaultSynCID PRIMARY KEY ([DefaultSynCID])");
+                    }
+
+                    using (var targetconn = new OleDbConnection(targetConnStr))
+                    {
+                        targetconn.Open();
+                        if (!TableExists(sourceConn, tableName) || !TableExists(targetconn, tableName))
                         {
-                            targetconn.Open();
-                            if (!TableExists(sourceConn, tableName) || !TableExists(targetconn, tableName))
-                            {
-                                CreateTableFromSource(sourceConn, targetconn, tableName);
-                            }
+                            CreateTableFromSource(sourceConn, targetconn, tableName);
                         }
-     
+                    }
+
 
                     //string query = $@"SELECT * FROM [{tableName}] 
                     //                WHERE Serverzeit > @lastSync
                     //                ORDER BY Serverzeit";
                     // Modified query with DESC and optional TOP clause for better performance
 
-                    string query = $@"SELECT * FROM [{tableName}] 
-                                                    WHERE Serverzeit >= ?
+                    if (isServerToClient)
+                    {
+                        string query = $@"SELECT * FROM [{tableName}] 
+                                                    WHERE Serverzeit > ?
+                                                    ORDER BY Serverzeit DESC";  // Newest first
+
+                        using (var cmd = new OleDbCommand(query, sourceConn))
+                        {
+                            DateTime cleanedLastSync = SafeTimestamp(lastSync); // keep original timestamp, strip milliseconds
+                            cmd.Parameters.AddWithValue("?", cleanedLastSync);
+
+                            using (var reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    var row = new Dictionary<string, object>();
+                                    for (int i = 0; i < reader.FieldCount; i++)
+                                    {
+                                        row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                                    }
+
+                                    using (var targetConn = new OleDbConnection(targetConnStr))
+                                    {
+                                        targetConn.Open();
+
+                                        if (ApplyChangeWithConflictResolution(
+                                        targetConn,
+                                        tableName,
+                                        row,
+                                        isServerToClient,
+                                        pkColumn))
+                                        {
+                                            changesApplied++;
+                                            var rowTimestamp = Convert.ToDateTime(row["Serverzeit"]);
+                                            if (rowTimestamp > maxTimestamp)
+                                                maxTimestamp = rowTimestamp;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string query = $@"SELECT * FROM [{tableName}] 
+                                                    WHERE Serverzeit > ?
                                                     ORDER BY Serverzeit DESC";  // Newest first
 
                         using (var cmd = new OleDbCommand(query, sourceConn))
@@ -1161,20 +1224,31 @@
                         }
                     }
                 }
+                }
                 catch (Exception ex)
                 {
-                     PrintError($"Error syncing {tableName}: {ex.Message}");
+                     //PrintError($"Error syncing {tableName}: {ex.Message}");
                 }
 
-                if (changesApplied > 0 && maxTimestamp > lastSync)
-                {
-                    metadata.TableLastSync[tableName] = maxTimestamp.AddSeconds(2);
+            if (maxTimestamp >= metadata.TableLastSync[tableName])
+            {
+                if(changesApplied> 0 || isServerToClient) { 
+                maxTimestamp = maxTimestamp.AddSeconds(1);
+                metadata.TableLastSync[tableName] = maxTimestamp;
+                SaveSyncMetadata(syncMetaFile, metadata);
+
                 }
 
-                return changesApplied;
+            }
+            // Add this after important metadata updates
+           
+
+            return changesApplied;
             }
 
-            static DateTime SafeTimestamp(DateTime dt)
+     
+
+        static DateTime SafeTimestamp(DateTime dt)
             {
                 return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Kind);
             }
