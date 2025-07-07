@@ -27,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|solutionrelative:test\\services\\icrudservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Migrations\\20250630122143_adff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Test\\Migrations\\20250630122143_adff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\test\\test\\entities\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|solutionrelative:test\\entities\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,20 +51,24 @@
       "RelativeMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|solutionrelative:test\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Migrations\\20250630113111_sdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Test\\Migrations\\20250630113111_sdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Migrations\\20250630112201_djfsd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Test\\Migrations\\20250630112201_djfsd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Migrations\\20250630111632_jksdhf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Test\\Migrations\\20250630111632_jksdhf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\test\\test\\test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|solutionrelative:test\\test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\test\\test\\migrations\\20250630122143_adff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|solutionrelative:test\\migrations\\20250630122143_adff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\test\\test\\migrations\\20250630113111_sdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|solutionrelative:test\\migrations\\20250630113111_sdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\test\\test\\migrations\\20250630112201_djfsd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|solutionrelative:test\\migrations\\20250630112201_djfsd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\test\\test\\migrations\\20250630111632_jksdhf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32424417-ABCD-44B6-888B-B4134FA8524D}|Test\\Test.csproj|solutionrelative:test\\migrations\\20250630111632_jksdhf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,8 +78,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -90,8 +98,7 @@
               "RelativeToolTip": "Test\\Controllers\\OrderController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAgwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T12:10:59.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T12:10:59.056Z"
             },
             {
               "$type": "Document",
@@ -103,8 +110,7 @@
               "RelativeToolTip": "Test\\Services\\IcrudServices.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T11:19:17.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:19:17.042Z"
             },
             {
               "$type": "Document",
@@ -116,8 +122,7 @@
               "RelativeToolTip": "Test\\Datacontext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T11:06:21.96Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:06:21.96Z"
             },
             {
               "$type": "Document",
@@ -127,7 +132,7 @@
               "RelativeDocumentMoniker": "Test\\Controllers\\CategoryController.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "Test\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAAkAAACA/////183wCUAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAg/P///780wCgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-30T12:02:34.097Z",
               "EditorCaption": ""
@@ -155,12 +160,11 @@
               "RelativeToolTip": "Test\\Controllers\\Productcontroller.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAwwDEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T12:04:32.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T12:04:32.239Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "20250630122143_adff.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Migrations\\20250630122143_adff.cs",
               "RelativeDocumentMoniker": "Test\\Migrations\\20250630122143_adff.cs",
@@ -168,12 +172,11 @@
               "RelativeToolTip": "Test\\Migrations\\20250630122143_adff.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T12:21:43.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T12:21:43.525Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Orders.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Entities\\Orders.cs",
               "RelativeDocumentMoniker": "Test\\Entities\\Orders.cs",
@@ -181,20 +184,11 @@
               "RelativeToolTip": "Test\\Entities\\Orders.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T12:11:42.954Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "WhenOpened": "2025-06-30T12:11:42.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "category.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Entities\\category.cs",
               "RelativeDocumentMoniker": "Test\\Entities\\category.cs",
@@ -202,12 +196,11 @@
               "RelativeToolTip": "Test\\Entities\\category.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T11:12:02.099Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:12:02.099Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "customer.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Entities\\customer.cs",
               "RelativeDocumentMoniker": "Test\\Entities\\customer.cs",
@@ -215,12 +208,11 @@
               "RelativeToolTip": "Test\\Entities\\customer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T11:11:17.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:11:17.468Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "product.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Entities\\product.cs",
               "RelativeDocumentMoniker": "Test\\Entities\\product.cs",
@@ -228,12 +220,11 @@
               "RelativeToolTip": "Test\\Entities\\product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T11:12:40.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:12:40.135Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Program.cs",
               "RelativeDocumentMoniker": "Test\\Program.cs",
@@ -241,12 +232,11 @@
               "RelativeToolTip": "Test\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T11:04:06.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:04:06.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\appsettings.json",
               "RelativeDocumentMoniker": "Test\\appsettings.json",
@@ -254,12 +244,11 @@
               "RelativeToolTip": "Test\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-30T11:04:09.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:04:09.19Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "20250630113111_sdf.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Migrations\\20250630113111_sdf.cs",
               "RelativeDocumentMoniker": "Test\\Migrations\\20250630113111_sdf.cs",
@@ -267,12 +256,11 @@
               "RelativeToolTip": "Test\\Migrations\\20250630113111_sdf.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T11:31:12.071Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:31:12.071Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "20250630112201_djfsd.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Migrations\\20250630112201_djfsd.cs",
               "RelativeDocumentMoniker": "Test\\Migrations\\20250630112201_djfsd.cs",
@@ -280,12 +268,11 @@
               "RelativeToolTip": "Test\\Migrations\\20250630112201_djfsd.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T11:22:01.457Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:22:01.457Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "20250630111632_jksdhf.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Migrations\\20250630111632_jksdhf.cs",
               "RelativeDocumentMoniker": "Test\\Migrations\\20250630111632_jksdhf.cs",
@@ -293,21 +280,19 @@
               "RelativeToolTip": "Test\\Migrations\\20250630111632_jksdhf.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T11:16:33.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:16:33.207Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Test",
+              "DocumentIndex": 12,
+              "Title": "Test.csproj",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Test.csproj",
               "RelativeDocumentMoniker": "Test\\Test.csproj",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Test\\Test\\Test.csproj",
               "RelativeToolTip": "Test\\Test.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-30T11:16:13.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T11:16:13.966Z"
             }
           ]
         }

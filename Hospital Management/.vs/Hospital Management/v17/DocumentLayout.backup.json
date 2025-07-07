@@ -226,8 +226,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -296,7 +304,7 @@
               "RelativeDocumentMoniker": "Hospital Management\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Program.cs",
               "RelativeToolTip": "Hospital Management\\Program.cs",
-              "ViewState": "AgIAAEQAAACsZmZmZiYgwBYAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAACAmJmZmRkWwFMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T11:28:16.109Z",
               "EditorCaption": ""

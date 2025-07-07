@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudmvc\\crudmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|solutionrelative:crudmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudmvc\\crudmvc\\sevices\\servicesimplementaion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|solutionrelative:crudmvc\\sevices\\servicesimplementaion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudmvc\\crudmvc\\sevices\\iemployeeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|solutionrelative:crudmvc\\sevices\\iemployeeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudmvc\\crudmvc\\models\\userdatamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|solutionrelative:crudmvc\\models\\userdatamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudmvc\\crudmvc\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|solutionrelative:crudmvc\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudmvc\\crudmvc\\crudmvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FFB737ED-EE81-4D98-A021-09FAEEF116D2}|CrudMvc\\CrudMvc.csproj|solutionrelative:crudmvc\\crudmvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CrudMvc\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CrudMvc\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T13:21:08.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Datacontext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Data\\Datacontext.cs",
+              "RelativeDocumentMoniker": "CrudMvc\\Data\\Datacontext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Data\\Datacontext.cs",
+              "RelativeToolTip": "CrudMvc\\Data\\Datacontext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T13:10:47.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserdataModel.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Models\\UserdataModel.cs",
+              "RelativeDocumentMoniker": "CrudMvc\\Models\\UserdataModel.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Models\\UserdataModel.cs",
+              "RelativeToolTip": "CrudMvc\\Models\\UserdataModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T13:10:31.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IEmployeeInterface.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Sevices\\IEmployeeInterface.cs",
+              "RelativeDocumentMoniker": "CrudMvc\\Sevices\\IEmployeeInterface.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Sevices\\IEmployeeInterface.cs*",
+              "RelativeToolTip": "CrudMvc\\Sevices\\IEmployeeInterface.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T13:08:27.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServicesImplementaion.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Sevices\\ServicesImplementaion.cs",
+              "RelativeDocumentMoniker": "CrudMvc\\Sevices\\ServicesImplementaion.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\Sevices\\ServicesImplementaion.cs*",
+              "RelativeToolTip": "CrudMvc\\Sevices\\ServicesImplementaion.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T13:06:14.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CrudMvc",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\CrudMvc.csproj",
+              "RelativeDocumentMoniker": "CrudMvc\\CrudMvc.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\CrudMvc\\CrudMvc\\CrudMvc.csproj*",
+              "RelativeToolTip": "CrudMvc\\CrudMvc.csproj*",
+              "ViewState": "AgIAAAwAAAAAAAAAAABQPQAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-07T12:22:09.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

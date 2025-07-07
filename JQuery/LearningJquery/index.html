@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+
+    <!-- This is CDN it is content delevery network  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ 
+</head>
+
+<style>
+    #btn{
+        height: 100px;
+        width: 200px;
+    }
+</style>
+
+
+   <!-- <script>
+        $(document).ready(function(){
+                $('#btn').click(function(){
+                    alert('You are clicked the button');
+                })
+        })
+    </script> -->
+    <!-- here we have function window load it whathappen in the .ready function as soon as dom load it start work but
+    sometime we require to wait for the load all window like imgage video audio and we have to work that element therefore
+    in this condition we have to use window load funtion -->
+
+    
+  <script>
+//   $(window).on('load', function() {
+//     $('#div').html("Height = " + $('#image').height() + "<br>" + "Width = " + $('#image').width());
+//     console.log("hello");
+//     //
+//   });
+
+  $(document).ready(function(){
+     $('#div').html("Height = " + $('#image').height() + "<br>" + "Width = " + $('#image').width());
+
+   // alert("This is from the window load");
+  })
+</script>
+
+<body>
+    <!-- We use .ready function to firstly load all the dom in the browser then any function or action perform
+    because here below we use funtion before the dom so here it did not get btn id and not work but when i use
+    ready it will work -->
+        <!-- <script>
+                $('#btn').click(function(){
+                    alert('Click me');
+                })
+    </script> -->
+
+
+    <div id="div">  
+    <h1>Hello world </h1>
+    <button id="btn" > Click me </button>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/640px-Microsoft_.NET_logo.svg.png" id="image"> 
+    </div>
+
+</body>
+</html>

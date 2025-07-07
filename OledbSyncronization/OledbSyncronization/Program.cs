@@ -1,220 +1,220 @@
-﻿    using System.Text.Json;
-    using System.Threading;
-    using System.Data.OleDb;
-    using System.Data;
-    using System.Net.NetworkInformation;
-    using System.IO;
-    using System.Text;
-    using System.Diagnostics;
-    using System.Collections.Concurrent;
-    using System.Net.Sockets;
-    using System.Security.Cryptography.X509Certificates;
+﻿using System.Text.Json;
+using System.Threading;
+using System.Data.OleDb;
+using System.Data;
+using System.Net.NetworkInformation;
+using System.IO;
+using System.Text;
+using System.Diagnostics;
+using System.Collections.Concurrent;
+using System.Net.Sockets;
+using System.Security.Cryptography.X509Certificates;
 
-    namespace RobustAccessDbSync
+namespace RobustAccessDbSync
+{
+    class SyncMetadata
     {
-        class SyncMetadata
-        {
-            public Dictionary<string, DateTime> TableLastSync { get; set; } = new Dictionary<string, DateTime>();
-            public List<QueuedChange> QueuedChanges { get; set; } = new List<QueuedChange>();
-        }
+        public Dictionary<string, DateTime> TableLastSync { get; set; } = new Dictionary<string, DateTime>();
+        public List<QueuedChange> QueuedChanges { get; set; } = new List<QueuedChange>();
+    }
 
-        class QueuedChange
-        {
-            public string TableName { get; set; }
-            public string PkColumn { get; set; }
-            public Dictionary<string, object> RowData { get; set; }
-            public bool IsDelete { get; set; }
-            public DateTime ChangeTime { get; set; }
-        }
+    class QueuedChange
+    {
+        public string TableName { get; set; }
+        public string PkColumn { get; set; }
+        public Dictionary<string, object> RowData { get; set; }
+        public bool IsDelete { get; set; }
+        public DateTime ChangeTime { get; set; }
+    }
 
-        class Program
-        {
-            static string DRIVE_LETTER = "X:";
-            private static bool _syncRunning = true;
-            private const string ConflictSuffix = "_CONFLICT_RESOLVED";
+    class Program
+    {
+        static string DRIVE_LETTER = "X:";
+        private static bool _syncRunning = true;
+        private const string ConflictSuffix = "_CONFLICT_RESOLVED";
 
-            static string SERVER_IP;
-            static string SHARE_NAME;
-            static string USERNAME;
-            static string PASSWORD;
-            private static bool _isOnline = true;
-            private static DateTime _lastOnlineTime = DateTime.MinValue;
-            private static int _syncCycleWaitMinutes = 1;
-            private static Stopwatch _cycleTimer = new Stopwatch();
-            private static DateTime _nextSyncTime = DateTime.Now;
-            static string clientDbPath;
-            static string serverDbPath;
-            static string filePath = "user_data.txt"; // File to save the input
-            static string syncMetaFile = "sync_metadata.json";
+        static string SERVER_IP;
+        static string SHARE_NAME;
+        static string USERNAME;
+        static string PASSWORD;
+        private static bool _isOnline = true;
+        private static DateTime _lastOnlineTime = DateTime.MinValue;
+        private static int _syncCycleWaitMinutes = 1;
+        private static Stopwatch _cycleTimer = new Stopwatch();
+        private static DateTime _nextSyncTime = DateTime.Now;
+        static string clientDbPath;
+        static string serverDbPath;
+        static string filePath = "user_data.txt"; // File to save the input
+        static string syncMetaFile = "sync_metadata.json";
 
         static void GetClinetServerPath()
+        {
+            Console.Title = "Database Synchronization Tool";
+            Console.CursorVisible = false;
+
+            PrintHeader();
+            ShowGameStyleLoader("Initializing Database Synchronization Tool", 20);
+            while (true)
             {
-                Console.Title = "Database Synchronization Tool";
-                Console.CursorVisible = false;
 
-                PrintHeader();
-                ShowGameStyleLoader("Initializing Database Synchronization Tool", 20);
-                while (true)
+                // Password input
+                do
                 {
+                    Console.Write("Enter Client Path: ");
+                    clientDbPath = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(clientDbPath))
+                        Console.WriteLine("client path cannot empty");
+                } while (string.IsNullOrWhiteSpace(clientDbPath));
 
-                    // Password input
-                    do
-                    {
-                        Console.Write("Enter Client Path: ");
-                        clientDbPath = Console.ReadLine();
-                        if (string.IsNullOrWhiteSpace(clientDbPath))
-                            Console.WriteLine("client path cannot empty");
-                    } while (string.IsNullOrWhiteSpace(clientDbPath));
+                do
+                {
+                    Console.Write("Enter Server Path: ");
+                    serverDbPath = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(serverDbPath))
+                        Console.WriteLine("server path cannot empty");
+                } while (string.IsNullOrWhiteSpace(serverDbPath));
 
-                    do
-                    {
-                        Console.Write("Enter Server Path: ");
-                        serverDbPath = Console.ReadLine();
-                        if (string.IsNullOrWhiteSpace(serverDbPath))
-                            Console.WriteLine("server path cannot empty");
-                    } while (string.IsNullOrWhiteSpace(serverDbPath));
+                var serverParts = serverDbPath.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+                if (serverParts.Length < 2)
+                {
+                    PrintError("Invalid server path format. Expected format: \\\\server\\share\\path\\file.mdb");
 
-                    var serverParts = serverDbPath.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
-                    if (serverParts.Length < 2)
-                    {
-                        PrintError("Invalid server path format. Expected format: \\\\server\\share\\path\\file.mdb");
-
-                    }
-
-                    SERVER_IP = serverParts[0];
-                    SHARE_NAME = serverParts[1];
-                    // Confirmation
-                    //Console.WriteLine("\nYou entered:");
-                    //Console.WriteLine($"Serverpath: {serverDbPath}");
-                    //Console.WriteLine($"clinetpath: {clientDbPath}");
-
-                    Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
-
-                    string input = Console.ReadLine()?.Trim().ToLower();
-
-                    if (string.IsNullOrEmpty(input))
-                    {  // user just pressed Enter
-                        File.WriteAllText(filePath, SERVER_IP);
-                        File.WriteAllText(filePath, SHARE_NAME);
-                        File.WriteAllText(filePath, clientDbPath);
-                        break;
-                    }
-                    else if (input == "r")
-                        continue;
-                    else
-                        Console.WriteLine("Invalid input. Re-entering...\n");
                 }
-            }
-            static void GetServerCredentials()
-            {
 
+                SERVER_IP = serverParts[0];
+                SHARE_NAME = serverParts[1];
+                // Confirmation
+                //Console.WriteLine("\nYou entered:");
+                //Console.WriteLine($"Serverpath: {serverDbPath}");
+                //Console.WriteLine($"clinetpath: {clientDbPath}");
 
-                while (true)
-                {
-                    // Username input
-                    do
-                    {
-                        Console.Write("Enter USERNAME: ");
-                        USERNAME = Console.ReadLine();
-                        if (string.IsNullOrWhiteSpace(USERNAME))
-                            Console.WriteLine("USERNAME cannot be empty.");
-                    } while (string.IsNullOrWhiteSpace(USERNAME));
+                Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
 
-                    // Password input
-                    do
-                    {
-                        Console.Write("Enter PASSWORD: ");
-                        PASSWORD = ReadPassword();
-                        if (string.IsNullOrWhiteSpace(PASSWORD))
-                            Console.WriteLine("PASSWORD cannot be empty.");
-                    } while (string.IsNullOrWhiteSpace(PASSWORD));
+                string input = Console.ReadLine()?.Trim().ToLower();
 
-                    // Confirmation
-                    //Console.WriteLine("\nYou entered:");
-                    //Console.WriteLine($"USERNAME: {USERNAME}");
-                    //Console.WriteLine($"PASSWORD: {new string('*', PASSWORD.Length)}");
-
-                    Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
-
-                    string input = Console.ReadLine()?.Trim().ToLower();
-
-                    if (string.IsNullOrEmpty(input))
-                    {  // user just pressed Enter
-                        File.WriteAllText(filePath, USERNAME);
-                        File.WriteAllText(filePath, PASSWORD);
-                        break;
-                    }
-                    else if (input == "r")
-                        continue;
-                    else
-                        Console.WriteLine("Invalid input. Re-entering...\n");
+                if (string.IsNullOrEmpty(input))
+                {  // user just pressed Enter
+                    File.WriteAllText(filePath, SERVER_IP);
+                    File.WriteAllText(filePath, SHARE_NAME);
+                    File.WriteAllText(filePath, clientDbPath);
+                    break;
                 }
+                else if (input == "r")
+                    continue;
+                else
+                    Console.WriteLine("Invalid input. Re-entering...\n");
             }
+        }
+        static void GetServerCredentials()
+        {
 
-            [System.Runtime.Versioning.SupportedOSPlatform("windows")]
-            static async Task Main()
+
+            while (true)
             {
-                try
+                // Username input
+                do
                 {
+                    Console.Write("Enter USERNAME: ");
+                    USERNAME = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(USERNAME))
+                        Console.WriteLine("USERNAME cannot be empty.");
+                } while (string.IsNullOrWhiteSpace(USERNAME));
 
-                    // Check if credentials file exists
-                    if (File.Exists(filePath))
+                // Password input
+                do
+                {
+                    Console.Write("Enter PASSWORD: ");
+                    PASSWORD = ReadPassword();
+                    if (string.IsNullOrWhiteSpace(PASSWORD))
+                        Console.WriteLine("PASSWORD cannot be empty.");
+                } while (string.IsNullOrWhiteSpace(PASSWORD));
+
+                // Confirmation
+                //Console.WriteLine("\nYou entered:");
+                //Console.WriteLine($"USERNAME: {USERNAME}");
+                //Console.WriteLine($"PASSWORD: {new string('*', PASSWORD.Length)}");
+
+                Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
+
+                string input = Console.ReadLine()?.Trim().ToLower();
+
+                if (string.IsNullOrEmpty(input))
+                {  // user just pressed Enter
+                    File.WriteAllText(filePath, USERNAME);
+                    File.WriteAllText(filePath, PASSWORD);
+                    break;
+                }
+                else if (input == "r")
+                    continue;
+                else
+                    Console.WriteLine("Invalid input. Re-entering...\n");
+            }
+        }
+
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+        static async Task Main()
+        {
+            try
+            {
+
+                // Check if credentials file exists
+                if (File.Exists(filePath))
+                {
+                    string[] savedData = File.ReadAllLines(filePath);
+
+                    if (savedData.Length >= 5) // Ensure we have all required data
                     {
-                        string[] savedData = File.ReadAllLines(filePath);
+                        Console.WriteLine("Saved credentials found:");
+                        Console.WriteLine($"Username: {savedData[0]}");
+                        Console.WriteLine($"Server Path: {savedData[4]}");
+                        Console.WriteLine($"Client Path: {savedData[5]}");
 
-                        if (savedData.Length >= 5) // Ensure we have all required data
+                        Console.Write("\nUse saved credentials? (Y/N): ");
+                        var key = Console.ReadKey();
+
+                        if (key.Key == ConsoleKey.Y)
                         {
-                            Console.WriteLine("Saved credentials found:");
-                            Console.WriteLine($"Username: {savedData[0]}");
-                            Console.WriteLine($"Server Path: {savedData[4]}");
-                            Console.WriteLine($"Client Path: {savedData[5]}");
+                            // Use saved credentials
+                            USERNAME = savedData[0];
+                            PASSWORD = savedData[1];
+                            SERVER_IP = savedData[2];
+                            SHARE_NAME = savedData[3];
+                            serverDbPath = savedData[4];
+                            clientDbPath = savedData[5];
 
-                            Console.Write("\nUse saved credentials? (Y/N): ");
-                            var key = Console.ReadKey();
-
-                            if (key.Key == ConsoleKey.Y)
-                            {
-                                // Use saved credentials
-                                USERNAME = savedData[0];
-                                PASSWORD = savedData[1];
-                                SERVER_IP = savedData[2];
-                                SHARE_NAME = savedData[3];
-                                serverDbPath = savedData[4];
-                                clientDbPath = savedData[5];
-
-                                Console.WriteLine("\nUsing saved credentials...");
-                            }
-                            else
-                            {
-                                // Get new credentials
-                                GetClinetServerPath();
-                                GetServerCredentials();
-                            }
+                            Console.WriteLine("\nUsing saved credentials...");
                         }
                         else
                         {
-                            Console.WriteLine("Saved credentials are incomplete.");
+                            // Get new credentials
                             GetClinetServerPath();
                             GetServerCredentials();
                         }
                     }
                     else
                     {
-                        // First run - get new credentials
+                        Console.WriteLine("Saved credentials are incomplete.");
                         GetClinetServerPath();
                         GetServerCredentials();
-
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.WriteLine("Please Run as Administrator");
+                    // First run - get new credentials
+                    GetClinetServerPath();
+                    GetServerCredentials();
+
                 }
-                Console.Write("\nSave these credentials for next time? (Y/N): ");
-                var saveKey = Console.ReadKey();
-                if (saveKey.Key == ConsoleKey.Y)
-                {
-                    File.WriteAllLines(filePath, new[] {
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Please Run as Administrator");
+            }
+            Console.Write("\nSave these credentials for next time? (Y/N): ");
+            var saveKey = Console.ReadKey();
+            if (saveKey.Key == ConsoleKey.Y)
+            {
+                File.WriteAllLines(filePath, new[] {
                 USERNAME,
                 PASSWORD,
                 SERVER_IP,
@@ -222,214 +222,263 @@
                 serverDbPath,
                 clientDbPath
             });
-                    Console.WriteLine("\n\nCredentials saved!");
+                Console.WriteLine("\n\nCredentials saved!");
+            }
+            else
+            {
+                Console.WriteLine("\n");
+            }
+
+            bool isNewClientDb = false;
+
+            if (!HasMdbExtension(clientDbPath))
+            {
+                if (File.Exists(Path.Combine(clientDbPath, Path.GetFileName(serverDbPath))))
+                {
+                    clientDbPath = Path.Combine(clientDbPath, Path.GetFileName(serverDbPath));
                 }
                 else
                 {
-                    Console.WriteLine("\n");
-                }
-
-                bool isNewClientDb = false;
-
-                if (!HasMdbExtension(clientDbPath))
-                {
-                    if (File.Exists(Path.Combine(clientDbPath, Path.GetFileName(serverDbPath))))
+                    while (true)
                     {
-                        clientDbPath = Path.Combine(clientDbPath, Path.GetFileName(serverDbPath));
-                    }
-                    else
-                    {
-                        while (true)
+                        //string destFolder = clientDbPath; // Initialize with current clientDbPath
+
+                        // If directory doesn't exist, get new input and restart the check immediately
+                        if (!Directory.Exists(clientDbPath))
                         {
-                            //string destFolder = clientDbPath; // Initialize with current clientDbPath
+                            PrintError($"ERROR: Destination folder does not exist: {clientDbPath}");
+                            Console.Write("Enter a valid destination folder: ");
+                            clientDbPath = Console.ReadLine();
+                            continue; // Restart loop to check the new input
+                        }
 
-                            // If directory doesn't exist, get new input and restart the check immediately
-                            if (!Directory.Exists(clientDbPath))
-                            {
-                                PrintError($"ERROR: Destination folder does not exist: {clientDbPath}");
-                                Console.Write("Enter a valid destination folder: ");
-                                clientDbPath = Console.ReadLine();
-                                continue; // Restart loop to check the new input
-                            }
+                        // Proceed with network operations if directory exists
+                        clientDbPath = Path.Combine(clientDbPath, Path.GetFileName(serverDbPath));
+                        RunCommand($"net use {DRIVE_LETTER} /delete", false);
 
-                            // Proceed with network operations if directory exists
-                            clientDbPath = Path.Combine(clientDbPath, Path.GetFileName(serverDbPath));
+                        // PrintInfo("Mounting shared folder...");
+                        var connectCmd = $"net use {DRIVE_LETTER} \\\\{SERVER_IP}\\{SHARE_NAME} /user:{USERNAME} {PASSWORD} /persistent:no";
+
+                        if (!RunCommand(connectCmd))
+                        {
+                            PrintError("ERROR: Failed to connect to shared folder.");
+                            GetServerCredentials();
+                            GetClinetServerPath();
+                            continue;
+                        }
+
+                        string serverFilePath = Path.Combine(DRIVE_LETTER, Path.GetFileName(serverDbPath));
+
+                        if (!File.Exists(serverFilePath))
+                        {
+                            PrintError($"ERROR: File does not exist on server: {Path.GetFileName(serverDbPath)}");
                             RunCommand($"net use {DRIVE_LETTER} /delete", false);
+                            Console.Write("Enter a valid server DB path: ");
+                            serverDbPath = Console.ReadLine();
+                            continue;
+                        }
 
-                            // PrintInfo("Mounting shared folder...");
-                            var connectCmd = $"net use {DRIVE_LETTER} \\\\{SERVER_IP}\\{SHARE_NAME} /user:{USERNAME} {PASSWORD} /persistent:no";
+                        PrintInfo("Copying file from server...");
 
-                            if (!RunCommand(connectCmd))
+                        try
+                        {
+                            File.Copy(serverFilePath, clientDbPath, true);
+                            PrintSuccess($"File successfully copied to: {clientDbPath}");
+                            isNewClientDb = true;
+
+                            // Clear any buffered key presses
+                            while (Console.KeyAvailable)
+                                Console.ReadKey(true);
+
+                            // User input handling
+                            PrintInfo("Synchronization is complete. (S) to Start Sync or (Q) to quit");
+
+                            while (true)
                             {
-                                PrintError("ERROR: Failed to connect to shared folder.");
-                                GetServerCredentials();
-                                GetClinetServerPath();
-                                continue;
-                            }
-
-                            string serverFilePath = Path.Combine(DRIVE_LETTER, Path.GetFileName(serverDbPath));
-
-                            if (!File.Exists(serverFilePath))
-                            {
-                                PrintError($"ERROR: File does not exist on server: {Path.GetFileName(serverDbPath)}");
-                                RunCommand($"net use {DRIVE_LETTER} /delete", false);
-                                Console.Write("Enter a valid server DB path: ");
-                                serverDbPath = Console.ReadLine();
-                                continue;
-                            }
-
-                            PrintInfo("Copying file from server...");
-                
-                            try
-                            {
-                                File.Copy(serverFilePath, clientDbPath, true);
-                                PrintSuccess($"File successfully copied to: {clientDbPath}");
-                                isNewClientDb = true;
-
-                                // Clear any buffered key presses
-                                while (Console.KeyAvailable)
-                                    Console.ReadKey(true);
-
-                                // User input handling
-                                PrintInfo("Synchronization is complete. (S) to Start Sync or (Q) to quit");
-
-                                while (true)
+                                if (Console.KeyAvailable)
                                 {
-                                    if (Console.KeyAvailable)
+                                    var key = Console.ReadKey(true).Key;
+
+                                    if (key == ConsoleKey.Q)
                                     {
-                                        var key = Console.ReadKey(true).Key;
-
-                                        if (key == ConsoleKey.Q)
-                                        {
-                                            _syncRunning = false;
-                                            PrintWarning("Stopping synchronization...");
-                                            Environment.Exit(0);
-                                            break;
-                                        }
-                                        else if (key == ConsoleKey.S)
-                                        {
-                                            _syncRunning = true;
-                                            PrintWarning("Starting synchronization...");
-                                            break;
-                                        }
+                                        _syncRunning = false;
+                                        PrintWarning("Stopping synchronization...");
+                                        Environment.Exit(0);
+                                        break;
                                     }
-                                    await Task.Delay(100);
+                                    else if (key == ConsoleKey.S)
+                                    {
+                                        _syncRunning = true;
+                                        PrintWarning("Starting synchronization...");
+                                        break;
+                                    }
                                 }
+                                await Task.Delay(100);
+                            }
 
-                                break; // Exit loop on success
-                            }
-                            catch (IOException ioEx)
-                            {
-                                PrintError($"File access error: {ioEx.Message}");
-                                // Consider adding retry logic here with a delay
-                            }
-                            catch (UnauthorizedAccessException authEx)
-                            {
-                                PrintError($"Permission denied: {authEx.Message}");
-                            }
-                            catch (Exception ex)
-                            {
-                                PrintError($"ERROR: File copy failed. {ex.Message}");
-                            }
-                            RunCommand($"net use {DRIVE_LETTER} /delete", false);
+                            break; // Exit loop on success
+                        }
+                        catch (IOException ioEx)
+                        {
+                            PrintError($"File access error: {ioEx.Message}");
+                            // Consider adding retry logic here with a delay
+                        }
+                        catch (UnauthorizedAccessException authEx)
+                        {
+                            PrintError($"Permission denied: {authEx.Message}");
+                        }
+                        catch (Exception ex)
+                        {
+                            PrintError($"ERROR: File copy failed. {ex.Message}");
+                        }
+                        RunCommand($"net use {DRIVE_LETTER} /delete", false);
+                    }
+                }
+            }
+
+
+            SyncMetadata metadata = null;
+
+            if (!File.Exists(clientDbPath))
+            {
+                PrintInfo("Client database not found. Attempting to pull from server...");
+                if (await PullDatabaseFromServer(serverDbPath, clientDbPath))
+                {
+                    PrintSuccess("Successfully pulled database from server to client.");
+                    isNewClientDb = true;
+                }
+                else
+                {
+                    PrintError("\nPress any key to exit...");
+                    Console.ReadKey();
+                    return;
+                }
+            }
+
+            ShowGameStyleLoader("Verifying database files", 10);
+            Console.WriteLine();
+
+            if (!VerifyDatabaseFiles(clientDbPath, serverDbPath))
+            {
+                PrintError("\nPress any key to exit...");
+                Console.ReadKey();
+                return;
+            }
+
+            string clientConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={clientDbPath};";
+            string serverConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={serverDbPath};";
+
+            ShowGameStyleLoader("Testing database connections", 20);
+            if (!TestConnection("Client DB", clientConnStr) || !TestConnection("Server DB", serverConnStr))
+            {
+                PrintError("\nPress any key to exit...");
+                Console.ReadKey();
+                return;
+            }
+
+            bool Testingdata = isNewClientDb;
+            UpdateNullServerzeit(clientConnStr, serverConnStr);
+
+            metadata = LoadSyncMetadata(syncMetaFile) ?? new SyncMetadata();
+            InitializeMetadata(metadata, clientConnStr, serverConnStr, isNewClientDb);
+
+            PrintSuccess("\nStarting optimized synchronization...");
+            PrintInfo("Press 'S' to stop, 'R' to restart, 'Q' to quit.\n");
+            //await ContinuousSync(serverConnStr, clientConnStr, syncMetaFile, metadata);
+            var syncTask = Task.Run(() => ContinuousSync(serverConnStr, clientConnStr, syncMetaFile, metadata));
+
+            //while (_syncRunning)
+            //{
+
+            //    if (Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Q)
+            //    {
+            //        _syncRunning = false;
+            //        PrintWarning("Stopping synchronization...");
+            //    }
+            //    await Task.Delay(100);
+            //}
+
+            //await syncTask;
+            //PrintInfo("\nSynchronization stopped. Press any key to exit.");
+            //Console.CursorVisible = true;
+            //Console.ReadKey();
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    var key = Console.ReadKey(true).Key;
+
+                    if (key == ConsoleKey.Q)
+                    {
+                        if (_syncRunning)
+                        {
+                            _syncRunning = false;
+                            PrintWarning("Stopping synchronization...");
+                            await syncTask;
+                        }
+                        break;
+                    }
+                    else if (key == ConsoleKey.S)
+                    {
+                        if (_syncRunning)
+                        {
+                            _syncRunning = false;
+                            PrintWarning("Stopping synchronization...");
+                            await syncTask;
+                            PrintInfo("Synchronization stopped. Press 'R' to restart or 'Q' to quit.");
                         }
                     }
-                }
-
-                 
-                SyncMetadata metadata = null;
-
-                if (!File.Exists(clientDbPath))
-                {
-                    PrintInfo("Client database not found. Attempting to pull from server...");
-                    if (await PullDatabaseFromServer(serverDbPath, clientDbPath))
+                    else if (key == ConsoleKey.R)
                     {
-                        PrintSuccess("Successfully pulled database from server to client.");
-                        isNewClientDb = true;
-                    }
-                    else
-                    {
-                        PrintError("\nPress any key to exit...");
-                        Console.ReadKey();
-                        return;
+                        if (_syncRunning)
+                        {
+                            _syncRunning = false;
+                            PrintWarning("Restarting synchronization...");
+                            await syncTask;
+                        }
+                        else
+                        {
+                            PrintWarning("Starting synchronization...");
+                        }
+
+                        _syncRunning = true;
+                        syncTask = Task.Run(() => ContinuousSync(serverConnStr, clientConnStr, syncMetaFile, metadata));
                     }
                 }
 
-                ShowGameStyleLoader("Verifying database files", 10);
-                Console.WriteLine();
-
-                if (!VerifyDatabaseFiles(clientDbPath, serverDbPath))
-                {
-                    PrintError("\nPress any key to exit...");
-                    Console.ReadKey();
-                    return;
-                }
-
-                string clientConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={clientDbPath};";
-                string serverConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={serverDbPath};";
-
-                ShowGameStyleLoader("Testing database connections", 20);
-                if (!TestConnection("Client DB", clientConnStr) || !TestConnection("Server DB", serverConnStr))
-                {
-                    PrintError("\nPress any key to exit...");
-                    Console.ReadKey();
-                    return;
-                }
-
-                bool Testingdata = isNewClientDb;
-                UpdateNullServerzeit(clientConnStr, serverConnStr); 
-
-                metadata = LoadSyncMetadata(syncMetaFile) ?? new SyncMetadata();
-                InitializeMetadata(metadata, clientConnStr, serverConnStr, isNewClientDb);
-
-                PrintSuccess("\nStarting optimized synchronization...");
-                PrintInfo("Press 'Q' then Enter to stop synchronization.\n");
-
-                await ContinuousSync(serverConnStr, clientConnStr, syncMetaFile, metadata);
-                var syncTask = Task.Run(() => ContinuousSync(serverConnStr, clientConnStr, syncMetaFile, metadata));
-
-                while (_syncRunning)
-                {
-
-                    if (Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Q)
-                    {
-                        _syncRunning = false;
-                        PrintWarning("Stopping synchronization...");
-                    }
-                    await Task.Delay(100);
-                }
-
-                await syncTask;
-                PrintInfo("\nSynchronization stopped. Press any key to exit.");
-                Console.CursorVisible = true;
-                Console.ReadKey();
+                await Task.Delay(100);
             }
 
+            PrintInfo("\nExited. Press any key to close.");
+            Console.CursorVisible = true;
+            Console.ReadKey();
+        }
 
-            static string ReadPassword()
+
+        static string ReadPassword()
+        {
+            string password = "";
+            ConsoleKeyInfo key;
+
+            do
             {
-                string password = "";
-                ConsoleKeyInfo key;
+                key = Console.ReadKey(true);
 
-                do
+                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
                 {
-                    key = Console.ReadKey(true);
+                    password += key.KeyChar;
+                    Console.Write("*");
+                }
+                else if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+                {
+                    password = password.Substring(0, (password.Length - 1));
+                    Console.Write("\b \b");
+                }
+            } while (key.Key != ConsoleKey.Enter);
 
-                    if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
-                    {
-                        password += key.KeyChar;
-                        Console.Write("*");
-                    }
-                    else if (key.Key == ConsoleKey.Backspace && password.Length > 0)
-                    {
-                        password = password.Substring(0, (password.Length - 1));
-                        Console.Write("\b \b");
-                    }
-                } while (key.Key != ConsoleKey.Enter);
-
-                Console.WriteLine();
-                return password;
-            }
+            Console.WriteLine();
+            return password;
+        }
 
 
 
@@ -441,7 +490,7 @@
             using (var command = new OleDbCommand(query, connection))
             {
                 DateTime nowUtc = SafeTimestamp(DateTime.UtcNow);
-                nowUtc = nowUtc.AddSeconds(-1);
+                //nowUtc = nowUtc.AddSeconds(1);
                 command.Parameters.AddWithValue("?", nowUtc);
                 try
                 {
@@ -471,351 +520,448 @@
         }
 
 
-        static void SyncTableStructure(string sourceConnStr, string targetConnStr, string tableName)
+        static void SyncTableStructure(string sourceConnStr, string targetConnStr, string tableName, SyncMetadata metadata)
+        {
+            try
             {
-                try
+                using var targetConn = new OleDbConnection(targetConnStr);
+                targetConn.Open();
+
+                // Skip if table already exists in target
+                if (TableExists(targetConn, tableName)) return;
+
+                using var sourceConn = new OleDbConnection(sourceConnStr);
+                sourceConn.Open();
+
+                // Get table schema from source
+                DataTable schema = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                    new object[] { null, null, tableName, "TABLE" });
+
+                if (schema.Rows.Count == 0) return;
+
+                // Get columns information
+                DataTable columns = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns,
+                    new object[] { null, null, tableName, null });
+
+                // Get primary key information
+                DataTable primaryKeys = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Primary_Keys,
+                    new object[] { null, null, tableName });
+
+                // Build CREATE TABLE statement
+                var createTableSql = new StringBuilder($"CREATE TABLE [{tableName}] (");
+
+                foreach (DataRow column in columns.Rows)
                 {
-                    using var targetConn = new OleDbConnection(targetConnStr);
-                    targetConn.Open();
+                    string columnName = column["COLUMN_NAME"].ToString();
+                    string dataType = GetSqlDataType(column);
+                    bool isPrimaryKey = primaryKeys.Select($"COLUMN_NAME = '{columnName}'").Length > 0;
 
-                    // Skip if table already exists in target
-                    if (TableExists(targetConn, tableName)) return;
+                    createTableSql.Append($"[{columnName}] {dataType}");
 
-                    using var sourceConn = new OleDbConnection(sourceConnStr);
-                    sourceConn.Open();
+                    if (isPrimaryKey)
+                        createTableSql.Append(" PRIMARY KEY");
 
-                    // Get table schema from source
-                    DataTable schema = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
-                        new object[] { null, null, tableName, "TABLE" });
-
-                    if (schema.Rows.Count == 0) return;
-
-                    // Get columns information
-                    DataTable columns = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns,
-                        new object[] { null, null, tableName, null });
-
-                    // Get primary key information
-                    DataTable primaryKeys = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Primary_Keys,
-                        new object[] { null, null, tableName });
-
-                    // Build CREATE TABLE statement
-                    var createTableSql = new StringBuilder($"CREATE TABLE [{tableName}] (");
-
-                    foreach (DataRow column in columns.Rows)
-                    {
-                        string columnName = column["COLUMN_NAME"].ToString();
-                        string dataType = GetSqlDataType(column);
-                        bool isPrimaryKey = primaryKeys.Select($"COLUMN_NAME = '{columnName}'").Length > 0;
-
-                        createTableSql.Append($"[{columnName}] {dataType}");
-
-                        if (isPrimaryKey)
-                            createTableSql.Append(" PRIMARY KEY");
-
-                        createTableSql.Append(", ");
-                    }
-
-                    // Add Serverzeit if not exists
-                    if (columns.Select("COLUMN_NAME = 'Serverzeit'").Length == 0)
-                    {
-                        createTableSql.Append("[Serverzeit] DATETIME DEFAULT Now(), ");
-                    }
-
-                    // Remove trailing comma and close
-                    createTableSql.Length -= 2;
-                    createTableSql.Append(")");
-
-                    // Execute creation
-                    ExecuteNonQuery(targetConn, createTableSql.ToString());
-                    Console.WriteLine($"Created table {tableName} in target database");
-
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error synchronizing table {tableName}: {ex.Message}");
-                }
-            }
-            static void ExecuteNonQuery(OleDbConnection conn, string sql, params (string, object)[] parameters)
-            {
-                using var cmd = new OleDbCommand(sql, conn);
-                foreach (var (name, value) in parameters)
-                {
-                    cmd.Parameters.AddWithValue(name, value);
-                }
-                cmd.ExecuteNonQuery();
-            }
-            static void PrintHeader()
-            {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\nDatabase Synchronization Tool");
-                Console.WriteLine("-----------------------------");
-                Console.ResetColor();
-            }
-
-            static void PrintInfo(string message)
-            {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine($"[{DateTime.Now:T}] {message}");
-                Console.ResetColor();
-            }
-
-            static void PrintSuccess(string message)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"[{DateTime.Now:T}] {message}");
-                Console.ResetColor();
-            }
-
-            static void PrintWarning(string message)
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"[{DateTime.Now:T}] {message}");
-                Console.ResetColor();
-            }
-
-            static void PrintError(string message)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"[{DateTime.Now:T}] {message}");
-                Console.ResetColor();
-            }
-
-
-            static void InitializeMetadata(SyncMetadata metadata, string clientConnStr, string serverConnStr, bool isNewClientDb)
-            {
-                var allTables = GetAllTableNames(clientConnStr)
-                    .Union(GetAllTableNames(serverConnStr))
-                    .Distinct(StringComparer.OrdinalIgnoreCase)
-                    .ToList();
-
-
-                foreach (var table in allTables)
-                {
-
-                    // Client → Server
-                    SyncTableStructure(clientConnStr, serverConnStr, table);
-                    // Server → Client
-                    SyncTableStructure(serverConnStr, clientConnStr, table);
+                    createTableSql.Append(", ");
                 }
 
-
-            var allTables1 = GetAllTableNames(serverConnStr);
-
-
-
-            foreach (var table in allTables1)
+                // Add Serverzeit if not exists
+                if (columns.Select("COLUMN_NAME = 'Serverzeit'").Length == 0)
                 {
-                    if (!metadata.TableLastSync.ContainsKey(table))
-                    {
-                        try
-                        {
-                            using var conn = new OleDbConnection(clientConnStr);
-                            conn.Open();
-
-
-                            // First check if Serverzeit column exists
-                            bool hasServerzeit = ColumnExists(conn, table, "Serverzeit");
-                            if (!hasServerzeit)
-                            {
-                                metadata.TableLastSync[table] = DateTime.UtcNow;
-                                continue;
-                            }
-                            using var cmd = new OleDbCommand($"SELECT MAX(Serverzeit) FROM [{table}]", conn);
-                            var result = cmd.ExecuteScalar();
-
-                            if (result != DBNull.Value && result != null)
-                            {
-                                metadata.TableLastSync[table] = (DateTime)result;
-                                  PrintInfo($"Initialized table '{table}' with max Serverzeit: {(DateTime)result:yyyy-MM-dd HH:mm:ss}");
-                            }
-                            else
-                            {
-                                metadata.TableLastSync[table] = DateTime.MinValue;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            metadata.TableLastSync[table] = DateTime.MinValue;
-                            //PrintWarning($"Could not initialize metadata for table '{table}': {ex.Message}");
-                        }
-                    }
+                    createTableSql.Append("[Serverzeit] DATETIME DEFAULT Now(), ");
                 }
+
+                // Remove trailing comma and close
+                createTableSql.Length -= 2;
+                createTableSql.Append(")");
+
+                // Execute creation
+                ExecuteNonQuery(targetConn, createTableSql.ToString());
+                Console.WriteLine($"Created table {tableName} in target database");
+
+                metadata.TableLastSync[tableName] = DateTime.MinValue;
+                SaveSyncMetadata(syncMetaFile, metadata);
+                PrintInfo($"[New Table] Initialized sync time for '{tableName}' to {DateTime.MinValue:yyyy-MM-dd HH:mm:ss}");
+
+
+
             }
-
-            // Helper method to check if column exists
-            static bool ColumnExists(OleDbConnection conn, string tableName, string columnName)
+            catch (Exception ex)
             {
-                try
-                {
-                    DataTable columns = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns,
-                        new object[] { null, null, tableName, null });
-
-                    return columns.Rows.Cast<DataRow>()
-                        .Any(row => row["COLUMN_NAME"].ToString().Equals(columnName, StringComparison.OrdinalIgnoreCase));
-                }
-                catch
-                {
-                    return false;
-                }
+                Console.WriteLine($"Error synchronizing table {tableName}: {ex.Message}");
             }
-            static bool RunCommand(string command, bool showOutput = true)
+        }
+        static void ExecuteNonQuery(OleDbConnection conn, string sql, params (string, object)[] parameters)
+        {
+            using var cmd = new OleDbCommand(sql, conn);
+            foreach (var (name, value) in parameters)
             {
-                try
-                {
-                    ProcessStartInfo procInfo = new ProcessStartInfo("cmd.exe", "/c " + command)
-                    {
-                        RedirectStandardOutput = !showOutput,
-                        RedirectStandardError = !showOutput,
-                        UseShellExecute = false,
-                        CreateNoWindow = !showOutput
-                    };
-
-                    using (Process proc = Process.Start(procInfo))
-                    {
-                        proc.WaitForExit();
-                        return proc.ExitCode == 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    PrintError("Command execution failed: " + ex.Message);
-                    return false;
-                }
+                cmd.Parameters.AddWithValue(name, value);
             }
+            cmd.ExecuteNonQuery();
+        }
+        static void PrintHeader()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\nDatabase Synchronization Tool");
+            Console.WriteLine("-----------------------------");
+            Console.ResetColor();
+        }
 
-            public static bool HasMdbExtension(string path)
+        static void PrintInfo(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"[{DateTime.Now:T}] {message}");
+            Console.ResetColor();
+        }
+
+        static void PrintSuccess(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"[{DateTime.Now:T}] {message}");
+            Console.ResetColor();
+        }
+
+        static void PrintWarning(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"[{DateTime.Now:T}] {message}");
+            Console.ResetColor();
+        }
+
+        static void PrintError(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"[{DateTime.Now:T}] {message}");
+            Console.ResetColor();
+        }
+
+
+        //    static void InitializeMetadata(SyncMetadata metadata, string clientConnStr, string serverConnStr, bool isNewClientDb)
+        //    {
+        //        var allTables = GetAllTableNames(clientConnStr)
+        //            .Union(GetAllTableNames(serverConnStr))
+        //            .Distinct(StringComparer.OrdinalIgnoreCase)
+        //            .ToList();
+        //   // var allTables1 = GetAllTableNames(serverConnStr);
+        //    foreach (var table in allTables)
+        //        {
+        //            if (!metadata.TableLastSync.ContainsKey(table))
+        //            {
+        //                try
+        //                {
+        //                    using var conn = new OleDbConnection(clientConnStr);
+        //                     conn.Open();
+        //                    // First check if Serverzeit column exists
+        //                    bool hasServerzeit = ColumnExists(conn, table, "Serverzeit");
+        //                    if (!hasServerzeit)
+        //                    {
+
+        //                    //ExecuteNonQuery(clientConnStr, $"ALTER TABLE [{table}] ADD COLUMN [Serverzeit] Default Now()");
+
+        //                    metadata.TableLastSync[table] = DateTime.UtcNow;
+        //                        SaveSyncMetadata(syncMetaFile,metadata);
+        //                        continue;
+        //                    }
+        //                    using var cmd = new OleDbCommand($"SELECT MAX(Serverzeit) FROM [{table}]", conn);
+        //                    var result = cmd.ExecuteScalar();
+
+        //                    if (result != DBNull.Value && result != null)
+        //                    {
+        //                        metadata.TableLastSync[table] = (DateTime)result;
+        //                        SaveSyncMetadata(syncMetaFile, metadata);
+
+        //                    PrintInfo($"Initialized table '{table}' with max Serverzeit: {(DateTime)result:yyyy-MM-dd HH:mm:ss}");
+        //                    }
+        //                    else
+        //                    {
+        //                        metadata.TableLastSync[table] = DateTime.MinValue;
+        //                        SaveSyncMetadata(syncMetaFile, metadata);
+
+        //                    }
+        //            }
+        //                catch (Exception ex)
+        //                {
+        //                    metadata.TableLastSync[table] = DateTime.MinValue;
+        //                    //PrintWarning($"Could not initialize metadata for table '{table}': {ex.Message}");
+        //                }
+        //            }
+        //        }
+
+        //    foreach (var table in allTables)
+        //    {
+
+        //        // Client → Server
+        //        SyncTableStructure(clientConnStr, serverConnStr, table,metadata);
+        //        // Server → Client
+        //        SyncTableStructure(serverConnStr, clientConnStr, table,metadata);
+        //    }
+        //}
+        static void InitializeMetadata(SyncMetadata metadata, string clientConnStr, string serverConnStr, bool isNewClientDb)
+        {
+            var allTables = GetAllTableNames(clientConnStr)
+                .Union(GetAllTableNames(serverConnStr))
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            foreach (var table in allTables)
             {
-                if (string.IsNullOrWhiteSpace(path))
-                    return false;
-
-                string extension = Path.GetExtension(path);
-
-
-                return extension.Equals(".mdb", StringComparison.OrdinalIgnoreCase) || extension.Equals(".crm", StringComparison.OrdinalIgnoreCase);
-            }
-
-            static async Task<bool> PullDatabaseFromServer(string serverPath, string clientPath)
-            {
-                try
+                // Handle for both client and server
+                foreach (var connStr in new[] { clientConnStr, serverConnStr })
                 {
-                    var serverParts = serverPath.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
-                    if (serverParts.Length < 2)
-                    {
-                        PrintError("Invalid server path format. Expected format: \\\\server\\share\\path\\file.mdb");
-                        return false;
-                    }
-
-                    string serverIP = serverParts[0];
-                    string shareName = serverParts[1];
-                    string serverFilePath = string.Join("\\", serverParts.Skip(2));
-                    string fileName = Path.GetFileName(serverPath);
-
-                    if (!PingHost("127.0.0.1") || !PingHost(serverIP))
-                    {
-                        PrintError("ERROR: Network connectivity issues");
-                        return false;
-                    }
-
-                    bool isClientPathDirectory = Directory.Exists(clientPath) ||
-                                               (clientPath.EndsWith("\\") ||
-                                                clientPath.EndsWith("/"));
-
-                    string finalClientPath;
-                    if (isClientPathDirectory)
-                    {
-                        Directory.CreateDirectory(clientPath);
-                        finalClientPath = Path.Combine(clientPath, fileName);
-                    }
-                    else
-                    {
-                        string directory = Path.GetDirectoryName(clientPath);
-                        if (!string.IsNullOrEmpty(directory))
-                        {
-                            Directory.CreateDirectory(directory);
-                        }
-                        finalClientPath = clientPath;
-                    }
-
-                    RunCommand($"net use {DRIVE_LETTER} /delete", false);
-
-                    PrintInfo("Mounting server share...");
-                    string connectCmd = $"net use {DRIVE_LETTER} \\\\{serverIP}\\{shareName} /user:{USERNAME} {PASSWORD} /persistent:no";
-                    if (!RunCommand(connectCmd))
-                    {
-                        PrintError("ERROR: Failed to connect to shared folder");
-                        return false;
-                    }
-
-                    string serverFile = $"{DRIVE_LETTER}\\{serverFilePath}";
-                    if (!File.Exists(serverFile))
-                    {
-                        PrintError($"ERROR: File does not exist on server: {serverFilePath}");
-                        RunCommand($"net use {DRIVE_LETTER} /delete", false);
-                        return false;
-                    }
-
-                    PrintInfo($"Copying file from server to {finalClientPath}...");
                     try
                     {
-                        File.Copy(serverFile, finalClientPath, true);
-                        PrintSuccess("File successfully copied");
-                        return true;
-                    }
+                        using var conn = new OleDbConnection(connStr);
+                        conn.Open();
 
+                        bool hasServerzeit = ColumnExists(conn, table, "Serverzeit");
+                        if (!hasServerzeit)
+                        {
+                            // Add the column
+                            string alterSql = $"ALTER TABLE [{table}] ADD COLUMN [Serverzeit] DATETIME DEFAULT Now()";
+                            ExecuteNonQuery(conn, alterSql);
+
+                            // Set all rows' Serverzeit to UTC now
+                            DateTime utcNow = SafeTimestamp(DateTime.UtcNow);
+                            string updateSql = $"UPDATE [{table}] SET Serverzeit = ?";
+                            using var updateCmd = new OleDbCommand(updateSql, conn);
+                            updateCmd.Parameters.AddWithValue("?", utcNow);
+                            updateCmd.ExecuteNonQuery();
+
+                            //  PrintInfo($"[INIT] Added 'Serverzeit' to '{table}' in {(connStr == clientConnStr ? "client" : "server")} DB and set to {utcNow:yyyy-MM-dd HH:mm:ss}");
+
+                            // Initialize metadata (only once per table)
+                            if (!metadata.TableLastSync.ContainsKey(table))
+                            {
+                                metadata.TableLastSync[table] = utcNow.AddSeconds(-1);
+                                SaveSyncMetadata(syncMetaFile, metadata);
+                            }
+
+                            continue;
+                        }
+
+                        // If Serverzeit exists and no metadata yet
+                        if (!metadata.TableLastSync.ContainsKey(table))
+                        {
+                            using var cmd = new OleDbCommand($"SELECT MAX(Serverzeit) FROM [{table}]", conn);
+                            var result = cmd.ExecuteScalar();
+                            DateTime syncTime = (result != DBNull.Value && result != null)
+                                ? (DateTime)result
+                                : DateTime.MinValue;
+
+                            metadata.TableLastSync[table] = syncTime;
+                            PrintInfo($"Initialized table '{table}' with Serverzeit: {syncTime:yyyy-MM-dd HH:mm:ss}");
+                            SaveSyncMetadata(syncMetaFile, metadata);
+                        }
+                    }
                     catch (Exception ex)
                     {
-                        PrintError($"ERROR: File copy failed: {ex.Message}");
-                        return false;
+                        // PrintWarning($"[INIT] Error processing '{table}' in {(connStr == clientConnStr ? "client" : "server")}: {ex.Message}");
+                        if (!metadata.TableLastSync.ContainsKey(table))
+                        {
+                            metadata.TableLastSync[table] = DateTime.MinValue;
+                            SaveSyncMetadata(syncMetaFile, metadata);
+                        }
                     }
-                    finally
-                    {
-                        RunCommand($"net use {DRIVE_LETTER} /delete", false);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    PrintError($"Error pulling database from server: {ex.Message}");
-                    return false;
                 }
             }
 
-            static bool CheckNetworkConnection(string ip)
+            // Sync table structure both ways
+            foreach (var table in allTables)
             {
+                SyncTableStructure(clientConnStr, serverConnStr, table, metadata);
+                SyncTableStructure(serverConnStr, clientConnStr, table, metadata);
+            }
+        }
+
+        // Helper method to check if column exists
+        static bool ColumnExists(OleDbConnection conn, string tableName, string columnName)
+        {
+            try
+            {
+                DataTable columns = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns,
+                    new object[] { null, null, tableName, null });
+
+                return columns.Rows.Cast<DataRow>()
+                    .Any(row => row["COLUMN_NAME"].ToString().Equals(columnName, StringComparison.OrdinalIgnoreCase));
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        static bool RunCommand(string command, bool showOutput = true)
+        {
+            try
+            {
+                ProcessStartInfo procInfo = new ProcessStartInfo("cmd.exe", "/c " + command)
+                {
+                    RedirectStandardOutput = !showOutput,
+                    RedirectStandardError = !showOutput,
+                    UseShellExecute = false,
+                    CreateNoWindow = !showOutput
+                };
+
+                using (Process proc = Process.Start(procInfo))
+                {
+                    proc.WaitForExit();
+                    return proc.ExitCode == 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                PrintError("Command execution failed: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool HasMdbExtension(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+                return false;
+
+            string extension = Path.GetExtension(path);
+
+
+            return extension.Equals(".mdb", StringComparison.OrdinalIgnoreCase) || extension.Equals(".crm", StringComparison.OrdinalIgnoreCase);
+        }
+
+        static async Task<bool> PullDatabaseFromServer(string serverPath, string clientPath)
+        {
+            try
+            {
+                var serverParts = serverPath.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+                if (serverParts.Length < 2)
+                {
+                    PrintError("Invalid server path format. Expected format: \\\\server\\share\\path\\file.mdb");
+                    return false;
+                }
+
+                string serverIP = serverParts[0];
+                string shareName = serverParts[1];
+                string serverFilePath = string.Join("\\", serverParts.Skip(2));
+                string fileName = Path.GetFileName(serverPath);
+
+                if (!PingHost("127.0.0.1") || !PingHost(serverIP))
+                {
+                    PrintError("ERROR: Network connectivity issues");
+                    return false;
+                }
+
+                bool isClientPathDirectory = Directory.Exists(clientPath) ||
+                                           (clientPath.EndsWith("\\") ||
+                                            clientPath.EndsWith("/"));
+
+                string finalClientPath;
+                if (isClientPathDirectory)
+                {
+                    Directory.CreateDirectory(clientPath);
+                    finalClientPath = Path.Combine(clientPath, fileName);
+                }
+                else
+                {
+                    string directory = Path.GetDirectoryName(clientPath);
+                    if (!string.IsNullOrEmpty(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
+                    finalClientPath = clientPath;
+                }
+
+                RunCommand($"net use {DRIVE_LETTER} /delete", false);
+
+                PrintInfo("Mounting server share...");
+                string connectCmd = $"net use {DRIVE_LETTER} \\\\{serverIP}\\{shareName} /user:{USERNAME} {PASSWORD} /persistent:no";
+                if (!RunCommand(connectCmd))
+                {
+                    PrintError("ERROR: Failed to connect to shared folder");
+                    return false;
+                }
+
+                string serverFile = $"{DRIVE_LETTER}\\{serverFilePath}";
+                if (!File.Exists(serverFile))
+                {
+                    PrintError($"ERROR: File does not exist on server: {serverFilePath}");
+                    RunCommand($"net use {DRIVE_LETTER} /delete", false);
+                    return false;
+                }
+
+                PrintInfo($"Copying file from server to {finalClientPath}...");
                 try
                 {
-                    using (var tcpClient = new TcpClient())
-                    {
-                        var result = tcpClient.BeginConnect(ip, 445, null, null);
-                        var success = result.AsyncWaitHandle.WaitOne(2000);
-                        if (tcpClient.Connected) tcpClient.EndConnect(result);
-                        return success;
-                    }
+                    File.Copy(serverFile, finalClientPath, true);
+                    PrintSuccess("File successfully copied");
+                    return true;
                 }
-                catch
+
+                catch (Exception ex)
                 {
+                    PrintError($"ERROR: File copy failed: {ex.Message}");
                     return false;
                 }
+                finally
+                {
+                    RunCommand($"net use {DRIVE_LETTER} /delete", false);
+                }
             }
+            catch (Exception ex)
+            {
+                PrintError($"Error pulling database from server: {ex.Message}");
+                return false;
+            }
+        }
 
-        
+        static bool CheckNetworkConnection(string ip)
+        {
+            try
+            {
+                using (var tcpClient = new TcpClient())
+                {
+                    var result = tcpClient.BeginConnect(ip, 445, null, null);
+                    var success = result.AsyncWaitHandle.WaitOne(2000);
+                    if (tcpClient.Connected) tcpClient.EndConnect(result);
+                    return success;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
         static async Task ContinuousSync(
 string serverConnStr,
 string clientConnStr,
 string syncMetaFile,
 SyncMetadata metadata)
         {
+            // if (!_syncRunning) return;
+
             while (_syncRunning)
             {
-                
+
                 try
                 {
                     var clientTables = GetAllTableNames(clientConnStr);
                     var serverTables = GetAllTableNames(serverConnStr);
                     var allTables = clientTables.Union(serverTables).ToList();
+                    //foreach (var table in allTables)
+                    //{
+
+                    //    // Client → Server
+                    //    SyncTableStructure(clientConnStr, serverConnStr, table, metadata);
+                    //    // Server → Client
+                    //    SyncTableStructure(serverConnStr, clientConnStr, table, metadata);
+                    //}
+
+                    //List<DateTime> lastSyncTimes = metadata.TableLastSync.Values.ToList();
 
                     foreach (var table in allTables)
                     {
+                        if (!_syncRunning) break;
+                        DateTime lastSync1 = metadata.TableLastSync.TryGetValue(table, out var syncTime2)
+                                   ? syncTime2
+                                   : DateTime.MinValue;
                         _cycleTimer.Restart();
                         PrintInfo($"Starting sync cycle at {DateTime.Now:T}");
 
@@ -835,13 +981,15 @@ SyncMetadata metadata)
                                 await ProcessQueuedChanges(metadata, clientConnStr, serverConnStr);
                                 SaveSyncMetadata(syncMetaFile, metadata);
                             }
-
+                            //  List<DateTime> lastSyncTimes1 = metadata.TableLastSync.Values.ToList();
                             int totalChanges = 0;
 
                             foreach (var tableName in allTables)
                             {
+                                if (!_syncRunning) break;
                                 try
                                 {
+
                                     // Ensure no null Serverzeit entries
                                     UpdateNullServerzeitForTable(clientConnStr, tableName);
                                     UpdateNullServerzeitForTable(serverConnStr, tableName);
@@ -852,6 +1000,7 @@ SyncMetadata metadata)
                                         : DateTime.MinValue;
 
                                     PrintInfo($"Syncing {tableName} since {lastSync:yyyy-MM-dd HH:mm:ss}");
+
 
                                     // Sync Server → Client
                                     int serverToClient = await SyncDirection(
@@ -869,8 +1018,11 @@ SyncMetadata metadata)
                                         totalChanges += serverToClient;
                                     }
 
+                                    lastSync = metadata.TableLastSync.TryGetValue(tableName, out var syncTime1)
+                                        ? syncTime1
+                                        : DateTime.MinValue;
                                     // Refresh last sync from metadata in case it was updated
-                    
+
                                     // Sync Client → Server
                                     int clientToServer = await SyncDirection(
                                         sourceConnStr: clientConnStr,
@@ -910,7 +1062,7 @@ SyncMetadata metadata)
                                 }
                                 catch (Exception ex)
                                 {
-                                   // PrintError($"Error syncing table {tableName}: {ex.Message}");
+                                    // PrintError($"Error syncing table {tableName}: {ex.Message}");
                                 }
                             }
 
@@ -962,157 +1114,184 @@ SyncMetadata metadata)
                 SyncMetadata metadata,
                 string clientConnStr,
                 string serverConnStr)
+        {
+            var processedChanges = new List<QueuedChange>();
+
+            foreach (var change in metadata.QueuedChanges)
             {
-                var processedChanges = new List<QueuedChange>();
-
-                foreach (var change in metadata.QueuedChanges)
+                try
                 {
-                    try
+                    if (change.IsDelete)
                     {
-                        if (change.IsDelete)
+                        using (var conn = new OleDbConnection(serverConnStr))
                         {
-                            using (var conn = new OleDbConnection(serverConnStr))
+                            conn.Open();
+                            DeleteRecord(conn, change.TableName, change.PkColumn, change.RowData[change.PkColumn]);
+                            PrintSuccess($"Applied queued delete for {change.TableName} (PK: {change.RowData[change.PkColumn]})");
+                        }
+                    }
+                    else
+                    {
+                        using (var conn = new OleDbConnection(serverConnStr))
+                        {
+                            conn.Open();
+                            if (ApplyChangeWithConflictResolution(
+                                conn,
+                                change.TableName,
+                                change.RowData,
+                                isServerToClient: false,
+                                change.PkColumn))
                             {
-                                conn.Open();
-                                DeleteRecord(conn, change.TableName, change.PkColumn, change.RowData[change.PkColumn]);
-                                PrintSuccess($"Applied queued delete for {change.TableName} (PK: {change.RowData[change.PkColumn]})");
+                                PrintSuccess($"Applied queued change for {change.TableName} (PK: {change.RowData[change.PkColumn]})");
                             }
                         }
-                        else
-                        {
-                            using (var conn = new OleDbConnection(serverConnStr))
-                            {
-                                conn.Open();
-                                if (ApplyChangeWithConflictResolution(
-                                    conn,
-                                    change.TableName,
-                                    change.RowData,
-                                    isServerToClient: false,
-                                    change.PkColumn))
-                                {
-                                    PrintSuccess($"Applied queued change for {change.TableName} (PK: {change.RowData[change.PkColumn]})");
-                                }
-                            }
-                        }
+                    }
 
-                        processedChanges.Add(change);
-                    }
-                    catch (Exception ex)
-                    {
-                        PrintError($"Failed to apply queued change: {ex.Message}");
-                    }
+                    processedChanges.Add(change);
                 }
-
-                foreach (var change in processedChanges)
+                catch (Exception ex)
                 {
-                    metadata.QueuedChanges.Remove(change);
+                    PrintError($"Failed to apply queued change: {ex.Message}");
                 }
             }
 
-            static async Task QueueLocalChanges(SyncMetadata metadata, string clientConnStr)
+            foreach (var change in processedChanges)
             {
-                foreach (var tableName in GetAllTableNames(clientConnStr))
+                metadata.QueuedChanges.Remove(change);
+            }
+        }
+
+        static async Task QueueLocalChanges(SyncMetadata metadata, string clientConnStr)
+        {
+            foreach (var tableName in GetAllTableNames(clientConnStr))
+            {
+                try
                 {
-                    try
+                    DateTime lastSync = metadata.TableLastSync.ContainsKey(tableName)
+                        ? metadata.TableLastSync[tableName]
+                        : DateTime.MinValue;
+
+                    string pkColumn = GetPrimaryKeyColumn(clientConnStr, tableName);
+                    if (string.IsNullOrEmpty(pkColumn)) continue;
+
+                    // Queue inserts/updates
+                    using (var conn = new OleDbConnection(clientConnStr))
                     {
-                        DateTime lastSync = metadata.TableLastSync.ContainsKey(tableName)
-                            ? metadata.TableLastSync[tableName]
-                            : DateTime.MinValue;
+                        conn.Open();
+                        string query = $@"SELECT * FROM [{tableName}] WHERE Serverzeit >= @lastSync";
 
-                        string pkColumn = GetPrimaryKeyColumn(clientConnStr, tableName);
-                        if (string.IsNullOrEmpty(pkColumn)) continue;
-
-                        // Queue inserts/updates
-                        using (var conn = new OleDbConnection(clientConnStr))
+                        using (var cmd = new OleDbCommand(query, conn))
                         {
-                            conn.Open();
-                            string query = $@"SELECT * FROM [{tableName}] WHERE Serverzeit >= @lastSync";
+                            DateTime cleanedLastSync = SafeTimestamp(lastSync);
+                            cmd.Parameters.AddWithValue("@lastSync", cleanedLastSync);
 
-                            using (var cmd = new OleDbCommand(query, conn))
-                            {
-                                DateTime cleanedLastSync = SafeTimestamp(lastSync);
-                                cmd.Parameters.AddWithValue("@lastSync", cleanedLastSync);
-
-                                using (var reader = cmd.ExecuteReader())
-                                {
-                                    while (reader.Read())
-                                    {
-                                        var row = new Dictionary<string, object>();
-                                        for (int i = 0; i < reader.FieldCount; i++)
-                                        {
-                                            row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
-                                        }
-
-                                        metadata.QueuedChanges.Add(new QueuedChange
-                                        {
-                                            TableName = tableName,
-                                            PkColumn = pkColumn,
-                                            RowData = row,
-                                            IsDelete = false,
-                                            ChangeTime = DateTime.UtcNow
-                                        });
-                                    }
-                                }
-                            }
-                        }
-
-                        // Queue deletes by checking for records that exist in metadata but not in database
-                        var existingPks = new HashSet<object>();
-                        using (var conn = new OleDbConnection(clientConnStr))
-                        {
-                            conn.Open();
-                            string query = $"SELECT [{pkColumn}] FROM [{tableName}]";
-
-                            using (var cmd = new OleDbCommand(query, conn))
                             using (var reader = cmd.ExecuteReader())
                             {
                                 while (reader.Read())
                                 {
-                                    existingPks.Add(reader.IsDBNull(0) ? null : reader.GetValue(0));
+                                    var row = new Dictionary<string, object>();
+                                    for (int i = 0; i < reader.FieldCount; i++)
+                                    {
+                                        row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                                    }
+
+                                    metadata.QueuedChanges.Add(new QueuedChange
+                                    {
+                                        TableName = tableName,
+                                        PkColumn = pkColumn,
+                                        RowData = row,
+                                        IsDelete = false,
+                                        ChangeTime = DateTime.UtcNow
+                                    });
                                 }
                             }
                         }
+                    }
 
-                        // Check queued changes for records that might have been deleted
-                        foreach (var change in metadata.QueuedChanges.ToList())
-                        {   
-                            if (change.TableName.Equals(tableName, StringComparison.OrdinalIgnoreCase) &&
-                                !change.IsDelete && !existingPks.Contains(change.RowData[change.PkColumn]))
+                    // Queue deletes by checking for records that exist in metadata but not in database
+                    var existingPks = new HashSet<object>();
+                    using (var conn = new OleDbConnection(clientConnStr))
+                    {
+                        conn.Open();
+                        string query = $"SELECT [{pkColumn}] FROM [{tableName}]";
+
+                        using (var cmd = new OleDbCommand(query, conn))
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
                             {
-                                // Convert update to delete
-                                metadata.QueuedChanges.Remove(change);
-                                metadata.QueuedChanges.Add(new QueuedChange
-                                {
-                                    TableName = tableName,
-                                    PkColumn = pkColumn,
-                                    RowData = new Dictionary<string, object> { { pkColumn, change.RowData[pkColumn] } },
-                                    IsDelete = true,
-                                    ChangeTime = DateTime.UtcNow
-                                });
+                                existingPks.Add(reader.IsDBNull(0) ? null : reader.GetValue(0));
                             }
                         }
                     }
-                    catch (Exception ex)
+
+                    // Check queued changes for records that might have been deleted
+                    foreach (var change in metadata.QueuedChanges.ToList())
                     {
-                        PrintError($"Error queuing changes for {tableName}: {ex.Message}");
+                        if (change.TableName.Equals(tableName, StringComparison.OrdinalIgnoreCase) &&
+                            !change.IsDelete && !existingPks.Contains(change.RowData[change.PkColumn]))
+                        {
+                            // Convert update to delete
+                            metadata.QueuedChanges.Remove(change);
+                            metadata.QueuedChanges.Add(new QueuedChange
+                            {
+                                TableName = tableName,
+                                PkColumn = pkColumn,
+                                RowData = new Dictionary<string, object> { { pkColumn, change.RowData[pkColumn] } },
+                                IsDelete = true,
+                                ChangeTime = DateTime.UtcNow
+                            });
+                        }
                     }
                 }
-            }
-
-            static async Task<int> SyncDirection(
-            string sourceConnStr,
-                string targetConnStr,
-                string tableName,
-                DateTime lastSync,
-                bool isServerToClient,
-                SyncMetadata metadata)
-            {
-                int changesApplied = 0;
-            
-                DateTime maxTimestamp = lastSync;
-
-                try
+                catch (Exception ex)
                 {
+                    PrintError($"Error queuing changes for {tableName}: {ex.Message}");
+                }
+            }
+        }
+
+        static async Task<int> SyncDirection(
+        string sourceConnStr,
+            string targetConnStr,
+            string tableName,
+            DateTime lastSync,
+            bool isServerToClient,
+            SyncMetadata metadata)
+        {
+            int changesApplied = 0;
+
+            DateTime maxTimestamp = lastSync;
+
+            try
+            {
+
+
+                if (isServerToClient)
+                {
+                    var clientTables = GetAllTableNames(sourceConnStr);
+                    var serverTables = GetAllTableNames(targetConnStr);
+                    var newTables = clientTables.Except(serverTables).ToList();
+
+                    foreach (var table in newTables)
+                    {
+                        SyncTableStructure(sourceConnStr, targetConnStr, table, metadata);
+                    }
+
+
+                }
+                if (!isServerToClient)
+                {
+                    var clientTables = GetAllTableNames(sourceConnStr);
+                    var serverTables = GetAllTableNames(targetConnStr);
+                    var newTables = clientTables.Except(serverTables).ToList();
+
+
+                    foreach (var table in newTables)
+                    {
+                        SyncTableStructure(sourceConnStr, targetConnStr, table, metadata);
+                    }
+                }
                 using (var sourceConn = new OleDbConnection(sourceConnStr))
                 {
                     sourceConn.Open();
@@ -1124,14 +1303,15 @@ SyncMetadata metadata)
                         ExecuteNonQuery(sourceConn, $"ALTER TABLE [{tableName}] ADD CONSTRAINT pk_{tableName}_DefaultSynCID PRIMARY KEY ([DefaultSynCID])");
                     }
 
-                    using (var targetconn = new OleDbConnection(targetConnStr))
-                    {
-                        targetconn.Open();
-                        if (!TableExists(sourceConn, tableName) || !TableExists(targetconn, tableName))
-                        {
-                            CreateTableFromSource(sourceConn, targetconn, tableName);
-                        }
-                    }
+                    //using (var targetconn = new OleDbConnection(targetConnStr))
+                    //{
+                    //    targetconn.Open();
+                    //    if (!TableExists(sourceConn, tableName) || !TableExists(targetconn, tableName))
+                    //    {
+                    //        SyncTableStructure(sourceConnStr, targetConnStr, tableName, metadata);
+                    //    }
+                    //}
+
 
 
                     //string query = $@"SELECT * FROM [{tableName}] 
@@ -1224,420 +1404,422 @@ SyncMetadata metadata)
                         }
                     }
                 }
-                }
-                catch (Exception ex)
-                {
-                     //PrintError($"Error syncing {tableName}: {ex.Message}");
-                }
+            }
+            catch (Exception ex)
+            {
+                //PrintError($"Error syncing {tableName}: {ex.Message}");
+            }
 
             if (maxTimestamp >= metadata.TableLastSync[tableName])
             {
-                if(changesApplied> 0 || isServerToClient) { 
-                maxTimestamp = maxTimestamp.AddSeconds(1);
-                metadata.TableLastSync[tableName] = maxTimestamp;
-                SaveSyncMetadata(syncMetaFile, metadata);
+                if (changesApplied > 0 && isServerToClient == true)
+                {
+                    maxTimestamp = maxTimestamp.AddSeconds(1);
+                    metadata.TableLastSync[tableName] = maxTimestamp;
+                    SaveSyncMetadata(syncMetaFile, metadata);
 
+                }
+                else
+                {
+                    metadata.TableLastSync[tableName] = maxTimestamp;
+                    SaveSyncMetadata(syncMetaFile, metadata);
                 }
 
             }
             // Add this after important metadata updates
-           
 
             return changesApplied;
-            }
-
-     
-
+        }
         static DateTime SafeTimestamp(DateTime dt)
+        {
+            return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Kind);
+        }
+
+        static bool ApplyChangeWithConflictResolution(OleDbConnection targetConn,
+                                            string tableName,
+                                            Dictionary<string, object> row,
+                                            bool isServerToClient,
+                                            string pkColumn)
+        {
+            try
             {
-                return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Kind);
-            }
+                var pkValue = row[pkColumn]; // This is a GUID
+                var incomingLastModified = Convert.ToDateTime(row["Serverzeit"]);
 
-            static bool ApplyChangeWithConflictResolution(OleDbConnection targetConn,
-                                                string tableName,
-                                                Dictionary<string, object> row,
-                                                bool isServerToClient,
-                                                string pkColumn)
-            {
-                try
+                bool exists = RecordExists(targetConn, tableName, pkColumn, pkValue);
+                if (!exists)
+                    return InsertRecord(targetConn, tableName, row);
+
+                var targetLastModified = GetLastModified(targetConn, tableName, pkColumn, pkValue);
+                //var targetRecord = GetRecord(targetConn, tableName, pkColumn, pkValue);
+
+                // Simple conflict resolution - server wins
+                if (isServerToClient)
                 {
-                    var pkValue = row[pkColumn]; // This is a GUID
-                    var incomingLastModified = Convert.ToDateTime(row["Serverzeit"]);
+                    //  bool dataIsDifferent = !row["Name"].Equals(targetRecord["Name"]);
 
-                    bool exists = RecordExists(targetConn, tableName, pkColumn, pkValue);
-                    if (!exists)
-                        return InsertRecord(targetConn, tableName, row);
-
-                    var targetLastModified = GetLastModified(targetConn, tableName, pkColumn, pkValue);
-                    //var targetRecord = GetRecord(targetConn, tableName, pkColumn, pkValue);
-
-                    // Simple conflict resolution - server wins
-                    if (isServerToClient)
-                    {
-                        //  bool dataIsDifferent = !row["Name"].Equals(targetRecord["Name"]);
-
-                        return UpdateRecord(targetConn, tableName, row, pkColumn);
-                    }
-                    else
-                    {
-                        // For client to server, only update if client has newer version
-
-
-                        return UpdateRecord(targetConn, tableName, row, pkColumn);
-
-                    }
+                    return UpdateRecord(targetConn, tableName, row, pkColumn);
                 }
-                catch (Exception ex)
+                else
                 {
-
-                    return false;
-                }
-            
-            }
+                    // For client to server, only update if client has newer version
 
 
+                    return UpdateRecord(targetConn, tableName, row, pkColumn);
 
-            static void CreateTableFromSource(OleDbConnection sourceConn, OleDbConnection targetConn, string tableName)
-            {
-                try
-                {
-                    // Get table schema from source
-                    DataTable schema = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
-                        new object[] { null, null, tableName, "TABLE" });
-
-                    if (schema.Rows.Count == 0) return;
-
-                    // Get columns information
-                    DataTable columns = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns,
-                        new object[] { null, null, tableName, null });
-
-                    // Get primary key information
-                    DataTable primaryKeys = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Primary_Keys,
-                        new object[] { null, null, tableName });
-
-                    // Build CREATE TABLE statement
-                    var createTableSql = new StringBuilder($"CREATE TABLE [{tableName}] (");
-
-                    foreach (DataRow column in columns.Rows)
-                    {
-                        string columnName = column["COLUMN_NAME"].ToString();
-                        string dataType = GetSqlDataType(column);
-                        bool isPrimaryKey = primaryKeys.Select($"COLUMN_NAME = '{columnName}'").Length > 0;
-
-                        createTableSql.Append($"[{columnName}] {dataType}");
-
-                        if (isPrimaryKey)
-                            createTableSql.Append(" PRIMARY KEY");
-
-                        createTableSql.Append(", ");
-                    }
-
-                    // Add LastModified column if it doesn't exist
-                    if (columns.Select("COLUMN_NAME = 'Serverzeit'").Length == 0)
-                    {
-                        createTableSql.Append("[Serverzeit] DATETIME DEFAULT Now(), ");
-                    }
-
-                    // Remove trailing comma and close statement
-                    createTableSql.Length -= 2;
-                    createTableSql.Append(")");
-
-                    // Execute creation
-                    using var cmd = new OleDbCommand(createTableSql.ToString(), targetConn);
-                    cmd.ExecuteNonQuery();
-
-                    Console.WriteLine($"Created table {tableName} in {targetConn} database");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error creating table {tableName}: {ex.Message}");
                 }
             }
-
-            static string GetSqlDataType(DataRow column)
-
+            catch (Exception ex)
             {
-                int oleDbType = (int)column["DATA_TYPE"];
-                int size = column["CHARACTER_MAXIMUM_LENGTH"] is DBNull ? 0 : Convert.ToInt32(column["CHARACTER_MAXIMUM_LENGTH"]);
 
-                switch (oleDbType)
-                {
-                    case 130: return size > 0 ? $"TEXT({size})" : "TEXT(255)";
-                    case 3: return "INTEGER";
-                    case 5: return "DOUBLE";
-                    case 7: return "DATETIME";
-                    case 11: return "BIT";
-                    case 72: return "GUID";
-                    case 203: return "MEMO";
-                    default: return "TEXT(255)";
-                }
+                return false;
             }
 
-            static SyncMetadata LoadSyncMetadata(string path)
-            {
-                if (!File.Exists(path)) return new SyncMetadata();
+        }
 
-                try
+
+
+        static void CreateTableFromSource(OleDbConnection sourceConn, OleDbConnection targetConn, string tableName)
+        {
+            try
+            {
+                // Get table schema from source
+                DataTable schema = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                    new object[] { null, null, tableName, "TABLE" });
+
+                if (schema.Rows.Count == 0) return;
+
+                // Get columns information
+                DataTable columns = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns,
+                    new object[] { null, null, tableName, null });
+
+                // Get primary key information
+                DataTable primaryKeys = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Primary_Keys,
+                    new object[] { null, null, tableName });
+
+                // Build CREATE TABLE statement
+                var createTableSql = new StringBuilder($"CREATE TABLE [{tableName}] (");
+
+                foreach (DataRow column in columns.Rows)
                 {
-                    var json = File.ReadAllText(path);
-                    return JsonSerializer.Deserialize<SyncMetadata>(json);
+                    string columnName = column["COLUMN_NAME"].ToString();
+                    string dataType = GetSqlDataType(column);
+                    bool isPrimaryKey = primaryKeys.Select($"COLUMN_NAME = '{columnName}'").Length > 0;
+
+                    createTableSql.Append($"[{columnName}] {dataType}");
+
+                    if (isPrimaryKey)
+                        createTableSql.Append(" PRIMARY KEY");
+
+                    createTableSql.Append(", ");
                 }
-                catch (Exception ex)
+
+                // Add LastModified column if it doesn't exist
+                if (columns.Select("COLUMN_NAME = 'Serverzeit'").Length == 0)
                 {
-                    PrintError($"Error loading metadata: {ex.Message}");
-                    return new SyncMetadata();
+                    createTableSql.Append("[Serverzeit] DATETIME DEFAULT Now(), ");
+                }
+
+                // Remove trailing comma and close statement
+                createTableSql.Length -= 2;
+                createTableSql.Append(")");
+
+                // Execute creation
+                using var cmd = new OleDbCommand(createTableSql.ToString(), targetConn);
+                cmd.ExecuteNonQuery();
+
+                Console.WriteLine($"Created table {tableName} in {targetConn} database");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error creating table {tableName}: {ex.Message}");
+            }
+        }
+
+        static string GetSqlDataType(DataRow column)
+
+        {
+            int oleDbType = (int)column["DATA_TYPE"];
+            int size = column["CHARACTER_MAXIMUM_LENGTH"] is DBNull ? 0 : Convert.ToInt32(column["CHARACTER_MAXIMUM_LENGTH"]);
+
+            switch (oleDbType)
+            {
+                case 130: return size > 0 ? $"TEXT({size})" : "TEXT(255)";
+                case 3: return "INTEGER";
+                case 5: return "DOUBLE";
+                case 7: return "DATETIME";
+                case 11: return "BIT";
+                case 72: return "GUID";
+                case 203: return "MEMO";
+                default: return "TEXT(255)";
+            }
+        }
+
+        static SyncMetadata LoadSyncMetadata(string path)
+        {
+            if (!File.Exists(path)) return new SyncMetadata();
+
+            try
+            {
+                var json = File.ReadAllText(path);
+                return JsonSerializer.Deserialize<SyncMetadata>(json);
+            }
+            catch (Exception ex)
+            {
+                PrintError($"Error loading metadata: {ex.Message}");
+                return new SyncMetadata();
+            }
+        }
+
+        static void SaveSyncMetadata(string path, SyncMetadata metadata)
+        {
+            try
+            {
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                var json = JsonSerializer.Serialize(metadata, options);
+                File.WriteAllText(path, json);
+            }
+            catch (Exception ex)
+            {
+                PrintError($"Error saving metadata: {ex.Message}");
+            }
+        }
+
+        static bool PingHost(string nameOrAddress)
+        {
+            try
+            {
+                using (var ping = new Ping())
+                {
+                    var reply = ping.Send(nameOrAddress, 2000);
+                    return reply.Status == IPStatus.Success;
                 }
             }
-
-            static void SaveSyncMetadata(string path, SyncMetadata metadata)
+            catch
             {
-                try
-                {
-                    var options = new JsonSerializerOptions { WriteIndented = true };
-                    var json = JsonSerializer.Serialize(metadata, options);
-                    File.WriteAllText(path, json);
-                }
-                catch (Exception ex)
-                {
-                    PrintError($"Error saving metadata: {ex.Message}");
-                }
+                return false;
+            }
+        }
+
+        static void ShowGameStyleLoader(string message, int totalSteps)
+        {
+            Console.Write(message + " ");
+            int progressBarWidth = 30;
+
+            for (int i = 0; i <= totalSteps; i++)
+            {
+                double percentage = (double)i / totalSteps;
+                int filledBars = (int)(percentage * progressBarWidth);
+                string bar = new string('█', filledBars).PadRight(progressBarWidth, '-');
+
+                Console.Write($"\r{message} [{bar}] {percentage * 100:0}%");
+                Thread.Sleep(20);
+            }
+            Console.WriteLine();
+        }
+
+        static bool VerifyDatabaseFiles(string clientPath, string serverPath)
+        {
+            if (!File.Exists(clientPath))
+            {
+                PrintError($"\nClient database not found at: {clientPath}");
+                return false;
             }
 
-            static bool PingHost(string nameOrAddress)
+            if (!File.Exists(serverPath))
             {
-                try
-                {
-                    using (var ping = new Ping())
-                    {
-                        var reply = ping.Send(nameOrAddress, 2000);
-                        return reply.Status == IPStatus.Success;
-                    }
-                }
-                catch
-                {
-                    return false;
-                }
+                PrintError($"\nServer database not found at: {serverPath}");
+                return false;
             }
 
-            static void ShowGameStyleLoader(string message, int totalSteps)
+            return true;
+        }
+
+        static bool TestConnection(string name, string connectionString)
+        {
+            try
             {
-                Console.Write(message + " ");
-                int progressBarWidth = 30;
-
-                for (int i = 0; i <= totalSteps; i++)
-                {
-                    double percentage = (double)i / totalSteps;
-                    int filledBars = (int)(percentage * progressBarWidth);
-                    string bar = new string('█', filledBars).PadRight(progressBarWidth, '-');
-
-                    Console.Write($"\r{message} [{bar}] {percentage * 100:0}%");
-                    Thread.Sleep(20);
-                }
-                Console.WriteLine();
-            }
-
-            static bool VerifyDatabaseFiles(string clientPath, string serverPath)
-            {
-                if (!File.Exists(clientPath))
-                {
-                    PrintError($"\nClient database not found at: {clientPath}");
-                    return false;
-                }
-
-                if (!File.Exists(serverPath))
-                {
-                    PrintError($"\nServer database not found at: {serverPath}");
-                    return false;
-                }
-
+                using var connection = new OleDbConnection(connectionString);
+                connection.Open();
+                PrintSuccess($"{name} connection successful");
                 return true;
             }
-
-            static bool TestConnection(string name, string connectionString)
+            catch (Exception ex)
             {
-                try
-                {
-                    using var connection = new OleDbConnection(connectionString);
-                    connection.Open();
-                    PrintSuccess($"{name} connection successful");
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    PrintError($"\n{name} connection failed: {ex.Message}");
-                    return false;
-                }
+                PrintError($"\n{name} connection failed: {ex.Message}");
+                return false;
             }
+        }
 
-            static List<string> GetAllTableNames(string connectionString)
+        static List<string> GetAllTableNames(string connectionString)
+        {
+            var tables = new List<string>();
+            try
             {
-                var tables = new List<string>();
-                try
+                using var conn = new OleDbConnection(connectionString);
+                conn.Open();
+                DataTable schemaTables = conn.GetSchema("Tables");
+
+                foreach (DataRow row in schemaTables.Rows)
                 {
-                    using var conn = new OleDbConnection(connectionString);
-                    conn.Open();
-                    DataTable schemaTables = conn.GetSchema("Tables");
+                    string tableName = row["TABLE_NAME"].ToString();
+                    string tableType = row["TABLE_TYPE"].ToString();
 
-                    foreach (DataRow row in schemaTables.Rows)
+                    if (tableType == "TABLE" && !tableName.StartsWith("MSys")
+                        && !tableName.StartsWith("~TMP") && !tableName.StartsWith("_"))
                     {
-                        string tableName = row["TABLE_NAME"].ToString();
-                        string tableType = row["TABLE_TYPE"].ToString();
-
-                        if (tableType == "TABLE" && !tableName.StartsWith("MSys")
-                            && !tableName.StartsWith("~TMP") && !tableName.StartsWith("_"))
-                        {
-                            tables.Add(tableName);
-                        }
+                        tables.Add(tableName);
                     }
                 }
-                catch (Exception ex)
-                {
-                    PrintError($"Error getting table names: {ex.Message}");
-                }
-                return tables;
             }
-
-            static string GetPrimaryKeyColumn(string connectionString, string tableName)
+            catch (Exception ex)
             {
-                try
+                PrintError($"Error getting table names: {ex.Message}");
+            }
+            return tables;
+        }
+
+        static string GetPrimaryKeyColumn(string connectionString, string tableName)
+        {
+            try
+            {
+                using var conn = new OleDbConnection(connectionString);
+                conn.Open();
+
+                DataTable schema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Primary_Keys,
+                    new object[] { null, null, tableName });
+
+                if (schema.Rows.Count > 0)
                 {
-                    using var conn = new OleDbConnection(connectionString);
-                    conn.Open();
+                    return schema.Rows[0]["COLUMN_NAME"].ToString();
+                }
 
-                    DataTable schema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Primary_Keys,
-                        new object[] { null, null, tableName });
+                DataTable columns = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns,
+                    new object[] { null, null, tableName, null });
 
-                    if (schema.Rows.Count > 0)
+                foreach (DataRow row in columns.Rows)
+                {
+                    string col = row["COLUMN_NAME"].ToString();
+
+                    if (col.Equals("ID", StringComparison.OrdinalIgnoreCase) ||
+                        col.Equals("GUID", StringComparison.OrdinalIgnoreCase))
                     {
-                        return schema.Rows[0]["COLUMN_NAME"].ToString();
+                        return col;
                     }
-
-                    DataTable columns = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns,
-                        new object[] { null, null, tableName, null });
-
-                    foreach (DataRow row in columns.Rows)
-                    {
-                        string col = row["COLUMN_NAME"].ToString();
-
-                        if (col.Equals("ID", StringComparison.OrdinalIgnoreCase) ||
-                            col.Equals("GUID", StringComparison.OrdinalIgnoreCase))
-                        {
-                            return col;
-                        }
-                    }
-
-                    return null;
                 }
-                catch
-                {
-                    return null;
-                }
+
+                return null;
             }
-
-            static bool TableExists(OleDbConnection conn, string tableName)
+            catch
             {
-                try
-                {
-                    DataTable schema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
-                        new object[] { null, null, tableName, "TABLE" });
-                    return schema.Rows.Count > 0;
-                }
-                catch
-                {
-                    return false;
-                }
+                return null;
             }
+        }
 
-            static bool RecordExists(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
+        static bool TableExists(OleDbConnection conn, string tableName)
+        {
+            try
             {
-                try
-                {
-                    string query = $"SELECT COUNT(*) FROM [{tableName}] WHERE [{pkColumn}] = ?";
-                    using var cmd = new OleDbCommand(query, conn);
-                    cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
-                    return (int)cmd.ExecuteScalar() > 0;
-                }
-                catch
-                {
-                    return false;
-                }
+                DataTable schema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+                    new object[] { null, null, tableName, "TABLE" });
+                return schema.Rows.Count > 0;
             }
-
-            static bool InsertRecord(OleDbConnection conn, string tableName, Dictionary<string, object> row)
+            catch
             {
-                try
-                {
-                    var columns = row.Keys.ToList();
-                    var columnList = string.Join(", ", columns.Select(c => $"[{c}]"));
-                    var valuePlaceholders = string.Join(", ", columns.Select(_ => "?"));
-
-                    string insertQuery = $@"INSERT INTO [{tableName}] ({columnList}) VALUES ({valuePlaceholders})";
-
-                    using var cmd = new OleDbCommand(insertQuery, conn);
-                    foreach (var col in columns)
-                        cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
-
-                    return cmd.ExecuteNonQuery() > 0;
-                }
-                catch (Exception ex)
-                {
-                    PrintError($"Error inserting record into {tableName}: {ex.Message}");
-                    return false;
-                }
+                return false;
             }
+        }
 
-            static bool UpdateRecord(OleDbConnection conn, string tableName, Dictionary<string, object> row, string pkColumn)
+        static bool RecordExists(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
+        {
+            try
             {
-                try
-                {
-                    var columns = row.Keys.Where(k => k != pkColumn).ToList();
-                    var updateSet = string.Join(", ", columns.Select(c => $"[{c}] = ?"));
-                    string updateQuery = $@"UPDATE [{tableName}] SET {updateSet} WHERE [{pkColumn}] = ?";
-
-                    using var cmd = new OleDbCommand(updateQuery, conn);
-                    foreach (var col in columns)
-                        cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue($"@{pkColumn}", row[pkColumn]);
-
-                    return cmd.ExecuteNonQuery() > 0;
-                }
-                catch (Exception ex)
-                {
-                    PrintError($"Error updating record in {tableName}: {ex.Message}");
-                    return false;
-                }
+                string query = $"SELECT COUNT(*) FROM [{tableName}] WHERE [{pkColumn}] = ?";
+                using var cmd = new OleDbCommand(query, conn);
+                cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
+                return (int)cmd.ExecuteScalar() > 0;
             }
-
-            static DateTime GetLastModified(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
+            catch
             {
-                try
-                {
-                    string query = $"SELECT Serverzeit FROM [{tableName}] WHERE [{pkColumn}] = ?";
-                    using var cmd = new OleDbCommand(query, conn);
-                    cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
-                    var result = cmd.ExecuteScalar();
-                    return (result != DBNull.Value && result != null) ? Convert.ToDateTime(result) : DateTime.MinValue;
-                }
-                catch
-                {
-                    return DateTime.MinValue;
-                }
+                return false;
             }
+        }
 
-            static void DeleteRecord(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
+        static bool InsertRecord(OleDbConnection conn, string tableName, Dictionary<string, object> row)
+        {
+            try
             {
-                try
-                {
-                    string query = $"DELETE FROM [{tableName}] WHERE [{pkColumn}] = ?";
-                    using var cmd = new OleDbCommand(query, conn);
-                    cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
-                    cmd.ExecuteNonQuery();
-                    PrintSuccess($"Deleted record from {tableName} (PK: {pkValue})");
-                }
-                catch (Exception ex)
-                {
-                    PrintError($"Error deleting record from {tableName}: {ex.Message}");
-                }
+                var columns = row.Keys.ToList();
+                var columnList = string.Join(", ", columns.Select(c => $"[{c}]"));
+                var valuePlaceholders = string.Join(", ", columns.Select(_ => "?"));
+
+                string insertQuery = $@"INSERT INTO [{tableName}] ({columnList}) VALUES ({valuePlaceholders})";
+
+                using var cmd = new OleDbCommand(insertQuery, conn);
+                foreach (var col in columns)
+                    cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                PrintError($"Error inserting record into {tableName}: {ex.Message}");
+                return false;
+            }
+        }
+
+        static bool UpdateRecord(OleDbConnection conn, string tableName, Dictionary<string, object> row, string pkColumn)
+        {
+            try
+            {
+                var columns = row.Keys.Where(k => k != pkColumn).ToList();
+                var updateSet = string.Join(", ", columns.Select(c => $"[{c}] = ?"));
+                string updateQuery = $@"UPDATE [{tableName}] SET {updateSet} WHERE [{pkColumn}] = ?";
+
+                using var cmd = new OleDbCommand(updateQuery, conn);
+                foreach (var col in columns)
+                    cmd.Parameters.AddWithValue($"@{col}", row[col] ?? DBNull.Value);
+                cmd.Parameters.AddWithValue($"@{pkColumn}", row[pkColumn]);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                PrintError($"Error updating record in {tableName}: {ex.Message}");
+                return false;
+            }
+        }
+
+        static DateTime GetLastModified(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
+        {
+            try
+            {
+                string query = $"SELECT Serverzeit FROM [{tableName}] WHERE [{pkColumn}] = ?";
+                using var cmd = new OleDbCommand(query, conn);
+                cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
+                var result = cmd.ExecuteScalar();
+                return (result != DBNull.Value && result != null) ? Convert.ToDateTime(result) : DateTime.MinValue;
+            }
+            catch
+            {
+                return DateTime.MinValue;
+            }
+        }
+
+        static void DeleteRecord(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
+        {
+            try
+            {
+                string query = $"DELETE FROM [{tableName}] WHERE [{pkColumn}] = ?";
+                using var cmd = new OleDbCommand(query, conn);
+                cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
+                cmd.ExecuteNonQuery();
+                PrintSuccess($"Deleted record from {tableName} (PK: {pkValue})");
+            }
+            catch (Exception ex)
+            {
+                PrintError($"Error deleting record from {tableName}: {ex.Message}");
             }
         }
     }
+}
