@@ -365,8 +365,9 @@ namespace RobustAccessDbSync
                 return;
             }
 
+             string serverConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={serverDbPath};";
             string clientConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={clientDbPath};";
-            string serverConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={serverDbPath};";
+
 
             ShowGameStyleLoader("Testing database connections", 20);
             if (!TestConnection("Client DB", clientConnStr) || !TestConnection("Server DB", serverConnStr))
@@ -479,8 +480,6 @@ namespace RobustAccessDbSync
             Console.WriteLine();
             return password;
         }
-
-
 
         static void UpdateNullServerzeitForTable(string connectionString, string tableName)
         {
