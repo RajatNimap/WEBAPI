@@ -53,6 +53,10 @@
             "System.Data.OleDb": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "ini-parser": {
+              "target": "Package",
+              "version": "[2.5.2, )"
             }
           },
           "imports": [

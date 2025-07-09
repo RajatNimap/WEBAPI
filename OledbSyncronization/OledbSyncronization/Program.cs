@@ -9,6 +9,8 @@ using System.Diagnostics;
 using System.Collections.Concurrent;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
+using IniParser;
+using IniParser.Model;
 
 namespace RobustAccessDbSync
 {
@@ -32,7 +34,6 @@ namespace RobustAccessDbSync
         static string DRIVE_LETTER = "X:";
         private static bool _syncRunning = true;
         private const string ConflictSuffix = "_CONFLICT_RESOLVED";
-
         static string SERVER_IP;
         static string SHARE_NAME;
         static string USERNAME;
@@ -44,7 +45,8 @@ namespace RobustAccessDbSync
         private static DateTime _nextSyncTime = DateTime.Now;
         static string clientDbPath;
         static string serverDbPath;
-        static string filePath = "user_data.txt"; // File to save the input
+        // static string filePath = "user_data.txt"; // File to save the input
+      
         static string syncMetaFile = "sync_metadata.json";
 
         static void GetClinetServerPath()
@@ -94,9 +96,9 @@ namespace RobustAccessDbSync
 
                 if (string.IsNullOrEmpty(input))
                 {  // user just pressed Enter
-                    File.WriteAllText(filePath, SERVER_IP);
-                    File.WriteAllText(filePath, SHARE_NAME);
-                    File.WriteAllText(filePath, clientDbPath);
+                    //File.WriteAllText(filePath, SERVER_IP);
+                    //File.WriteAllText(filePath, SHARE_NAME);
+                    //File.WriteAllText(filePath, clientDbPath);
                     break;
                 }
                 else if (input == "r")
@@ -107,8 +109,6 @@ namespace RobustAccessDbSync
         }
         static void GetServerCredentials()
         {
-
-
             while (true)
             {
                 // Username input
@@ -140,8 +140,8 @@ namespace RobustAccessDbSync
 
                 if (string.IsNullOrEmpty(input))
                 {  // user just pressed Enter
-                    File.WriteAllText(filePath, USERNAME);
-                    File.WriteAllText(filePath, PASSWORD);
+                    //File.WriteAllText(filePath, USERNAME);
+                    //File.WriteAllText(filePath, PASSWORD);
                     break;
                 }
                 else if (input == "r")
@@ -154,80 +154,110 @@ namespace RobustAccessDbSync
         [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static async Task Main()
         {
+            var parser = new FileIniDataParser();
+            IniData data = null;
+
+            const string pointerFile = "last_path.txt"; // Stores last-used client DB path
+
             try
             {
+                string rememberedClientPath = null;
 
-                // Check if credentials file exists
-                if (File.Exists(filePath))
+                // Step 1: Try to read last-used client path
+                if (File.Exists(pointerFile))
                 {
-                    string[] savedData = File.ReadAllLines(filePath);
+                    rememberedClientPath = File.ReadAllText(pointerFile)?.Trim();
+                }
 
-                    if (savedData.Length >= 5) // Ensure we have all required data
+                // Step 2: Try to load config.ini if we know where to look
+                if (!string.IsNullOrEmpty(rememberedClientPath))
+                {
+
+                    //string iniPath = Path.Combine(Path.GetDirectoryName(rememberedClientPath), "config.ini");
+                    string iniPath = Path.Combine(rememberedClientPath, "config.ini");
+
+
+                    if (File.Exists(iniPath))
                     {
-                        Console.WriteLine("Saved credentials found:");
-                        Console.WriteLine($"Username: {savedData[0]}");
-                        Console.WriteLine($"Server Path: {savedData[4]}");
-                        Console.WriteLine($"Client Path: {savedData[5]}");
+                        data = parser.ReadFile(iniPath);
 
-                        Console.Write("\nUse saved credentials? (Y/N): ");
-                        var key = Console.ReadKey();
+                        USERNAME = data["Credentials"]["Username"];
+                        PASSWORD = data["Credentials"]["Password"];
+                        SERVER_IP = data["Server"]["IP"];
+                        SHARE_NAME = data["Server"]["Share"];
+                        serverDbPath = data["Server"]["Path"];
+                        clientDbPath = data["Client"]["Path"];
 
-                        if (key.Key == ConsoleKey.Y)
-                        {
-                            // Use saved credentials
-                            USERNAME = savedData[0];
-                            PASSWORD = savedData[1];
-                            SERVER_IP = savedData[2];
-                            SHARE_NAME = savedData[3];
-                            serverDbPath = savedData[4];
-                            clientDbPath = savedData[5];
-
-                            Console.WriteLine("\nUsing saved credentials...");
-                        }
-                        else
-                        {
-                            // Get new credentials
-                            GetClinetServerPath();
-                            GetServerCredentials();
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Saved credentials are incomplete.");
-                        GetClinetServerPath();
-                        GetServerCredentials();
+                        Console.WriteLine("Loaded saved configuration.");
                     }
                 }
-                else
-                {
-                    // First run - get new credentials
-                    GetClinetServerPath();
-                    GetServerCredentials();
 
+                // Step 3: If config not loaded, ask user and save it
+                if (data == null)
+                {
+                    Console.WriteLine("No saved configuration found. Please enter details.");
+
+                    GetClinetServerPath();       // sets clientDbPath
+                    GetServerCredentials();      // sets USERNAME, PASSWORD
+
+                    data = new IniData();
+                    data["Credentials"]["Username"] = USERNAME;
+                    data["Credentials"]["Password"] = PASSWORD;
+                    data["Server"]["IP"] = SERVER_IP;
+                    data["Server"]["Share"] = SHARE_NAME;
+                    data["Server"]["Path"] = serverDbPath;
+                    data["Client"]["Path"] = clientDbPath;
+
+                    //string iniPath = Path.Combine(Path.GetDirectoryName(clientDbPath),"config.ini");
+                    string iniPath = Path.Combine(clientDbPath, "config.ini");
+
+                    parser.WriteFile(iniPath, data);
+
+                    // Save clientDbPath to pointer file for future runs
+                    File.WriteAllText(pointerFile, clientDbPath);
+
+                    Console.WriteLine($" Configuration saved to: {iniPath}");
                 }
+
+                // 🔁 Continue with your sync logic using the loaded values...
+                Console.WriteLine("Ready to sync using loaded configuration.");
+                // await StartSynchronization();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Please Run as Administrator");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" ERROR: " + ex.Message);
+                Console.ResetColor();
             }
-            Console.Write("\nSave these credentials for next time? (Y/N): ");
-            var saveKey = Console.ReadKey();
-            if (saveKey.Key == ConsoleKey.Y)
-            {
-                File.WriteAllLines(filePath, new[] {
-                USERNAME,
-                PASSWORD,
-                SERVER_IP,
-                SHARE_NAME,
-                serverDbPath,
-                clientDbPath
-            });
-                Console.WriteLine("\n\nCredentials saved!");
-            }
-            else
-            {
-                Console.WriteLine("\n");
-            }
+
+            //File.WriteAllLines(filePath, new[] {
+            //    USERNAME,
+            //    PASSWORD,
+            //    SERVER_IP,
+            //    SHARE_NAME,
+            //    serverDbPath,
+            //    clientDbPath
+            //});
+
+
+            //Console.Write("\nSave these credentials for next time? (Y/N): ");
+            //var saveKey = Console.ReadKey();
+            //if (saveKey.Key == ConsoleKey.Y)
+            //{
+            //    File.WriteAllLines(filePath, new[] {
+            //    USERNAME,
+            //    PASSWORD,
+            //    SERVER_IP,
+            //    SHARE_NAME,
+            //    serverDbPath,
+            //    clientDbPath
+            //});
+            //    Console.WriteLine("\n\nCredentials saved!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("\n");
+            //}
 
             bool isNewClientDb = false;
 
@@ -364,9 +394,8 @@ namespace RobustAccessDbSync
                 Console.ReadKey();
                 return;
             }
-
              string serverConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={serverDbPath};";
-            string clientConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={clientDbPath};";
+             string clientConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={clientDbPath};";
 
 
             ShowGameStyleLoader("Testing database connections", 20);
