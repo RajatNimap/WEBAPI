@@ -8,8 +8,11 @@ namespace OledbSyncronization
 {
     public class ChangesModel
     {
-        public string ColumnName { get; set; }
-        string OldValue {  get; set; }  
-        string NewValue { get; set; }
+     //  public string PrimarKey { get; set; }
+       public string Direction { get; set; }
+       public string ColumnName { get; set; }
+       public string OldValue {  get; set; }  
+       public string NewValue { get; set; }
+       public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

@@ -11,22 +11,13 @@ using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using IniParser;
 using IniParser.Model;
+using OledbSyncronization;
 
 namespace RobustAccessDbSync
 {
     class SyncMetadata
     {
         public Dictionary<string, DateTime> TableLastSync { get; set; } = new Dictionary<string, DateTime>();
-        public List<QueuedChange> QueuedChanges { get; set; } = new List<QueuedChange>();
-    }
-
-    class QueuedChange
-    {
-        public string TableName { get; set; }
-        public string PkColumn { get; set; }
-        public Dictionary<string, object> RowData { get; set; }
-        public bool IsDelete { get; set; }
-        public DateTime ChangeTime { get; set; }
     }
 
     class Program
@@ -45,8 +36,12 @@ namespace RobustAccessDbSync
         private static DateTime _nextSyncTime = DateTime.Now;
         static string clientDbPath;
         static string serverDbPath;
+        static string rememberedClientPath = null;
+        static string clientFileFolder;
+        static string serverFileFolder;
+
         // static string filePath = "user_data.txt"; // File to save the input
-      
+
         static string syncMetaFile = "sync_metadata.json";
 
         static void GetClinetServerPath()
@@ -58,7 +53,6 @@ namespace RobustAccessDbSync
             ShowGameStyleLoader("Initializing Database Synchronization Tool", 20);
             while (true)
             {
-
                 // Password input
                 do
                 {
@@ -85,20 +79,14 @@ namespace RobustAccessDbSync
 
                 SERVER_IP = serverParts[0];
                 SHARE_NAME = serverParts[1];
-                // Confirmation
-                //Console.WriteLine("\nYou entered:");
-                //Console.WriteLine($"Serverpath: {serverDbPath}");
-                //Console.WriteLine($"clinetpath: {clientDbPath}");
+           
 
                 Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
 
                 string input = Console.ReadLine()?.Trim().ToLower();
 
                 if (string.IsNullOrEmpty(input))
-                {  // user just pressed Enter
-                    //File.WriteAllText(filePath, SERVER_IP);
-                    //File.WriteAllText(filePath, SHARE_NAME);
-                    //File.WriteAllText(filePath, clientDbPath);
+                { 
                     break;
                 }
                 else if (input == "r")
@@ -129,19 +117,14 @@ namespace RobustAccessDbSync
                         Console.WriteLine("PASSWORD cannot be empty.");
                 } while (string.IsNullOrWhiteSpace(PASSWORD));
 
-                // Confirmation
-                //Console.WriteLine("\nYou entered:");
-                //Console.WriteLine($"USERNAME: {USERNAME}");
-                //Console.WriteLine($"PASSWORD: {new string('*', PASSWORD.Length)}");
+        
 
                 Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
 
                 string input = Console.ReadLine()?.Trim().ToLower();
 
                 if (string.IsNullOrEmpty(input))
-                {  // user just pressed Enter
-                    //File.WriteAllText(filePath, USERNAME);
-                    //File.WriteAllText(filePath, PASSWORD);
+                {  
                     break;
                 }
                 else if (input == "r")
@@ -161,7 +144,6 @@ namespace RobustAccessDbSync
 
             try
             {
-                string rememberedClientPath = null;
 
                 // Step 1: Try to read last-used client path
                 if (File.Exists(pointerFile))
@@ -219,9 +201,7 @@ namespace RobustAccessDbSync
                     Console.WriteLine($" Configuration saved to: {iniPath}");
                 }
 
-                // 🔁 Continue with your sync logic using the loaded values...
                 Console.WriteLine("Ready to sync using loaded configuration.");
-                // await StartSynchronization();
             }
             catch (Exception ex)
             {
@@ -230,34 +210,6 @@ namespace RobustAccessDbSync
                 Console.ResetColor();
             }
 
-            //File.WriteAllLines(filePath, new[] {
-            //    USERNAME,
-            //    PASSWORD,
-            //    SERVER_IP,
-            //    SHARE_NAME,
-            //    serverDbPath,
-            //    clientDbPath
-            //});
-
-
-            //Console.Write("\nSave these credentials for next time? (Y/N): ");
-            //var saveKey = Console.ReadKey();
-            //if (saveKey.Key == ConsoleKey.Y)
-            //{
-            //    File.WriteAllLines(filePath, new[] {
-            //    USERNAME,
-            //    PASSWORD,
-            //    SERVER_IP,
-            //    SHARE_NAME,
-            //    serverDbPath,
-            //    clientDbPath
-            //});
-            //    Console.WriteLine("\n\nCredentials saved!");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("\n");
-            //}
 
             bool isNewClientDb = false;
 
@@ -394,8 +346,8 @@ namespace RobustAccessDbSync
                 Console.ReadKey();
                 return;
             }
-             string serverConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={serverDbPath};";
-             string clientConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={clientDbPath};";
+            string serverConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={serverDbPath};";
+            string clientConnStr = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={clientDbPath};";
 
 
             ShowGameStyleLoader("Testing database connections", 20);
@@ -662,68 +614,7 @@ namespace RobustAccessDbSync
             Console.WriteLine($"[{DateTime.Now:T}] {message}");
             Console.ResetColor();
         }
-
-
-        //    static void InitializeMetadata(SyncMetadata metadata, string clientConnStr, string serverConnStr, bool isNewClientDb)
-        //    {
-        //        var allTables = GetAllTableNames(clientConnStr)
-        //            .Union(GetAllTableNames(serverConnStr))
-        //            .Distinct(StringComparer.OrdinalIgnoreCase)
-        //            .ToList();
-        //   // var allTables1 = GetAllTableNames(serverConnStr);
-        //    foreach (var table in allTables)
-        //        {
-        //            if (!metadata.TableLastSync.ContainsKey(table))
-        //            {
-        //                try
-        //                {
-        //                    using var conn = new OleDbConnection(clientConnStr);
-        //                     conn.Open();
-        //                    // First check if Serverzeit column exists
-        //                    bool hasServerzeit = ColumnExists(conn, table, "Serverzeit");
-        //                    if (!hasServerzeit)
-        //                    {
-
-        //                    //ExecuteNonQuery(clientConnStr, $"ALTER TABLE [{table}] ADD COLUMN [Serverzeit] Default Now()");
-
-        //                    metadata.TableLastSync[table] = DateTime.UtcNow;
-        //                        SaveSyncMetadata(syncMetaFile,metadata);
-        //                        continue;
-        //                    }
-        //                    using var cmd = new OleDbCommand($"SELECT MAX(Serverzeit) FROM [{table}]", conn);
-        //                    var result = cmd.ExecuteScalar();
-
-        //                    if (result != DBNull.Value && result != null)
-        //                    {
-        //                        metadata.TableLastSync[table] = (DateTime)result;
-        //                        SaveSyncMetadata(syncMetaFile, metadata);
-
-        //                    PrintInfo($"Initialized table '{table}' with max Serverzeit: {(DateTime)result:yyyy-MM-dd HH:mm:ss}");
-        //                    }
-        //                    else
-        //                    {
-        //                        metadata.TableLastSync[table] = DateTime.MinValue;
-        //                        SaveSyncMetadata(syncMetaFile, metadata);
-
-        //                    }
-        //            }
-        //                catch (Exception ex)
-        //                {
-        //                    metadata.TableLastSync[table] = DateTime.MinValue;
-        //                    //PrintWarning($"Could not initialize metadata for table '{table}': {ex.Message}");
-        //                }
-        //            }
-        //        }
-
-        //    foreach (var table in allTables)
-        //    {
-
-        //        // Client → Server
-        //        SyncTableStructure(clientConnStr, serverConnStr, table,metadata);
-        //        // Server → Client
-        //        SyncTableStructure(serverConnStr, clientConnStr, table,metadata);
-        //    }
-        //}
+     
         static void InitializeMetadata(SyncMetadata metadata, string clientConnStr, string serverConnStr, bool isNewClientDb)
         {
             var allTables = GetAllTableNames(clientConnStr)
@@ -766,6 +657,7 @@ namespace RobustAccessDbSync
 
                             continue;
                         }
+                       
 
                         // If Serverzeit exists and no metadata yet
                         if (!metadata.TableLastSync.ContainsKey(table))
@@ -773,7 +665,7 @@ namespace RobustAccessDbSync
                             using var cmd = new OleDbCommand($"SELECT MAX(Serverzeit) FROM [{table}]", conn);
                             var result = cmd.ExecuteScalar();
                             DateTime syncTime = (result != DBNull.Value && result != null)
-                                ? (DateTime)result
+                                ? ((DateTime)result).ToUniversalTime()
                                 : DateTime.MinValue;
 
                             metadata.TableLastSync[table] = syncTime;
@@ -955,6 +847,81 @@ namespace RobustAccessDbSync
                 return false;
             }
         }
+        static void SyncFiles(string sourceFolder, string targetFolder, string logFile)
+        {
+            if (!Directory.Exists(sourceFolder) || !Directory.Exists(targetFolder))
+                return;
+
+            string today = DateTime.Today.ToString("yyyy-MM-dd");
+
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".pdf", ".docx", ".xlsx", ".txt", ".jfif" };
+
+            string[] sourceFiles = Directory
+                .EnumerateFiles(sourceFolder, ".", SearchOption.AllDirectories)
+                .Where(f =>
+                    !f.EndsWith(".ldb", StringComparison.OrdinalIgnoreCase) &&
+                    allowedExtensions.Contains(Path.GetExtension(f).ToLower()))
+                .ToArray();
+
+            var loggedFiles = new HashSet<string>();
+            string logPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, logFile);
+
+            if (File.Exists(logPath))
+            {
+                var existingLogs = File.ReadAllLines(logPath);
+                loggedFiles = existingLogs
+                    .Where(line => line.StartsWith(today))
+                    .Select(line => line.Split('|')[1])
+                    .ToHashSet();
+            }
+
+            foreach (var src in sourceFiles)
+            {
+                string relativePath = Path.GetRelativePath(sourceFolder, src);
+                string dest = Path.Combine(targetFolder, relativePath);
+
+                Directory.CreateDirectory(Path.GetDirectoryName(dest)!);
+
+                bool shouldCopy = !File.Exists(dest) || File.GetLastWriteTimeUtc(src) > File.GetLastWriteTimeUtc(dest);
+                bool alreadyLoggedToday = loggedFiles.Contains(relativePath);
+
+                if (shouldCopy)
+                {
+                    File.Copy(src, dest, true);
+
+                    if (!alreadyLoggedToday)
+                    {
+                        File.AppendAllText(logPath, $"{today}|{relativePath}|{File.GetLastWriteTimeUtc(src)}{Environment.NewLine}");
+                        PrintSuccess($"File synced: {relativePath}");
+                    }
+                }
+            }
+        }
+        static void SyncFilesBothDirections(string clientDbPath, string serverDbPath)
+        {
+            string logFilePath = Path.Combine(Path.GetDirectoryName(clientDbPath), "file_sync_log.txt");
+
+            if (HasMdbExtension(clientDbPath) && HasMdbExtension(serverDbPath))
+            {
+                string clientFolder = Path.GetDirectoryName(clientDbPath)!;
+                string serverFolder = Path.GetDirectoryName(serverDbPath)!;
+
+                if (Directory.Exists(clientFolder) && Directory.Exists(serverFolder))
+                {
+
+                    SyncFiles(clientFolder, serverFolder, logFilePath);
+                    SyncFiles(serverFolder, clientFolder, logFilePath);
+                }
+            }
+            else
+            {
+                if (Directory.Exists(clientDbPath) && Directory.Exists(serverDbPath))
+                {
+                    SyncFiles(clientDbPath, serverDbPath, logFilePath);
+                    SyncFiles(serverDbPath, clientDbPath, logFilePath);
+                }
+            }
+        }
 
 
         static async Task ContinuousSync(
@@ -973,16 +940,6 @@ SyncMetadata metadata)
                     var clientTables = GetAllTableNames(clientConnStr);
                     var serverTables = GetAllTableNames(serverConnStr);
                     var allTables = clientTables.Union(serverTables).ToList();
-                    //foreach (var table in allTables)
-                    //{
-
-                    //    // Client → Server
-                    //    SyncTableStructure(clientConnStr, serverConnStr, table, metadata);
-                    //    // Server → Client
-                    //    SyncTableStructure(serverConnStr, clientConnStr, table, metadata);
-                    //}
-
-                    //List<DateTime> lastSyncTimes = metadata.TableLastSync.Values.ToList();
 
                     foreach (var table in allTables)
                     {
@@ -1002,13 +959,8 @@ SyncMetadata metadata)
                                 PrintSuccess("Connection restored");
                             }
                             _lastOnlineTime = DateTime.Now;
+                            var fileSyncTask = Task.Run(() => SyncFilesBothDirections(clientDbPath, serverDbPath));
 
-                            if (metadata.QueuedChanges.Count > 0)
-                            {
-                                PrintInfo($"Processing {metadata.QueuedChanges.Count} queued changes");
-                                await ProcessQueuedChanges(metadata, clientConnStr, serverConnStr);
-                                SaveSyncMetadata(syncMetaFile, metadata);
-                            }
                             //  List<DateTime> lastSyncTimes1 = metadata.TableLastSync.Values.ToList();
                             int totalChanges = 0;
 
@@ -1093,7 +1045,7 @@ SyncMetadata metadata)
                                     // PrintError($"Error syncing table {tableName}: {ex.Message}");
                                 }
                             }
-
+                            await fileSyncTask;
                             _cycleTimer.Stop();
                             PrintSuccess($"Sync cycle completed in {_cycleTimer.Elapsed.TotalSeconds:0.00} seconds. Total changes: {totalChanges}");
 
@@ -1110,7 +1062,6 @@ SyncMetadata metadata)
                                 _lastOnlineTime = DateTime.MinValue;
                             }
 
-                            await QueueLocalChanges(metadata, clientConnStr);
                         }
 
                         // Wait until the next sync cycle
@@ -1138,147 +1089,9 @@ SyncMetadata metadata)
             }
         }
 
-        static async Task ProcessQueuedChanges(
-                SyncMetadata metadata,
-                string clientConnStr,
-                string serverConnStr)
-        {
-            var processedChanges = new List<QueuedChange>();
+        
 
-            foreach (var change in metadata.QueuedChanges)
-            {
-                try
-                {
-                    if (change.IsDelete)
-                    {
-                        using (var conn = new OleDbConnection(serverConnStr))
-                        {
-                            conn.Open();
-                            DeleteRecord(conn, change.TableName, change.PkColumn, change.RowData[change.PkColumn]);
-                            PrintSuccess($"Applied queued delete for {change.TableName} (PK: {change.RowData[change.PkColumn]})");
-                        }
-                    }
-                    else
-                    {
-                        using (var conn = new OleDbConnection(serverConnStr))
-                        {
-                            conn.Open();
-                            if (ApplyChangeWithConflictResolution(
-                                conn,
-                                change.TableName,
-                                change.RowData,
-                                isServerToClient: false,
-                                change.PkColumn))
-                            {
-                                PrintSuccess($"Applied queued change for {change.TableName} (PK: {change.RowData[change.PkColumn]})");
-                            }
-                        }
-                    }
-
-                    processedChanges.Add(change);
-                }
-                catch (Exception ex)
-                {
-                    PrintError($"Failed to apply queued change: {ex.Message}");
-                }
-            }
-
-            foreach (var change in processedChanges)
-            {
-                metadata.QueuedChanges.Remove(change);
-            }
-        }
-
-        static async Task QueueLocalChanges(SyncMetadata metadata, string clientConnStr)
-        {
-            foreach (var tableName in GetAllTableNames(clientConnStr))
-            {
-                try
-                {
-                    DateTime lastSync = metadata.TableLastSync.ContainsKey(tableName)
-                        ? metadata.TableLastSync[tableName]
-                        : DateTime.MinValue;
-
-                    string pkColumn = GetPrimaryKeyColumn(clientConnStr, tableName);
-                    if (string.IsNullOrEmpty(pkColumn)) continue;
-
-                    // Queue inserts/updates
-                    using (var conn = new OleDbConnection(clientConnStr))
-                    {
-                        conn.Open();
-                        string query = $@"SELECT * FROM [{tableName}] WHERE Serverzeit >= @lastSync";
-
-                        using (var cmd = new OleDbCommand(query, conn))
-                        {
-                            DateTime cleanedLastSync = SafeTimestamp(lastSync);
-                            cmd.Parameters.AddWithValue("@lastSync", cleanedLastSync);
-
-                            using (var reader = cmd.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    var row = new Dictionary<string, object>();
-                                    for (int i = 0; i < reader.FieldCount; i++)
-                                    {
-                                        row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
-                                    }
-
-                                    metadata.QueuedChanges.Add(new QueuedChange
-                                    {
-                                        TableName = tableName,
-                                        PkColumn = pkColumn,
-                                        RowData = row,
-                                        IsDelete = false,
-                                        ChangeTime = DateTime.UtcNow
-                                    });
-                                }
-                            }
-                        }
-                    }
-
-                    // Queue deletes by checking for records that exist in metadata but not in database
-                    var existingPks = new HashSet<object>();
-                    using (var conn = new OleDbConnection(clientConnStr))
-                    {
-                        conn.Open();
-                        string query = $"SELECT [{pkColumn}] FROM [{tableName}]";
-
-                        using (var cmd = new OleDbCommand(query, conn))
-                        using (var reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                existingPks.Add(reader.IsDBNull(0) ? null : reader.GetValue(0));
-                            }
-                        }
-                    }
-
-                    // Check queued changes for records that might have been deleted
-                    foreach (var change in metadata.QueuedChanges.ToList())
-                    {
-                        if (change.TableName.Equals(tableName, StringComparison.OrdinalIgnoreCase) &&
-                            !change.IsDelete && !existingPks.Contains(change.RowData[change.PkColumn]))
-                        {
-                            // Convert update to delete
-                            metadata.QueuedChanges.Remove(change);
-                            metadata.QueuedChanges.Add(new QueuedChange
-                            {
-                                TableName = tableName,
-                                PkColumn = pkColumn,
-                                RowData = new Dictionary<string, object> { { pkColumn, change.RowData[pkColumn] } },
-                                IsDelete = true,
-                                ChangeTime = DateTime.UtcNow
-                            });
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    PrintError($"Error queuing changes for {tableName}: {ex.Message}");
-                }
-            }
-        }
-
+      
         static async Task<int> SyncDirection(
         string sourceConnStr,
             string targetConnStr,
@@ -1331,31 +1144,16 @@ SyncMetadata metadata)
                         ExecuteNonQuery(sourceConn, $"ALTER TABLE [{tableName}] ADD CONSTRAINT pk_{tableName}_DefaultSynCID PRIMARY KEY ([DefaultSynCID])");
                     }
 
-                    //using (var targetconn = new OleDbConnection(targetConnStr))
-                    //{
-                    //    targetconn.Open();
-                    //    if (!TableExists(sourceConn, tableName) || !TableExists(targetconn, tableName))
-                    //    {
-                    //        SyncTableStructure(sourceConnStr, targetConnStr, tableName, metadata);
-                    //    }
-                    //}
-
-
-
-                    //string query = $@"SELECT * FROM [{tableName}] 
-                    //                WHERE Serverzeit > @lastSync
-                    //                ORDER BY Serverzeit";
-                    // Modified query with DESC and optional TOP clause for better performance
+                  
 
                     if (isServerToClient)
                     {
                         string query = $@"SELECT * FROM [{tableName}] 
                                                     WHERE Serverzeit > ?
                                                     ORDER BY Serverzeit DESC";  // Newest first
-
                         using (var cmd = new OleDbCommand(query, sourceConn))
                         {
-                            DateTime cleanedLastSync = SafeTimestamp(lastSync); // keep original timestamp, strip milliseconds
+                            DateTime cleanedLastSync = SafeTimestamp(lastSync.ToLocalTime()); // keep original timestamp, strip milliseconds
                             cmd.Parameters.AddWithValue("?", cleanedLastSync);
 
                             using (var reader = cmd.ExecuteReader())
@@ -1366,24 +1164,97 @@ SyncMetadata metadata)
                                     for (int i = 0; i < reader.FieldCount; i++)
                                     {
                                         row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                                        
                                     }
-
                                     using (var targetConn = new OleDbConnection(targetConnStr))
                                     {
+                                        string Targetpkcolumn = GetPrimaryKeyColumn(targetConnStr, tableName);
+                                        //var Loggingdata = new List<ChangesModel>();
                                         targetConn.Open();
+                                        string Targetquery = $@"SELECT * FROM [{tableName}] 
+                                                WHERE [{Targetpkcolumn}] = ?";
+                                        var Loggingdata = new List<ChangesModel>();
+
+                                        using (var cmd2 = new OleDbCommand(Targetquery, targetConn))
+                                        {
+                                            cmd2.Parameters.AddWithValue("?", row[pkColumn]);
+                                            using (var reader1 = cmd2.ExecuteReader())
+                                            {
+                                                if (reader1.HasRows)
+                                                {
+                                                    while (reader1.Read())
+                                                    {
+                                                        var TargetLog = new Dictionary<string, object>();
+
+                                                        for (int i = 0; i < reader1.FieldCount; i++)
+                                                        {
+                                                            TargetLog[reader1.GetName(i)] = reader1.IsDBNull(i) ? null : reader1.GetValue(i);
+                                                        }
+
+                                                        foreach (var key in row.Keys)
+                                                        {
+                                                            if (key == "Serverzeit")
+                                                                continue;
+
+                                                            if (!TargetLog.ContainsKey(key))
+                                                                continue;
+
+                                                            string oldVal = TargetLog[key]?.ToString();
+                                                            string newVal = row[key]?.ToString();
+
+                                                            if (oldVal != newVal)
+                                                            {
+                                                                Loggingdata.Add(new ChangesModel
+                                                                {
+                                                                    Direction = "ServerToClient",
+                                                                    ColumnName = key,
+                                                                    OldValue = oldVal,
+                                                                    NewValue = newVal,
+                                                                });
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    // INSERT CASE: row does not exist in target
+                                                    foreach (var key in row.Keys)
+                                                    {
+                                                        if (key == "Serverzeit")
+                                                            continue;
+
+                                                        Loggingdata.Add(new ChangesModel
+                                                        {
+                                                            Direction = "ServerToClient",
+                                                            ColumnName = key,
+                                                            OldValue = null,
+                                                            NewValue = row[key]?.ToString(),
+                                                        });
+                                                    }
+                                                }
+                                            }
+
+                                        }
 
                                         if (ApplyChangeWithConflictResolution(
-                                        targetConn,
-                                        tableName,
-                                        row,
-                                        isServerToClient,
-                                        pkColumn))
+                                            targetConn,
+                                            tableName,
+                                            row,
+                                            isServerToClient,
+                                            pkColumn))
+                                            {
+                                                changesApplied++;
+                                                var rowTimestamp = Convert.ToDateTime(row["Serverzeit"]);
+                                                if (rowTimestamp > maxTimestamp)
+                                                    maxTimestamp = rowTimestamp;
+                                         }
+                                        if (Loggingdata.Count > 0)
                                         {
-                                            changesApplied++;
-                                            var rowTimestamp = Convert.ToDateTime(row["Serverzeit"]);
-                                            if (rowTimestamp > maxTimestamp)
-                                                maxTimestamp = rowTimestamp;
+                                            string logFilePath = Path.Combine(Path.GetDirectoryName(clientDbPath), "Configlog.ini");
+
+                                            WriteChangesToIni(tableName, row[pkColumn], Loggingdata, logFilePath);
                                         }
+
                                     }
                                 }
                             }
@@ -1394,10 +1265,9 @@ SyncMetadata metadata)
                         string query = $@"SELECT * FROM [{tableName}] 
                                                     WHERE Serverzeit > ?
                                                     ORDER BY Serverzeit DESC";  // Newest first
-
                         using (var cmd = new OleDbCommand(query, sourceConn))
                         {
-                            DateTime cleanedLastSync = SafeTimestamp(lastSync); // keep original timestamp, strip milliseconds
+                            DateTime cleanedLastSync = SafeTimestamp(lastSync.ToLocalTime()); // keep original timestamp, strip milliseconds
                             cmd.Parameters.AddWithValue("?", cleanedLastSync);
 
                             using (var reader = cmd.ExecuteReader())
@@ -1408,11 +1278,76 @@ SyncMetadata metadata)
                                     for (int i = 0; i < reader.FieldCount; i++)
                                     {
                                         row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
-                                    }
 
+                                    }
                                     using (var targetConn = new OleDbConnection(targetConnStr))
                                     {
+                                        string Targetpkcolumn = GetPrimaryKeyColumn(targetConnStr, tableName);
+                                        //var Loggingdata = new List<ChangesModel>();
                                         targetConn.Open();
+                                        string Targetquery = $@"SELECT * FROM [{tableName}] 
+                                                WHERE [{Targetpkcolumn}] = ?";
+                                        var Loggingdata = new List<ChangesModel>();
+
+                                        using (var cmd2 = new OleDbCommand(Targetquery, targetConn))
+                                        {
+                                            cmd2.Parameters.AddWithValue("?", row[pkColumn]);
+                                            using (var reader1 = cmd2.ExecuteReader())
+                                            {
+                                                if (reader1.HasRows)
+                                                {
+                                                    while (reader1.Read())
+                                                    {
+                                                        var TargetLog = new Dictionary<string, object>();
+
+                                                        for (int i = 0; i < reader1.FieldCount; i++)
+                                                        {
+                                                            TargetLog[reader1.GetName(i)] = reader1.IsDBNull(i) ? null : reader1.GetValue(i);
+                                                        }
+
+                                                        foreach (var key in row.Keys)
+                                                        {
+                                                            if (key == "Serverzeit")
+                                                                continue;
+
+                                                            if (!TargetLog.ContainsKey(key))
+                                                                continue;
+
+                                                            string oldVal = TargetLog[key]?.ToString();
+                                                            string newVal = row[key]?.ToString();
+
+                                                            if (oldVal != newVal)
+                                                            {
+                                                                Loggingdata.Add(new ChangesModel
+                                                                {
+                                                                    Direction = "ClientToServer",
+                                                                    ColumnName = key,
+                                                                    OldValue = oldVal,
+                                                                    NewValue = newVal,
+                                                                });
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    // INSERT CASE: row does not exist in target
+                                                    foreach (var key in row.Keys)
+                                                    {
+                                                        if (key == "Serverzeit")
+                                                            continue;
+
+                                                        Loggingdata.Add(new ChangesModel
+                                                        {
+                                                            Direction = "ClientToServer",
+                                                            ColumnName = key,
+                                                            OldValue = null,
+                                                            NewValue = row[key]?.ToString(),
+                                                        });
+                                                    }
+                                                }
+                                            }
+                                        }
 
                                         if (ApplyChangeWithConflictResolution(
                                         targetConn,
@@ -1426,6 +1361,13 @@ SyncMetadata metadata)
                                             if (rowTimestamp > maxTimestamp)
                                                 maxTimestamp = rowTimestamp;
                                         }
+                                        if (Loggingdata.Count > 0)
+                                        {
+                                            string logFilePath = Path.Combine(Path.GetDirectoryName(clientDbPath), "Configlog.ini");
+
+                                            WriteChangesToIni(tableName, row[pkColumn], Loggingdata, logFilePath);
+                                        }
+
                                     }
                                 }
                             }
@@ -1442,14 +1384,14 @@ SyncMetadata metadata)
             {
                 if (changesApplied > 0 && isServerToClient == true)
                 {
-                    maxTimestamp = maxTimestamp.AddSeconds(1);
+                    maxTimestamp = maxTimestamp.AddSeconds(1).ToUniversalTime();
                     metadata.TableLastSync[tableName] = maxTimestamp;
                     SaveSyncMetadata(syncMetaFile, metadata);
 
                 }
                 else
                 {
-                    metadata.TableLastSync[tableName] = maxTimestamp;
+                    metadata.TableLastSync[tableName] = maxTimestamp.ToUniversalTime();
                     SaveSyncMetadata(syncMetaFile, metadata);
                 }
 
@@ -1458,6 +1400,23 @@ SyncMetadata metadata)
 
             return changesApplied;
         }
+
+       static void WriteChangesToIni(string tableName, object primaryKey, List<ChangesModel> changes, string filePath)
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine($"[TableName: {tableName}]");
+            sb.AppendLine($"Direction = {changes[0].Direction}");
+           // sb.AppendLine($"ChangedAt = {primaryKey}");
+
+            foreach (var change in changes)
+            {
+                sb.AppendLine($"ColumnName {change.ColumnName} = {change.OldValue} -> {change.NewValue}");
+            }
+            sb.AppendLine($"ChangedAt = {DateTime.Now:O}");
+            sb.AppendLine();
+            File.AppendAllText(filePath, sb.ToString());
+        }
+
         static DateTime SafeTimestamp(DateTime dt)
         {
             return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Kind);
@@ -1472,13 +1431,13 @@ SyncMetadata metadata)
             try
             {
                 var pkValue = row[pkColumn]; // This is a GUID
-                var incomingLastModified = Convert.ToDateTime(row["Serverzeit"]);
+              //  var incomingLastModified = Convert.ToDateTime(row["Serverzeit"]);
 
                 bool exists = RecordExists(targetConn, tableName, pkColumn, pkValue);
                 if (!exists)
                     return InsertRecord(targetConn, tableName, row);
 
-                var targetLastModified = GetLastModified(targetConn, tableName, pkColumn, pkValue);
+               // var targetLastModified = GetLastModified(targetConn, tableName, pkColumn, pkValue);
                 //var targetRecord = GetRecord(targetConn, tableName, pkColumn, pkValue);
 
                 // Simple conflict resolution - server wins
@@ -1491,8 +1450,6 @@ SyncMetadata metadata)
                 else
                 {
                     // For client to server, only update if client has newer version
-
-
                     return UpdateRecord(targetConn, tableName, row, pkColumn);
 
                 }
@@ -1505,64 +1462,6 @@ SyncMetadata metadata)
 
         }
 
-
-
-        static void CreateTableFromSource(OleDbConnection sourceConn, OleDbConnection targetConn, string tableName)
-        {
-            try
-            {
-                // Get table schema from source
-                DataTable schema = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
-                    new object[] { null, null, tableName, "TABLE" });
-
-                if (schema.Rows.Count == 0) return;
-
-                // Get columns information
-                DataTable columns = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns,
-                    new object[] { null, null, tableName, null });
-
-                // Get primary key information
-                DataTable primaryKeys = sourceConn.GetOleDbSchemaTable(OleDbSchemaGuid.Primary_Keys,
-                    new object[] { null, null, tableName });
-
-                // Build CREATE TABLE statement
-                var createTableSql = new StringBuilder($"CREATE TABLE [{tableName}] (");
-
-                foreach (DataRow column in columns.Rows)
-                {
-                    string columnName = column["COLUMN_NAME"].ToString();
-                    string dataType = GetSqlDataType(column);
-                    bool isPrimaryKey = primaryKeys.Select($"COLUMN_NAME = '{columnName}'").Length > 0;
-
-                    createTableSql.Append($"[{columnName}] {dataType}");
-
-                    if (isPrimaryKey)
-                        createTableSql.Append(" PRIMARY KEY");
-
-                    createTableSql.Append(", ");
-                }
-
-                // Add LastModified column if it doesn't exist
-                if (columns.Select("COLUMN_NAME = 'Serverzeit'").Length == 0)
-                {
-                    createTableSql.Append("[Serverzeit] DATETIME DEFAULT Now(), ");
-                }
-
-                // Remove trailing comma and close statement
-                createTableSql.Length -= 2;
-                createTableSql.Append(")");
-
-                // Execute creation
-                using var cmd = new OleDbCommand(createTableSql.ToString(), targetConn);
-                cmd.ExecuteNonQuery();
-
-                Console.WriteLine($"Created table {tableName} in {targetConn} database");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error creating table {tableName}: {ex.Message}");
-            }
-        }
 
         static string GetSqlDataType(DataRow column)
 
@@ -1831,22 +1730,6 @@ SyncMetadata metadata)
             catch
             {
                 return DateTime.MinValue;
-            }
-        }
-
-        static void DeleteRecord(OleDbConnection conn, string tableName, string pkColumn, object pkValue)
-        {
-            try
-            {
-                string query = $"DELETE FROM [{tableName}] WHERE [{pkColumn}] = ?";
-                using var cmd = new OleDbCommand(query, conn);
-                cmd.Parameters.AddWithValue($"@{pkColumn}", pkValue);
-                cmd.ExecuteNonQuery();
-                PrintSuccess($"Deleted record from {tableName} (PK: {pkValue})");
-            }
-            catch (Exception ex)
-            {
-                PrintError($"Error deleting record from {tableName}: {ex.Message}");
             }
         }
     }
