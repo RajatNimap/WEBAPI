@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{85E90403-3836-4F2A-8101-9F65D396E226}|OledbSyncronization\\OledbSyncronization.csproj|solutionrelative:oledbsyncronization\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{85E90403-3836-4F2A-8101-9F65D396E226}|OledbSyncronization\\OledbSyncronization.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\oledbsyncronization\\oledbsyncronization\\oledbsyncronization.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{85E90403-3836-4F2A-8101-9F65D396E226}|OledbSyncronization\\OledbSyncronization.csproj|solutionrelative:oledbsyncronization\\oledbsyncronization.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{85E90403-3836-4F2A-8101-9F65D396E226}|OledbSyncronization\\OledbSyncronization.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\oledbsyncronization\\oledbsyncronization\\changesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85E90403-3836-4F2A-8101-9F65D396E226}|OledbSyncronization\\OledbSyncronization.csproj|solutionrelative:oledbsyncronization\\changesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,12 +35,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "OledbSyncronization",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\OledbSyncronization\\OledbSyncronization\\OledbSyncronization.csproj",
+              "RelativeDocumentMoniker": "OledbSyncronization\\OledbSyncronization.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\OledbSyncronization\\OledbSyncronization\\OledbSyncronization.csproj",
+              "RelativeToolTip": "OledbSyncronization\\OledbSyncronization.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-11T11:39:00.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ChangesModel.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\OledbSyncronization\\OledbSyncronization\\ChangesModel.cs",
               "RelativeDocumentMoniker": "OledbSyncronization\\ChangesModel.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\OledbSyncronization\\OledbSyncronization\\ChangesModel.cs",
               "RelativeToolTip": "OledbSyncronization\\ChangesModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-09T12:34:59.263Z",
               "EditorCaption": ""
@@ -49,7 +66,7 @@
               "RelativeDocumentMoniker": "OledbSyncronization\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\OledbSyncronization\\OledbSyncronization\\Program.cs",
               "RelativeToolTip": "OledbSyncronization\\Program.cs",
-              "ViewState": "AgIAANYEAAAA2JmZmZkXwJMCAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAOwDAACAMTMzM7MRwAYEAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-02T06:03:18.273Z",
               "EditorCaption": ""

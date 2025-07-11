@@ -15,10 +15,19 @@ using OledbSyncronization;
 
 namespace RobustAccessDbSync
 {
+    // Replace existing SyncMetadata with this version
+
+    class SyncTimestamps
+    {
+        public DateTime ServerToClient { get; set; } = DateTime.MinValue;
+        public DateTime ClientToServer { get; set; } = DateTime.MinValue;
+    }
+
     class SyncMetadata
     {
-        public Dictionary<string, DateTime> TableLastSync { get; set; } = new Dictionary<string, DateTime>();
+        public Dictionary<string, SyncTimestamps> TableLastSync { get; set; } = new();
     }
+
 
     class Program
     {
@@ -469,7 +478,7 @@ namespace RobustAccessDbSync
             using (var connection = new OleDbConnection(connectionString))
             using (var command = new OleDbCommand(query, connection))
             {
-                DateTime nowUtc = SafeTimestamp(DateTime.UtcNow);
+                DateTime nowUtc = SafeTimestamp(DateTime.Now);
                 //nowUtc = nowUtc.AddSeconds(1);
                 command.Parameters.AddWithValue("?", nowUtc);
                 try
@@ -558,7 +567,12 @@ namespace RobustAccessDbSync
                 ExecuteNonQuery(targetConn, createTableSql.ToString());
                 Console.WriteLine($"Created table {tableName} in target database");
 
-                metadata.TableLastSync[tableName] = DateTime.MinValue;
+                metadata.TableLastSync[tableName] = new SyncTimestamps
+                {
+                    ServerToClient = DateTime.MinValue,
+                    ClientToServer = DateTime.MinValue
+                };
+
                 SaveSyncMetadata(syncMetaFile, metadata);
                 PrintInfo($"[New Table] Initialized sync time for '{tableName}' to {DateTime.MinValue:yyyy-MM-dd HH:mm:ss}");
 
@@ -651,7 +665,13 @@ namespace RobustAccessDbSync
                             // Initialize metadata (only once per table)
                             if (!metadata.TableLastSync.ContainsKey(table))
                             {
-                                metadata.TableLastSync[table] = utcNow.AddSeconds(-1);
+                                //metadata.TableLastSync[table] = utcNow.AddSeconds(-1);
+                                metadata.TableLastSync[table] = new SyncTimestamps
+                                {
+                                    ServerToClient = utcNow,
+                                    ClientToServer = utcNow,
+                                };
+
                                 SaveSyncMetadata(syncMetaFile, metadata);
                             }
 
@@ -667,9 +687,10 @@ namespace RobustAccessDbSync
                             DateTime syncTime = (result != DBNull.Value && result != null)
                                 ? ((DateTime)result).ToUniversalTime()
                                 : DateTime.MinValue;
-
-                            metadata.TableLastSync[table] = syncTime;
-                            PrintInfo($"Initialized table '{table}' with Serverzeit: {syncTime:yyyy-MM-dd HH:mm:ss}");
+                            metadata.TableLastSync[table] = new SyncTimestamps();
+                            metadata.TableLastSync[table].ServerToClient = syncTime;
+                            metadata.TableLastSync[table].ClientToServer = syncTime;
+                            PrintInfo($"Initialized table '{table}' with Serverzeit: {syncTime.ToLocalTime():yyyy-MM-dd HH:mm:ss}");
                             SaveSyncMetadata(syncMetaFile, metadata);
                         }
                     }
@@ -678,7 +699,12 @@ namespace RobustAccessDbSync
                         // PrintWarning($"[INIT] Error processing '{table}' in {(connStr == clientConnStr ? "client" : "server")}: {ex.Message}");
                         if (!metadata.TableLastSync.ContainsKey(table))
                         {
-                            metadata.TableLastSync[table] = DateTime.MinValue;
+                            metadata.TableLastSync[table] = new SyncTimestamps
+                            {
+                                ServerToClient = DateTime.MinValue,
+                                ClientToServer = DateTime.MinValue
+                            };
+
                             SaveSyncMetadata(syncMetaFile, metadata);
                         }
                     }
@@ -944,9 +970,14 @@ SyncMetadata metadata)
                     foreach (var table in allTables)
                     {
                         if (!_syncRunning) break;
-                        DateTime lastSync1 = metadata.TableLastSync.TryGetValue(table, out var syncTime2)
-                                   ? syncTime2
-                                   : DateTime.MinValue;
+                        //DateTime lastSync1 = metadata.TableLastSync.TryGetValue(table, out var syncTime2)
+                        //           ? syncTime2
+                        //           : DateTime.MinValue;
+                        //DateTime lastSync = metadata.TableLastSync.TryGetValue(table, out var syncData)
+                        // ? syncData.ServerToClient
+                        // : DateTime.MinValue;
+
+
                         _cycleTimer.Restart();
                         PrintInfo($"Starting sync cycle at {DateTime.Now:T}");
 
@@ -971,17 +1002,15 @@ SyncMetadata metadata)
                                 {
 
                                     // Ensure no null Serverzeit entries
-                                    UpdateNullServerzeitForTable(clientConnStr, tableName);
                                     UpdateNullServerzeitForTable(serverConnStr, tableName);
 
                                     // Load last sync timestamp from metadata
-                                    DateTime lastSync = metadata.TableLastSync.TryGetValue(tableName, out var syncTime)
-                                        ? syncTime
-                                        : DateTime.MinValue;
+                                    DateTime lastSync = metadata.TableLastSync.TryGetValue(table, out var syncData)
+                                     ? syncData.ServerToClient
+                                     : DateTime.MinValue;
 
-                                    PrintInfo($"Syncing {tableName} since {lastSync:yyyy-MM-dd HH:mm:ss}");
-
-
+                                    PrintInfo($"Syncing {tableName} since {lastSync.ToLocalTime():yyyy-MM-dd HH:mm:ss}");
+                                    var skipList = new HashSet<object>();
                                     // Sync Server → Client
                                     int serverToClient = await SyncDirection(
                                         sourceConnStr: serverConnStr,
@@ -989,7 +1018,8 @@ SyncMetadata metadata)
                                         tableName: tableName,
                                         lastSync: lastSync,
                                         isServerToClient: true,
-                                        metadata: metadata
+                                        metadata: metadata,
+                                        skipList
                                     );
 
                                     if (serverToClient > 0)
@@ -997,21 +1027,26 @@ SyncMetadata metadata)
                                         PrintSuccess($"{tableName} sync: Server → Client: {serverToClient}");
                                         totalChanges += serverToClient;
                                     }
+                                    UpdateNullServerzeitForTable(clientConnStr, tableName);
 
-                                    lastSync = metadata.TableLastSync.TryGetValue(tableName, out var syncTime1)
-                                        ? syncTime1
-                                        : DateTime.MinValue;
+                                    //lastSync = metadata.TableLastSync.TryGetValue(tableName, out var syncTime1)
+                                    //    ? syncTime1
+                                    // : DateTime.MinValue;
                                     // Refresh last sync from metadata in case it was updated
+                                    var lastSync1 = metadata.TableLastSync.TryGetValue(tableName, out var syncTime1)
+                                      ? syncTime1.ClientToServer
+                                        : DateTime.MinValue;
+
 
                                     // Sync Client → Server
                                     int clientToServer = await SyncDirection(
                                         sourceConnStr: clientConnStr,
                                         targetConnStr: serverConnStr,
                                         tableName: tableName,
-                                        lastSync: lastSync,
+                                        lastSync: lastSync1,
                                         isServerToClient: false,
-                                        metadata: metadata
-                                    );
+                                        metadata: metadata,
+                                        skipList);
 
                                     if (clientToServer > 0)
                                     {
@@ -1026,7 +1061,10 @@ SyncMetadata metadata)
 
                                         //metadata.TableLastSync[tableName] = lastSync;
                                         //SaveSyncMetadata(syncMetaFile, metadata);
-
+                                        var getsafeTime = SafeTimestamp(DateTime.UtcNow);
+                                        metadata.TableLastSync[tableName].ServerToClient = getsafeTime;
+                                        metadata.TableLastSync[tableName].ClientToServer = getsafeTime;
+                                        SaveSyncMetadata(syncMetaFile, metadata);
 
                                     }
                                     if (serverToClient == 0 && clientToServer == 0)
@@ -1088,17 +1126,13 @@ SyncMetadata metadata)
                 }
             }
         }
-
-        
-
-      
         static async Task<int> SyncDirection(
         string sourceConnStr,
             string targetConnStr,
             string tableName,
             DateTime lastSync,
             bool isServerToClient,
-            SyncMetadata metadata)
+            SyncMetadata metadata, HashSet<object> skipList)
         {
             int changesApplied = 0;
 
@@ -1106,8 +1140,6 @@ SyncMetadata metadata)
 
             try
             {
-
-
                 if (isServerToClient)
                 {
                     var clientTables = GetAllTableNames(sourceConnStr);
@@ -1143,8 +1175,7 @@ SyncMetadata metadata)
                         ExecuteNonQuery(sourceConn, $"ALTER TABLE [{tableName}] ADD COLUMN [DefaultSynCID] GUID");
                         ExecuteNonQuery(sourceConn, $"ALTER TABLE [{tableName}] ADD CONSTRAINT pk_{tableName}_DefaultSynCID PRIMARY KEY ([DefaultSynCID])");
                     }
-
-                  
+                   //var Skipist = new List<object>();
 
                     if (isServerToClient)
                     {
@@ -1155,7 +1186,6 @@ SyncMetadata metadata)
                         {
                             DateTime cleanedLastSync = SafeTimestamp(lastSync.ToLocalTime()); // keep original timestamp, strip milliseconds
                             cmd.Parameters.AddWithValue("?", cleanedLastSync);
-
                             using (var reader = cmd.ExecuteReader())
                             {
                                 while (reader.Read())
@@ -1166,10 +1196,10 @@ SyncMetadata metadata)
                                         row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
                                         
                                     }
+                                    skipList.Add(row[pkColumn]);
                                     using (var targetConn = new OleDbConnection(targetConnStr))
                                     {
                                         string Targetpkcolumn = GetPrimaryKeyColumn(targetConnStr, tableName);
-                                        //var Loggingdata = new List<ChangesModel>();
                                         targetConn.Open();
                                         string Targetquery = $@"SELECT * FROM [{tableName}] 
                                                 WHERE [{Targetpkcolumn}] = ?";
@@ -1190,7 +1220,7 @@ SyncMetadata metadata)
                                                         {
                                                             TargetLog[reader1.GetName(i)] = reader1.IsDBNull(i) ? null : reader1.GetValue(i);
                                                         }
-
+                                                        
                                                         foreach (var key in row.Keys)
                                                         {
                                                             if (key == "Serverzeit")
@@ -1198,14 +1228,19 @@ SyncMetadata metadata)
 
                                                             if (!TargetLog.ContainsKey(key))
                                                                 continue;
-
+                                                            string primarykeyGuid = "";
+                                                            if(key == pkColumn)
+                                                            {
+                                                                primarykeyGuid=TargetLog[key]?.ToString();    
+                                                            }
                                                             string oldVal = TargetLog[key]?.ToString();
                                                             string newVal = row[key]?.ToString();
+
 
                                                             if (oldVal != newVal)
                                                             {
                                                                 Loggingdata.Add(new ChangesModel
-                                                                {
+                                                                {   //GUID=primarykeyGuid,
                                                                     Direction = "ServerToClient",
                                                                     ColumnName = key,
                                                                     OldValue = oldVal,
@@ -1235,7 +1270,6 @@ SyncMetadata metadata)
                                             }
 
                                         }
-
                                         if (ApplyChangeWithConflictResolution(
                                             targetConn,
                                             tableName,
@@ -1277,8 +1311,13 @@ SyncMetadata metadata)
                                     var row = new Dictionary<string, object>();
                                     for (int i = 0; i < reader.FieldCount; i++)
                                     {
+                                      
                                         row[reader.GetName(i)] = reader.IsDBNull(i) ? null : reader.GetValue(i);
 
+                                    }
+                                    if (skipList.Contains(row[pkColumn]))
+                                    {
+                                        continue;
                                     }
                                     using (var targetConn = new OleDbConnection(targetConnStr))
                                     {
@@ -1349,6 +1388,7 @@ SyncMetadata metadata)
                                             }
                                         }
 
+
                                         if (ApplyChangeWithConflictResolution(
                                         targetConn,
                                         tableName,
@@ -1380,24 +1420,45 @@ SyncMetadata metadata)
                 //PrintError($"Error syncing {tableName}: {ex.Message}");
             }
 
-            if (maxTimestamp >= metadata.TableLastSync[tableName])
-            {
-                if (changesApplied > 0 && isServerToClient == true)
-                {
-                    maxTimestamp = maxTimestamp.AddSeconds(1).ToUniversalTime();
-                    metadata.TableLastSync[tableName] = maxTimestamp;
-                    SaveSyncMetadata(syncMetaFile, metadata);
+            //if (maxTimestamp >= metadata.TableLastSync[tableName])
+            //{
+            //    if (changesApplied > 0 && isServerToClient == true)
+            //    {
+            //        maxTimestamp = maxTimestamp.AddSeconds(1).ToUniversalTime();
+            //        metadata.TableLastSync[tableName] = maxTimestamp;
+            //        SaveSyncMetadata(syncMetaFile, metadata);
 
-                }
-                else
-                {
-                    metadata.TableLastSync[tableName] = maxTimestamp.ToUniversalTime();
-                    SaveSyncMetadata(syncMetaFile, metadata);
-                }
+            //    }
+            //    else
+            //    {
+            //        metadata.TableLastSync[tableName] = maxTimestamp.ToUniversalTime();
+            //        SaveSyncMetadata(syncMetaFile, metadata);
+            //    }
 
-            }
+            //}
             // Add this after important metadata updates
 
+            //if (!metadata.TableLastSync.ContainsKey(tableName))
+            //    metadata.TableLastSync[tableName] = new SyncTimestamps();
+
+            //if (isServerToClient)
+            //{
+            //    if (changesApplied > 0)
+            //    {
+            //        metadata.TableLastSync[tableName].ServerToClient = maxTimestamp.ToUniversalTime();
+            //        SaveSyncMetadata(syncMetaFile, metadata);
+            //    }
+
+            //}
+            //else
+            //{
+            //    if (changesApplied > 0) {
+
+            //        metadata.TableLastSync[tableName].ClientToServer = maxTimestamp.ToUniversalTime();
+            //        SaveSyncMetadata(syncMetaFile, metadata);
+
+            //    }
+            //}
             return changesApplied;
         }
 

@@ -8,7 +8,7 @@ namespace OledbSyncronization
 {
     public class ChangesModel
     {
-     //  public string PrimarKey { get; set; }
+      // public string GUID { get; set; }
        public string Direction { get; set; }
        public string ColumnName { get; set; }
        public string OldValue {  get; set; }  
