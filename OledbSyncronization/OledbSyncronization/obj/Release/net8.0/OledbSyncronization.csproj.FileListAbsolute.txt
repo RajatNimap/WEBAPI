@@ -24,3 +24,4 @@ C:\Users\Nimap\Desktop\Nimap-Learning\OledbSyncronization\OledbSyncronization\ob
 C:\Users\Nimap\Desktop\Nimap-Learning\OledbSyncronization\OledbSyncronization\obj\Release\net8.0\OledbSyncronization.pdb
 C:\Users\Nimap\Desktop\Nimap-Learning\OledbSyncronization\OledbSyncronization\obj\Release\net8.0\OledbSyncronization.genruntimeconfig.cache
 C:\Users\Nimap\Desktop\Nimap-Learning\OledbSyncronization\OledbSyncronization\obj\Release\net8.0\ref\OledbSyncronization.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\OledbSyncronization\OledbSyncronization\bin\Release\net8.0\INIFileParser.dll
