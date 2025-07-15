@@ -192,6 +192,18 @@
         }
       }
     },
+    "/api/Category/test": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Employe": {
       "get": {
         "tags": [

@@ -464,40 +464,48 @@ namespace RobustAccessDbSync
 
         static void UpdateNullServerzeitForTable(string connectionString, string tableName)
         {
-            string query = $@"UPDATE [{tableName}] SET Serverzeit = ? WHERE Serverzeit IS NULL";
-
-            using (var connection = new OleDbConnection(connectionString))
-            using (var command = new OleDbCommand(query, connection))
+            try
             {
-                DateTime nowUtc = SafeTimestamp(DateTime.Now);
-                //nowUtc = nowUtc.AddSeconds(1);
-                command.Parameters.AddWithValue("?", nowUtc);
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    // Optionally log or handle the error
-                    // Console.WriteLine($"Error updating table '{tableName}' in database: {ex.Message}");
-                }
+                using var connection = new OleDbConnection(connectionString);
+                connection.Open();
+
+                string checkQuery = $"SELECT COUNT(*) FROM [{tableName}] WHERE Serverzeit IS NULL";
+                using var checkCmd = new OleDbCommand(checkQuery, connection);
+                int nullCount = (int)checkCmd.ExecuteScalar();
+
+                if (nullCount == 0) return;
+
+                string updateQuery = $"UPDATE [{tableName}] SET Serverzeit = ?";
+                using var updateCmd = new OleDbCommand(updateQuery, connection);
+                updateCmd.Parameters.AddWithValue("?", SafeTimestamp(DateTime.UtcNow));
+                updateCmd.ExecuteNonQuery();
+
+                PrintInfo($"[{tableName}] - Updated {nullCount} NULL Serverzeit values.");
+            }
+            catch (Exception ex)
+            {
+                PrintError($"[UpdateNullServerzeit] {tableName} - {ex.Message}");
             }
         }
+
+
 
         static void UpdateNullServerzeit(string clientConnStr, string serverConnStr)
         {
+            var clientTables = GetAllTableNames(clientConnStr);
+            var serverTables = GetAllTableNames(serverConnStr);
 
-            foreach (var table in GetAllTableNames(clientConnStr))
+            Parallel.ForEach(clientTables, table =>
             {
                 UpdateNullServerzeitForTable(clientConnStr, table);
-            }
+            });
 
-            foreach (var table in GetAllTableNames(serverConnStr))
+            Parallel.ForEach(serverTables, table =>
             {
                 UpdateNullServerzeitForTable(serverConnStr, table);
-            }
+            });
         }
+
 
 
         static void SyncTableStructure(string sourceConnStr, string targetConnStr, string tableName, SyncMetadata metadata)
@@ -617,80 +625,86 @@ namespace RobustAccessDbSync
 
         static void InitializeMetadata(SyncMetadata metadata, string clientConnStr, string serverConnStr, bool isNewClientDb)
         {
-            var allTables = GetAllTableNames(clientConnStr)
-                .Union(GetAllTableNames(serverConnStr))
-                .Distinct(StringComparer.OrdinalIgnoreCase)
-                .ToList();
+            var clientTables = GetAllTableNames(clientConnStr);
+            var serverTables = GetAllTableNames(serverConnStr);
+            var allTables = clientTables.Union(serverTables, StringComparer.OrdinalIgnoreCase).ToList();
 
-            foreach (var table in allTables)
+            using var clientConn = new OleDbConnection(clientConnStr);
+            using var serverConn = new OleDbConnection(serverConnStr);
+            clientConn.Open();
+            serverConn.Open();
+
+            Parallel.ForEach(allTables, table =>
             {
-                // Handle for both client and server
-                foreach (var connStr in new[] { clientConnStr, serverConnStr })
+                foreach (var (conn, connStr, label) in new[] {
+            (clientConn, clientConnStr, "client"),
+            (serverConn, serverConnStr, "server")
+        })
                 {
                     try
                     {
-                        using var conn = new OleDbConnection(connStr);
-                        conn.Open();
-
-                        bool hasServerzeit = ColumnExists(conn, table, "Serverzeit");
-                        if (!hasServerzeit)
+                        if (!ColumnExists(conn, table, "Serverzeit"))
                         {
-                            // Add the column
+                            // Add Serverzeit column
                             string alterSql = $"ALTER TABLE [{table}] ADD COLUMN [Serverzeit] DATETIME DEFAULT Now()";
                             ExecuteNonQuery(conn, alterSql);
 
-                            // Set all rows' Serverzeit to UTC now
+                            // Set current UTC as Serverzeit
                             DateTime utcNow = SafeTimestamp(DateTime.UtcNow);
                             string updateSql = $"UPDATE [{table}] SET Serverzeit = ?";
                             using var updateCmd = new OleDbCommand(updateSql, conn);
                             updateCmd.Parameters.AddWithValue("?", utcNow);
                             updateCmd.ExecuteNonQuery();
 
-                            //  PrintInfo($"[INIT] Added 'Serverzeit' to '{table}' in {(connStr == clientConnStr ? "client" : "server")} DB and set to {utcNow:yyyy-MM-dd HH:mm:ss}");
-
-                            // Initialize metadata (only once per table)
-                            if (!metadata.TableLastSync.ContainsKey(table))
+                            lock (metadata)
                             {
-                                metadata.TableLastSync[table] = utcNow.AddSeconds(-1);
-                                SaveSyncMetadata(syncMetaFile, metadata);
+                                if (!metadata.TableLastSync.ContainsKey(table))
+                                {
+                                    metadata.TableLastSync[table] = utcNow.AddSeconds(-1);
+                                    SaveSyncMetadata(syncMetaFile, metadata);
+                                    PrintInfo($"[INIT] {label} '{table}': Added 'Serverzeit' and initialized metadata.");
+                                }
                             }
-
-                            continue;
                         }
 
-
-                        // If Serverzeit exists and no metadata yet
+                        // If Serverzeit exists but no metadata
                         if (!metadata.TableLastSync.ContainsKey(table))
                         {
-                            using var cmd = new OleDbCommand($"SELECT MAX(Serverzeit) FROM [{table}]", conn);
+                            string query = $"SELECT MAX(Serverzeit) FROM [{table}]";
+                            using var cmd = new OleDbCommand(query, conn);
                             var result = cmd.ExecuteScalar();
-                            DateTime syncTime = (result != DBNull.Value && result != null)
+
+                            DateTime maxTime = (result != null && result != DBNull.Value)
                                 ? ((DateTime)result).ToUniversalTime()
                                 : DateTime.MinValue;
 
-                            metadata.TableLastSync[table] = syncTime;
-                            PrintInfo($"Initialized table '{table}' with Serverzeit: {syncTime:yyyy-MM-dd HH:mm:ss}");
-                            SaveSyncMetadata(syncMetaFile, metadata);
+                            lock (metadata)
+                            {
+                                metadata.TableLastSync[table] = maxTime;
+                                SaveSyncMetadata(syncMetaFile, metadata);
+                                PrintInfo($"[INIT] {label} '{table}': Initialized sync time to {maxTime:yyyy-MM-dd HH:mm:ss}");
+                            }
                         }
                     }
                     catch (Exception ex)
                     {
-                        // PrintWarning($"[INIT] Error processing '{table}' in {(connStr == clientConnStr ? "client" : "server")}: {ex.Message}");
-                        if (!metadata.TableLastSync.ContainsKey(table))
+                        lock (metadata)
                         {
-                            metadata.TableLastSync[table] = DateTime.MinValue;
-                            SaveSyncMetadata(syncMetaFile, metadata);
+                            if (!metadata.TableLastSync.ContainsKey(table))
+                            {
+                                metadata.TableLastSync[table] = DateTime.MinValue;
+                                SaveSyncMetadata(syncMetaFile, metadata);
+                            }
                         }
+
+                        PrintWarning($"[INIT] {label} '{table}' failed: {ex.Message}");
                     }
                 }
-            }
 
-            // Sync table structure both ways
-            foreach (var table in allTables)
-            {
+                // Sync table structure both ways
                 SyncTableStructure(clientConnStr, serverConnStr, table, metadata);
                 SyncTableStructure(serverConnStr, clientConnStr, table, metadata);
-            }
+            });
         }
 
         // Helper method to check if column exists
@@ -1405,6 +1419,7 @@ SyncMetadata metadata)
             var sb = new StringBuilder();
             sb.AppendLine($"[TableName: {tableName}]");
             sb.AppendLine($"Direction = {changes[0].Direction}");
+            sb.AppendLine($"PrimaryKey = {primaryKey}");    
             // sb.AppendLine($"ChangedAt = {primaryKey}");
 
             foreach (var change in changes)
@@ -1567,7 +1582,7 @@ SyncMetadata metadata)
             {
                 using var connection = new OleDbConnection(connectionString);
                 connection.Open();
-                PrintSuccess($"{name} connection successful");
+                PrintSuccess($"{name} connection successfull");
                 return true;
             }
             catch (Exception ex)

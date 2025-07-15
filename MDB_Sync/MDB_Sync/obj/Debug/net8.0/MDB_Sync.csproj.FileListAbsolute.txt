@@ -26,3 +26,4 @@ C:\Users\Nimap\Desktop\Nimap-Learning\MDB_Sync\MDB_Sync\obj\Debug\net8.0\refint\
 C:\Users\Nimap\Desktop\Nimap-Learning\MDB_Sync\MDB_Sync\obj\Debug\net8.0\MDB_Sync.pdb
 C:\Users\Nimap\Desktop\Nimap-Learning\MDB_Sync\MDB_Sync\obj\Debug\net8.0\MDB_Sync.genruntimeconfig.cache
 C:\Users\Nimap\Desktop\Nimap-Learning\MDB_Sync\MDB_Sync\obj\Debug\net8.0\ref\MDB_Sync.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\MDB_Sync\MDB_Sync\bin\Debug\net8.0\INIFileParser.dll

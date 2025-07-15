@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Net.Security;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PracticeTask.Data;
@@ -76,6 +77,36 @@ namespace PracticeTask.Controllers
             Database.categories.Remove(data);
             await Database.SaveChangesAsync();
             return Ok(data);
+        }
+        [HttpGet("test")]
+
+        public async Task<IActionResult> Testing()
+        {
+
+            //Example of Enumerable and IQuearble
+            //IQueryable<Category> data = Database.categories.Where(x => x.Id > 1);
+            //IEnumerable<Category> data1 = Database.categories.ToList();
+
+            //Here is the lazy and eager Loading 
+            // THis is by default
+          //  var data1 = Database.categories.ToList();
+
+            // this is the eager loading
+           // var data = Database.categories.Include(x => x.Products).ToList();
+            // Now we are heading to the Lazy Loading
+            // for the lazy loading first install proxies and make the navigation property virual
+
+
+            List<Category> data2= Database.categories.ToList();
+            var data3 = data2.Select(x => new
+            {
+                x.Id,
+                x.Name,
+                Products = x.Products.Select(p => p.Name).ToList()
+            });
+            return Ok(data3);        
+
+                
         }
     }
 }

@@ -10,11 +10,11 @@ namespace PracticeTask.Model.Entities
         public string Address { get; set; } 
         public DateTime ordertime { get; set; }=DateTime.UtcNow;
 
-        public ICollection <OrderItems> orderItems { get; set; } = new List<OrderItems>();
+        public virtual ICollection <OrderItems> orderItems { get; set; } = new List<OrderItems>();
 
         // Forign key
 
         public int UserDetailId { get; set; }
-        public UserDetail? UserDetail { get; set; }  
+        public virtual UserDetail? UserDetail { get; set; }  
     }
 }

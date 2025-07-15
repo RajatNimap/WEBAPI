@@ -12,7 +12,7 @@ namespace PracticeTask.Model.Entities
         public int StockQuatity { get; set; }
         //Foriegn key
         public int CategoryId { get; set; }
-        public Category Category { get; set; }  
+        public virtual Category Category { get; set; }  
 
         //soft deletion
         public bool SoftDelete {  get; set; }

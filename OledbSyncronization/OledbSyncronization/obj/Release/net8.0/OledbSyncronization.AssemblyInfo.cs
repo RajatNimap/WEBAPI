@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OledbSyncronization")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71d9aab084aeb8b89bb059dc5e81a3a9473deae9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+319683272c1e3fe51f7e5bbe6b4f24d3826442fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("OledbSyncronization")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OledbSyncronization")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

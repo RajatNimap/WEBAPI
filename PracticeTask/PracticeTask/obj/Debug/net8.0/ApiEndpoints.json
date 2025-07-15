@@ -111,6 +111,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PracticeTask.Controllers.CategoryController",
+    "Method": "Testing",
+    "RelativePath": "api/Category/test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PracticeTask.Controllers.EmployeController",
     "Method": "Getalldata",
     "RelativePath": "api/Employe",

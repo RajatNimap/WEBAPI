@@ -22,7 +22,10 @@ namespace PracticeTask.Data
             modelBuilder.Entity<Product>().HasQueryFilter(x => !x.SoftDelete);  
            
         }
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+        }
     }
    
 }

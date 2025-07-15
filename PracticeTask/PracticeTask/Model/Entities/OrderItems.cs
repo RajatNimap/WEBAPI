@@ -13,10 +13,10 @@ namespace PracticeTask.Model.Entities
         //Foreign key
 
         public int Productid {  get; set; } 
-        public Product? Product { get; set; }    
+        public  virtual Product? Product { get; set; }    
 
         public int Ordersid {  get; set; }    
-        public Orders? Orders { get; set; }
+        public virtual Orders? Orders { get; set; }
 
 
        
