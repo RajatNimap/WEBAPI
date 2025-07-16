@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\e-commerce\\e-commerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\e-commerce\\e-commerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\e-commerce\\e-commerce\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\e-commerce\\e-commerce\\appexceptionalhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\appexceptionalhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\e-commerce\\e-commerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\e-commerce\\e-commerce\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\e-commerce\\e-commerce\\controllers\\basicauthenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -146,7 +146,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -158,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "E-Commerce\\Data\\DataContext.cs",
@@ -166,18 +166,17 @@
               "RelativeToolTip": "E-Commerce\\Data\\DataContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T13:52:18.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T13:52:18.487Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\appsettings.json",
               "RelativeDocumentMoniker": "E-Commerce\\appsettings.json",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\appsettings.json",
               "RelativeToolTip": "E-Commerce\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-04-19T13:19:05.663Z",
               "EditorCaption": ""
@@ -196,15 +195,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\Program.cs",
               "RelativeDocumentMoniker": "E-Commerce\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\Program.cs",
               "RelativeToolTip": "E-Commerce\\Program.cs",
-              "ViewState": "AgIAAAsAAACAJjMzM7McwCMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAACAJjMzM7McwCEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T10:12:12.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppExceptionalHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\AppExceptionalHandler.cs",
+              "RelativeDocumentMoniker": "E-Commerce\\AppExceptionalHandler.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\AppExceptionalHandler.cs",
+              "RelativeToolTip": "E-Commerce\\AppExceptionalHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:30:37.211Z",
               "EditorCaption": ""
             },
             {
@@ -218,18 +230,6 @@
               "ViewState": "AgIAAF8AAAAANDMzM7MgwHAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T06:07:16.052Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppExceptionalHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\AppExceptionalHandler.cs",
-              "RelativeDocumentMoniker": "E-Commerce\\AppExceptionalHandler.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\AppExceptionalHandler.cs",
-              "RelativeToolTip": "E-Commerce\\AppExceptionalHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T04:30:37.211Z"
             },
             {
               "$type": "Document",

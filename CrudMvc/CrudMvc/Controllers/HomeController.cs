@@ -1,4 +1,5 @@
-﻿using CrudMvc.Sevices;
+﻿using CrudMvc.Models;
+using CrudMvc.Sevices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CrudMvc.Controllers
@@ -11,11 +12,26 @@ namespace CrudMvc.Controllers
             this.employeeInterface = employeeInterface;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data=employeeInterface.GetEmployeedata();
+            var data=await employeeInterface.GetEmployeedata();
             ViewBag.Data = data;
+      
             return View();
         }
+     
+        public async Task<IActionResult> Addemployee([FromBody]EmployeeDto emp)
+        {
+            await employeeInterface.CreateEmployee(emp);
+            return Ok(new { message = "employee added successully" });            
+        }
+        public IActionResult newpage()
+        { 
+            return View();
+        }
+        public IActionResult Privacy()
+        {
+            return View();
+        }   
     }
 }

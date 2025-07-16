@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<style>
+#Raj{
+    height:  300px;
+    width:  500px;
+    background-color: aqua;
+}
+.hello1{
+    margin-top: 30px;
+    height: 50px;
+    width: 100px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    left: 30px;
+    
+}
+.hello{
+      margin-top: 30px;
+    height: 50px;
+    width: 100px;
+    position: fixed;
+    bottom: 100px;  
+    left: 30px;
+}
+</style>
+<script>
+    $(document).ready(function(){
+
+        let isVisible=true;
+            $('.hello1').click(function(){
+              //  $('#Raj').slideToggle();
+                
+              if(isVisible){
+                    $('#Raj').hide();
+                    isVisible=false;
+              }else{
+                     $('#Raj').show();
+                     isVisible=true;
+              }
+
+            });
+            $('.hello').click(function(){
+                $('.hello1').hide();
+                $('#Raj').hide();
+                $(this).hide();
+                
+            })
+    })  
+</script>
+<body>
+
+<div id="Raj">
+</div>
+
+<button class="hello1">
+See the Magic
+</button>
+
+<button class="hello"> 
+We aware if you click
+ this button all hide
+</button> 
+</body>
+</html>
