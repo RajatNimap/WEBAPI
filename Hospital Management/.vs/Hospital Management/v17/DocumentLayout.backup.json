@@ -246,8 +246,7 @@
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\DepartmentImplement.cs",
               "ViewState": "AgIAAAEAAAAA+/////8RwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T11:31:05.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T11:31:05.194Z"
             },
             {
               "$type": "Document",
@@ -259,8 +258,7 @@
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\DoctorImplementation.cs",
               "ViewState": "AgIAADsAAAAAl5mZmZkrwEsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T12:55:27.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T12:55:27.963Z"
             },
             {
               "$type": "Document",
@@ -272,8 +270,7 @@
               "RelativeToolTip": "Hospital Management\\Models\\Entities\\Doctors.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T12:20:36.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T12:20:36.451Z"
             },
             {
               "$type": "Document",
@@ -298,8 +295,7 @@
               "RelativeToolTip": "Hospital Management\\Interfaces\\Implementation\\PatientsImplementation.cs",
               "ViewState": "AgIAAEwAAACA9////38uwG8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:26:43.672Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T06:26:43.672Z"
             },
             {
               "$type": "Document",
@@ -311,8 +307,7 @@
               "RelativeToolTip": "Hospital Management\\Controllers\\PatientsController.cs",
               "ViewState": "AgIAAD8AAADAYWZmZqYlwDEAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:58:47.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T06:58:47.328Z"
             },
             {
               "$type": "Document",
@@ -324,8 +319,7 @@
               "RelativeToolTip": "Hospital Management\\Models\\Entities\\Register.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T10:54:09.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T10:54:09.441Z"
             },
             {
               "$type": "Document",

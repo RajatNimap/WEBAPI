@@ -566,9 +566,9 @@ namespace RobustAccessDbSync
                 ExecuteNonQuery(targetConn, createTableSql.ToString());
                 Console.WriteLine($"Created table {tableName} in target database");
 
-                metadata.TableLastSync[tableName] = DateTime.MinValue;
-                SaveSyncMetadata(syncMetaFile, metadata);
-                PrintInfo($"[New Table] Initialized sync time for '{tableName}' to {DateTime.MinValue:yyyy-MM-dd HH:mm:ss}");
+                    metadata.TableLastSync[tableName] = DateTime.MinValue;
+                    SaveSyncMetadata(syncMetaFile, metadata);
+                    PrintInfo($"[New Table] Initialized sync time for '{tableName}' to {DateTime.MinValue:yyyy-MM-dd HH:mm:ss}");
 
 
 

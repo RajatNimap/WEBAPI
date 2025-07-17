@@ -1,8 +1,8 @@
 {
   "TableLastSync": {
     "Analyse": {
-      "ServerToClient": "2025-07-16T13:31:19Z",
-      "ClientToServer": "2025-07-16T13:31:19Z"
+      "ServerToClient": "2025-07-17T11:41:30Z",
+      "ClientToServer": "2025-07-17T11:41:30Z"
     },
     "Anfahrstellen": {
       "ServerToClient": "0001-01-01T00:00:00",
@@ -19,6 +19,14 @@
     "Ansprechpartner": {
       "ServerToClient": "2025-07-02T10:53:26Z",
       "ClientToServer": "2025-07-02T10:53:26Z"
+    },
+    "client1": {
+      "ServerToClient": "2025-07-17T09:31:46Z",
+      "ClientToServer": "2025-07-17T09:31:46Z"
+    },
+    "client2": {
+      "ServerToClient": "2025-07-17T08:25:14Z",
+      "ClientToServer": "2025-07-17T08:25:14Z"
     },
     "DB_Const": {
       "ServerToClient": "2025-07-09T03:22:56Z",
