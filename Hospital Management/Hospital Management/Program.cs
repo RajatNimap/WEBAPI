@@ -46,6 +46,7 @@ builder.Services.AddScoped<AvailabilityRepository>();
 builder.Services.AddScoped<AppointmentRepository>();
 builder.Services.AddScoped<DoctorSlotService>();
 builder.Services.AddScoped<AppointmentImplementation>();
+builder.Services.AddScoped<IMedicalRecord, MedicalRecordImplementation>();
 
 
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

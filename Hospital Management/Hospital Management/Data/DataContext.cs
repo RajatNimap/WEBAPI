@@ -18,7 +18,8 @@ namespace Hospital_Management.Data
         public DbSet<Appointment> appointments { get; set; }    
       //  public DbSet<MedicalRecord> medicalRecords { get; set; }    
         public DbSet<DoctorAvailability> doctorAvailabilities { get; set; } 
-       public DbSet<DocotorLeave>  docotorLeaves { get; set; }
+        public DbSet<DocotorLeave>  docotorLeaves { get; set; }
+        public DbSet<MedicalRecord> medicalRecords { get; set; }
 
 
     }

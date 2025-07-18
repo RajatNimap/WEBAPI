@@ -180,6 +180,47 @@ namespace Hospital_Management.Migrations
                     b.ToTable("doctors");
                 });
 
+            modelBuilder.Entity("Hospital_Management.Models.Entities.MedicalRecord", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AppointmentId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Follow_up")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PatientsModelID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Prescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vist_Notes")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppointmentId");
+
+                    b.HasIndex("PatientsModelID");
+
+                    b.ToTable("medicalRecords");
+                });
+
             modelBuilder.Entity("Hospital_Management.Models.Entities.PatientsModel", b =>
                 {
                     b.Property<int>("Id")
@@ -203,6 +244,9 @@ namespace Hospital_Management.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DiseaseHistory")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -211,6 +255,10 @@ namespace Hospital_Management.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -327,9 +375,30 @@ namespace Hospital_Management.Migrations
                     b.Navigation("Department");
                 });
 
+            modelBuilder.Entity("Hospital_Management.Models.Entities.MedicalRecord", b =>
+                {
+                    b.HasOne("Hospital_Management.Models.Entities.Appointment", "Appointment")
+                        .WithMany()
+                        .HasForeignKey("AppointmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Hospital_Management.Models.Entities.PatientsModel", "PatientsModel")
+                        .WithMany("medicalRecords")
+                        .HasForeignKey("PatientsModelID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Appointment");
+
+                    b.Navigation("PatientsModel");
+                });
+
             modelBuilder.Entity("Hospital_Management.Models.Entities.PatientsModel", b =>
                 {
                     b.Navigation("Appointment");
+
+                    b.Navigation("medicalRecords");
                 });
 #pragma warning restore 612, 618
         }

@@ -222,6 +222,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Hospital_Management.Controllers.DoctorController",
+    "Method": "PostLeave",
+    "RelativePath": "api/Doctor/Leave",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "leaveDto",
+        "Type": "Hospital_Management.Models.EntitiesDto.DoctorLeaveDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Hospital_Management.Controllers.DoctorSlotController",
     "Method": "GetAvailableSlots",
     "RelativePath": "api/DoctorSlot/{doctorId}/slots",
@@ -238,6 +254,32 @@
         "Name": "date",
         "Type": "System.DateTime",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.MedicalRecordController",
+    "Method": "GetMedicalRecords",
+    "RelativePath": "api/MedicalRecord",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.MedicalRecordController",
+    "Method": "AddMedicalRecored",
+    "RelativePath": "api/MedicalRecord",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medical",
+        "Type": "Hospital_Management.Models.EntitiesDto.MedicalRecoredDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -329,12 +371,76 @@
   },
   {
     "ContainingType": "Hospital_Management.Controllers.PatientsController",
+    "Method": "GetMedicalRecords",
+    "RelativePath": "api/Patients/medical-records/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.PatientsController",
     "Method": "GetPatientsList",
     "RelativePath": "api/Patients/Patients",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.PatientsController",
+    "Method": "SearchPatients",
+    "RelativePath": "api/Patients/search/{value}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.MedicalRecordController",
+    "Method": "GetMedicalRecordById",
+    "RelativePath": "GetRecordbyId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.MedicalRecordController",
+    "Method": "GetMedicalRecordByPatientId",
+    "RelativePath": "pateintsId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   }
 ]

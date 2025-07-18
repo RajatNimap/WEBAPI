@@ -77,5 +77,18 @@ namespace Hospital_Management.Interfaces.Implementation
             Database.SaveChanges(); 
             return true;
         }
+
+        public async Task<DocotorLeave> MarkdoctorLeave(DoctorLeaveDto doctorleave)
+        {
+            var data = new DocotorLeave
+            {
+                DoctorsId = doctorleave.DoctorsId,
+                Leave = doctorleave.Leave,
+                Reason = doctorleave.Reason,
+            };
+           await Database.docotorLeaves.AddAsync(data);
+           Database.SaveChanges();
+           return data;
+        }
     }
 }

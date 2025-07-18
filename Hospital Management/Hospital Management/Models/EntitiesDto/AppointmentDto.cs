@@ -11,6 +11,6 @@ namespace Hospital_Management.Models.EntitiesDto
         //public TimeSpan EndTime { get; set; } 
         public DateTime DateofAppointment { get; set;}
         public AppointmentStatus Status { get; set; }
-        public DateTime Created { get; set; }= DateTime.Now;    
+        public DateTime Created { get; set; } = DateTime.Now;    
     }
 }

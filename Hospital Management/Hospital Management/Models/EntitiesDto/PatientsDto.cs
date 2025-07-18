@@ -10,6 +10,9 @@ namespace Hospital_Management.Models.Entities
         [Required]
         public string Gender { get; set; }
         [Required]
+
+        public string PhoneNumber { get; set; } 
+        public string Email { get; set; }   
         public string Address { get; set; }
         [Required]
         public string Disease { get; set; }

@@ -11,6 +11,6 @@ namespace Hospital_Management.Interfaces.Services
         Task<bool> DeletePatientDetail(int id);
         Task<Appointment> GetAppointmentDetail(int id);
         Task<List<PatientsModel>> Searching(string value);
-
+        Task<List<MedicalRecord>> GettingAllmedicalRecord(int patientId);
     }
 }

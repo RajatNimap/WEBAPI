@@ -1,6 +1,7 @@
 ﻿using System;
 using Hospital_Management.Data;
 using Hospital_Management.Interfaces.Services;
+using Hospital_Management.Migrations;
 using Hospital_Management.Models.Entities;
 using Hospital_Management.Models.EntitiesDto;
 using Microsoft.EntityFrameworkCore;
@@ -44,16 +45,23 @@ namespace Hospital_Management.Interfaces.Implementation
         public async Task<List<DoctorAvailability>> GetAvailability(int DoctorId, DateTime dateTime)
         {
             var dayofWeek = (int)dateTime.DayOfWeek;
-          //  var dayofWeek = ((int)dateTime.DayOfWeek == 0) ? 7 :(int)dateTime.DayOfWeek;
+       //       //  var dayofWeek = ((int)dateTime.DayOfWeek == 0) ? 7 :(int)dateTime.DayOfWeek;
+       //     var isOnLeave = await Database.docotorLeaves
+       //.AnyAsync(x => x.DoctorsId == DoctorId && x.Leave == DateOnly.FromDateTime(dateTime));
+
+       //     if (isOnLeave) {
+       //         return null; // Doctor is on leave, no availability
+       //     }
             var Data = await Database.doctorAvailabilities.Where(x => x.DoctorId == DoctorId && x.DayOfWeek == dayofWeek && x.IsAvailable).ToListAsync();
             if (Data == null)
             {
                 return null;
             }
+
             return Data;
         }
        
-
+         
     }
 
     public class SlotGenerator : ISLotGenerator

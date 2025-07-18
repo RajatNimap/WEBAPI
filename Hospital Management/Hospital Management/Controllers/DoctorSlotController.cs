@@ -21,7 +21,7 @@ namespace Hospital_Management.Controllers
         {
             var slots = await _slotService.GetDoctorSlotsAsync(doctorId, date);
 
-            if (slots.Count == 0)
+            if (slots.Count == 0 )
                 return NotFound("Doctor is not available on this day.");
 
             return Ok(slots);

@@ -101,9 +101,7 @@ namespace E_Commerce.Controllers
         [Route("{id}")]
         public async Task<IActionResult> UpdateData(int id, [FromBody] ProductDto productdto)
         {
-            try
-            {
-                var data = await Database.products.FirstOrDefaultAsync(x => x.Id == id && x.Soft_delete == 0);
+            var data = await Database.products.FirstOrDefaultAsync(x => x.Id == id && x.Soft_delete == 0);
 
                 data.Name = productdto.Name;
                 data.price = productdto.price;
@@ -117,14 +115,6 @@ namespace E_Commerce.Controllers
                 }
                 await Database.SaveChangesAsync();
                 return Ok(data);
-
-
-            }
-            catch (Exception ex)
-            {
-
-                return BadRequest("data not found");
-            }
         }
 
         [HttpDelete]

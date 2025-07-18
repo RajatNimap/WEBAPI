@@ -50,23 +50,38 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ClockSkew=TimeSpan.Zero
     };
 });
-builder.Services.AddMemoryCache();
+    builder.Services.AddMemoryCache();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<CustomMiddlewarebyDelegate>();
+//app.Use(async (context, next) =>
+//{
+//    Console.WriteLine("Console 1");
+//    await next();
+//    Console.WriteLine("Console 2");
+//});
+
+//app.Use(async (context, next) =>
+//{
+//    Console.WriteLine("Console 3");
+//    await next();
+//    Console.WriteLine("Console 4");
+//});
+
 app.UseAuthentication();
 
-//app.UseExceptionHandler(_ => { });
+    //app.UseExceptionHandler(_ => { });
 
-app.UseAuthorization();
+    app.UseAuthorization();
 
-app.MapControllers();
+    app.MapControllers();
 
-app.Run();
+    app.Run();

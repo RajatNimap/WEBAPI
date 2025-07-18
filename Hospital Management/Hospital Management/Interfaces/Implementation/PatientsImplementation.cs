@@ -45,6 +45,8 @@ namespace Hospital_Management.Interfaces.Implementation
                         Gender = patients.Gender,   
                         Address = patients.Address,
                         Disease = patients.Disease,
+                    PhoneNumber = patients.PhoneNumber,
+                    Email = patients.Email, 
                 };   
             if(Data==null) { return null; }
             await Database.AddAsync(Data);  
@@ -66,6 +68,8 @@ namespace Hospital_Management.Interfaces.Implementation
             Data.Gender = patients.Gender;  
             Data.Address = patients.Address;    
             Data.Disease = patients.Disease;
+            Data.PhoneNumber = patients.PhoneNumber;
+            Data.Email = patients.Email;
 
             await Database.SaveChangesAsync();
 
@@ -100,14 +104,20 @@ namespace Hospital_Management.Interfaces.Implementation
         {
             var Query= Database.patients.AsQueryable();
             // var Data= await Database.patients.FirstOrDefaultAsync(x=>x.)
-
-
             if (!string.IsNullOrEmpty(value))
             {
-                Query=Query.Where(x=>x.Name.ToLower() == value.ToLower());
+                value = value.ToLower();
+                Query=Query.Where(x=>x.Name.ToLower() == value || x.Email.ToLower()==value || x.PhoneNumber == value);
+               
             }
-             
-            throw new NotImplementedException();
+            var list = await Query.ToListAsync();   
+            return list;
+        }
+
+        public Task<List<MedicalRecord>> GettingAllmedicalRecord(int patientId)
+        {
+              var data = Database.medicalRecords.Where(x => x.PatientsModelID == patientId).ToListAsync();  
+            return data;
         }
     }
 }

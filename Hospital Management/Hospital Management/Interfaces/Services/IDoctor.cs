@@ -10,5 +10,6 @@ namespace Hospital_Management.Interfaces.Services
         Task<Doctors> InsertDoctorsDetail(DoctorDto Doctors);
         Task<Doctors> UpdateDoctorsDetail(int id, DoctorDto Doctorss);
         Task<bool> DeleteDoctorsDetail(int id);
+        Task<DocotorLeave> MarkdoctorLeave(DoctorLeaveDto doctorleave);
     }
 }

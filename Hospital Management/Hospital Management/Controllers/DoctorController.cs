@@ -15,11 +15,11 @@ namespace Hospital_Management.Controllers
         public readonly DoctorImplementation DoctorIm;
         public DoctorController(DoctorImplementation DoctorIm)
         {
-                this.DoctorIm = DoctorIm;
+            this.DoctorIm = DoctorIm;
         }
 
         [HttpGet]
-        [Authorize (Roles = "admin,receptionist")]
+        [Authorize(Roles = "admin,receptionist")]
         public async Task<IActionResult> GetData()
         {
             var Data = await DoctorIm.GetDoctors();
@@ -34,9 +34,9 @@ namespace Hospital_Management.Controllers
         {
             var Data = await DoctorIm.GetDoctorssById(id);
             if (Data == null) { return NotFound("Data Not Found"); }
-            return Ok(Data);    
+            return Ok(Data);
         }
-        [HttpPost]  
+        [HttpPost]
         public async Task<IActionResult> PostData(DoctorDto doctorDto)
         {
             if (doctorDto == null) {
@@ -49,10 +49,10 @@ namespace Hospital_Management.Controllers
         public async Task<IActionResult> UpdateData(int id, DoctorDto doctorDto)
         {
 
-            var Data = await DoctorIm.UpdateDoctorsDetail(id,doctorDto);
-            if (Data == null) { 
-            
-                    return NotFound("Data Not Found");
+            var Data = await DoctorIm.UpdateDoctorsDetail(id, doctorDto);
+            if (Data == null) {
+
+                return NotFound("Data Not Found");
             }
             return Ok(Data);
         }
@@ -60,10 +60,24 @@ namespace Hospital_Management.Controllers
         public async Task<IActionResult> DeleteRecord(int id)
         {
             var Data = await DoctorIm.DeleteDoctorsDetail(id);
-            if(Data == null)
+            if (Data == null)
             {
 
                 return NotFound("Doctor not exist");
+            }
+            return Ok(Data);
+        }
+        [HttpPost("Leave")]
+        public async Task<IActionResult> PostLeave([FromBody] DoctorLeaveDto leaveDto)
+        {
+            if (leaveDto == null)
+            {
+                return BadRequest("Please Enter the Valid Detail");
+            }
+            var Data = await DoctorIm.MarkdoctorLeave(leaveDto);    
+            if (Data == null)
+            {
+                return BadRequest("Please Enter the Valid Detail");
             }
             return Ok(Data);
         }

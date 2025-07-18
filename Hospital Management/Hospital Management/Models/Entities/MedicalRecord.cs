@@ -10,11 +10,11 @@ namespace Hospital_Management.Models.Entities
         public int PatientsModelID { get; set; }
 
         [ForeignKey("PatientsModelID")]
-        public PatientsModel PatientsModel { get; set; } 
+        public PatientsModel PatientsModel { get; set; }
         public int DoctorId { get; set; }
 
-        [ForeignKey("Doctors")]
-        public Doctors Doctors { get; set; }    
+        //[ForeignKey("DoctorsId")]
+        //public Doctors Doctors { get; set; }
         public int AppointmentId { get; set; }
 
         [ForeignKey("AppointmentId")]

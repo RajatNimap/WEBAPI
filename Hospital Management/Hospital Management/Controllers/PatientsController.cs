@@ -30,6 +30,7 @@ namespace Hospital_Management.Controllers
             }
             return Ok(Data);    
         }
+     
        [Authorize(Roles = "receptionist")] 
         [HttpGet]
         [Route("{id}")]
@@ -88,5 +89,26 @@ namespace Hospital_Management.Controllers
             }
             return Ok("Record are deleted");
         }
+
+        [HttpGet("search/{value}")]
+        public async Task<IActionResult> SearchPatients(string value)
+        {
+            var Data = await patientIm.Searching(value);
+            if (Data == null || Data.Count == 0)
+            {
+                return NotFound("No patients found with the given search criteria.");
+            }
+            return Ok(Data);
+        }
+        [HttpGet("medical-records/{patientId}")]
+        public async Task<IActionResult> GetMedicalRecords(int patientId)
+        {
+            var Data = await patientIm.GettingAllmedicalRecord(patientId);
+            if (Data == null || Data.Count == 0)
+            {
+                return NotFound("No medical records found for the given patient.");
+            }
+            return Ok(Data);
+        }   
     }
 }
