@@ -1,8 +1,8 @@
 {
   "TableLastSync": {
     "Analyse": {
-      "ServerToClient": "2025-07-21T10:05:34Z",
-      "ClientToServer": "2025-07-21T10:05:34Z"
+      "ServerToClient": "2025-07-21T12:41:17Z",
+      "ClientToServer": "2025-07-21T12:41:17Z"
     },
     "Anfahrstellen": {
       "ServerToClient": "0001-01-01T00:00:00",
@@ -21,7 +21,7 @@
       "ClientToServer": "2025-07-18T08:40:14Z"
     },
     "DB_Const": {
-      "ServerToClient": "2025-07-21T04:21:01Z",
+      "ServerToClient": "2025-07-21T07:12:04Z",
       "ClientToServer": "2025-07-08T14:04:58Z"
     },
     "Firmen": {
@@ -33,7 +33,7 @@
       "ClientToServer": "2025-07-18T05:53:16Z"
     },
     "Kuerzel": {
-      "ServerToClient": "2025-07-21T04:21:01Z",
+      "ServerToClient": "2025-07-21T07:12:04Z",
       "ClientToServer": "2025-07-08T14:05:04Z"
     },
     "Kursbewertung": {

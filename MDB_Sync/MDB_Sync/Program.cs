@@ -56,6 +56,7 @@ namespace RobustAccessDbSync
         static string clientFileFolder;
         static string serverFileFolder;
         static string Client_Folder; //THis is use for the sharing the file
+        static List<string> Client_Folders = new();
 
         // static string filePath = "user_data.txt"; // File to save the input
 
@@ -151,33 +152,60 @@ namespace RobustAccessDbSync
             }
         }
         // THis is file path taking from user
+        //static void GetClientPathCredentials()
+        //{
+        //    while (true)
+        //    {
+        //        // Username input
+        //        do
+        //        {
+        //            Console.Write("Enter client path for Image/Folder Sync: ");
+        //            Client_Folder = Console.ReadLine();
+        //            if (string.IsNullOrWhiteSpace(Client_Folder))
+        //                Console.WriteLine("clientFolder cannot be empty.");
+        //        } while (string.IsNullOrWhiteSpace(Client_Folder));
+
+        //        Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
+
+        //        string input = Console.ReadLine()?.Trim().ToLower();
+
+        //        if (string.IsNullOrEmpty(input))
+        //        {
+        //            break;
+        //        }
+        //        else if (input == "r")
+        //            continue;
+        //        else
+        //            Console.WriteLine("Invalid input. Re-entering...\n");
+        //    }
+        //}
+
         static void GetClientPathCredentials()
         {
+            Client_Folders.Clear();
+            int i = 1;
             while (true)
             {
-                // Username input
-                do
-                {
-                    Console.Write("Enter client path for Image/Folder Sync: ");
-                    Client_Folder = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(Client_Folder))
-                        Console.WriteLine("clientFolder cannot be empty.");
-                } while (string.IsNullOrWhiteSpace(Client_Folder));
-
-                Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
-
-                string input = Console.ReadLine()?.Trim().ToLower();
-
-                if (string.IsNullOrEmpty(input))
-                {
+                Console.Write($"Enter client folder path #{i} (leave blank to stop): ");
+                string path = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(path))
                     break;
+
+                if (Directory.Exists(path))
+                {
+                    Client_Folders.Add(path);
+                    i++;
                 }
-                else if (input == "r")
-                    continue;
                 else
-                    Console.WriteLine("Invalid input. Re-entering...\n");
+                {
+                    Console.WriteLine("Invalid folder. Please try again.");
+                }
             }
+
+            if (Client_Folders.Count == 0)
+                Console.WriteLine("Warning: No folders entered for sync.");
         }
+
 
         [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static async Task Main()
@@ -214,7 +242,20 @@ namespace RobustAccessDbSync
                         SHARE_NAME = data["Server"]["Share"];
                         serverDbPath = data["Server"]["Path"];
                         clientDbPath = data["Client"]["Path"];
-                        Client_Folder = data["folder"]["Path"]; 
+                     //   Client_Folder = data["folder"]["Path"];
+
+                        // Load multiple folders
+                        int index = 1;
+                        while (true)
+                        {
+                            string key = $"Path{index}";
+                            if (data["folder"].ContainsKey(key))
+                            {
+                                Client_Folders.Add(data["folder"][key]);
+                                index++;
+                            }
+                            else break;
+                        }
 
                         Console.WriteLine("Loaded saved configuration.");
                     }
@@ -231,6 +272,9 @@ namespace RobustAccessDbSync
                     GetClientPathCredentials(); // sets Client_Folder   
 
                     data = new IniData();
+                    data.Sections.AddSection("folder");
+                  
+
                     data["Credentials"]["Username"] = USERNAME;
                     data["Credentials"]["Password"] = PASSWORD;
                     data["Server"]["IP"] = SERVER_IP;
@@ -238,7 +282,11 @@ namespace RobustAccessDbSync
                     data["Server"]["Path"] = serverDbPath;
                     data["Client"]["Path"] = clientDbPath;
 
-                    data["folder"]["Path"] = Client_Folder;
+                   // data["folder"]["Path"] = Client_Folder;
+                    for (int i = 0; i < Client_Folders.Count; i++)
+                    {
+                        data["folder"][$"Path{i + 1}"] = Client_Folders[i];
+                    }
 
                     string basePath = File.Exists(clientDbPath)
                      ? Path.GetDirectoryName(clientDbPath)
@@ -535,7 +583,7 @@ namespace RobustAccessDbSync
         {
 
             DateTime startTime = DateTime.Now;
-            string logPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TablesWithTooLongForNullExecution.txt");
+            //string logPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TablesWithTooLongForNullExecution.txt");
             string query = $@"UPDATE [{tableName}] SET Serverzeit = ? WHERE Serverzeit IS NULL";
 
             using (var command = new OleDbCommand(query, connection))
@@ -557,8 +605,8 @@ namespace RobustAccessDbSync
 
                 TimeSpan elapsed = endTime - startTime;
 
-                string logEntry = $"Table: {tableName}, Elapsed Time: {elapsed.TotalSeconds:F2} seconds{Environment.NewLine}";
-                File.AppendAllText(logPath, logEntry);
+                //string logEntry = $"Table: {tableName}, Elapsed Time: {elapsed.TotalSeconds:F2} seconds{Environment.NewLine}";
+                //File.AppendAllText(logPath, logEntry);
             }
         }
 
@@ -868,12 +916,12 @@ namespace RobustAccessDbSync
                         if (db.label == "server")
                         {
                             metadata.TableLastSync[table].ServerToClient = syncTime;
-                            PrintInfo($"[Server] Initialized table '{table}' with Serverzeit: {syncTime.ToLocalTime():yyyy-MM-dd HH:mm:ss}");
+                           // PrintInfo($"[Server] Initialized table '{table}' with Serverzeit: {syncTime.ToLocalTime():yyyy-MM-dd HH:mm:ss}");
                         }
                         else if (db.label == "client")
                         {
                             metadata.TableLastSync[table].ClientToServer = syncTime;
-                            PrintInfo($"[Client] Initialized table '{table}' with Serverzeit: {syncTime.ToLocalTime():yyyy-MM-dd HH:mm:ss}");
+                           // PrintInfo($"[Client] Initialized table '{table}' with Serverzeit: {syncTime.ToLocalTime():yyyy-MM-dd HH:mm:ss}");
                         }
 
                         SaveSyncMetadata(syncMetaFile, metadata);
@@ -1098,17 +1146,28 @@ namespace RobustAccessDbSync
                     iniLines.Add($"file{fileCount}.direction={direction}");
                     Console.WriteLine();
                     //iniLines.Add($"file{fileCount}.lastModified={lastModified}");
-                    if (fileCount > 0)
-                    {
-                        string logFilePath = Path.Combine(Path.GetDirectoryName(clientDbPath), "Configlog.ini");
-                        //WriteChangesToIni(tableName, serverToClient, "ServerToClient", logFilePath);
-                        WriteChangesToIni("File", fileCount, direction, logFilePath);
-                    }
+                  
                 }
             }
 
-          //  File.WriteAllLines(logPath, iniLines);
-        
+            if (fileCount > 0)
+            {
+                string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm"); // [2025-07-18 10:43]
+                var logLines = new List<string>
+    {
+        $"[{timestamp}]",
+        $"Sync = Files",
+        $"changes = {fileCount}",
+        $"direction = {direction}",
+        ""
+    };
+
+                File.AppendAllLines(logPath, logLines);
+            }
+
+
+            //  File.WriteAllLines(logPath, iniLines);
+
         }
 
 
@@ -1124,11 +1183,15 @@ namespace RobustAccessDbSync
                 //string clientFolder = Path.GetDirectoryName(clientDbPath)!;
                 string serverFolder = Path.GetDirectoryName(serverDbPath)!;
 
-                if (Directory.Exists(Client_Folder) && Directory.Exists(serverFolder))
+                foreach (var clientFolder in Client_Folders)
                 {
-                    SyncFiles(Client_Folder, serverFolder, logFilePath, "ClientToServer");
-                    SyncFiles(serverFolder, Client_Folder, logFilePath, "ServerToClient");
+                    if (Directory.Exists(clientFolder) && Directory.Exists(serverFolder))
+                    {
+                        SyncFiles(clientFolder, serverFolder, logFilePath, "ClientToServer");
+                        SyncFiles(serverFolder, clientFolder, logFilePath, "ServerToClient");
+                    }
                 }
+
             }
             else
             {
