@@ -138,6 +138,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Hospital_Management.Controllers.DashboardController",
+    "Method": "GetPatientFrequency",
+    "RelativePath": "api/Dashboard/dashboard/PatientFrequency/{month}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Hospital_Management.Controllers.DepartmentController",
     "Method": "GetDepartment",
     "RelativePath": "api/Department",
@@ -326,6 +342,109 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.DoctorAvailabilityController",
+    "Method": "GetAll",
+    "RelativePath": "api/DoctorAvailability",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Hospital_Management.Models.Entities.DoctorAvailability, Hospital Management, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.DoctorAvailabilityController",
+    "Method": "Create",
+    "RelativePath": "api/DoctorAvailability",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Hospital_Management.Models.EntitiesDto.DoctorAvailibilityDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Hospital_Management.Models.EntitiesDto.DoctorAvailibilityDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.DoctorAvailabilityController",
+    "Method": "GetById",
+    "RelativePath": "api/DoctorAvailability/{doctorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Hospital_Management.Models.Entities.DoctorAvailability",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.DoctorAvailabilityController",
+    "Method": "Update",
+    "RelativePath": "api/DoctorAvailability/{doctorId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Hospital_Management.Models.EntitiesDto.DoctorAvailibilityDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Hospital_Management.Models.EntitiesDto.DoctorAvailibilityDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Hospital_Management.Controllers.DoctorSlotController",

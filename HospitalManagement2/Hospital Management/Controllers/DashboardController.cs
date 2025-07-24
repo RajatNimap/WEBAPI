@@ -22,17 +22,17 @@ namespace Hospital_Management.Controllers
         public async Task<IActionResult> GetDashboardData(DateOnly date)
         {
             var data = await _dashboardService.getDailyCount(date);
-            var json =JsonConvert.SerializeObject(data,Formatting.Indented);
+            var json = JsonConvert.SerializeObject(data, Formatting.Indented);
             if (data == null)
             {
                 return NotFound("No data found for the dashboard.");
             }
-            
+
 
             return Ok(json);
         }
 
-        [HttpGet("dashboard/doctor")]   
+        [HttpGet("dashboard/doctor")]
         public async Task<IActionResult> GetDoctorpercentage(int doctorId, DateOnly date)
         {
             var data = await _dashboardService.getPercentage(doctorId, date);
@@ -40,8 +40,22 @@ namespace Hospital_Management.Controllers
             {
                 return NotFound("No data found for the doctor.");
             }
-           // var json = JsonConvert.SerializeObject(data, Formatting.Indented);
+            // var json = JsonConvert.SerializeObject(data, Formatting.Indented);
             return Ok(data);
-        }   
+        }
+
+        [HttpGet("dashboard/PatientFrequency/{month}")]
+
+        public async Task<IActionResult> GetPatientFrequency(int month)
+        {
+            var data = await _dashboardService.PatientFrequencyDto(month);
+            if (data == null)
+            {
+                return NotFound("No data found for the patient frequency.");
+            }
+            // var json = JsonConvert.SerializeObject(data, Formatting.Indented);
+            return Ok(data);    
+
+        }
     }
 }

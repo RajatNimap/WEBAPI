@@ -7,5 +7,6 @@ namespace Hospital_Management.Interfaces.Services
     {
         Task<DataTable> getDailyCount(DateOnly date); 
         Task<GetdailyCountdto> getPercentage(int doctorId,DateOnly date);
+        Task <List<PatientFrequencyDto>> PatientFrequencyDto(int month);
     }
 }

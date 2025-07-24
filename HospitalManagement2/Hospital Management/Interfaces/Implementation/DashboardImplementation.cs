@@ -108,9 +108,35 @@ namespace Hospital_Management.Interfaces.Implementation
            return await datafromlinq.FirstOrDefaultAsync();
         }
 
+        public async Task<List<PatientFrequencyDto>> PatientFrequencyDto(int month)
+        {
+            //var data = await _database.appointments.FromSqlRaw($@"select p.Name,p.Age,p.Email,
+            //                count(a.Id) as appoint
+            //                from patients p join appointments a on p.Id =a.PatientId
+            //                where MONTH(a.DateofAppointment) ={month}
+            //                group by p.Name,p.Age ,p.Email order by appoint desc").ToListAsync();
 
-       
+            var data = (from p in _database.patients
+                       join a in _database.appointments on p.Id equals a.PatientId
+                       where a.DateofAppointment.Month == month
+                       group new { p, a } by new { p.Name, p.Age, p.Email } into g
+                        orderby g.Count() descending
 
-   
+                        select new PatientFrequencyDto
+                       {
+                           Name = g.Key.Name,
+                            age=g.Key.Age,
+                           Email = g.Key.Email,
+                           frequency = g.Count()
+                       }).ToListAsync();
+
+            if (data == null)
+            {
+                return null; // No data found for the specified month
+            }
+            return await data;
+
+          
+        }
     }
 }

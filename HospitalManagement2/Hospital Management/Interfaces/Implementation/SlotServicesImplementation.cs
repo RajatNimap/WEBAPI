@@ -8,9 +8,6 @@ using static Hospital_Management.Interfaces.Implementation.AppointmentRepository
 
 namespace Hospital_Management.Interfaces.Implementation
 {
-
-
-
     public class AppointmentRepository : IAppointmentRepo
     {
 
@@ -23,8 +20,6 @@ namespace Hospital_Management.Interfaces.Implementation
 
         public async Task<List<Appointment>> GetBookedSlot(int DoctorId, DateTime Date)
         {
-
-
             //var data = await Database.appointments.Where(x => x.DoctorId == DoctorId && x.DateofAppointment.ToDateTime(TimeOnly.MinValue) == Date.Date).ToListAsync();
             var data = await Database.appointments
     .Where(x => x.DoctorId == DoctorId && x.DateofAppointment == DateOnly.FromDateTime(Date))
@@ -72,11 +67,8 @@ namespace Hospital_Management.Interfaces.Implementation
         {
             var groupedSlots = new Dictionary<string, List<TimeSlotDto>>();
 
-           
-
             foreach (var availability in availabilities)
             {
-                
                 // MORNING SLOTS
                 var current = availability.MorningStartTime;
                 while (current < availability.MorningEndTime)

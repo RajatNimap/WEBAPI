@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospitalmanagemet2\\Hospital Management\\Hospital Management\\Hospital Management\\Hospital Management.csproj": {}
+    "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\HospitalManagement2\\Hospital Management\\Hospital Management.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospitalmanagemet2\\Hospital Management\\Hospital Management\\Hospital Management\\Hospital Management.csproj": {
+    "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\HospitalManagement2\\Hospital Management\\Hospital Management.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospitalmanagemet2\\Hospital Management\\Hospital Management\\Hospital Management\\Hospital Management.csproj",
+        "projectUniqueName": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\HospitalManagement2\\Hospital Management\\Hospital Management.csproj",
         "projectName": "Hospital Management",
-        "projectPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospitalmanagemet2\\Hospital Management\\Hospital Management\\Hospital Management\\Hospital Management.csproj",
+        "projectPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\HospitalManagement2\\Hospital Management\\Hospital Management.csproj",
         "packagesPath": "C:\\Users\\Nimap\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospitalmanagemet2\\Hospital Management\\Hospital Management\\Hospital Management\\obj\\",
+        "outputPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\HospitalManagement2\\Hospital Management\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
