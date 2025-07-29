@@ -1,8 +1,5 @@
-﻿
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<div class="container mt-5">
-    <h2 class="mb-4 text-primary">Employee Form </h2>
+﻿<div class="container mt-5">
+    <h2 class="mb-4 text-primary">Employee Form</h2>
 
     <form id="employeeForm">
         <div class="mb-3">
@@ -26,26 +23,70 @@
     <div id="result" class="mt-3"></div>
 </div>
 
-<script>
+<!-- jQuery CDN (uncomment this line if jQuery is not included elsewhere) -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
-    $(document).ready(function(){
-            
-        $(#'employee').submit(function(e){
+<script>
+    // $(document).ready(function () {
+    //     $('#employeeForm').submit(function (e) {
+    //         e.preventDefault();
+
+    //         const data1 = {
+    //             Name: $('#Name').val(),
+    //             Email: $('#Email').val(),
+    //             Age: $('#Age').val()
+    //         };
+
+    //         $.ajax({
+    //             type: 'POST',
+    //             url: '@Url.Action("AddEmployee", "Home")',
+    //             data: data1,
+    //             success: function (response) {
+    //                 $('#result').html('<div class="alert alert-success">Employee added successfully!</div>');
+    //                 $('#employeeForm')[0].reset();
+    //                 console.log(response);
+    //             },
+    //             error: function (xhr, status, error) {
+    //                 $('#result').html('<div class="alert alert-danger">An error occurred: ' + xhr.responseText + '</div>');
+    //                 console.error("Error:", error);
+    //             }
+    //         });
+    //     });
+    // });
+
+    $(document).ready(function (){
+
+        $('#employeeForm').submit(function (e){
             e.preventDefault();
 
-            const data={
-                Name : $('Name').val(),
-                Email : $('Email').val(),
-                Age : $('Age').val()
+            const userdata={
+                 Name: $('#Name').val(),
+                 Email:$('#Email').val(),
+                 Age: $('#Age').val()
             }
-        })
-        $.ajax({
 
-            type:'Post',
-            url:'/Home/AddEmployee',
+            $.ajax({
 
+                type:'POST',
+                url:'@Url.Action("AddEmployee","Home")',
+                data:userdata,
+                success:function(reponse){
+                        $("#employeeForm")[0].reset();
+                                                     $('#result').html('<div class="alert alert-success">Employee added successfully!</div>');
+
+                        setTimeout(function(){
+                             $('#result').html('');
+                        },2500)
+       
+                },
+                error: function(xhr,status,error){
+                        console.log(xhr.resposnse,error,status);
+                }
+
+            })
         })
+
+
 
     })
-
 </script>

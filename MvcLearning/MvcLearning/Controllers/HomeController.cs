@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ActionConstraints;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using MvcLearning.IServices;
 using MvcLearning.Model;
 using MvcLearning.Model.Entities;
@@ -72,6 +73,8 @@ namespace MvcLearning.Controllers
             return RedirectToAction("Index");   
 
         }
+        
+      
 
         [HttpGet("serach")]
         public async Task<IActionResult> Search(string query)

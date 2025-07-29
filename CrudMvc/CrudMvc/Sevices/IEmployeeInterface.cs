@@ -7,7 +7,7 @@ namespace CrudMvc.Sevices
     {
 
         Task<List<Employee>> GetEmployeedata();
-        Task<EmployeeDto> CreateEmployee(EmployeeDto employee);
+        Task<Employee> CreateEmployee(EmployeeDto employee);
         Task<Employee> UpdateEmployee(int id);
         Task<bool> DeleteEmployee(int id);
     }

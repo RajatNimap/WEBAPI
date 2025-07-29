@@ -20,8 +20,8 @@ namespace CrudMvc.Controllers
             return View();
         }
      
-        public async Task<IActionResult> Addemployee([FromBody]EmployeeDto emp)
-        {
+        public async Task<IActionResult> Addemployee(EmployeeDto emp)
+            {
             await employeeInterface.CreateEmployee(emp);
             return Ok(new { message = "employee added successully" });            
         }

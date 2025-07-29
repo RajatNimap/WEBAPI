@@ -21,7 +21,9 @@
             <ul class="list-group mt-2 bg-dark text-white">
                 <li class="list-group-item bg-dark text-white">
                      <a href="@list.Id" class="text-white text-decoration-none d-block" style="display:block;"><h3>  @list.Title @list.CreatedDate.Date  </h3> </a>
-                     <a href="delete/@list.Id" class="card-link"> Delete 
+                     <a href="delete/@list.Id" class="card-link"> Delete
+                            @await Html.PartialAsync("PartialView")
+
                 </li>
                
             </ul>    

@@ -13,10 +13,10 @@ namespace CrudMvc.Sevices
 
                      Datbase = database;
         }
-        public async Task<EmployeeDto> CreateEmployee(EmployeeDto employee)
+        public async Task<Employee> CreateEmployee(EmployeeDto employee)
         {
 
-            var data = new EmployeeDto
+            var data = new Employee
             {
                 Name = employee.Name,   
                 Email = employee.Email, 
