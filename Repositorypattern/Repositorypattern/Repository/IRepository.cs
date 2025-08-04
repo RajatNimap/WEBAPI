@@ -1,13 +1,13 @@
 ﻿namespace Repositorypattern.Repository
 {
-    public interface IRepository<T>
+    public interface IRepository<T> where T:class
     {
 
         public Task<IEnumerable<T>> GetAllAsync();
         public Task<T> GetELementById(int id);
-        public Task AddAsync(T entity);
-        public void Update(int id,T entity);
-        public void DeleteAsync(int id);
-        public Task SaveChangesAsync(); 
+        public Task<T> AddAsync(T entity); 
+        public Task Update(T entity);
+        public Task DeleteAsync(T entity);
+       // public Task SaveChangesAsync(); 
     }
 }
