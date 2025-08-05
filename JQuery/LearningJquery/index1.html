@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,39 +10,40 @@
 </head>
 
 <style>
-    #btn{
+    #btn {
         height: 50px;
         width: 100px;
     }
 </style>
 <script>
 
-    $(document).ready(function (){
-        $('#btn').click(function(){
-             $.get('https://dummyjson.com/c/3029-d29f-4014-9fb4',function(response){
+    $(document).ready(function () {
+        $('#btn').click(function () {
+            $.get('https://dummyjson.com/c/3029-d29f-4014-9fb4', function (response) {
                 console.log(response);
-            $.post('https://jsonplaceholder.typicode.com/posts', {
-    "userId": 101,
-    "id": 102,
-    "title": "Rajat Pandit",
-    "body": "Rajat"
-  },function(response){
-    console.log(response);
-  })
-        });     
+                $.post('https://jsonplaceholder.typicode.com/posts', {
+                    "userId": 101,
+                    "id": 102,
+                    "title": "Rajat Pandit",
+                    "body": "Rajat"
+                }, function (response) {
+                    console.log(response);
+                })
+            });
         })
 
         // $('#btn').css("background-color","yellow");
         // $('#btn').text("Rajat Button");
         // $('#btn').hide();
-       
+
         //document.getElementById("btn").style.backgroundColor="red";
 
-       
+
     })
-    
-    
+
+
 </script>
+
 <body>
     <button id="btn"> Click me </button>
     <h1>Rajat Pandit </h1>
@@ -51,4 +53,5 @@
 
 
 </script>
+
 </html>

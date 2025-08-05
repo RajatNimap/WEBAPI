@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorypattern\\repositorypattern\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|solutionrelative:repositorypattern\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorypattern\\repositorypattern\\repository\\reposotoryimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|solutionrelative:repositorypattern\\repository\\reposotoryimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorypattern\\repositorypattern\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|solutionrelative:repositorypattern\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorypattern\\repositorypattern\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|solutionrelative:repositorypattern\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorypattern\\repositorypattern\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorypattern\\repositorypattern\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|solutionrelative:repositorypattern\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorypattern\\repositorypattern\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|solutionrelative:repositorypattern\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D22151EF-0D97-46E9-9B3C-35F9D7424C3D}|Repositorypattern\\Repositorypattern.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorypattern\\repositorypattern\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,20 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Repositorypattern\\Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Repositorypattern\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAABQAAAAAzMzMzMz8vyMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T10:58:30.316Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ProductDto.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Model\\ProductDto.cs",
               "RelativeDocumentMoniker": "Repositorypattern\\Model\\ProductDto.cs",
@@ -92,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Repositorypattern\\Data\\DataContext.cs",
@@ -105,26 +92,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Repositorypattern\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Controllers\\ProductController.cs",
               "RelativeToolTip": "Repositorypattern\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAsAAADgXmZmZuYjwBkAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAA/f////8GwAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-04T09:41:02.022Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ReposotoryImplementation.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Repository\\ReposotoryImplementation.cs",
               "RelativeDocumentMoniker": "Repositorypattern\\Repository\\ReposotoryImplementation.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Repository\\ReposotoryImplementation.cs",
               "RelativeToolTip": "Repositorypattern\\Repository\\ReposotoryImplementation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAACQmJmZmdk7wBMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-31T11:43:13.966Z",
               "EditorCaption": ""
@@ -143,7 +130,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Program.cs",
+              "RelativeDocumentMoniker": "Repositorypattern\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Program.cs",
+              "RelativeToolTip": "Repositorypattern\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T10:46:15.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Repositorypattern\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Repositorypattern\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAABQAAAAAzMzMzMz8vyMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T10:58:30.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Model\\Product.cs",
               "RelativeDocumentMoniker": "Repositorypattern\\Model\\Product.cs",
@@ -178,19 +191,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-07-31T10:46:17.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Program.cs",
-              "RelativeDocumentMoniker": "Repositorypattern\\Program.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Repositorypattern\\Repositorypattern\\Program.cs",
-              "RelativeToolTip": "Repositorypattern\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T10:46:15.726Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",

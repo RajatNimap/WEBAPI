@@ -1,0 +1,15 @@
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\bin\Debug\net8.0\SingleTonDesignPattern.exe
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\bin\Debug\net8.0\SingleTonDesignPattern.deps.json
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\bin\Debug\net8.0\SingleTonDesignPattern.runtimeconfig.json
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\bin\Debug\net8.0\SingleTonDesignPattern.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\bin\Debug\net8.0\SingleTonDesignPattern.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\SingleTonDesignPattern.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\SingleTonDesignPattern.AssemblyInfoInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\SingleTonDesignPattern.AssemblyInfo.cs
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\SingleTonDesignPattern.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\SingleTonDesignPattern.sourcelink.json
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\SingleTonDesignPattern.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\refint\SingleTonDesignPattern.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\SingleTonDesignPattern.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\SingleTonDesignPattern.genruntimeconfig.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\SingleTonDesignPattern\SingleTonDesignPattern\obj\Debug\net8.0\ref\SingleTonDesignPattern.dll

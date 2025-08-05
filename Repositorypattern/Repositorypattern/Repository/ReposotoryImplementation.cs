@@ -5,8 +5,6 @@ using Repositorypattern.Data;
 
 namespace Repositorypattern.Repository
 {
-
-
     public class ReposotoryImplementation<T> : IRepository<T> where T : class
     {
         private readonly DataContext database;
@@ -16,25 +14,21 @@ namespace Repositorypattern.Repository
             database = _database;   
             _dbset = database.Set<T>(); 
         }
-
         public async Task<T> AddAsync(T entity)
         {
             await _dbset.AddAsync(entity);
             await database.SaveChangesAsync();
             return entity;
         }
-
         public async Task DeleteAsync(T entity)
         {
               _dbset.Remove(entity);
               await database.SaveChangesAsync();  
         }
-
         public async Task<IEnumerable<T>> GetAllAsync()
         {
            return  await _dbset.ToListAsync();
         }
-
         public async Task<T> GetELementById(int id)
         {
             var data= await _dbset.FindAsync(id);
@@ -44,7 +38,6 @@ namespace Repositorypattern.Repository
             }
             return data;
         }
-
         public async Task Update(T entity)
         {
             _dbset.Attach(entity);
