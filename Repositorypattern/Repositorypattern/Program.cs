@@ -10,7 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(ReposotoryImplementation<>));
-builder.Services.AddDbContext<DataContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));    
+builder.Services.AddScoped<IExtensionRepo, ExtensionImplementation>();
+
+ builder.Services.AddDbContext<DataContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));    
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

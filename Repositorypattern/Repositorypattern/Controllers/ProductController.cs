@@ -83,5 +83,15 @@ namespace Repositorypattern.Controllers
             await _repository.DeleteAsync(existingProduct);
             return NoContent();
         }
+        [HttpGet("count")]
+        public async Task<IActionResult> GetCount()
+        {
+            var count = await _repository.GetAllAsync();
+            if (count == null)
+            {
+                return NotFound();
+            }
+            return Ok(count.Count());
+        }   
     }
 }

@@ -106,6 +106,16 @@
   },
   {
     "ContainingType": "Repositorypattern.Controllers.ProductController",
+    "Method": "GetCount",
+    "RelativePath": "api/Product/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Repositorypattern.Controllers.ProductController",
     "Method": "DeleteRepo",
     "RelativePath": "api/Product/delete/{id}",
     "HttpMethod": "DELETE",

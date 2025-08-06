@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Repositorypattern.Data;
+using Repositorypattern.Model;
 
 namespace Repositorypattern.Repository
 {
@@ -11,8 +12,8 @@ namespace Repositorypattern.Repository
         private readonly DbSet<T> _dbset;
         public ReposotoryImplementation(DataContext _database)
         {
-            database = _database;   
-            _dbset = database.Set<T>(); 
+            database = _database;
+            _dbset = database.Set<T>();
         }
         public async Task<T> AddAsync(T entity)
         {
@@ -22,17 +23,17 @@ namespace Repositorypattern.Repository
         }
         public async Task DeleteAsync(T entity)
         {
-              _dbset.Remove(entity);
-              await database.SaveChangesAsync();  
+            _dbset.Remove(entity);
+            await database.SaveChangesAsync();
         }
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-           return  await _dbset.ToListAsync();
+            return await _dbset.ToListAsync();
         }
         public async Task<T> GetELementById(int id)
         {
-            var data= await _dbset.FindAsync(id);
-            if(data == null)
+            var data = await _dbset.FindAsync(id);
+            if (data == null)
             {
                 return null;
             }
@@ -44,5 +45,6 @@ namespace Repositorypattern.Repository
             database.Entry(entity).State = EntityState.Modified;
             await database.SaveChangesAsync();
         }
+      
     }
 }
