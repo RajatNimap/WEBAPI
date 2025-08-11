@@ -4,11 +4,13 @@ using System.Text.Json.Serialization;
 using Hospital_Management.Data;
 using Hospital_Management.Interfaces.Implementation;
 using Hospital_Management.Interfaces.Services;
+using Hospital_Management.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -21,7 +23,12 @@ builder.Services.AddControllers()
     {
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     });
-
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
+builder.Host.UseSerilog();  
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
             {
@@ -47,8 +54,6 @@ builder.Services.AddScoped<AppointmentRepository>();
 builder.Services.AddScoped<DoctorSlotService>();
 builder.Services.AddScoped<AppointmentImplementation>();
 builder.Services.AddScoped<IMedicalRecord, MedicalRecordImplementation>();
-
-
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddSwaggerGen(c =>
 {
@@ -83,6 +88,7 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+    
 var app = builder.Build();
 
 
@@ -95,6 +101,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+
+app.UseMiddleware<LoggingMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 

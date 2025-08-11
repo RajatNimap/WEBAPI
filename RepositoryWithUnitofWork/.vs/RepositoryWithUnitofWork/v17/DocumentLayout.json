@@ -1,0 +1,248 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12EBC1C6-F19E-4A26-A2E2-766834BFE308}|CRUD.SERVICE\\CRUD.SERVICE.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.service\\employee\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12EBC1C6-F19E-4A26-A2E2-766834BFE308}|CRUD.SERVICE\\CRUD.SERVICE.csproj|solutionrelative:crud.service\\employee\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.data\\infrastructure\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|solutionrelative:crud.data\\infrastructure\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.data\\infrastructure\\repoimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|solutionrelative:crud.data\\infrastructure\\repoimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BB24ED2-373D-49AC-A40C-60B7D2F7D0F4}|CRUD.MODEL\\CRUD.MODEL.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.model\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BB24ED2-373D-49AC-A40C-60B7D2F7D0F4}|CRUD.MODEL\\CRUD.MODEL.csproj|solutionrelative:crud.model\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BB24ED2-373D-49AC-A40C-60B7D2F7D0F4}|CRUD.MODEL\\CRUD.MODEL.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.model\\model\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BB24ED2-373D-49AC-A40C-60B7D2F7D0F4}|CRUD.MODEL\\CRUD.MODEL.csproj|solutionrelative:crud.model\\model\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD6D3460-5445-4838-9069-B5AD3E488832}|RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\repositorywithunitofwork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD6D3460-5445-4838-9069-B5AD3E488832}|RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj|solutionrelative:repositorywithunitofwork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12EBC1C6-F19E-4A26-A2E2-766834BFE308}|CRUD.SERVICE\\CRUD.SERVICE.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.service\\crud.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{12EBC1C6-F19E-4A26-A2E2-766834BFE308}|CRUD.SERVICE\\CRUD.SERVICE.csproj|solutionrelative:crud.service\\crud.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.data\\infrastructure\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|solutionrelative:crud.data\\infrastructure\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.data\\crud.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|solutionrelative:crud.data\\crud.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD6D3460-5445-4838-9069-B5AD3E488832}|RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\repositorywithunitofwork\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BD6D3460-5445-4838-9069-B5AD3E488832}|RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj|solutionrelative:repositorywithunitofwork\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BB24ED2-373D-49AC-A40C-60B7D2F7D0F4}|CRUD.MODEL\\CRUD.MODEL.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.model\\crud.model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3BB24ED2-373D-49AC-A40C-60B7D2F7D0F4}|CRUD.MODEL\\CRUD.MODEL.csproj|solutionrelative:crud.model\\crud.model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD6D3460-5445-4838-9069-B5AD3E488832}|RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\repositorywithunitofwork\\repositorywithunitofwork.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BD6D3460-5445-4838-9069-B5AD3E488832}|RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj|solutionrelative:repositorywithunitofwork\\repositorywithunitofwork.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3BC25C8-2D28-4E0B-801E-9BCE39D70369}|CRUD.CONTROLLER\\CRUD.CONTROLLER.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.controller\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3BC25C8-2D28-4E0B-801E-9BCE39D70369}|CRUD.CONTROLLER\\CRUD.CONTROLLER.csproj|solutionrelative:crud.controller\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Emp.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.SERVICE\\Employee\\Emp.cs",
+              "RelativeDocumentMoniker": "CRUD.SERVICE\\Employee\\Emp.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.SERVICE\\Employee\\Emp.cs",
+              "RelativeToolTip": "CRUD.SERVICE\\Employee\\Emp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T13:35:36.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CRUD.SERVICE",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.SERVICE\\CRUD.SERVICE.csproj",
+              "RelativeDocumentMoniker": "CRUD.SERVICE\\CRUD.SERVICE.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.SERVICE\\CRUD.SERVICE.csproj",
+              "RelativeToolTip": "CRUD.SERVICE\\CRUD.SERVICE.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-11T13:35:10.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RepoImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Infrastructure\\RepoImplementation.cs",
+              "RelativeDocumentMoniker": "CRUD.DATA\\Infrastructure\\RepoImplementation.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Infrastructure\\RepoImplementation.cs",
+              "RelativeToolTip": "CRUD.DATA\\Infrastructure\\RepoImplementation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T12:02:07.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\Program.cs",
+              "RelativeDocumentMoniker": "RepositoryWithUnitofWork\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\Program.cs",
+              "RelativeToolTip": "RepositoryWithUnitofWork\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T11:48:44.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Infrastructure\\IRepository.cs",
+              "RelativeDocumentMoniker": "CRUD.DATA\\Infrastructure\\IRepository.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Infrastructure\\IRepository.cs",
+              "RelativeToolTip": "CRUD.DATA\\Infrastructure\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T11:58:15.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.MODEL\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "CRUD.MODEL\\Entities\\Employee.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.MODEL\\Entities\\Employee.cs",
+              "RelativeToolTip": "CRUD.MODEL\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T11:50:06.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmployeeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.MODEL\\Model\\EmployeeDto.cs",
+              "RelativeDocumentMoniker": "CRUD.MODEL\\Model\\EmployeeDto.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.MODEL\\Model\\EmployeeDto.cs",
+              "RelativeToolTip": "CRUD.MODEL\\Model\\EmployeeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T11:53:25.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CRUD.DATA.csproj",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\CRUD.DATA.csproj",
+              "RelativeDocumentMoniker": "CRUD.DATA\\CRUD.DATA.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\CRUD.DATA.csproj",
+              "RelativeToolTip": "CRUD.DATA\\CRUD.DATA.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-11T11:49:19.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Infrastructure\\DataContext.cs",
+              "RelativeDocumentMoniker": "CRUD.DATA\\Infrastructure\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Infrastructure\\DataContext.cs",
+              "RelativeToolTip": "CRUD.DATA\\Infrastructure\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T11:55:37.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\appsettings.json",
+              "RelativeDocumentMoniker": "RepositoryWithUnitofWork\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\appsettings.json",
+              "RelativeToolTip": "RepositoryWithUnitofWork\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-11T12:09:48.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CRUD.MODEL.csproj",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.MODEL\\CRUD.MODEL.csproj",
+              "RelativeDocumentMoniker": "CRUD.MODEL\\CRUD.MODEL.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.MODEL\\CRUD.MODEL.csproj",
+              "RelativeToolTip": "CRUD.MODEL\\CRUD.MODEL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-11T11:49:20.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RepositoryWithUnitofWork.csproj",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj",
+              "RelativeDocumentMoniker": "RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj",
+              "RelativeToolTip": "RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-11T12:04:10.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.CONTROLLER\\Class1.cs",
+              "RelativeDocumentMoniker": "CRUD.CONTROLLER\\Class1.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.CONTROLLER\\Class1.cs",
+              "RelativeToolTip": "CRUD.CONTROLLER\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T11:42:35.208Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

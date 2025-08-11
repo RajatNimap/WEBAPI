@@ -1,0 +1,12 @@
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\bin\Debug\net8.0\CRUD.MODEL.deps.json
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\bin\Debug\net8.0\CRUD.MODEL.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\bin\Debug\net8.0\CRUD.MODEL.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\obj\Debug\net8.0\CRUD.MODEL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\obj\Debug\net8.0\CRUD.MODEL.AssemblyInfoInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\obj\Debug\net8.0\CRUD.MODEL.AssemblyInfo.cs
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\obj\Debug\net8.0\CRUD.MODEL.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\obj\Debug\net8.0\CRUD.MODEL.sourcelink.json
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\obj\Debug\net8.0\CRUD.MODEL.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\obj\Debug\net8.0\refint\CRUD.MODEL.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\obj\Debug\net8.0\CRUD.MODEL.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\CRUD.MODEL\obj\Debug\net8.0\ref\CRUD.MODEL.dll

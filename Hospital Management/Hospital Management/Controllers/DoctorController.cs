@@ -19,7 +19,7 @@ namespace Hospital_Management.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "admin,receptionist")]
+      //  [Authorize(Roles = "admin,receptionist")]
         public async Task<IActionResult> GetData()
         {
             var Data = await DoctorIm.GetDoctors();

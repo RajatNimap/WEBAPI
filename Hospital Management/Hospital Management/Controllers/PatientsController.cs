@@ -18,7 +18,7 @@ namespace Hospital_Management.Controllers
         {
             this.patientIm = patientIm;
         }
-        [Authorize(Roles ="admin")]
+      //  [Authorize(Roles ="admin")]
         [HttpGet("Patients")]
         public async Task<IActionResult> GetPatientsList()
         {

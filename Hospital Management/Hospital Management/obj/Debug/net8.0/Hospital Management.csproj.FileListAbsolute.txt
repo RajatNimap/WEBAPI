@@ -141,3 +141,20 @@ C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\ob
 C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\Hospital Management.genruntimeconfig.cache
 C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\ref\Hospital Management.dll
 C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.Enrichers.Environment.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Hospital Management\Hospital Management\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
