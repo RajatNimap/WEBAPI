@@ -38,7 +38,6 @@ namespace PracticeTask.Controllers
 
         [HttpPost]
         public IActionResult Postdata([FromBody]EmployeDto emp) { 
-               
             Empdata.AddEmployeeDetail(emp);
             return Ok(Empdata); 
         }

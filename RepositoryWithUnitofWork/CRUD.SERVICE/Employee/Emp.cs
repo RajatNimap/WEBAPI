@@ -4,33 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CRUD.DATA.Infrastructure;
+using CRUD.DATA.Unitowork;
 using CRUD.MODEL.Entities;
 using CRUD.MODEL.Model;
-
 
 namespace CRUD.SERVICE
 {
     public class Emp
     {
-        private readonly IRepository<Employee> _repository;
 
-
-        public Emp(IRepository<Employee> repository)
+        private readonly IUnitofWork _unitOfWork;   
+        public Emp(IUnitofWork unitofWork)
         {
-            _repository = repository;
+            _unitOfWork = unitofWork;
         }
 
         public async Task<IEnumerable<Employee>> GetAllEmployeesAsync()
         {
-            return await _repository.GetAllAsync();
+            return await _unitOfWork.employe.GetAllAsync();
         }
 
         public async Task<Employee> GetEmployeeByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id);
+            return await _unitOfWork.employe.GetByIdAsync(id);
         }
 
-        public async Task AddEmployeeAsync(EmployeeDto employee)
+        public async Task<Employee> AddEmployeeAsync(EmployeeDto employee)
         {
 
             var data =new Employee
@@ -44,13 +43,18 @@ namespace CRUD.SERVICE
                 Department = employee.Department    
             };
 
-            await _repository.AddAsync(data);   
+            await _unitOfWork.employe.AddAsync(data);
+            await _unitOfWork.SaveCommitChanges();
+            return data;
         }
-        public async Task UpdateEmployeeAsync(int id, EmployeeDto employee)
+        public async Task<bool> UpdateEmployeeAsync(int id, EmployeeDto employee)
         {
-            var existingEmployee = await _repository.GetByIdAsync(id);
-            if (existingEmployee != null)
+            var existingEmployee = await _unitOfWork.employe.GetByIdAsync(id);
+            if(existingEmployee == null)
             {
+                return false; // Employee not found
+            }   
+      
                 existingEmployee.Name = employee.Name;
                 existingEmployee.Email = employee.Email;
                 existingEmployee.PhoneNumber = employee.PhoneNumber;
@@ -58,14 +62,24 @@ namespace CRUD.SERVICE
                 existingEmployee.Age = employee.Age;
                 existingEmployee.Position = employee.Position;
                 existingEmployee.Department = employee.Department;
-                await _repository.UpdateAsync(existingEmployee);
-            }
+               
+            
+            await _unitOfWork.employe.UpdateAsync(existingEmployee);
+            await _unitOfWork.SaveCommitChanges();
+            return true;
         }
 
-        public async Task DeleteEmployeeAsync(int id)
+        public async Task<bool> DeleteEmployeeAsync(int id)
         {
-            var existingEmployee = await _repository.GetByIdAsync(id);
-            await _repository.DeleteAsync(existingEmployee);
+            var existingEmployee = await _unitOfWork.employe.GetByIdAsync(id);
+            if (existingEmployee == null)
+            {
+                return false; // Employee not found
+            }   
+
+            await _unitOfWork.employe.DeleteAsync(existingEmployee);
+            await _unitOfWork.SaveCommitChanges();  
+            return true; 
         }
 
     }

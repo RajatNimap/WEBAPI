@@ -19,8 +19,4 @@
     <ProjectReference Include="..\CRUD.MODEL\CRUD.MODEL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Unitowork\" />
-  </ItemGroup>
-
 </Project>

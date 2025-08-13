@@ -1,22 +1,18 @@
 using CRUD.DATA.Infrastructure;
+using CRUD.DATA.Unitowork;
+using CRUD.SERVICE;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-//builder.Services.AddDbContext<DataContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers().AddApplicationPart(typeof(Controller).Assembly);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));  
-
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<Emp>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(RepoImplementation<>));
+builder.Services.AddScoped<IUnitofWork, UnitofWorkImplementation>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

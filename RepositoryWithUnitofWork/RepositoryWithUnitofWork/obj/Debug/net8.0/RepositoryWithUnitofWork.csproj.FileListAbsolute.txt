@@ -175,3 +175,10 @@ C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUni
 C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\obj\Debug\net8.0\RepositoryWithUnitofWork.genruntimeconfig.cache
 C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\obj\Debug\net8.0\ref\RepositoryWithUnitofWork.dll
 C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\bin\Debug\net8.0\CRUD.SERVICE.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\bin\Debug\net8.0\CRUD.SERVICE.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\bin\Debug\net8.0\CRUDCONTROLLER.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\RepositoryWithUnitofWork\RepositoryWithUnitofWork\bin\Debug\net8.0\CRUDCONTROLLER.pdb
