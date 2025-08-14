@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.data\\infrastructure\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|solutionrelative:crud.data\\infrastructure\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF3A3A3E-104D-440C-8E52-6449E72ABED9}|Controller\\CRUDCONTROLLER.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\controller\\controller\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF3A3A3E-104D-440C-8E52-6449E72ABED9}|Controller\\CRUDCONTROLLER.csproj|solutionrelative:controller\\controller\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD6D3460-5445-4838-9069-B5AD3E488832}|RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\repositorywithunitofwork\\repositorywithunitofwork.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{BD6D3460-5445-4838-9069-B5AD3E488832}|RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj|solutionrelative:repositorywithunitofwork\\repositorywithunitofwork.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -17,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{12EBC1C6-F19E-4A26-A2E2-766834BFE308}|CRUD.SERVICE\\CRUD.SERVICE.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.service\\employee\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12EBC1C6-F19E-4A26-A2E2-766834BFE308}|CRUD.SERVICE\\CRUD.SERVICE.csproj|solutionrelative:crud.service\\employee\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF3A3A3E-104D-440C-8E52-6449E72ABED9}|Controller\\CRUDCONTROLLER.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\controller\\controller\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF3A3A3E-104D-440C-8E52-6449E72ABED9}|Controller\\CRUDCONTROLLER.csproj|solutionrelative:controller\\controller\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{36A97C3B-9877-4C93-8271-5C02E114C981}|CRUD.DATA\\CRUD.DATA.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\repositorywithunitofwork\\crud.data\\unitowork\\unitofworkimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,7 +78,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Infrastructure\\DataContext.cs",
+              "RelativeDocumentMoniker": "CRUD.DATA\\Infrastructure\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Infrastructure\\DataContext.cs",
+              "RelativeToolTip": "CRUD.DATA\\Infrastructure\\DataContext.cs",
+              "ViewState": "AgIAAAQAAABAZmZmZmYkwAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T12:36:14.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "RepoImplementation.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Infrastructure\\RepoImplementation.cs",
               "RelativeDocumentMoniker": "CRUD.DATA\\Infrastructure\\RepoImplementation.cs",
@@ -82,12 +99,11 @@
               "RelativeToolTip": "CRUD.DATA\\Infrastructure\\RepoImplementation.cs",
               "ViewState": "AgIAAAgAAAAAMzMzMzMbwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T13:25:11.926Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T13:25:11.926Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "UnitofWorkImplementation.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Unitowork\\UnitofWorkImplementation.cs",
               "RelativeDocumentMoniker": "CRUD.DATA\\Unitowork\\UnitofWorkImplementation.cs",
@@ -95,25 +111,24 @@
               "RelativeToolTip": "CRUD.DATA\\Unitowork\\UnitofWorkImplementation.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAABaPRMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T13:22:00.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T13:22:00.448Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "EmployeeController.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\Controller\\Controller\\EmployeeController.cs",
               "RelativeDocumentMoniker": "Controller\\Controller\\EmployeeController.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\Controller\\Controller\\EmployeeController.cs",
               "RelativeToolTip": "Controller\\Controller\\EmployeeController.cs",
-              "ViewState": "AgIAAA4AAAAgZmZmZmYkwEAAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAACE/////38pwCsAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-12T09:47:58.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Emp.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.SERVICE\\Employee\\Emp.cs",
               "RelativeDocumentMoniker": "CRUD.SERVICE\\Employee\\Emp.cs",
@@ -121,12 +136,11 @@
               "RelativeToolTip": "CRUD.SERVICE\\Employee\\Emp.cs",
               "ViewState": "AgIAAAgAAADAMzMzMzMbwBEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T09:31:18.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T09:31:18.022Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\Program.cs",
               "RelativeDocumentMoniker": "RepositoryWithUnitofWork\\Program.cs",
@@ -134,12 +148,11 @@
               "RelativeToolTip": "RepositoryWithUnitofWork\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T09:33:38.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T09:33:38.645Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "RepositoryWithUnitofWork.csproj",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj",
               "RelativeDocumentMoniker": "RepositoryWithUnitofWork\\RepositoryWithUnitofWork.csproj",
@@ -152,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "IUnitofWork.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\Unitowork\\IUnitofWork.cs",
               "RelativeDocumentMoniker": "CRUD.DATA\\Unitowork\\IUnitofWork.cs",
@@ -160,12 +173,11 @@
               "RelativeToolTip": "CRUD.DATA\\Unitowork\\IUnitofWork.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T13:20:16.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T13:20:16.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "EmployeeDto.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.MODEL\\Model\\EmployeeDto.cs",
               "RelativeDocumentMoniker": "CRUD.MODEL\\Model\\EmployeeDto.cs",
@@ -177,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CRUD.DATA.csproj",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.DATA\\CRUD.DATA.csproj",
               "RelativeDocumentMoniker": "CRUD.DATA\\CRUD.DATA.csproj",
@@ -185,12 +197,11 @@
               "RelativeToolTip": "CRUD.DATA\\CRUD.DATA.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-12T09:30:12.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T09:30:12.923Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CRUDCONTROLLER.csproj",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\Controller\\CRUDCONTROLLER.csproj",
               "RelativeDocumentMoniker": "Controller\\CRUDCONTROLLER.csproj",
@@ -198,12 +209,11 @@
               "RelativeToolTip": "Controller\\CRUDCONTROLLER.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-12T09:32:42.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T09:32:42.878Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\appsettings.json",
               "RelativeDocumentMoniker": "RepositoryWithUnitofWork\\appsettings.json",
@@ -215,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\CRUD.MODEL\\Entities\\Employee.cs",
               "RelativeDocumentMoniker": "CRUD.MODEL\\Entities\\Employee.cs",
@@ -227,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "RepositoryWithUnitofWork.http",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork\\RepositoryWithUnitofWork.http",
               "RelativeDocumentMoniker": "RepositoryWithUnitofWork\\RepositoryWithUnitofWork.http",
