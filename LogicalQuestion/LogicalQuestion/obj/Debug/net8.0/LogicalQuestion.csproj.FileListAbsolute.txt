@@ -1,0 +1,15 @@
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\bin\Debug\net8.0\LogicalQuestion.exe
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\bin\Debug\net8.0\LogicalQuestion.deps.json
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\bin\Debug\net8.0\LogicalQuestion.runtimeconfig.json
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\bin\Debug\net8.0\LogicalQuestion.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\bin\Debug\net8.0\LogicalQuestion.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\LogicalQuestion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\LogicalQuestion.AssemblyInfoInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\LogicalQuestion.AssemblyInfo.cs
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\LogicalQuestion.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\LogicalQuestion.sourcelink.json
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\LogicalQuestion.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\refint\LogicalQuestion.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\LogicalQuestion.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\LogicalQuestion.genruntimeconfig.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\LogicalQuestion\LogicalQuestion\obj\Debug\net8.0\ref\LogicalQuestion.dll

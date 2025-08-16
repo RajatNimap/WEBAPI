@@ -116,4 +116,9 @@ select top 2 salary from Employee e2
 join customers c on o.customer_id=c.customer_id
 where o.order_date between  DATEADD(DAY, -30, GETDATE()) and GETDATE()
 
+select *  from orders o 
+join customers c on o.customer_id=c.customer_id
+where o.order_date between Dateadd(month,-6,Getdate()) and getdate();
+
+
 update orders set order_date ='2025-07-30' where order_id > 6
