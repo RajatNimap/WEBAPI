@@ -1,0 +1,9 @@
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagementMVC\HospitalManagementMVC\obj\Debug\net8.0\HospitalManagementMVC.csproj.AssemblyReference.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagementMVC\HospitalManagementMVC\obj\Debug\net8.0\HospitalManagementMVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagementMVC\HospitalManagementMVC\obj\Debug\net8.0\HospitalManagementMVC.AssemblyInfoInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagementMVC\HospitalManagementMVC\obj\Debug\net8.0\HospitalManagementMVC.AssemblyInfo.cs
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagementMVC\HospitalManagementMVC\obj\Debug\net8.0\HospitalManagementMVC.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagementMVC\HospitalManagementMVC\obj\Debug\net8.0\HospitalManagementMVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagementMVC\HospitalManagementMVC\obj\Debug\net8.0\HospitalManagementMVC.RazorAssemblyInfo.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagementMVC\HospitalManagementMVC\obj\Debug\net8.0\HospitalManagementMVC.RazorAssemblyInfo.cs
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagementMVC\HospitalManagementMVC\obj\Debug\net8.0\HospitalManagementMVC.sourcelink.json

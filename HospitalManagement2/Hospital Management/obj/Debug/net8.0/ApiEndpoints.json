@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "Hospital_Management.Controllers.HomeController",
+    "Method": "Index",
+    "RelativePath": "",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Hospital_Management.Controllers.AppointmentBookingController",
     "Method": "AppointmentBooking",
     "RelativePath": "api/AppointmentBooking",
@@ -650,6 +660,16 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.HomeController",
+    "Method": "Register",
+    "RelativePath": "register",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

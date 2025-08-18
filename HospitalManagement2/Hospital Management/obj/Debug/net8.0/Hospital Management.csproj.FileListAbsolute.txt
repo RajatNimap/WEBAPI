@@ -583,3 +583,5 @@ C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagement2\Hospital Management\ob
 C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagement2\Hospital Management\obj\Debug\net8.0\Hospital Management.pdb
 C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagement2\Hospital Management\obj\Debug\net8.0\Hospital Management.genruntimeconfig.cache
 C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagement2\Hospital Management\obj\Debug\net8.0\ref\Hospital Management.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagement2\Hospital Management\obj\Debug\net8.0\Hospital Management.RazorAssemblyInfo.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\HospitalManagement2\Hospital Management\obj\Debug\net8.0\Hospital Management.RazorAssemblyInfo.cs
