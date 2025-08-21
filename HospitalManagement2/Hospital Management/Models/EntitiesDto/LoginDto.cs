@@ -1,8 +1,14 @@
-﻿namespace Hospital_Management.Models.EntitiesDto
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Hospital_Management.Models.EntitiesDto
 {
     public class LoginDto
-    {   
-        public string Email {  get; set; }  
+    {
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email format.")]  
+        public string Email {  get; set; }
+
+        [Required(ErrorMessage = "Password is required.")]
         public string Password { get; set; }    
     }
 }

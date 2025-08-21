@@ -65,6 +65,7 @@ builder.Services.AddScoped<IDoctorAvaliability, DoctorAvailabilityService>();
 builder.Services.AddExceptionHandler<GlobalException>();
 builder.Services.Configure<EmailSetting>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddTransient<EmailService>();
+builder.Services.AddSession();
 
 
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -118,7 +119,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-
+app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -48,12 +48,34 @@ namespace Hospital_Management.Interfaces.Implementation
             var token = new JwtSecurityToken(_config["JWT:Issuer"],
                 _config["JWT:Audiance"],
                 claims,
-                expires: DateTime.Now.AddMinutes(10),
+                expires: DateTime.Now.AddMinutes(1000),
                 signingCredentials: Credential
 
             );
             return new JwtSecurityTokenHandler().WriteToken(token);
             
+        }
+
+        public void SetAuthCooked(string Jwttoken,string refreshToken,HttpContext context)
+        {
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Expires = DateTime.Now.AddDays(7),
+                Secure = true,
+                SameSite = SameSiteMode.Strict
+            };
+            var refreshCookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Expires = DateTime.Now.AddDays(20),
+                Secure = true,
+                SameSite = SameSiteMode.Strict
+            };
+
+            context.Response.Cookies.Append("jwt", Jwttoken, cookieOptions);
+
+            context.Response.Cookies.Append("refreshToken", refreshToken, refreshCookieOptions);
         }
     }
 }

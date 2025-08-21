@@ -47,7 +47,7 @@ namespace Hospital_Management.Interfaces.Implementation
             }
             var IsValid=BCrypt.Net.BCrypt.Verify(password,Data.Password);
             if (!IsValid) {
-                return "Invalid Credential";
+                return null;
             }
             return "Bearer";
 

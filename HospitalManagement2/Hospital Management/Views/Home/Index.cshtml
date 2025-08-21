@@ -2,6 +2,9 @@
 
 	Layout = "_Layout";
 }
+
+
+
 <div class="row g-4">
     <div class="col-md-3">
         <div class="card h-100 shadow-sm border-0">
@@ -51,3 +54,20 @@
         and ease of use.
     </p>
 </div>
+@section script {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var successMessage = '@TempData["SuccessMessage"]';
+        if (successMessage && successMessage !== '') {
+            Swal.fire({
+                toast: true,
+                position: 'top-end',   // top-right corner
+                icon: 'success',
+                title: successMessage,
+                showConfirmButton: false,
+                timer: 3000,           // 3 seconds
+                timerProgressBar: true
+            });
+        }
+    </script>
+}
