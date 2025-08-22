@@ -3,7 +3,7 @@
 
     Layout = "_Layout"; 
 }
-<div id="error" asp-validation-summary="All" class="alert alert-danger" role="alert">
+<div id="error" asp-validation-summary="All" class="" role="alert">
 </div>
 
 <div class="row justify-content-center">
@@ -27,7 +27,7 @@
                     </div>
 
                     <!-- Submit -->
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <button type="submit" class="btn btn-primary w-100" id="btn">Login</button>
                 </form>
             </div>
             <div class="card-footer text-center">
@@ -46,7 +46,23 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
 
 
-}   
+   
+}
+
+<script>
+    $(document).ready(function () {
+        // Check if there are validation errors inside #error
+        if ($.trim($("#error").html()).length > 0) {
+            $("#error")
+            .addClass("alert alert-danger") // Add Bootstrap alert class
+                .fadeIn()
+                .delay(3000)
+                .fadeOut();
+                  $("#error").removeClass("alert alert-danger");
+        }
+
+    });
+</script>
 <script>    
 
    // Here we are going for the Validation
@@ -73,14 +89,15 @@
 
    // })
 
-   $(document).ready(function(){
-   
-   
-   
-   
-   
-   
-   })
+   // $(document).ready(function(){
+
+   //    if ($.trim($("#error").text()).length > 0) {
+   //   $("#error")
+   //     .fadeIn()
+   //     .delay(3000)   // keep visible for 3 seconds
+   //     .fadeOut();
+
+   //  })
 
 
 </script>

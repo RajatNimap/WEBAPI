@@ -1,9 +1,15 @@
 ﻿@{
 
-	Layout = "_Layout";
+    Layout = "_Layout";
 }
 
 
+@if(TempData["ErrorMessage"] != null)
+{
+    <div id="log" class="" >
+        @TempData["ErrorMessage"]
+    </div>
+}
 
 <div class="row g-4">
     <div class="col-md-3">
@@ -57,17 +63,18 @@
 @section script {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        var successMessage = '@TempData["SuccessMessage"]';
-        if (successMessage && successMessage !== '') {
-            Swal.fire({
-                toast: true,
-                position: 'top-end',   // top-right corner
-                icon: 'success',
-                title: successMessage,
-                showConfirmButton: false,
-                timer: 3000,           // 3 seconds
-                timerProgressBar: true
-            });
-        }
+		$(document).ready(function () {
+			// Check if there is a log message
+			if ($.trim($("#log").text()).length > 0) {
+
+			   console.log("Log message found:", $("#log").text());
+                   $("#log")
+                .addClass("alert alert-success") // Add Bootstrap alert class
+                    .fadeIn()
+                    .delay(3000)
+                    .fadeOut();
+
+			}
+		});
     </script>
 }
