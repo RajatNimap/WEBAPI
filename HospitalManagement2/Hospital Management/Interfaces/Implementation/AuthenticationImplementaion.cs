@@ -36,20 +36,21 @@ namespace Hospital_Management.Interfaces.Implementation
                     Role = Register.Role,
                 };
         }
-        public async Task<string> Login(string email, string password)
+        public async Task<bool> Login(string email, string password)
         {
             var Data= await Database.registers.FirstOrDefaultAsync(x=>x.Email == email);
             
 
             if (Data == null) {
-                return null;
+                return false;
 
             }
             var IsValid=BCrypt.Net.BCrypt.Verify(password,Data.Password);
             if (!IsValid) {
-                return null;
+                return false;
             }
-            return "Bearer";
+            return true;
+           
 
         }
 

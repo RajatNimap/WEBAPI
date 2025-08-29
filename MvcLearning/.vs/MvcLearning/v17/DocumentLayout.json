@@ -106,7 +106,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -115,18 +115,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "MvcLearning\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "MvcLearning\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T10:32:38.089Z"
             },
             {
               "$type": "Document",
@@ -162,8 +150,7 @@
               "RelativeToolTip": "MvcLearning\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAABAPQAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-29T05:19:43.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T05:19:43.431Z"
             },
             {
               "$type": "Document",
@@ -201,6 +188,18 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T11:03:37.485Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "MvcLearning\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "MvcLearning\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T10:32:38.089Z"
             },
             {
               "$type": "Document",

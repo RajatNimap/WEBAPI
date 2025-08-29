@@ -59,7 +59,7 @@ namespace Hospital_Management.Controllers
 
             var StoreToken = RefreshTokenIm.StoreToken(loginDto.Email,GenRefreshToken);
 
-            if (data == null) {
+            if (data == false) {
                 return NotFound("Data Not found");
             }
            

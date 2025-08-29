@@ -7,7 +7,7 @@ namespace Hospital_Management.Interfaces.Services
    public interface IAuthentication
     {
         Task<RegisterDto> RegisterServices(RegisterDto Register);
-        Task<string> Login(string email, string password);
+        Task<bool> Login(string email, string password);
 
     }
     public interface IGenerateToken

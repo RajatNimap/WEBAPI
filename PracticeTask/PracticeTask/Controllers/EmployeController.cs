@@ -16,7 +16,8 @@ namespace PracticeTask.Controllers
             
             Empdata = employeeCrud;   
         }
-        [HttpGet]
+     // [HttpGet]
+       [HttpDelete]
         public IActionResult Getalldata()
         {
             var data =  Empdata.GetAllDetail();

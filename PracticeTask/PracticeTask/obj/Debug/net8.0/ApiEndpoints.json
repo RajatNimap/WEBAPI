@@ -124,7 +124,7 @@
     "ContainingType": "PracticeTask.Controllers.EmployeController",
     "Method": "Getalldata",
     "RelativePath": "api/Employe",
-    "HttpMethod": "GET",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

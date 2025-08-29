@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "_Layout2";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-5">Hospital Management System</h2>
+
+    <div class="row g-4">
+        <!-- Register Patient Card -->
+        <div class="col-md-3">
+            <div class="card card-hover text-center shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-person-plus-fill" style="font-size: 2rem;"></i>
+                    <h5 class="card-title mt-3">Register Patient</h5>
+                    <p class="card-text">Add a new patient to the system.</p>
+                    <a class="stretched-link" asp-controller="Recap" asp-action="RegisterPatient"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Patient Card -->
+        <div class="col-md-3">
+            <div class="card card-hover text-center shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-pencil-square" style="font-size: 2rem;"></i>
+                    <h5 class="card-title mt-3">Update Patient</h5>
+                    <p class="card-text">Modify patient information.</p>
+                    <a class="stretched-link" href="/Patient/Update"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete Patient Card -->
+        <div class="col-md-3">
+            <div class="card card-hover text-center shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-trash-fill" style="font-size: 2rem;"></i>
+                    <h5 class="card-title mt-3">Delete Patient</h5>
+                    <p class="card-text">Remove a patient from the system.</p>
+                    <a class="stretched-link" href="/Patient/Delete"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Patient Details Card -->
+        <div class="col-md-3">
+            <div class="card card-hover text-center shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-eye-fill" style="font-size: 2rem;"></i>
+                    <h5 class="card-title mt-3">View Patient Details</h5>
+                    <p class="card-text">See full patient information.</p>
+                    <a class="stretched-link" href="/Patient/Details"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Patient Details by ID -->
+        <div class="col-md-3">
+            <div class="card card-hover text-center shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-eye-fill" style="font-size: 2rem;"></i>
+                    <h5 class="card-title mt-3">View Patient by ID</h5>
+                    <p class="card-text">See patient information by ID</p>
+                    <a class="stretched-link" href="/Patient/DetailsById"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card-hover:hover {
+        transform: scale(1.05);
+        transition: 0.3s;
+        cursor: pointer;
+    }
+</style>

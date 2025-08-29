@@ -3,8 +3,35 @@
 
     Layout = "_Layout"; 
 }
-<div id="error" asp-validation-summary="All" class="" role="alert">
-</div>
+
+@{
+    if (!ViewData.ModelState.IsValid)
+    {
+        <div id="error" asp-validation-summary="All"
+             class="alert alert-danger"
+             role="alert">
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const errorEl = document.getElementById("error");
+
+                if (errorEl) {
+                    // Show initially
+                    errorEl.style.display = "block";
+
+                    setTimeout(() => {
+                        errorEl.style.transition = "opacity 0.5s ease";
+                        errorEl.style.opacity = "0";
+                        setTimeout(() => {
+                            errorEl.style.display = "none";
+                        }, 500); // matches fade duration
+                    }, 3000); // 👈 change this to any timestamp in ms
+                }
+            });
+        </script>
+    }
+}
 
 <div class="row justify-content-center">
     <div class="col-md-5">
@@ -44,25 +71,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
-
-
    
 }
 
-<script>
-    $(document).ready(function () {
-        // Check if there are validation errors inside #error
-        if ($.trim($("#error").html()).length > 0) {
-            $("#error")
-            .addClass("alert alert-danger") // Add Bootstrap alert class
-                .fadeIn()
-                .delay(3000)
-                .fadeOut();
-                  $("#error").removeClass("alert alert-danger");
-        }
 
-    });
-</script>
 <script>    
 
    // Here we are going for the Validation

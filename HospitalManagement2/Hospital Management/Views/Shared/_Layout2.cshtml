@@ -16,7 +16,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
+            <a class="navbar-brand fw-bold">
                 🏥 Hospital Management
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -27,8 +27,7 @@
 
             <div class="collapse navbar-collapse" id="navbarHospital">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Patients" asp-action="Index">Patients</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Recap" asp-action="Patients">Patients</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Doctors" asp-action="Index">Doctors</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Departments" asp-action="Index">Departments</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Appointments" asp-action="Index">Appointments</a></li>
@@ -36,8 +35,7 @@
                 </ul>
 
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="btn btn-outline-light me-2" asp-controller="Home" asp-action="Login">Login</a></li>
-                    <li class="nav-item"><a class="btn btn-warning" asp-controller="Home" asp-action="Register">Register</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light me-2" asp-controller="Home" asp-action="Logout">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -54,7 +52,7 @@
         </div>
     </footer>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 👈 Added -->
     @RenderSection("script", required: false)
 

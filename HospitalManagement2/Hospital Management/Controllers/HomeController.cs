@@ -2,7 +2,9 @@
 using Hospital_Management.Interfaces.Services;
 using Hospital_Management.Models.Entities;
 using Hospital_Management.Models.EntitiesDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json.Linq;
 using Org.BouncyCastle.Ocsp;
 
@@ -10,6 +12,13 @@ namespace Hospital_Management.Controllers
 {
     public class HomeController : Controller
     {
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
+            Response.Headers["Pragma"] = "no-cache";
+            Response.Headers["Expires"] = "-1";
+            base.OnActionExecuting(context);
+        }
         private readonly IAuthentication Reg;
         private readonly TokenImplementation Token;
         private readonly RefreshTokenImplementation RefreshTokenIm;
@@ -18,7 +27,8 @@ namespace Hospital_Management.Controllers
             Reg = _reg;
             Token = token;
             RefreshTokenIm = refreshTokenImplementation;    
-        } 
+        }
+    
         [HttpGet("~/")]
         public IActionResult Index()
         {
@@ -47,7 +57,7 @@ namespace Hospital_Management.Controllers
             }
 
             var data =  await Reg.Login(loginDto.Email, loginDto.Password);
-            if (data == null)
+            if (data == false)
             {
                 ModelState.AddModelError("", "Invalid login attempt.");
                 return View(loginDto);
@@ -61,7 +71,27 @@ namespace Hospital_Management.Controllers
 
             TempData["Message"] = "Login successful!";  
 
-            return RedirectToAction("Index");   
+            return RedirectToAction("RecepLogin");   
         }
+        [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+        [Authorize(Roles = "admin")]
+        public IActionResult RecepLogin()
+        {
+            return View();
+        }
+        public async Task<IActionResult> Logout()
+        {
+            var refreshToken = Request.Cookies["refreshToken"];
+            if (refreshToken != null)
+            {
+                await RefreshTokenIm.InvalidateRefreshToken(refreshToken);
+            }
+            // Clear the authentication cookies
+            Response.Cookies.Delete("jwt", new CookieOptions { Path = "/" });
+            Response.Cookies.Delete("refreshToken", new CookieOptions { Path = "/" });
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index");
+        }
+
     }
 }

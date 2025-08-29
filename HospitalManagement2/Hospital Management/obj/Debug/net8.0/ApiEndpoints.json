@@ -694,6 +694,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Hospital_Management.Controllers.RecapController",
+    "Method": "Patients",
+    "RelativePath": "Recap/Patients",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Hospital_Management.Controllers.RecapController",
+    "Method": "RegisterPatient",
+    "RelativePath": "Recap/RegisterPatient",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Hospital_Management.Controllers.HomeController",
     "Method": "Register",
     "RelativePath": "register",
