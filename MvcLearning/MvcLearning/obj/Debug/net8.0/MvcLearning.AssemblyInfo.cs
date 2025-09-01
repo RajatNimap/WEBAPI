@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MvcLearning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f98afd5cdd4d61defc92d4690bf63db905bead2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a4da577b2a4cf03116f73be213ff5b0ecf73a01")]
 [assembly: System.Reflection.AssemblyProductAttribute("MvcLearning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MvcLearning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -54,6 +54,7 @@ namespace Hospital_Management.Interfaces.Implementation
                         Disease = patients.Disease,
                     PhoneNumber = patients.PhoneNumber,
                     Email = patients.Email, 
+                    DiseaseHistory=patients.DiseaseHistory
                 };   
             if(Data==null) { return null; }
             await Database.AddAsync(Data);  
@@ -64,8 +65,6 @@ namespace Hospital_Management.Interfaces.Implementation
         public async Task<PatientsModel> UpdatePatientDetail(int id, PatientsDto patients)
         {
             var Data=await Database.patients.FirstOrDefaultAsync(x=>x.Id == id);
-           
-
             if (Data == null)
             {
                 return null;

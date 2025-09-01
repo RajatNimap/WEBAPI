@@ -1,22 +1,19 @@
-﻿
-@{
+﻿@{
     Layout = "_Layout2";
 }
+
 <div id="result" class="mt-3"></div>
 
 <div class="container my-5">
     <h2 class="text-center mb-4">Register Patients</h2>
 
     <div class="row justify-content-center">
-        <!-- 👈 centers the form -->
-        <!-- Form Card -->
         <div class="col-md-5 mb-4">
             <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white">
                     Add / Update Patient
                 </div>
                 <div class="card-body">
-                    <!-- Added id="patientForm" -->
                     <form id="patientForm">
                         <div class="mb-3">
                             <input name="Name" class="form-control" placeholder="Patient Name" />
@@ -59,43 +56,38 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        $("#patientForm").submit(function (e) {
-            e.preventDefault();
+@section script {
+    <script>
+        $(function () {   // shorthand for $(document).ready
+            $("#patientForm").submit(function (e) {
+                e.preventDefault();
 
-            // Collect form data
-            const patientData = {
-                Name: $("input[name='Name']").val(),
-                Age: $("input[name='Age']").val(),
-                Gender: $("select[name='Gender']").val(),
-                PhoneNumber: $("input[name='PhoneNumber']").val(),
-                Email: $("input[name='Email']").val(),
-                Address: $("textarea[name='Address']").val(),
-                Disease: $("input[name='Disease']").val(),
-                DiseaseHistory: $("input[name='DiseaseHistory']").val()
-            };
+                const patientData = {
+                    Name: $("input[name='Name']").val(),
+                    Age: $("input[name='Age']").val(),
+                    Gender: $("select[name='Gender']").val(),
+                    PhoneNumber: $("input[name='PhoneNumber']").val(),
+                    Email: $("input[name='Email']").val(),
+                    Address: $("textarea[name='Address']").val(),
+                    Disease: $("input[name='Disease']").val(),
+                    DiseaseHistory: $("input[name='DiseaseHistory']").val()
+                };
 
-            // AJAX request
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("AddPatient", "Home")', // <-- update your action/controller
-                data: patientData,
-                success: function (response) {
-                    $("#patientForm")[0].reset();
-                    $("#result").html('<div class="alert alert-success">Patient saved successfully!</div>');
-
-                    setTimeout(function () {
-                        $("#result").html('');
-                    }, 2500);
-                },
-                error: function (xhr, status, error) {
-                    console.log(xhr.responseText, status, error);
-                    $("#result").html('<div class="alert alert-danger">Error saving patient.</div>');
-                }
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AddPatients", "Recap")',
+                    data: patientData,
+                    success: function () {
+                        $("#patientForm")[0].reset();
+                        $("#result").html('<div class="alert alert-success">Patient saved successfully!</div>');
+                        setTimeout(function () { $("#result").html(''); }, 2500);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText, status, error);
+                        $("#result").html('<div class="alert alert-danger">Error saving patient.</div>');
+                    }
+                });
             });
         });
-    });
-</script>
-
-<!-- Add this where you want messages to appear -->
+    </script>
+}

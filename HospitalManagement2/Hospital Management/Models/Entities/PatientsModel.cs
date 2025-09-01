@@ -15,7 +15,7 @@ namespace Hospital_Management.Models.Entities
         public string Address { get; set; }
         public string Disease { get; set; }
         public string? DiseaseHistory { get; set; }
-        public DateTime Createdate { get; set; }
+        public DateTime Createdate { get; set; } = DateTime.Now;
         public ICollection<MedicalRecord> medicalRecords { get; set; } =new List<MedicalRecord>();
         public ICollection<Appointment> Appointment { get; set; } = new List<Appointment>();
 

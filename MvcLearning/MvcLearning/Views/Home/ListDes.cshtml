@@ -6,21 +6,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo Details</title>
-  
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card-custom {
+            background-color: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+            margin: 3rem auto;
+            max-width: 50rem;
+        }
+
+        .card-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .btn-action {
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: #fff !important;
+            border: none;
+        }
+
+            .btn-delete:hover {
+                background-color: #bb2d3b;
+                color: #fff !important;
+            }
+
+        .btn-edit {
+            background-color: #0d6efd;
+            color: #fff !important;
+            border: none;
+        }
+
+            .btn-edit:hover {
+                background-color: #0b5ed7;
+                color: #fff !important;
+            }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+    </style>
 </head>
 <body>
-    <div class="card bg-dark text-light mt-5" style="width:50rem">
-        <div class="card-body">
+    <div class="container">
+        <div class="card card-custom">
+            <div class="card-body">
+                <h5 class="card-title text-white">@Model.Title</h5>
+                <p class="card-text text-white">
+                    @Model.Description
+                </p>
 
-            <!-- View Mode -->
-            <div id="viewMode">
-                <h5 class="card-title">@Model.Title</h5>
-                <p class="card-text">@Model.Description</p>
-                <a href="delete/@Model.Id" class="card-link">Delete Card</a>
-                <a href="edit/@Model.Id"  class="card-link">Edit</a>
-                <p>Date @Model.CreatedDate.Date Time @Model.CreatedDate.TimeOfDay</p>
+                <p class="meta-info">
+                    <strong>Created:</strong> @Model.CreatedDate.ToString("dd MMM yyyy, HH:mm")
+                </p>
+
+                <div class="d-flex gap-3 mt-4">
+                    <a href="/delete/@Model.Id" class="btn btn-delete btn-action">🗑 Delete</a>
+                    <a href="/edit/@Model.Id" class="btn btn-edit btn-action">✏️ Edit</a>
+                    <a href="/" class="btn btn-secondary btn-action">⬅ Back</a>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

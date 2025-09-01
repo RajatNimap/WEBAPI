@@ -1,7 +1,6 @@
-﻿
-@model List<MvcLearning.Model.Entities.TodoModel>
+﻿@model List<MvcLearning.Model.Entities.TodoModel>
 @{
-    ViewData["Title"] ="Todo App";
+    ViewData["Title"] = "Todo App";
 }
 
 <!DOCTYPE html>
@@ -9,28 +8,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .todo-card {
+            background-color: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+            .todo-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            }
+
+        .todo-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .btn-add {
+            background-color: #0d6efd;
+            border: none;
+            color: #fff !important;
+        }
+
+            .btn-add:hover {
+                background-color: #0b5ed7;
+                color: #fff !important;
+            }
+
+        .btn-delete {
+            background-color: #dc3545; /* Bootstrap danger */
+            border: none;
+            color: #fff !important;
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+        }
+
+            .btn-delete:hover {
+                background-color: #bb2d3b;
+                color: #fff !important;
+            }
+    </style>
 </head>
 <body>
 
-    <a href="/create"><button type="button" class="btn btn-dark mt-3">Add TodoList</button></a>
-    @{
-        if(Model!=null){
-        foreach(var list in Model)
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="fw-bold">📝 Todo App</h1>
+            <a href="/create" class="btn btn-add px-4">+ Add Todo</a>
+        </div>
+
+        @if (Model != null && Model.Any())
         {
+            <div class="row g-3">
+                @foreach (var list in Model)
+                {
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card todo-card p-3 h-100">
+                            <a href="@list.Id" class="text-decoration-none text-light">
+                                <h3 class="todo-title">@list.Title</h3>
+                                <small> @list.CreatedDate.ToString("dd MMM yyyy")</small><br/>
+                                <small>
+                                    @(list.Description != null && list.Description.Length > 100
+                                        ? list.Description.Substring(0, 100) + "..."
+                                        : list.Description)
+                                </small>
 
-            <ul class="list-group mt-2 bg-dark text-white">
-                <li class="list-group-item bg-dark text-white">
-                     <a href="@list.Id" class="text-white text-decoration-none d-block" style="display:block;"><h3>  @list.Title @list.CreatedDate.Date  </h3> </a>
-                     <a href="delete/@list.Id" class="card-link"> Delete
-                            @await Html.PartialAsync("PartialView")
-
-                </li>
-               
-            </ul>    
+                            </a>
+                            <div class="mt-3">
+                                <a href="delete/@list.Id" class="btn btn-delete">🗑 Delete</a>
+                            </div>
+                          
+                        </div>
+                    </div>
+                }
+            </div>
         }
+        else
+        {
+            <div class="text-center mt-5">
+                <p class="fs-5 text-secondary">No todos yet. Start by adding one!</p>
+            </div>
         }
+    </div>
 
-    }
-   
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
