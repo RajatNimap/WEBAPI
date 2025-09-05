@@ -3,31 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\IIS\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\addtodolist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\addtodolist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\partialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\partialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\listdes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -38,12 +23,59 @@
       "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\migrations\\20250530100818_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\migrations\\20250530100818_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\iservices\\serviceimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\iservices\\serviceimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\iservices\\itodolistcrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\iservices\\itodolistcrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\partialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\partialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\mvclearning.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\mvclearning.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\model\\entities\\todomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\model\\entities\\todomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\IIS\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\addtodolist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\addtodolist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -62,24 +94,12 @@
       "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\iservices\\itodolistcrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\iservices\\itodolistcrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\model\\todomodeldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\model\\todomodeldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\mvclearning.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
@@ -88,14 +108,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\mvclearning\\mvclearning\\migrations\\20250530100818_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{296DA55B-4C83-4248-8A3E-23D32E08863A}|MvcLearning\\MvcLearning.csproj|solutionrelative:mvclearning\\migrations\\20250530100818_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -105,7 +117,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -117,130 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "web.config",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\IIS\\web.config",
-              "RelativeDocumentMoniker": "..\\..\\IIS\\web.config",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\IIS\\web.config",
-              "RelativeToolTip": "..\\..\\IIS\\web.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-09-01T12:41:24.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ListDes.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\ListDes.cshtml",
-              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\ListDes.cshtml",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\ListDes.cshtml",
-              "RelativeToolTip": "MvcLearning\\Views\\Home\\ListDes.cshtml",
-              "ViewState": "AgIAADkAAABg//////8TwEkAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T10:45:55.038Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PartialView.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\PartialView.cshtml",
-              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\PartialView.cshtml",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\PartialView.cshtml",
-              "RelativeToolTip": "MvcLearning\\Views\\Home\\PartialView.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-29T09:35:33.082Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\appsettings.json",
-              "RelativeDocumentMoniker": "MvcLearning\\appsettings.json",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\appsettings.json",
-              "RelativeToolTip": "MvcLearning\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-30T09:54:05.067Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Program.cs",
-              "RelativeDocumentMoniker": "MvcLearning\\Program.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Program.cs",
-              "RelativeToolTip": "MvcLearning\\Program.cs",
-              "ViewState": "AgIAABUAAADAmZmZmdkhwCEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T05:08:05.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MvcLearning\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MvcLearning\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAUwCcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T05:08:24.424Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ServiceImplementation.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\IServices\\ServiceImplementation.cs",
-              "RelativeDocumentMoniker": "MvcLearning\\IServices\\ServiceImplementation.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\IServices\\ServiceImplementation.cs",
-              "RelativeToolTip": "MvcLearning\\IServices\\ServiceImplementation.cs",
-              "ViewState": "AgIAABgAAACAkJmZmZkDwB0AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T11:03:37.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Edit.cshtml",
-              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Edit.cshtml",
-              "RelativeToolTip": "MvcLearning\\Views\\Home\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T03:43:51.958Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "MvcLearning\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAFMAAADAZWZmZuYjwFsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-29T05:19:43.431Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddTodolIst.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\AddTodolIst.cshtml",
-              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\AddTodolIst.cshtml",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\AddTodolIst.cshtml",
-              "RelativeToolTip": "MvcLearning\\Views\\Home\\AddTodolIst.cshtml",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAuwHIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T12:53:26.221Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "MvcLearning\\Views\\_ViewStart.cshtml",
@@ -252,7 +141,229 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Search.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Search.cshtml",
+              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\Search.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Search.cshtml",
+              "RelativeToolTip": "MvcLearning\\Views\\Home\\Search.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T06:57:41.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "MvcLearning\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T05:19:43.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListDes.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\ListDes.cshtml",
+              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\ListDes.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\ListDes.cshtml",
+              "RelativeToolTip": "MvcLearning\\Views\\Home\\ListDes.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T10:45:55.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Program.cs",
+              "RelativeDocumentMoniker": "MvcLearning\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Program.cs",
+              "RelativeToolTip": "MvcLearning\\Program.cs",
+              "ViewState": "AgIAABQAAAAAMzMzMzMrwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T05:08:05.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MvcLearning\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MvcLearning\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAwF0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T05:08:24.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\appsettings.json",
+              "RelativeDocumentMoniker": "MvcLearning\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\appsettings.json",
+              "RelativeToolTip": "MvcLearning\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-30T09:54:05.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "MvcLearning\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Properties\\launchSettings.json",
+              "RelativeToolTip": "MvcLearning\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-05T06:35:14.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20250530100818_initial.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Migrations\\20250530100818_initial.cs",
+              "RelativeDocumentMoniker": "MvcLearning\\Migrations\\20250530100818_initial.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Migrations\\20250530100818_initial.cs",
+              "RelativeToolTip": "MvcLearning\\Migrations\\20250530100818_initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T10:08:18.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ServiceImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\IServices\\ServiceImplementation.cs",
+              "RelativeDocumentMoniker": "MvcLearning\\IServices\\ServiceImplementation.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\IServices\\ServiceImplementation.cs",
+              "RelativeToolTip": "MvcLearning\\IServices\\ServiceImplementation.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwD8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T11:03:37.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ITodoListCrud.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\IServices\\ITodoListCrud.cs",
+              "RelativeDocumentMoniker": "MvcLearning\\IServices\\ITodoListCrud.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\IServices\\ITodoListCrud.cs",
+              "RelativeToolTip": "MvcLearning\\IServices\\ITodoListCrud.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T10:56:59.406Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "DataContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "MvcLearning\\Migrations\\DataContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeToolTip": "MvcLearning\\Migrations\\DataContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T05:07:14.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "MvcLearning\\Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Data\\DataContext.cs",
+              "RelativeToolTip": "MvcLearning\\Data\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T10:00:24.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PartialView.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\PartialView.cshtml",
+              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\PartialView.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\PartialView.cshtml",
+              "RelativeToolTip": "MvcLearning\\Views\\Home\\PartialView.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-29T09:35:33.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MvcLearning.csproj",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\MvcLearning.csproj",
+              "RelativeDocumentMoniker": "MvcLearning\\MvcLearning.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\MvcLearning.csproj",
+              "RelativeToolTip": "MvcLearning\\MvcLearning.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-05T06:24:59.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TodoModel.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Model\\Entities\\TodoModel.cs",
+              "RelativeDocumentMoniker": "MvcLearning\\Model\\Entities\\TodoModel.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Model\\Entities\\TodoModel.cs",
+              "RelativeToolTip": "MvcLearning\\Model\\Entities\\TodoModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T06:57:09.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "web.config",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\IIS\\web.config",
+              "RelativeDocumentMoniker": "..\\..\\IIS\\web.config",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\IIS\\web.config",
+              "RelativeToolTip": "..\\..\\IIS\\web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-01T12:41:24.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Edit.cshtml",
+              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Edit.cshtml",
+              "RelativeToolTip": "MvcLearning\\Views\\Home\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T03:43:51.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddTodolIst.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\AddTodolIst.cshtml",
+              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\AddTodolIst.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\AddTodolIst.cshtml",
+              "RelativeToolTip": "MvcLearning\\Views\\Home\\AddTodolIst.cshtml",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAuwHIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T12:53:26.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "MvcLearning\\Views\\Shared\\_Layout.cshtml",
@@ -264,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 19,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "MvcLearning\\Views\\_ViewImports.cshtml",
@@ -276,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "MvcLearning\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -288,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 22,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "MvcLearning\\Models\\ErrorViewModel.cs",
@@ -300,19 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ITodoListCrud.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\IServices\\ITodoListCrud.cs",
-              "RelativeDocumentMoniker": "MvcLearning\\IServices\\ITodoListCrud.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\IServices\\ITodoListCrud.cs",
-              "RelativeToolTip": "MvcLearning\\IServices\\ITodoListCrud.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T10:56:59.406Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "TodoModelDto.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Model\\TodoModelDto.cs",
               "RelativeDocumentMoniker": "MvcLearning\\Model\\TodoModelDto.cs",
@@ -320,23 +419,12 @@
               "RelativeToolTip": "MvcLearning\\Model\\TodoModelDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T11:00:17.201Z"
+              "WhenOpened": "2025-05-30T11:00:17.201Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "MvcLearning\\Data\\DataContext.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Data\\DataContext.cs",
-              "RelativeToolTip": "MvcLearning\\Data\\DataContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T10:00:24.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "MvcLearning\\Views\\Shared\\Error.cshtml",
@@ -348,31 +436,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Search.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Search.cshtml",
-              "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\Search.cshtml",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Search.cshtml",
-              "RelativeToolTip": "MvcLearning\\Views\\Home\\Search.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T06:57:41.315Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "MvcLearning",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\MvcLearning.csproj",
               "RelativeDocumentMoniker": "MvcLearning\\MvcLearning.csproj",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\MvcLearning.csproj",
               "RelativeToolTip": "MvcLearning\\MvcLearning.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-02T04:50:29.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T04:50:29.51Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "MvcLearning\\Views\\Home\\Privacy.cshtml",
@@ -381,30 +456,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-29T09:21:39.82Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "20250530100818_initial.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Migrations\\20250530100818_initial.cs",
-              "RelativeDocumentMoniker": "MvcLearning\\Migrations\\20250530100818_initial.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Migrations\\20250530100818_initial.cs",
-              "RelativeToolTip": "MvcLearning\\Migrations\\20250530100818_initial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T10:08:18.784Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "DataContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Migrations\\DataContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "MvcLearning\\Migrations\\DataContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\Migrations\\DataContextModelSnapshot.cs",
-              "RelativeToolTip": "MvcLearning\\Migrations\\DataContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T05:07:14.656Z"
             }
           ]
         }
