@@ -1,6 +1,4 @@
-﻿
-
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Data;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -9,6 +7,7 @@ using System.Net.Sockets;
 using IniParser;
 using IniParser.Model;
 using System.Collections.Concurrent;
+//using Spectre.Console;
 
 namespace RobustAccessDbSync
 {
@@ -37,7 +36,14 @@ namespace RobustAccessDbSync
         class SyncMetadata
         {
             public DateTime LastSyncTime { get; set; } = DateTime.MinValue;
+            public Dictionary<string, FolderMetadata> Folders { get; set; } = new Dictionary<string, FolderMetadata>();
+        }
+
+        class FolderMetadata
+        {
+            public string FolderPath { get; set; } = string.Empty;
             public Dictionary<string, FileMetadata> Files { get; set; } = new Dictionary<string, FileMetadata>();
+            public DateTime LastScanTime { get; set; } = DateTime.MinValue;
         }
 
         class FileMetadata
@@ -244,7 +250,7 @@ namespace RobustAccessDbSync
                     _syncMetadata = JsonSerializer.Deserialize<SyncMetadata>(json) ?? new SyncMetadata();
                     _lastSyncTime = _syncMetadata.LastSyncTime;
                     PrintSuccess($"Loaded sync metadata. Last sync: {_lastSyncTime:yyyy-MM-dd HH:mm:ss}");
-                    PrintInfo($"Tracked files: {_syncMetadata.Files.Count:N0}");
+                    PrintInfo($"Tracked folders: {_syncMetadata.Folders.Count:N0}");
                 }
                 else
                 {
@@ -259,6 +265,7 @@ namespace RobustAccessDbSync
         }
 
         // Save sync metadata to file
+
         static void SaveSyncMetadata()
         {
             try
@@ -273,7 +280,6 @@ namespace RobustAccessDbSync
                 PrintError($"Error saving sync metadata: {ex.Message}");
             }
         }
-
         [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static async Task Main()
         {
@@ -290,7 +296,8 @@ namespace RobustAccessDbSync
 
                 if (!string.IsNullOrEmpty(rememberedClientPath))
                 {
-                    string iniPath = Path.Combine(rememberedClientPath, "config.ini");
+                    string iniPath = Path.Combine(rememberedClientPath, "FileConfig.ini");
+
                     if (File.Exists(iniPath))
                     {
                         data = parser.ReadFile(iniPath);
@@ -314,6 +321,8 @@ namespace RobustAccessDbSync
                         }
 
                         Console.WriteLine("Loaded saved configuration.");
+                        //validate
+                        // ValidateConfiguration();
                     }
                 }
 
@@ -339,13 +348,13 @@ namespace RobustAccessDbSync
                         data["folder"][$"Path{i + 1}"] = Client_Folders[i];
                     }
 
-                    string iniPath = Path.Combine(clientPath, "config.ini");
+                    string iniPath = Path.Combine(clientPath, "FileConfig.ini");
                     parser.WriteFile(iniPath, data);
                 }
 
 
                 // Load sync metadata AFTER clientPath is determined
-              
+
 
                 LoadSyncMetadata();
 
@@ -360,6 +369,8 @@ namespace RobustAccessDbSync
             }
 
             File.WriteAllText(pointerFile, clientPath);
+            ValidateConfiguration();
+
 
             PrintSuccess("\nStarting file synchronization...");
             PrintInfo("Press 'S' to stop, 'R' to restart, 'Q' to quit.\n");
@@ -417,8 +428,38 @@ namespace RobustAccessDbSync
             Console.CursorVisible = true;
             Console.ReadKey();
         }
+        static void ValidateConfiguration()
+        {
+            if (string.IsNullOrWhiteSpace(clientPath) || !Directory.Exists(clientPath))
+            {
+                Console.WriteLine($"Invalid client root path: {clientPath}");
+                _syncRunning = false;
 
-       
+                return;
+            }
+            if (Client_Folders.Count == 0)
+            {
+                Console.WriteLine("No client folders found in configuration.");
+                _syncRunning = false;
+
+                return;
+            }
+            else
+            {
+                for (int i = 0; i < Client_Folders.Count; i++)
+                {
+                    string folder = Client_Folders[i];
+                    if (!Directory.Exists(folder))
+                    {
+                        Console.WriteLine($"Check The INI File.");
+                        _syncRunning = false;
+                        return;
+                    }
+                }
+            }
+        }
+
+
         static string ReadPassword()
         {
             string password = "";
@@ -469,6 +510,134 @@ namespace RobustAccessDbSync
         }
 
         // Optimized file sync with parallel processing
+        //static void SyncFiles(string sourceFolder, string targetFolder, string logFile, string direction, List<string>? excludeFolders, bool isFullServerToClient)
+        //{
+        //    if (!Directory.Exists(sourceFolder))
+        //        return;
+
+        //    string today = DateTime.Today.ToString("yyyy-MM-dd");
+        //    string logPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, logFile);
+
+        //    PrintInfo($"Scanning {Path.GetFileName(sourceFolder)} for changes...");
+
+        //    // Get or create folder metadata
+        //    if (!_syncMetadata.Folders.TryGetValue(sourceFolder, out var folderMetadata))
+        //    {
+        //        folderMetadata = new FolderMetadata { FolderPath = sourceFolder };
+        //        _syncMetadata.Folders[sourceFolder] = folderMetadata;
+        //    }
+
+        //    // Fast parallel file enumeration
+        //    var allFiles = EnumerateFilesFast(sourceFolder).ToArray();
+        //    PrintInfo($"Found {allFiles.Length:N0} files total");
+
+        //    // Parallel processing to find changed files
+        //    var changedFiles = new ConcurrentBag<string>();
+        //    var newFileMetadata = new ConcurrentDictionary<string, FileMetadata>();
+
+        //    Parallel.ForEach(allFiles, new ParallelOptions { MaxDegreeOfParallelism = _maxDegreeOfParallelism }, file =>
+        //    {
+        //        try
+        //        {
+        //            var fileInfo = new FileInfo(file);
+        //            string relativePath = Path.GetRelativePath(sourceFolder, file);
+
+        //            // Check if file should be excluded
+        //            if (isFullServerToClient && excludeFolders != null)
+        //            {
+        //                string topLevel = relativePath.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)[0];
+        //                if (excludeFolders.Contains(topLevel, StringComparer.OrdinalIgnoreCase))
+        //                    return;
+        //            }
+
+        //            var currentMetadata = new FileMetadata
+        //            {
+        //                LastModified = fileInfo.LastWriteTimeUtc,
+        //                FileSize = fileInfo.Length,
+        //                FilePath = relativePath
+        //            };
+
+        //            newFileMetadata[relativePath] = currentMetadata;
+
+        //            // Check if file has changed
+        //            bool hasChanged = true;
+        //            if (folderMetadata.Files.TryGetValue(relativePath, out var oldMetadata))
+        //            {
+        //                hasChanged = currentMetadata.LastModified > oldMetadata.LastModified ||
+        //                            currentMetadata.FileSize != oldMetadata.FileSize;
+        //            }
+
+        //            if (hasChanged)
+        //            {
+        //                changedFiles.Add(file);
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            PrintError($"Error processing file {file}: {ex.Message}");
+        //        }
+        //    });
+
+        //    PrintInfo($"Found {changedFiles.Count:N0} changed file(s)");
+
+        //    if (changedFiles.Count == 0)
+        //    {
+        //        // Update folder metadata even if no changes
+        //        folderMetadata.Files = new Dictionary<string, FileMetadata>(newFileMetadata);
+        //        return;
+        //    }
+
+        //    // Process changed files in batches
+        //    int copiedFiles = 0;
+        //    var changedFilesArray = changedFiles.ToArray();
+        //    var total = changedFiles.Count();
+
+        //    for (int i = 0; i < changedFilesArray.Length; i += _batchSize)
+        //    {
+        //        var batch = changedFilesArray.Skip(i).Take(_batchSize).ToArray();
+
+        //        Parallel.ForEach(batch, new ParallelOptions { MaxDegreeOfParallelism = _maxDegreeOfParallelism }, src =>
+        //        {
+        //            try
+        //            {
+        //                string relativePath = Path.GetRelativePath(sourceFolder, src);
+        //                string dest = Path.Combine(targetFolder, relativePath);
+
+        //                Directory.CreateDirectory(Path.GetDirectoryName(dest));
+        //                File.Copy(src, dest, true);
+        //                Count++;
+
+        //                Interlocked.Increment(ref copiedFiles);
+        //                PrintSuccess($"  [✓] Copied: {relativePath} {direction}");
+        //               // Console.WriteLine($"File Copied {Count} out of {total}");
+
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                PrintError($"Error copying file {src}: {ex.Message}");
+        //            }
+        //        });
+        //    }
+
+        //    // Update folder metadata
+        //    folderMetadata.Files = new Dictionary<string, FileMetadata>(newFileMetadata);
+
+        //    // Log results
+        //    if (copiedFiles > 0)
+        //    {
+        //        string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+        //        var logLines = new List<string>
+        //{
+        //    $"[{timestamp}]",
+        //    $"Sync = Files",
+        //    $"changes = {copiedFiles}",
+        //    $"direction = {direction}",
+        //    $"total_files = {allFiles.Length}",
+        //    ""
+        //};
+        //        File.AppendAllLines(logPath, logLines);
+        //    }
+        //}
         static void SyncFiles(string sourceFolder, string targetFolder, string logFile, string direction, List<string>? excludeFolders, bool isFullServerToClient)
         {
             if (!Directory.Exists(sourceFolder))
@@ -479,23 +648,34 @@ namespace RobustAccessDbSync
 
             PrintInfo($"Scanning {Path.GetFileName(sourceFolder)} for changes...");
 
+            // Get or create folder metadata
+            if (!_syncMetadata.Folders.TryGetValue(sourceFolder, out var folderMetadata))
+            {
+                folderMetadata = new FolderMetadata { FolderPath = sourceFolder };
+                _syncMetadata.Folders[sourceFolder] = folderMetadata;
+            }
+
             // Fast parallel file enumeration
             var allFiles = EnumerateFilesFast(sourceFolder).ToArray();
             PrintInfo($"Found {allFiles.Length:N0} files total");
 
+            // Track current files
+            var currentFiles = new HashSet<string>();
+
             // Parallel processing to find changed files
             var changedFiles = new ConcurrentBag<string>();
-            var newMetadata = new ConcurrentDictionary<string, FileMetadata>();
+            var newFileMetadata = new ConcurrentDictionary<string, FileMetadata>();
 
             Parallel.ForEach(allFiles, new ParallelOptions { MaxDegreeOfParallelism = _maxDegreeOfParallelism }, file =>
             {
                 try
                 {
-                    var fileInfo = new FileInfo(file); //need datetime of file
+                    var fileInfo = new FileInfo(file);
                     string relativePath = Path.GetRelativePath(sourceFolder, file);
+                    currentFiles.Add(relativePath);
 
                     // Check if file should be excluded
-                    if (isFullServerToClient && excludeFolders != null) //any
+                    if (isFullServerToClient && excludeFolders != null)
                     {
                         string topLevel = relativePath.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)[0];
                         if (excludeFolders.Contains(topLevel, StringComparer.OrdinalIgnoreCase))
@@ -509,11 +689,11 @@ namespace RobustAccessDbSync
                         FilePath = relativePath
                     };
 
-                    newMetadata[relativePath] = currentMetadata;
+                    newFileMetadata[relativePath] = currentMetadata;
 
                     // Check if file has changed
                     bool hasChanged = true;
-                    if (_syncMetadata.Files.TryGetValue(relativePath, out var oldMetadata))
+                    if (folderMetadata.Files.TryGetValue(relativePath, out var oldMetadata))
                     {
                         hasChanged = currentMetadata.LastModified > oldMetadata.LastModified ||
                                     currentMetadata.FileSize != oldMetadata.FileSize;
@@ -526,23 +706,90 @@ namespace RobustAccessDbSync
                 }
                 catch (Exception ex)
                 {
-                    PrintError($"Error processing file {file}: {ex.Message}");
+                   // PrintError($"Error processing file {file}: {ex.Message}");
                 }
             });
 
-            PrintInfo($"Found {changedFiles.Count:N0} changed file(s)");
-
-            if (changedFiles.Count == 0)
+            // Check for files that are in metadata but not in current scan
+            // These files were deleted from source but might exist in target
+            var missingFiles = new List<string>();
+            foreach (var knownFile in folderMetadata.Files.Keys)
             {
-                // Update metadata even if no changes (for deleted files tracking)
-                _syncMetadata.Files = new Dictionary<string, FileMetadata>(newMetadata);
+                if (!currentFiles.Contains(knownFile))
+                {
+                    missingFiles.Add(knownFile);
+
+                    // Keep the file in metadata but check if it exists in target
+                    if (newFileMetadata.TryGetValue(knownFile, out var fileMeta))
+                    {
+                        // File was in metadata but not found in current scan
+                        // We'll check if it exists in target location
+                    }
+                    else
+                    {
+                        // Add to metadata to maintain tracking
+                        newFileMetadata[knownFile] = new FileMetadata
+                        {
+                            FilePath = knownFile,
+                            LastModified = DateTime.MinValue,
+                            FileSize = 0
+                        };
+                    }
+                }
+            }
+
+            PrintInfo($"Found {changedFiles.Count:N0} changed file(s)");
+            PrintInfo($"Found {missingFiles.Count:N0} missing file(s) from source");
+
+            // Process missing files - check if they exist in target and copy back to source
+            foreach (var relativePath in missingFiles)
+            {
+                try
+                {
+                    string targetFile = Path.Combine(targetFolder, relativePath);
+                    string sourceFile = Path.Combine(sourceFolder, relativePath);
+
+                    // If file exists in target but not in source, copy it back
+                    if (File.Exists(targetFile) && !File.Exists(sourceFile))
+                    {
+                        Directory.CreateDirectory(Path.GetDirectoryName(sourceFile));
+                        File.Copy(targetFile, sourceFile, true);
+                        PrintSuccess($"  [↻] Restored: {relativePath} from {direction}");
+
+                        // Update the file info in metadata
+                        var fileInfo = new FileInfo(sourceFile);
+                        newFileMetadata[relativePath] = new FileMetadata
+                        {
+                            LastModified = fileInfo.LastWriteTimeUtc,
+                            FileSize = fileInfo.Length,
+                            FilePath = relativePath
+                        };
+
+                        // Log restoration
+                        string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                        File.AppendAllLines(logPath, new[] {
+                    $"[{timestamp}] RESTORED: {relativePath} from {direction}"
+                });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //PrintError($"Error processing missing file {relativePath}: {ex.Message}");
+                }
+            }
+
+            if (changedFiles.Count == 0 && missingFiles.Count == 0)
+            {
+                // Update folder metadata even if no changes
+                folderMetadata.Files = new Dictionary<string, FileMetadata>(newFileMetadata);
+                folderMetadata.LastScanTime = DateTime.UtcNow;
                 return;
             }
 
             // Process changed files in batches
             int copiedFiles = 0;
             var changedFilesArray = changedFiles.ToArray();
-            var total = changedFiles.Count();
+            var totalChanges = changedFiles.Count() + missingFiles.Count();
 
             for (int i = 0; i < changedFilesArray.Length; i += _batchSize)
             {
@@ -561,43 +808,44 @@ namespace RobustAccessDbSync
 
                         Interlocked.Increment(ref copiedFiles);
                         PrintSuccess($"  [✓] Copied: {relativePath} {direction}");
-                        Console.WriteLine($"File Copied {Count} out of {total}");
+                        //Console.WriteLine($"File Copied {Count} out of {totalChanges}");
 
                     }
                     catch (Exception ex)
                     {
-                        PrintError($"Error copying file {src}: {ex.Message}");
+                        //PrintError($"Error copying file {src}: {ex.Message}");
                     }
                 });
             }
 
-            // Update metadata
-            _syncMetadata.Files = new Dictionary<string, FileMetadata>(newMetadata);
-            //Console.WriteLine($"")
+            // Update folder metadata
+            folderMetadata.Files = new Dictionary<string, FileMetadata>(newFileMetadata);
+            folderMetadata.LastScanTime = DateTime.UtcNow;
+
             // Log results
-            if (copiedFiles > 0)
+            if (copiedFiles > 0 || missingFiles.Count > 0)
             {
                 string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                 var logLines = new List<string>
-                {
-                    $"[{timestamp}]",
-                    $"Sync = Files",
-                    $"changes = {copiedFiles}",
-                    $"direction = {direction}",
-                    $"total_files = {allFiles.Length}",
-                    ""
-                };
+        {
+            $"[{timestamp}]",
+            $"Sync = Files",
+            $"changes = {copiedFiles}",
+            $"restorations = {missingFiles.Count}",
+            $"direction = {direction}",
+            $"total_files = {allFiles.Length}",
+            ""
+        };
                 File.AppendAllLines(logPath, logLines);
             }
         }
-
         static void SyncFilesBothDirections()
         {
             try
             {
                 if (_syncRunning)
                 {
-                    string logFilePath = Path.Combine(clientPath, "Configlog.ini");
+                    string logFilePath = Path.Combine(clientPath, "fileConfiglog.ini");
                     string serverFolder = serverPath;
                     var excludeList = new List<string>();
 
@@ -628,10 +876,9 @@ namespace RobustAccessDbSync
             }
             catch (Exception ex)
             {
-                PrintError($"[!] Error during sync: {ex.Message}");
+                //PrintError($"[!] Error during sync: {ex.Message}");
             }
         }
-
         static async Task ContinuousFileSync()
         {
             while (_syncRunning)
@@ -652,8 +899,12 @@ namespace RobustAccessDbSync
 
                         RunCommand($"net use {DRIVE_LETTER} /delete", false);
 
-                        string connectCmd = $"net use {DRIVE_LETTER} \\\\{SERVER_IP}\\{SHARE_NAME} /user:{USERNAME} {PASSWORD} /persistent:no";
-                        if (RunCommand(connectCmd))
+                       // string connectCmd = $"net use {DRIVE_LETTER} \\\\{SERVER_IP}\\{SHARE_NAME} /user:{USERNAME} {PASSWORD} /persistent:no";
+                        string connectCmd = $@"net use {DRIVE_LETTER} ""\\{SERVER_IP}\{SHARE_NAME}"" /user:""{USERNAME}"" ""{PASSWORD}"" /persistent:no";
+
+
+                       // Console.WriteLine(connectCmd);
+                        if (RunCommand(connectCmd,false))
                         {
                             SyncFilesBothDirections();
                             RunCommand($"net use {DRIVE_LETTER} /delete", false);
