@@ -5,18 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}|FileSyncProcess\\FileSyncProcess.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\filesyncprocess\\filesyncprocess\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}|FileSyncProcess\\FileSyncProcess.csproj|solutionrelative:filesyncprocess\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}|FileSyncProcess\\FileSyncProcess.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\filesyncprocess\\filesyncprocess\\filesyncprocess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}|FileSyncProcess\\FileSyncProcess.csproj|solutionrelative:filesyncprocess\\filesyncprocess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}|FileSyncProcess\\FileSyncProcess.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\filesyncprocess\\filesyncprocess\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}|FileSyncProcess\\FileSyncProcess.csproj|solutionrelative:filesyncprocess\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}|FileSyncProcess\\FileSyncProcess.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\filesyncprocess\\filesyncprocess\\.filenesting.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}|FileSyncProcess\\FileSyncProcess.csproj|solutionrelative:filesyncprocess\\.filenesting.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,49 +26,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": ".filenesting.json",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\FileSyncProcess\\FileSyncProcess\\.filenesting.json",
-              "RelativeDocumentMoniker": "FileSyncProcess\\.filenesting.json",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\FileSyncProcess\\FileSyncProcess\\.filenesting.json",
-              "RelativeToolTip": "FileSyncProcess\\.filenesting.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-09T09:06:10.129Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "app.manifest",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\FileSyncProcess\\FileSyncProcess\\app.manifest",
-              "RelativeDocumentMoniker": "FileSyncProcess\\app.manifest",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\FileSyncProcess\\FileSyncProcess\\app.manifest",
-              "RelativeToolTip": "FileSyncProcess\\app.manifest",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
-              "WhenOpened": "2025-09-09T08:34:30.389Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FileSyncProcess.csproj",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\FileSyncProcess\\FileSyncProcess\\FileSyncProcess.csproj",
-              "RelativeDocumentMoniker": "FileSyncProcess\\FileSyncProcess.csproj",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\FileSyncProcess\\FileSyncProcess\\FileSyncProcess.csproj",
-              "RelativeToolTip": "FileSyncProcess\\FileSyncProcess.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-09T08:20:40.219Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\FileSyncProcess\\FileSyncProcess\\Program.cs",
               "RelativeDocumentMoniker": "FileSyncProcess\\Program.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\FileSyncProcess\\FileSyncProcess\\Program.cs",
               "RelativeToolTip": "FileSyncProcess\\Program.cs",
-              "ViewState": "AgIAAG4CAAAAAAAAAAAiwC8DAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAANcDAAAAAAAAAAAYwOoDAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-08T04:06:49.221Z",
               "EditorCaption": ""

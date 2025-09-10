@@ -44,6 +44,8 @@ namespace RobustAccessDbSync
             public string FolderPath { get; set; } = string.Empty;
             public Dictionary<string, FileMetadata> Files { get; set; } = new Dictionary<string, FileMetadata>();
             public DateTime LastScanTime { get; set; } = DateTime.MinValue;
+            //public DateTime LastSyncTime { get; set; } = DateTime.UtcNow; // Add this
+
         }
 
         class FileMetadata
@@ -51,6 +53,8 @@ namespace RobustAccessDbSync
             public DateTime LastModified { get; set; }
             public long FileSize { get; set; }
             public string FilePath { get; set; } = string.Empty;
+            public DateTime LastSyncTime { get; set; } = DateTime.UtcNow; // Add this
+
         }
 
         static SyncMetadata _syncMetadata = new SyncMetadata();
@@ -739,7 +743,7 @@ namespace RobustAccessDbSync
             }
 
             PrintInfo($"Found {changedFiles.Count:N0} changed file(s)");
-            PrintInfo($"Found {missingFiles.Count:N0} missing file(s) from source");
+       //     PrintInfo($"Found {missingFiles.Count:N0} missing file(s) from source");
 
             // Process missing files - check if they exist in target and copy back to source
             foreach (var relativePath in missingFiles)
@@ -785,7 +789,11 @@ namespace RobustAccessDbSync
                 folderMetadata.LastScanTime = DateTime.UtcNow;
                 return;
             }
-
+            if (!Directory.Exists(targetFolder))
+            {
+                Directory.CreateDirectory(targetFolder);
+                PrintInfo($"Created target directory: {targetFolder}");
+            }
             // Process changed files in batches
             int copiedFiles = 0;
             var changedFilesArray = changedFiles.ToArray();
@@ -800,10 +808,17 @@ namespace RobustAccessDbSync
                     try
                     {
                         string relativePath = Path.GetRelativePath(sourceFolder, src);
+
                         string dest = Path.Combine(targetFolder, relativePath);
 
                         Directory.CreateDirectory(Path.GetDirectoryName(dest));
                         File.Copy(src, dest, true);
+                        var sourceInfo = new FileInfo(src);
+                        UpdateFileMetadata(sourceFolder, relativePath, sourceInfo);
+
+                        var destInfo = new FileInfo(dest);
+                        UpdateFileMetadata(targetFolder, relativePath, destInfo);
+                        // === END ADDED CODE === //
                         Count++;
 
                         Interlocked.Increment(ref copiedFiles);
@@ -818,9 +833,13 @@ namespace RobustAccessDbSync
                 });
             }
 
+
+            // Also sync empty directories
+            SyncEmptyDirectories(sourceFolder, targetFolder);
             // Update folder metadata
             folderMetadata.Files = new Dictionary<string, FileMetadata>(newFileMetadata);
             folderMetadata.LastScanTime = DateTime.UtcNow;
+            SaveSyncMetadata();
 
             // Log results
             if (copiedFiles > 0 || missingFiles.Count > 0)
@@ -855,7 +874,8 @@ namespace RobustAccessDbSync
                     {
                         if (!Directory.Exists(clientFolder)) continue;
 
-                        string clientFolderName = Path.GetFileName(clientFolder);
+                        //    string clientFolderName = Path.GetFileName(clientFolder);
+                        string clientFolderName = Path.GetFileName(clientFolder.TrimEnd(Path.DirectorySeparatorChar));
                         excludeList.Add(clientFolderName);
 
                         string correspondingServerFolder = Path.Combine(serverFolder, clientFolderName);
@@ -965,6 +985,63 @@ namespace RobustAccessDbSync
             }
         }
 
+
+        // Add this helper method to your Program class
+        static void UpdateFileMetadata(string folderPath, string relativePath, FileInfo fileInfo)
+        {
+            // Get or create folder metadata
+            if (!_syncMetadata.Folders.TryGetValue(folderPath, out var folderMetadata))
+            {
+                folderMetadata = new FolderMetadata { FolderPath = folderPath };
+                _syncMetadata.Folders[folderPath] = folderMetadata;
+            }
+
+            // Update the file metadata
+            folderMetadata.Files[relativePath] = new FileMetadata
+            {
+                LastModified = fileInfo.LastWriteTimeUtc,
+                FileSize = fileInfo.Length,
+                FilePath = relativePath,
+                LastSyncTime = DateTime.UtcNow  // Add this property to track sync time
+            };
+        }
+        // Method to synchronize empty directories between source and target
+        static void SyncEmptyDirectories(string sourceFolder, string targetFolder)
+        {
+            try
+            {
+                // Get all directories recursively from the source folder
+                // SearchOption.AllDirectories means include all subdirectories
+                var allDirectories = Directory.GetDirectories(sourceFolder, "*", SearchOption.AllDirectories);
+
+                // Process each directory found in the source
+                foreach (var sourceDir in allDirectories)
+                {
+                    // Get the relative path from the source root to this directory
+                    // Example: if sourceFolder = "C:\Client" and sourceDir = "C:\Client\Documents\Projects"
+                    // then relativePath = "Documents\Projects"
+                    string relativePath = Path.GetRelativePath(sourceFolder, sourceDir);
+
+                    // Create the corresponding target directory path
+                    // Example: if targetFolder = "\\Server\Share" and relativePath = "Documents\Projects"
+                    // then targetDir = "\\Server\Share\Documents\Projects"
+                    string targetDir = Path.Combine(targetFolder, relativePath);
+
+                    // Create directory in target if it doesn't exist
+                    // This ensures the folder structure is identical even for empty directories
+                    if (!Directory.Exists(targetDir))
+                    {
+                        Directory.CreateDirectory(targetDir);
+                        PrintInfo($"Created directory: {relativePath}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors that occur during directory synchronization
+                PrintError($"Error syncing directories: {ex.Message}");
+            }
+        }
         static void PrintHeader()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
