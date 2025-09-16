@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSyncProcess", "FileSyncProcess\FileSyncProcess.csproj", "{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RohalFIleSyncronization", "RohalFIleSyncronization\RohalFIleSyncronization.vdproj", "{BFFCAB93-60A3-E3FA-7D2C-8902BEBF427B}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RohalCrmFileSync", "RohalCrmFileSync\RohalCrmFileSync.vdproj", "{AB9D1E13-72DE-78DA-58B7-9CE6508964AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CBE7B80-864A-43A3-9C40-A22CB096D2FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFFCAB93-60A3-E3FA-7D2C-8902BEBF427B}.Debug|Any CPU.ActiveCfg = Debug
-		{BFFCAB93-60A3-E3FA-7D2C-8902BEBF427B}.Release|Any CPU.ActiveCfg = Release
+		{AB9D1E13-72DE-78DA-58B7-9CE6508964AE}.Debug|Any CPU.ActiveCfg = Debug
+		{AB9D1E13-72DE-78DA-58B7-9CE6508964AE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

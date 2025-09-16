@@ -1,0 +1,15 @@
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\bin\Debug\net8.0\Practice3.exe
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\bin\Debug\net8.0\Practice3.deps.json
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\bin\Debug\net8.0\Practice3.runtimeconfig.json
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\bin\Debug\net8.0\Practice3.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\bin\Debug\net8.0\Practice3.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\Practice3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\Practice3.AssemblyInfoInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\Practice3.AssemblyInfo.cs
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\Practice3.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\Practice3.sourcelink.json
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\Practice3.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\refint\Practice3.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\Practice3.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\Practice3.genruntimeconfig.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\Practice3\Practice3\obj\Debug\net8.0\ref\Practice3.dll

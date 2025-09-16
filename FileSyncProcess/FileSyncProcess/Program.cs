@@ -7,7 +7,7 @@ using System.Net.Sockets;
 using IniParser;
 using IniParser.Model;
 using System.Collections.Concurrent;
-//using Spectre.Console;
+
 
 namespace RobustAccessDbSync
 {
@@ -32,6 +32,8 @@ namespace RobustAccessDbSync
         static DateTime _lastSyncTime = DateTime.MinValue;
         static int Count = 0;
 
+        #region Models
+
         // Enhanced metadata tracking
         class SyncMetadata
         {
@@ -44,7 +46,6 @@ namespace RobustAccessDbSync
             public string FolderPath { get; set; } = string.Empty;
             public Dictionary<string, FileMetadata> Files { get; set; } = new Dictionary<string, FileMetadata>();
             public DateTime LastScanTime { get; set; } = DateTime.MinValue;
-            //public DateTime LastSyncTime { get; set; } = DateTime.UtcNow; // Add this
 
         }
 
@@ -53,237 +54,18 @@ namespace RobustAccessDbSync
             public DateTime LastModified { get; set; }
             public long FileSize { get; set; }
             public string FilePath { get; set; } = string.Empty;
-            public DateTime LastSyncTime { get; set; } = DateTime.UtcNow; // Add this
+            public DateTime LastSyncTime { get; set; } = DateTime.UtcNow;
 
         }
 
         static SyncMetadata _syncMetadata = new SyncMetadata();
 
+        #endregion
+
         // Parallel processing settings
         static int _maxDegreeOfParallelism = Environment.ProcessorCount;
         static int _batchSize = 1000;
 
-        static void GetServerCredentials()
-        {
-            while (true)
-            {
-                do
-                {
-                    Console.Write("Enter USERNAME: ");
-                    USERNAME = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(USERNAME))
-                        Console.WriteLine("USERNAME cannot be empty.");
-                } while (string.IsNullOrWhiteSpace(USERNAME));
-
-                do
-                {
-                    Console.Write("Enter PASSWORD: ");
-                    PASSWORD = ReadPassword();
-                    if (string.IsNullOrWhiteSpace(PASSWORD))
-                        Console.WriteLine("PASSWORD cannot be empty.");
-                } while (string.IsNullOrWhiteSpace(PASSWORD));
-
-                Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
-
-                string input = Console.ReadLine()?.Trim().ToLower();
-
-                if (string.IsNullOrEmpty(input))
-                {
-                    break;
-                }
-                else if (input == "r")
-                    continue;
-                else
-                    Console.WriteLine("Invalid input. Re-entering...\n");
-            }
-        }
-
-        static void GetClientsServerPath()
-        {
-            Console.Title = "File Synchronization Tool";
-            Console.CursorVisible = false;
-            PrintHeader();
-            ShowGameStyleLoader("Initializing File Synchronization Tool", 20);
-
-            while (true)
-            {
-                do
-                {
-                    Console.Write("Enter Client Root Path(For Config/Server to Client Copy): ");
-                    clientPath = Console.ReadLine();
-
-                    if (!Directory.Exists(clientPath) || string.IsNullOrWhiteSpace(clientPath))
-                    {
-                        Console.WriteLine($"Path should be valid and cannot be empty");
-                        clientPath = string.Empty;
-                    }
-                } while (string.IsNullOrWhiteSpace(clientPath));
-
-                do
-                {
-                    Console.Write("Enter Server Path: ");
-                    serverPath = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(serverPath))
-                        Console.WriteLine("Server path cannot be empty");
-                } while (string.IsNullOrWhiteSpace(serverPath));
-
-                var serverParts = serverPath.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
-                if (serverParts.Length < 2)
-                {
-                    PrintError("Invalid server path format. Expected format: \\\\server\\share\\path");
-                }
-
-                SERVER_IP = serverParts[0];
-                SHARE_NAME = serverParts[1];
-
-                Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
-
-                string input = Console.ReadLine()?.Trim().ToLower();
-
-                if (string.IsNullOrEmpty(input))
-                {
-                    break;
-                }
-                else if (input == "r")
-                    continue;
-                else
-                    Console.WriteLine("Invalid input. Re-entering...\n");
-            }
-        }
-
-        //static void GetClientPathCredentials()
-        //{
-        //    Client_Folders.Clear();
-        //    int i = 1;
-        //    while (true)
-        //    {
-        //        Console.Write($"Enter client folder path #{i} (leave blank to stop): ");
-        //        string path = Console.ReadLine();
-        //        if (string.IsNullOrWhiteSpace(path))
-        //            break;
-
-        //        if (Directory.Exists(path))
-        //        {
-        //            Client_Folders.Add(path);
-        //            i++;
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Invalid folder. Please try again.");
-        //        }
-        //    }
-
-        //    if (Client_Folders.Count == 0)
-        //        Console.WriteLine("Warning: No folders entered for sync.");
-        //}
-        static void GetClientPathCredentials()
-        {
-            Client_Folders.Clear();
-            int i = 1;
-
-            while (true)
-            {
-                Console.Write($"Enter client folder path #{i} (at least one required): ");
-                string path = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(path))
-                {
-                    if (Client_Folders.Count == 0)
-                    {
-                        Console.WriteLine("You must enter at least one folder!");
-                        continue; // force user to enter at least one
-                    }
-                    else
-                    {
-                        break; // user can stop after entering at least one
-                    }
-                }
-
-                if (Directory.Exists(path))
-                {
-                    Client_Folders.Add(path);
-                    i++;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid folder. Please try again.");
-                }
-            }
-        }
-
-
-
-
-        // Fast directory enumeration with progress
-        static IEnumerable<string> EnumerateFilesFast(string path, string searchPattern = "*")
-        {
-            var files = new ConcurrentBag<string>();
-            var directories = new ConcurrentStack<string>();
-            directories.Push(path);
-
-            while (directories.TryPop(out var currentDir))
-            {
-                try
-                {
-                    Parallel.ForEach(Directory.EnumerateFiles(currentDir, searchPattern), file =>
-                    {
-                        files.Add(file);
-                    });
-
-                    Parallel.ForEach(Directory.EnumerateDirectories(currentDir), dir =>
-                    {
-                        directories.Push(dir);
-                    });
-                }
-                catch (UnauthorizedAccessException) { }
-                catch (DirectoryNotFoundException) { }
-            }
-
-            return files;
-        }
-
-        // Load sync metadata from file
-        static void LoadSyncMetadata()
-        {
-            try
-            {
-                string metadataPath = Path.Combine(clientPath, syncMetaFile);
-                if (File.Exists(metadataPath))
-                {
-                    string json = File.ReadAllText(metadataPath);
-                    _syncMetadata = JsonSerializer.Deserialize<SyncMetadata>(json) ?? new SyncMetadata();
-                    _lastSyncTime = _syncMetadata.LastSyncTime;
-                    PrintSuccess($"Loaded sync metadata. Last sync: {_lastSyncTime:yyyy-MM-dd HH:mm:ss}");
-                    PrintInfo($"Tracked folders: {_syncMetadata.Folders.Count:N0}");
-                }
-                else
-                {
-                    PrintInfo("No previous sync metadata found. Starting fresh sync.");
-                }
-            }
-            catch (Exception ex)
-            {
-                PrintError($"Error loading sync metadata: {ex.Message}");
-                _syncMetadata = new SyncMetadata();
-            }
-        }
-
-        // Save sync metadata to file
-
-        static void SaveSyncMetadata()
-        {
-            try
-            {
-                _syncMetadata.LastSyncTime = DateTime.UtcNow;
-                string metadataPath = Path.Combine(clientPath, syncMetaFile);
-                string json = JsonSerializer.Serialize(_syncMetadata, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(metadataPath, json);
-            }
-            catch (Exception ex)
-            {
-                PrintError($"Error saving sync metadata: {ex.Message}");
-            }
-        }
         [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static async Task Main()
         {
@@ -300,17 +82,45 @@ namespace RobustAccessDbSync
 
                 if (!string.IsNullOrEmpty(rememberedClientPath))
                 {
-                    string iniPath = Path.Combine(rememberedClientPath, "FileConfig.ini");
+                    string iniPath = Path.Combine(rememberedClientPath, "Config.ini");
 
                     if (File.Exists(iniPath))
                     {
                         data = parser.ReadFile(iniPath);
+                       
+                        if (!data.Sections.ContainsSection("Credentials"))
+                        {
+                            GetServerCredentials();
+                            data["Credentials"]["Username"] = USERNAME;
+                            data["Credentials"]["Password"] = PASSWORD;
+
+                        }
+                        if(!data.Sections.ContainsSection("Server") || !data.Sections.ContainsSection("Client"))
+                        {
+                            GetClientsServerPath();
+                            data["Server"]["Path"] = serverPath;
+                            data["Client"]["Path"] = clientPath;
+                        }
+                        if (!data.Sections.ContainsSection("folder"))
+                        {
+                            GetClientPathCredentials();
+                            data.Sections.AddSection("folder");
+                            for (int i = 0; i < Client_Folders.Count; i++)
+                            {
+                                data["folder"][$"Path{i + 1}"] = Client_Folders[i];
+                            }
+                            parser.WriteFile(iniPath, data);
+
+                        }
+                       // parser.WriteFile(iniPath, data);
+
                         USERNAME = data["Credentials"]["Username"];
                         PASSWORD = data["Credentials"]["Password"];
                         SERVER_IP = data["Server"]["IP"];
                         SHARE_NAME = data["Server"]["Share"];
                         serverPath = data["Server"]["Path"];
                         clientPath = data["Client"]["Path"];
+
 
                         int index = 1;
                         while (true)
@@ -325,8 +135,6 @@ namespace RobustAccessDbSync
                         }
 
                         Console.WriteLine("Loaded saved configuration.");
-                        //validate
-                        // ValidateConfiguration();
                     }
                 }
 
@@ -352,16 +160,34 @@ namespace RobustAccessDbSync
                         data["folder"][$"Path{i + 1}"] = Client_Folders[i];
                     }
 
-                    string iniPath = Path.Combine(clientPath, "FileConfig.ini");
+                    if (Path.HasExtension(clientPath))
+                    {
+                        clientPath = Path.GetDirectoryName(clientPath);
+                    }
+
+                    if (Path.HasExtension(serverPath))
+                    {
+                        serverPath = Path.GetDirectoryName(serverPath);
+                    }
+
+                    string iniPath = Path.Combine(clientPath, "Config.ini");
                     parser.WriteFile(iniPath, data);
+                }
+                
+
+                if (Path.HasExtension(clientPath))
+                {
+                    clientPath = Path.GetDirectoryName(clientPath);
+                }
+
+                if (Path.HasExtension(serverPath))
+                {
+                    serverPath = Path.GetDirectoryName(serverPath);
                 }
 
 
                 // Load sync metadata AFTER clientPath is determined
-
-
                 LoadSyncMetadata();
-
 
                 Console.WriteLine("Ready to sync using loaded configuration.");
             }
@@ -432,6 +258,202 @@ namespace RobustAccessDbSync
             Console.CursorVisible = true;
             Console.ReadKey();
         }
+
+
+
+        static void GetServerCredentials()
+        {
+            while (true)
+            {
+                do
+                {
+                    Console.Write("Enter USERNAME: ");
+                    USERNAME = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(USERNAME))
+                        Console.WriteLine("USERNAME cannot be empty.");
+                } while (string.IsNullOrWhiteSpace(USERNAME));
+
+                do
+                {
+                    Console.Write("Enter PASSWORD: ");
+                    PASSWORD = ReadPassword();
+                    if (string.IsNullOrWhiteSpace(PASSWORD))
+                        Console.WriteLine("PASSWORD cannot be empty.");
+                } while (string.IsNullOrWhiteSpace(PASSWORD));
+
+                Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
+
+                string input = Console.ReadLine()?.Trim().ToLower();
+
+                if (string.IsNullOrEmpty(input))
+                {
+                    break;
+                }
+                else if (input == "r")
+                    continue;
+                else
+                    Console.WriteLine("Invalid input. Re-entering...\n");
+            }
+        }
+
+        static void GetClientsServerPath()
+        {
+            Console.Title = "File Synchronization Tool";
+            Console.CursorVisible = false;
+            PrintHeader();
+            ShowGameStyleLoader("Initializing File Synchronization Tool", 20);
+
+            while (true)
+            {
+                do
+                {
+                    Console.Write("Enter Client Root Path(For Config/Server to Client Copy): ");
+                    clientPath = Console.ReadLine();
+
+                    if (!Directory.Exists(Path.GetDirectoryName(clientPath)) || string.IsNullOrWhiteSpace(clientPath))
+                    {
+                        Console.WriteLine($"Path should be valid and cannot be empty");
+                        clientPath = string.Empty;
+                    }
+                } while (string.IsNullOrWhiteSpace(clientPath));
+
+                do
+                {
+                    Console.Write("Enter Server Path: ");
+                    serverPath = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(serverPath))
+                        Console.WriteLine("Server path cannot be empty");
+                } while (string.IsNullOrWhiteSpace(serverPath));
+
+                var serverParts = serverPath.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+                if (serverParts.Length < 2)
+                {
+                    PrintError("Invalid server path format. Expected format: \\\\server\\share\\path");
+                }
+
+                SERVER_IP = serverParts[0];
+                SHARE_NAME = serverParts[1];
+
+                Console.WriteLine("\nPress Enter to continue or type 'r' to re-enter:");
+
+                string input = Console.ReadLine()?.Trim().ToLower();
+
+                if (string.IsNullOrEmpty(input))
+                {
+                    break;
+                }
+                else if (input == "r")
+                    continue;
+                else
+                    Console.WriteLine("Invalid input. Re-entering...\n");
+            }
+        }
+
+        static void GetClientPathCredentials()
+        {
+            Client_Folders.Clear();
+            int i = 1;
+
+            while (true)
+            {
+                Console.Write($"Enter client folder path #{i} (at least one required): ");
+                string path = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(path))
+                {
+                    if (Client_Folders.Count == 0)
+                    {
+                        Console.WriteLine("You must enter at least one folder!");
+                        continue; // force user to enter at least one
+                    }
+                    else
+                    {
+                        break; // user can stop after entering at least one
+                    }
+                }
+
+                if (Directory.Exists(path))
+                {
+                    Client_Folders.Add(path);
+                    i++;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid folder. Please try again.");
+                }
+            }
+        }
+
+        // Fast directory enumeration with progress
+        static IEnumerable<string> EnumerateFilesFast(string path, string searchPattern = "*")
+        {
+            var files = new ConcurrentBag<string>();
+            var directories = new ConcurrentStack<string>();
+            directories.Push(path);
+
+            while (directories.TryPop(out var currentDir))
+            {
+                try
+                {
+                    Parallel.ForEach(Directory.EnumerateFiles(currentDir, searchPattern), file =>
+                    {
+                        files.Add(file);
+                    });
+
+                    Parallel.ForEach(Directory.EnumerateDirectories(currentDir), dir =>
+                    {
+                        directories.Push(dir);
+                    });
+                }
+                catch (UnauthorizedAccessException) { }
+                catch (DirectoryNotFoundException) { }
+            }
+
+            return files;
+        }
+
+        // Load sync metadata from file
+        static void LoadSyncMetadata()
+        {
+            try
+            {
+                string metadataPath = Path.Combine(clientPath, syncMetaFile);
+                if (File.Exists(metadataPath))
+                {
+                    string json = File.ReadAllText(metadataPath);
+                    _syncMetadata = JsonSerializer.Deserialize<SyncMetadata>(json) ?? new SyncMetadata();
+                    _lastSyncTime = _syncMetadata.LastSyncTime;
+                    PrintSuccess($"Loaded sync metadata. Last sync: {_lastSyncTime:yyyy-MM-dd HH:mm:ss}");
+                    PrintInfo($"Tracked folders: {_syncMetadata.Folders.Count:N0}");
+                }
+                else
+                {
+                    PrintInfo("No previous sync metadata found. Starting fresh sync.");
+                }
+            }
+            catch (Exception ex)
+            {
+                PrintError($"Error loading sync metadata: {ex.Message}");
+                _syncMetadata = new SyncMetadata();
+            }
+        }
+
+        // Save sync metadata to file
+        static void SaveSyncMetadata()
+        {
+            try
+            {
+                _syncMetadata.LastSyncTime = DateTime.UtcNow;
+                string metadataPath = Path.Combine(clientPath, syncMetaFile);
+                string json = JsonSerializer.Serialize(_syncMetadata, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(metadataPath, json);
+            }
+            catch (Exception ex)
+            {
+                PrintError($"Error saving sync metadata: {ex.Message}");
+            }
+        }
+
         static void ValidateConfiguration()
         {
             if (string.IsNullOrWhiteSpace(clientPath) || !Directory.Exists(clientPath))
@@ -462,7 +484,6 @@ namespace RobustAccessDbSync
                 }
             }
         }
-
 
         static string ReadPassword()
         {
@@ -512,137 +533,8 @@ namespace RobustAccessDbSync
                 return false;
             }
         }
-
-        // Optimized file sync with parallel processing
-        //static void SyncFiles(string sourceFolder, string targetFolder, string logFile, string direction, List<string>? excludeFolders, bool isFullServerToClient)
-        //{
-        //    if (!Directory.Exists(sourceFolder))
-        //        return;
-
-        //    string today = DateTime.Today.ToString("yyyy-MM-dd");
-        //    string logPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, logFile);
-
-        //    PrintInfo($"Scanning {Path.GetFileName(sourceFolder)} for changes...");
-
-        //    // Get or create folder metadata
-        //    if (!_syncMetadata.Folders.TryGetValue(sourceFolder, out var folderMetadata))
-        //    {
-        //        folderMetadata = new FolderMetadata { FolderPath = sourceFolder };
-        //        _syncMetadata.Folders[sourceFolder] = folderMetadata;
-        //    }
-
-        //    // Fast parallel file enumeration
-        //    var allFiles = EnumerateFilesFast(sourceFolder).ToArray();
-        //    PrintInfo($"Found {allFiles.Length:N0} files total");
-
-        //    // Parallel processing to find changed files
-        //    var changedFiles = new ConcurrentBag<string>();
-        //    var newFileMetadata = new ConcurrentDictionary<string, FileMetadata>();
-
-        //    Parallel.ForEach(allFiles, new ParallelOptions { MaxDegreeOfParallelism = _maxDegreeOfParallelism }, file =>
-        //    {
-        //        try
-        //        {
-        //            var fileInfo = new FileInfo(file);
-        //            string relativePath = Path.GetRelativePath(sourceFolder, file);
-
-        //            // Check if file should be excluded
-        //            if (isFullServerToClient && excludeFolders != null)
-        //            {
-        //                string topLevel = relativePath.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)[0];
-        //                if (excludeFolders.Contains(topLevel, StringComparer.OrdinalIgnoreCase))
-        //                    return;
-        //            }
-
-        //            var currentMetadata = new FileMetadata
-        //            {
-        //                LastModified = fileInfo.LastWriteTimeUtc,
-        //                FileSize = fileInfo.Length,
-        //                FilePath = relativePath
-        //            };
-
-        //            newFileMetadata[relativePath] = currentMetadata;
-
-        //            // Check if file has changed
-        //            bool hasChanged = true;
-        //            if (folderMetadata.Files.TryGetValue(relativePath, out var oldMetadata))
-        //            {
-        //                hasChanged = currentMetadata.LastModified > oldMetadata.LastModified ||
-        //                            currentMetadata.FileSize != oldMetadata.FileSize;
-        //            }
-
-        //            if (hasChanged)
-        //            {
-        //                changedFiles.Add(file);
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            PrintError($"Error processing file {file}: {ex.Message}");
-        //        }
-        //    });
-
-        //    PrintInfo($"Found {changedFiles.Count:N0} changed file(s)");
-
-        //    if (changedFiles.Count == 0)
-        //    {
-        //        // Update folder metadata even if no changes
-        //        folderMetadata.Files = new Dictionary<string, FileMetadata>(newFileMetadata);
-        //        return;
-        //    }
-
-        //    // Process changed files in batches
-        //    int copiedFiles = 0;
-        //    var changedFilesArray = changedFiles.ToArray();
-        //    var total = changedFiles.Count();
-
-        //    for (int i = 0; i < changedFilesArray.Length; i += _batchSize)
-        //    {
-        //        var batch = changedFilesArray.Skip(i).Take(_batchSize).ToArray();
-
-        //        Parallel.ForEach(batch, new ParallelOptions { MaxDegreeOfParallelism = _maxDegreeOfParallelism }, src =>
-        //        {
-        //            try
-        //            {
-        //                string relativePath = Path.GetRelativePath(sourceFolder, src);
-        //                string dest = Path.Combine(targetFolder, relativePath);
-
-        //                Directory.CreateDirectory(Path.GetDirectoryName(dest));
-        //                File.Copy(src, dest, true);
-        //                Count++;
-
-        //                Interlocked.Increment(ref copiedFiles);
-        //                PrintSuccess($"  [✓] Copied: {relativePath} {direction}");
-        //               // Console.WriteLine($"File Copied {Count} out of {total}");
-
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                PrintError($"Error copying file {src}: {ex.Message}");
-        //            }
-        //        });
-        //    }
-
-        //    // Update folder metadata
-        //    folderMetadata.Files = new Dictionary<string, FileMetadata>(newFileMetadata);
-
-        //    // Log results
-        //    if (copiedFiles > 0)
-        //    {
-        //        string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-        //        var logLines = new List<string>
-        //{
-        //    $"[{timestamp}]",
-        //    $"Sync = Files",
-        //    $"changes = {copiedFiles}",
-        //    $"direction = {direction}",
-        //    $"total_files = {allFiles.Length}",
-        //    ""
-        //};
-        //        File.AppendAllLines(logPath, logLines);
-        //    }
-        //}
-        static void SyncFiles(string sourceFolder, string targetFolder, string logFile, string direction, List<string>? excludeFolders, bool isFullServerToClient)
+        
+        static void SyncFiles(string sourceFolder, string targetFolder, string logFile, string direction)
         {
             if (!Directory.Exists(sourceFolder))
                 return;
@@ -664,7 +556,7 @@ namespace RobustAccessDbSync
             PrintInfo($"Found {allFiles.Length:N0} files total");
 
             // Track current files
-            var currentFiles = new HashSet<string>();
+            var currentFiles = new HashSet<string>(); //it store the relative path of current folder path
 
             // Parallel processing to find changed files
             var changedFiles = new ConcurrentBag<string>();
@@ -679,12 +571,13 @@ namespace RobustAccessDbSync
                     currentFiles.Add(relativePath);
 
                     // Check if file should be excluded
-                    if (isFullServerToClient && excludeFolders != null)
-                    {
-                        string topLevel = relativePath.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)[0];
-                        if (excludeFolders.Contains(topLevel, StringComparer.OrdinalIgnoreCase))
-                            return;
-                    }
+                    // for future purpose
+                    //if (isFullServerToClient && excludeFolders != null)
+                    //{
+                    //    string topLevel = relativePath.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)[0];
+                    //    if (excludeFolders.Contains(topLevel, StringComparer.OrdinalIgnoreCase))
+                    //        return;
+                    //}
 
                     var currentMetadata = new FileMetadata
                     {
@@ -743,7 +636,7 @@ namespace RobustAccessDbSync
             }
 
             PrintInfo($"Found {changedFiles.Count:N0} changed file(s)");
-       //     PrintInfo($"Found {missingFiles.Count:N0} missing file(s) from source");
+             //PrintInfo($"Found {missingFiles.Count:N0} missing file(s) from source");
 
             // Process missing files - check if they exist in target and copy back to source
             foreach (var relativePath in missingFiles)
@@ -832,8 +725,6 @@ namespace RobustAccessDbSync
                     }
                 });
             }
-
-
             // Also sync empty directories
             SyncEmptyDirectories(sourceFolder, targetFolder);
             // Update folder metadata
@@ -858,15 +749,16 @@ namespace RobustAccessDbSync
                 File.AppendAllLines(logPath, logLines);
             }
         }
+        
         static void SyncFilesBothDirections()
         {
             try
             {
                 if (_syncRunning)
                 {
-                    string logFilePath = Path.Combine(clientPath, "fileConfiglog.ini");
+                    string logFilePath = Path.Combine(clientPath, "Configlog.ini");
                     string serverFolder = serverPath;
-                    var excludeList = new List<string>();
+                  //  var excludeList = new List<string>();
 
                     PrintInfo($"Starting optimized sync (since {_lastSyncTime:yyyy-MM-dd HH:mm:ss})");
 
@@ -874,9 +766,9 @@ namespace RobustAccessDbSync
                     {
                         if (!Directory.Exists(clientFolder)) continue;
 
-                        //    string clientFolderName = Path.GetFileName(clientFolder);
+           
                         string clientFolderName = Path.GetFileName(clientFolder.TrimEnd(Path.DirectorySeparatorChar));
-                        excludeList.Add(clientFolderName);
+                       // excludeList.Add(clientFolderName);
 
                         string correspondingServerFolder = Path.Combine(serverFolder, clientFolderName);
 
@@ -886,8 +778,8 @@ namespace RobustAccessDbSync
                             PrintSuccess($"[+] Created folder on server: {correspondingServerFolder}");
                         }
 
-                        SyncFiles(clientFolder, correspondingServerFolder, logFilePath, "ClientToServer", excludeList, false);
-                        SyncFiles(correspondingServerFolder, clientFolder, logFilePath, "ServerToClient", excludeList, false);
+                        SyncFiles(clientFolder, correspondingServerFolder, logFilePath, "ClientToServer");
+                        SyncFiles(correspondingServerFolder, clientFolder, logFilePath, "ServerToClient");
                     }
 
                     // Save metadata after successful sync
@@ -899,6 +791,7 @@ namespace RobustAccessDbSync
                 //PrintError($"[!] Error during sync: {ex.Message}");
             }
         }
+        
         static async Task ContinuousFileSync()
         {
             while (_syncRunning)
@@ -918,12 +811,9 @@ namespace RobustAccessDbSync
                         _lastOnlineTime = DateTime.Now;
 
                         RunCommand($"net use {DRIVE_LETTER} /delete", false);
-
-                       // string connectCmd = $"net use {DRIVE_LETTER} \\\\{SERVER_IP}\\{SHARE_NAME} /user:{USERNAME} {PASSWORD} /persistent:no";
                         string connectCmd = $@"net use {DRIVE_LETTER} ""\\{SERVER_IP}\{SHARE_NAME}"" /user:""{USERNAME}"" ""{PASSWORD}"" /persistent:no";
 
-
-                       // Console.WriteLine(connectCmd);
+                       
                         if (RunCommand(connectCmd,false))
                         {
                             SyncFilesBothDirections();
@@ -985,7 +875,6 @@ namespace RobustAccessDbSync
             }
         }
 
-
         // Add this helper method to your Program class
         static void UpdateFileMetadata(string folderPath, string relativePath, FileInfo fileInfo)
         {
@@ -1005,6 +894,7 @@ namespace RobustAccessDbSync
                 LastSyncTime = DateTime.UtcNow  // Add this property to track sync time
             };
         }
+
         // Method to synchronize empty directories between source and target
         static void SyncEmptyDirectories(string sourceFolder, string targetFolder)
         {
@@ -1042,6 +932,7 @@ namespace RobustAccessDbSync
                 PrintError($"Error syncing directories: {ex.Message}");
             }
         }
+        
         static void PrintHeader()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
