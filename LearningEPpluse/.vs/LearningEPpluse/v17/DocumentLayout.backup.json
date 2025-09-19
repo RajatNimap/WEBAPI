@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\learningeppluse\\learningeppluse\\services\\excelservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|solutionrelative:learningeppluse\\services\\excelservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\learningeppluse\\learningeppluse\\learningeppluse.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|solutionrelative:learningeppluse\\learningeppluse.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\learningeppluse\\learningeppluse\\controllers\\excelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|solutionrelative:learningeppluse\\controllers\\excelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\learningeppluse\\learningeppluse\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|solutionrelative:learningeppluse\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\learningeppluse\\learningeppluse\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|solutionrelative:learningeppluse\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExcelController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\Controllers\\ExcelController.cs",
+              "RelativeDocumentMoniker": "LearningEPpluse\\Controllers\\ExcelController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\Controllers\\ExcelController.cs",
+              "RelativeToolTip": "LearningEPpluse\\Controllers\\ExcelController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAqwEQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T10:14:29.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\appsettings.json",
+              "RelativeDocumentMoniker": "LearningEPpluse\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\appsettings.json",
+              "RelativeToolTip": "LearningEPpluse\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-19T10:08:27.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExcelServices.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\Services\\ExcelServices.cs",
+              "RelativeDocumentMoniker": "LearningEPpluse\\Services\\ExcelServices.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\Services\\ExcelServices.cs*",
+              "RelativeToolTip": "LearningEPpluse\\Services\\ExcelServices.cs*",
+              "ViewState": "AgIAADAAAADAZWZmZmYkwDsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T09:57:10.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LearningEPpluse",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\LearningEPpluse.csproj",
+              "RelativeDocumentMoniker": "LearningEPpluse\\LearningEPpluse.csproj",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\LearningEPpluse.csproj",
+              "RelativeToolTip": "LearningEPpluse\\LearningEPpluse.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-19T09:29:53.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\Program.cs",
+              "RelativeDocumentMoniker": "LearningEPpluse\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\Program.cs",
+              "RelativeToolTip": "LearningEPpluse\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAMzMzMzMLwAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T09:28:01.278Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

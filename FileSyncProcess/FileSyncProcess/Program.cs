@@ -93,6 +93,7 @@ namespace RobustAccessDbSync
                             GetServerCredentials();
                             data["Credentials"]["Username"] = USERNAME;
                             data["Credentials"]["Password"] = PASSWORD;
+                            parser.WriteFile(iniPath, data);
 
                         }
                         if(!data.Sections.ContainsSection("Server") || !data.Sections.ContainsSection("Client"))
@@ -100,6 +101,7 @@ namespace RobustAccessDbSync
                             GetClientsServerPath();
                             data["Server"]["Path"] = serverPath;
                             data["Client"]["Path"] = clientPath;
+                            parser.WriteFile(iniPath, data);
                         }
                         if (!data.Sections.ContainsSection("folder"))
                         {

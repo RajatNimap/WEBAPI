@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FFCORP_CASHFLOW")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9db286b0da99b7821e33f2bce85b93667031c91f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+794aced1cacc8753c0ac265025dfaaf05db22a0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("FFCORP_CASHFLOW")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FFCORP_CASHFLOW")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

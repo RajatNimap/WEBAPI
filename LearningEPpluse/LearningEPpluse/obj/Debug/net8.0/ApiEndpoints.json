@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "LearningEPpluse.Controllers.ExcelController",
+    "Method": "Yardi",
+    "RelativePath": "api/Excel/Yardi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
