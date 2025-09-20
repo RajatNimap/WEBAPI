@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LearningEPpluse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+794aced1cacc8753c0ac265025dfaaf05db22a0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26232f7fa5416b5956a338ce7c9c8e98be7f57dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("LearningEPpluse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LearningEPpluse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

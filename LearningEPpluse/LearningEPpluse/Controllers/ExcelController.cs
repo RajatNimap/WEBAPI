@@ -32,7 +32,7 @@ namespace LearningEPpluse.Controllers
                 var fileName = file.FileName;
                 if (fileName.Equals("Scheduler_Reports.xlsx"))
                 {
-                    YardiTb = Path.Combine(BaseDirc, $"{file}_{Guid.NewGuid()}.xlsx");
+                    YardiTb = Path.Combine(BaseDirc, $"{file.Name}_{Guid.NewGuid()}.xlsx");
                     using (var stream = new FileStream(YardiTb, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
@@ -66,9 +66,10 @@ namespace LearningEPpluse.Controllers
 
             }
 
-            return Ok (await _excel.GetExcelData());  
+           // return Ok (await _excel.GetExcelData());  
+           return Ok(await _excel.yardiExcel(YardiTb));
 
-           
+
         }   
         
     }

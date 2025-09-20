@@ -39,7 +39,7 @@ namespace LearningEPpluse.Services
                 var ws3 = sheet.Workbook.Worksheets.Add("Interco");
                 var ws4 = sheet.Workbook.Worksheets.Add("BS Detail");
                 var ws5 = sheet.Workbook.Worksheets.Add("Interest EIDL");
-                var path = _config["AppSettings:"]
+                var path = _config["AppSettings:"];
                 var file = new FileInfo("filetemp.xlsx");
                 await sheet.SaveAsAsync(file);
 
@@ -52,23 +52,41 @@ namespace LearningEPpluse.Services
 
         }
 
-        //public async Task<string> yardiExcel(string yardipath)
-        //{
+        public async Task<string> yardiExcel(string yardipath)
+        {
 
-          
-        //    using (var yardiInput = new ExcelPackage(new FileInfo(yardipath)))
-        //    {
+            var template=_config["AppSettings:BaseDirectory"] ?? string.Empty;
+            var file=Path.Combine(template, "filetemp.xlsx");
+            var fileTemplate=new ExcelPackage(new FileInfo(file));  
 
-
-        //        var wsy = yardiInput.Workbook.Worksheets[0];
+            using (var yardiInput = new ExcelPackage(new FileInfo(yardipath)))
+            {
+                var wsy = yardiInput.Workbook.Worksheets[0];
+                var wsTemplate = fileTemplate.Workbook.Worksheets["Yardi TB"];
                 
+                    var range = wsy.Cells["A5:F394"];
+                for (int row = 0; row < range.End.Row - range.Start.Row + 1; row++)
+                {
+                    for (int col = 0; col < range.End.Column - range.Start.Column + 1; col++)
+                    {
+                        var source = wsy.Cells[range.Start.Row + row, range.Start.Column + col];
+                        var dest = wsTemplate.Cells[row + 1, col + 1];
+
+                        if (!string.IsNullOrEmpty(source.Formula))
+                            dest.Formula = source.Formula;   // keep formula
+                        else
+                            dest.Value = source.Value;       // copy value
+                    }
+                }
+
+                fileTemplate.Save();
+               
+            }
+            return "Yardi Data Imported";
 
 
-        //    }
 
-           
-
-        //}
+        }
 
     }
     
