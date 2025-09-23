@@ -91,29 +91,27 @@ namespace LearningEPpluse.Services
             {
                 using (var targetFile = new ExcelPackage(new FileInfo(targetfile))) { 
                 
-                        var sourceWorksheet = sourceFile.Workbook.Worksheets[0];
-                        var endrow = sourceWorksheet.Dimension.End.Row;
+
+                    
                     //Source Range
-                        var range = sourceFile.Workbook.Worksheets[0].Cells[$"A5:F{endrow}"];
-                        var targetworksheet=targetFile.Workbook.Worksheets["Yardi TB"];
+                    var output = sourceFile.Workbook.Worksheets[0];
+                    var endrow = output.Dimension.End.Row;
+                    var range=output.Cells[$"A5:F{endrow-1}"];
+                    var targetworksheet=targetFile.Workbook.Worksheets["Yardi TB"];
+                    var targetStartRow = 5;
 
-                    var targetstartrow = 1;
-                    var targetstartcolumn = 1;
-                    for (int i = 1; i < range.Rows; i++)
+                    for(int i = 1; i <= range.Rows; i++)
                     {
-                            for(int j=1; j <= range.Columns; j++)
-                            {
-                            var soucecell = range[i,j];
-                                int targetRow = targetstartrow + i - 1;
-                                int targetCol = targetstartcolumn + j - 1;
+                        for(int j = 1; j <= range.Columns; j++)
+                        {
+                            var src = output.Cells[range.Start.Row+i-1, range.Start.Column+j-1];
+                            var tar = targetworksheet.Cells[i, j];
+                            tar.Value = src.Value;
 
-                                var targetCell = targetworksheet.Cells[targetRow, targetCol];
-                                targetCell.Value = soucecell.Value;
-                            targetCell.Style.Font.Bold = soucecell.Style.Font.Bold;
-                            }
+                        }
                     }
+                    targetFile.Save();
 
-              
 
                 }
 

@@ -9,6 +9,9 @@
     {
       "AbsoluteMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\learningeppluse\\learningeppluse\\controllers\\excelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A35EA1B-21EE-4671-8809-3C6AADF85969}|LearningEPpluse\\LearningEPpluse.csproj|solutionrelative:learningeppluse\\controllers\\excelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\AppData\\Local\\SourceServer\\9c8afb9417b6e0b9cf01897967ecfdcf0b522389d64d650b81a323d0a5fae7bb\\LearningEPpluse\\LearningEPpluse\\Services\\ExcelServices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,13 +33,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExcelServices.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\AppData\\Local\\SourceServer\\9c8afb9417b6e0b9cf01897967ecfdcf0b522389d64d650b81a323d0a5fae7bb\\LearningEPpluse\\LearningEPpluse\\Services\\ExcelServices.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\SourceServer\\9c8afb9417b6e0b9cf01897967ecfdcf0b522389d64d650b81a323d0a5fae7bb\\LearningEPpluse\\LearningEPpluse\\Services\\ExcelServices.cs",
+              "ToolTip": "C:\\Users\\Nimap\\AppData\\Local\\SourceServer\\9c8afb9417b6e0b9cf01897967ecfdcf0b522389d64d650b81a323d0a5fae7bb\\LearningEPpluse\\LearningEPpluse\\Services\\ExcelServices.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\SourceServer\\9c8afb9417b6e0b9cf01897967ecfdcf0b522389d64d650b81a323d0a5fae7bb\\LearningEPpluse\\LearningEPpluse\\Services\\ExcelServices.cs [Read Only]",
+              "ViewState": "AgIAAFkAAABgZmZmZmYlwGUAAAAdAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T09:58:32.105Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ExcelController.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\Controllers\\ExcelController.cs",
               "RelativeDocumentMoniker": "LearningEPpluse\\Controllers\\ExcelController.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\Controllers\\ExcelController.cs",
               "RelativeToolTip": "LearningEPpluse\\Controllers\\ExcelController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAvwBQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAACQmZmZmRk3wBQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-22T11:11:26.946Z",
               "EditorCaption": ""
@@ -49,7 +65,7 @@
               "RelativeDocumentMoniker": "LearningEPpluse\\Services\\ExcelServices.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\LearningEPpluse\\LearningEPpluse\\Services\\ExcelServices.cs",
               "RelativeToolTip": "LearningEPpluse\\Services\\ExcelServices.cs",
-              "ViewState": "AgIAAFcAAAAAtszMzMwFwG8AAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-22T05:54:28.174Z",
               "EditorCaption": ""
