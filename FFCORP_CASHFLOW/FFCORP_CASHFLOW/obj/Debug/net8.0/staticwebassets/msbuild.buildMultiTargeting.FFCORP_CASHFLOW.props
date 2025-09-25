@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FFCORP_CASHFLOW.props" />
+</Project>

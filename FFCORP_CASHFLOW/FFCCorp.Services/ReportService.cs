@@ -1,0 +1,195 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Security;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using OfficeOpenXml;
+
+namespace FFCCorp.Services
+{
+    public class ReportService : IReportService
+    {
+        public async Task<string> BalanceSheetReport(string baseDirectory, string yardi, string loc, string bsdetail, string interco, string interestEidl)
+        {
+            var targetfile = Path.Combine(baseDirectory, "filetemp.xlsx");
+            //using (var sourceFile = new ExcelPackage(new FileInfo(yardi)))
+            //using (var targetFile = new ExcelPackage(new FileInfo(targetfile)))
+            //{
+            //    try
+            //    {
+            //        var targetWorksheet = targetFile.Workbook.Worksheets["Yardi TB"];
+            //        if (targetWorksheet == null)
+            //        {
+            //            targetWorksheet = targetFile.Workbook.Worksheets.Add("Yardi TB");
+            //        }
+
+            //        int targetStartRow = 1;
+
+            //        for (int k = 0; k < sourceFile.Workbook.Worksheets.Count; k++)
+            //        {
+            //            Console.WriteLine(sourceFile.Workbook.Worksheets[k]);
+            //            var sourceWorksheet = sourceFile.Workbook.Worksheets[k];
+
+            //            if (k == 1)
+            //            {
+            //                Console.WriteLine("Hello");
+            //            }
+
+            //            string entity = sourceWorksheet.Cells["A1"].Text;
+            //            if (sourceWorksheet.Dimension == null) continue;
+
+            //            int startRow = (k == 0 ? 5 : 7);
+            //            int endRow = sourceWorksheet.Dimension.End.Row;
+            //            int endCol = sourceWorksheet.Dimension.End.Column;
+
+            //            var checkcell = sourceWorksheet.Cells[7, 1].Text;
+            //            if (checkcell.Contains("No activity for given filter criteria"))
+            //            {
+            //                continue;
+            //            }
+            //            var range = sourceWorksheet.Cells[$"A{startRow}:F{endRow - 1}"];
+            //            var entityword = WordSplit(entity);
+            //            int startentity = (targetStartRow == 1 ? 3 : targetStartRow);
+            //            var rangeofentity = targetWorksheet.Cells[$"H{startentity}:H{startentity + (endRow - 8)}"];
+            //            //var rangeofentity1 = targetWorksheet.Cells[$"J{startentity}:J{startentity + (endRow - 8)}"];
+
+            //            rangeofentity.Value = entityword;
+            //            //rangeofentity1.Value = entityword; 
+            //            for (int i = 1; i <= range.Rows; i++)
+            //            {
+            //                for (int j = 1; j <= range.Columns; j++)
+            //                {
+            //                    var targetCell = targetWorksheet.Cells[targetStartRow + i - 1, j];
+            //                    var sourceCell = sourceWorksheet.Cells[range.Start.Row + i - 1, range.Start.Column + j - 1];
+
+
+            //                    targetCell.Value = sourceCell.Value;
+
+            //                }
+            //            }
+            //            targetFile.Save();
+            //            // Console.WriteLine(targetStartRow);
+            //            //Console.WriteLine(range.Rows);
+            //            targetStartRow += range.Rows; // Move to next row block in target
+            //            Console.WriteLine(targetStartRow);
+            //        }
+            //        // targetFile.Save(); // Save once after all copying
+            //        targetWorksheet.Cells["I1"].Value = "Ent - Category";
+            //        targetWorksheet.Cells["J1"].Value = "Entity";
+            //        targetWorksheet.Cells["K1"].Value = "GL Code";
+            //        targetWorksheet.Cells["L1"].Value = "Entity-GLCode";
+            //        targetWorksheet.Cells["M1"].Value = "GL Description";
+            //        var lastRow = targetWorksheet.Dimension.End.Row;
+            //        var entityrange = targetWorksheet.Cells[$"J3:J{lastRow}"].Formula = "H3";
+            //        var Glcoderange = targetWorksheet.Cells[$"K3:K{lastRow}"].Formula = "A3";
+            //        var entityglcode = targetWorksheet.Cells[$"L3:L{lastRow}"].Formula = "=+CONCATENATE(J3,\"-\",K3)";
+            //        var description = targetWorksheet.Cells[$"M3:M{lastRow}"].Formula = "B3";
+            //        targetFile.Save();
+
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.Message);
+            //    }
+
+
+
+            //}
+
+            //using (var sourceFile = new ExcelPackage(new FileInfo(loc)))
+            //using (var targetFile = new ExcelPackage(new FileInfo(targetfile)))
+            //{
+            //    try
+            //    {
+            //        var sourceWorksheet = sourceFile.Workbook.Worksheets[0];
+            //        var targetWorksheet = targetFile.Workbook.Worksheets["LOC"];
+            //        if (targetWorksheet == null)
+            //        {
+            //            targetWorksheet = targetFile.Workbook.Worksheets.Add("LOC");
+            //        }
+
+            //        var Endcol = sourceWorksheet.Dimension.Columns;
+            //        int targeRow = 1;
+            //        sourceWorksheet.Cells[1, 1, 1, Endcol].Copy(targetWorksheet.Cells[targeRow, 1]);
+            //        targeRow++;
+
+            //        var LastRow = sourceWorksheet.Dimension.End.Row;
+            //        var FilteredRow = Enumerable.Range(2, LastRow - 1)
+            //            .Where(r => sourceWorksheet.Cells[r, 7].Text.Trim() == "Lines of Credit")
+            //            .ToList();
+
+            //        foreach (var rownum in FilteredRow)
+            //        {
+            //            sourceWorksheet.Cells[rownum, 1, rownum, Endcol].Copy(targetWorksheet.Cells[targeRow, 1]);
+            //            targeRow++;
+
+            //        }
+
+            //        targetFile.Save();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.Message);
+            //    }
+
+            //}
+
+            using (var sourceFile = new ExcelPackage(new FileInfo(bsdetail)))
+            using (var targetFile = new ExcelPackage(new FileInfo(targetfile)))
+            {
+                try
+                {
+                    var sourceWorksheet = sourceFile.Workbook.Worksheets[0];
+                    var targetWorksheet = targetFile.Workbook.Worksheets["BS-Detail"];
+                    if (targetWorksheet == null)
+                    {
+                        targetWorksheet = targetFile.Workbook.Worksheets.Add("BS-Detail");
+                    }
+
+                    var Endcol = sourceWorksheet.Dimension.Columns;
+                   
+                    //Header copy 
+                    sourceWorksheet.Cells[38, 1, 38, 8].Copy(targetWorksheet.Cells[1, 4]);
+                    //Data copy
+                    var lastRow = sourceWorksheet.Dimension.End.Row;
+                    if (sourceWorksheet.Dimension != null)
+                    {
+                        sourceWorksheet.Cells[42, 1, lastRow, 8]
+                            .Copy(targetWorksheet.Cells[2, 4]);
+                    }
+                    targetFile.Save();
+
+                    targetWorksheet.Cells["A1"].Value = "Ent-Category";
+                    targetWorksheet.Cells["B1"].Value = "Entity";
+                    targetWorksheet.Cells["C1"].Value = "GL Code";
+
+                    targetWorksheet.Cells[$"C2:C{lastRow}"].Formula = $"=RIGHT(D2,10)";
+                    targetWorksheet.Cells[$"B2:B{lastRow}"].Formula = $"=LEFT(D2,3)";
+                    targetWorksheet.Cells[$"A2:A{lastRow}"].Formula = $"=B2&\" - \"&TRIM(H2)";
+                    
+
+                    targetFile.Save();
+                }
+                catch (Exception ex) { 
+                
+                        Console.WriteLine(ex.Message);  
+                }
+
+                return "hello";
+
+
+            }
+
+        }
+
+
+        public static string WordSplit(string entity)
+        {
+            var match = Regex.Match(entity, @"\(([^)]*)\)");
+            string insideBrackets = match.Success ? match.Groups[1].Value : "";
+            return insideBrackets.ToUpper();
+        }
+    }
+}

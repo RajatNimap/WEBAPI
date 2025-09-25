@@ -67,7 +67,9 @@ namespace LearningEPpluse.Controllers
             }
 
            // return Ok (await _excel.GetExcelData());  
-           return Ok(await _excel.yardiExcel(YardiTb));
+           //return Ok(await _excel.yardiExcel(YardiTb));
+           return Ok(await _excel.LOCFileter(Loc));
+
 
 
         }   

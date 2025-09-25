@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\FFCCorp.Services\FFCCorp.Services.csproj" />
+    <ProjectReference Include="..\FFCCorp.Utility\FFCCorp.Utility.csproj" />
   </ItemGroup>
 
 </Project>

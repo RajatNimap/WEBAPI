@@ -1,0 +1,12 @@
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\bin\Debug\net8.0\FFCCorp.Utility.deps.json
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\bin\Debug\net8.0\FFCCorp.Utility.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\bin\Debug\net8.0\FFCCorp.Utility.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\obj\Debug\net8.0\FFCCorp.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\obj\Debug\net8.0\FFCCorp.Utility.AssemblyInfoInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\obj\Debug\net8.0\FFCCorp.Utility.AssemblyInfo.cs
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\obj\Debug\net8.0\FFCCorp.Utility.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\obj\Debug\net8.0\FFCCorp.Utility.sourcelink.json
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\obj\Debug\net8.0\FFCCorp.Utility.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\obj\Debug\net8.0\refint\FFCCorp.Utility.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\obj\Debug\net8.0\FFCCorp.Utility.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\FFCORP_CASHFLOW\FFCCorp.Utility\obj\Debug\net8.0\ref\FFCCorp.Utility.dll
