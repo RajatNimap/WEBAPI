@@ -40,7 +40,7 @@ namespace FFCORP_CASHFLOW.Controllers
                 }
                 if (fileName.Equals("loc-1756906948114.xlsx"))
                 {
-                    Loc = Path.Combine(BaseDirc, $"{file}_{Guid.NewGuid()}.xlsx");
+                    Loc = Path.Combine(BaseDirc, $"{file.Name}_{Guid.NewGuid()}.xlsx");
                     using (var stream = new FileStream(Loc, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
@@ -49,16 +49,16 @@ namespace FFCORP_CASHFLOW.Controllers
                 }
                 if (fileName.Equals("TB 2022.xlsx"))
                 {
-                    Interco = Path.Combine(BaseDirc, $"{file}_{Guid.NewGuid()}.xlsx");
-                    using (var stream = new FileStream(Interco, FileMode.Create))
+                    BsDetail = Path.Combine(BaseDirc, $"{file.Name}_{Guid.NewGuid()}.xlsx");
+                    using (var stream = new FileStream(BsDetail, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
                     }
                 }
                 if (fileName.Equals("Interest Exp - EIDL.xlsx"))
                 {
-                    BsDetail = Path.Combine(BaseDirc, $"{file}_{Guid.NewGuid()}.xlsx");
-                    using (var stream = new FileStream(BsDetail, FileMode.Create))
+                    InterestEIDL = Path.Combine(BaseDirc, $"{file.Name}_{Guid.NewGuid()}.xlsx");
+                    using (var stream = new FileStream(InterestEIDL, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
                     }
@@ -67,7 +67,7 @@ namespace FFCORP_CASHFLOW.Controllers
             }
 
             // await _excel.BalanceSheetReport(BaseDirc, YardiTb, Loc, BsDetail, Interco, InterestEIDL);
-            await _excel.BalanceSheetReport(BaseDirc, YardiTb, Loc, Interco, "", "");
+            await _excel.BalanceSheetReport(BaseDirc, YardiTb, Loc, BsDetail, InterestEIDL, "");
 
             return Ok("Success");   
 
