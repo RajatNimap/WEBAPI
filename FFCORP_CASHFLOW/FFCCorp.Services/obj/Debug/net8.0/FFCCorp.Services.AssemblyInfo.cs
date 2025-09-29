@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FFCCorp.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0480c99b7f2f665842cbc7883fb8ee919c4e385")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a256a615febc7db41bafb35aea6ff6c260bdcbfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("FFCCorp.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FFCCorp.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

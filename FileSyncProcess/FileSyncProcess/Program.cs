@@ -26,7 +26,7 @@ namespace RobustAccessDbSync
         static string SHARE_NAME;
         static string USERNAME;
         static string PASSWORD;
-        static string? rememberedClientPath = null;
+        static string rememberedClientPath = string.Empty;
         static List<string> Client_Folders = [];
         static string syncMetaFile = "sync_metadata.json";
         static DateTime _lastSyncTime = DateTime.MinValue;
@@ -87,7 +87,7 @@ namespace RobustAccessDbSync
                     if (File.Exists(iniPath))
                     {
                         data = parser.ReadFile(iniPath);
-                       
+
                         if (!data.Sections.ContainsSection("Credentials"))
                         {
                             GetServerCredentials();
@@ -96,7 +96,7 @@ namespace RobustAccessDbSync
                             parser.WriteFile(iniPath, data);
 
                         }
-                        if(!data.Sections.ContainsSection("Server") || !data.Sections.ContainsSection("Client"))
+                        if (!data.Sections.ContainsSection("Server") || !data.Sections.ContainsSection("Client"))
                         {
                             GetClientsServerPath();
                             data["Server"]["Path"] = serverPath;
@@ -114,15 +114,12 @@ namespace RobustAccessDbSync
                             parser.WriteFile(iniPath, data);
 
                         }
-                       // parser.WriteFile(iniPath, data);
-
                         USERNAME = data["Credentials"]["Username"];
                         PASSWORD = data["Credentials"]["Password"];
                         SERVER_IP = data["Server"]["IP"];
                         SHARE_NAME = data["Server"]["Share"];
                         serverPath = data["Server"]["Path"];
                         clientPath = data["Client"]["Path"];
-
 
                         int index = 1;
                         while (true)
@@ -162,33 +159,16 @@ namespace RobustAccessDbSync
                         data["folder"][$"Path{i + 1}"] = Client_Folders[i];
                     }
 
-                    if (Path.HasExtension(clientPath))
-                    {
-                        clientPath = Path.GetDirectoryName(clientPath);
-                    }
-
-                    if (Path.HasExtension(serverPath))
-                    {
-                        serverPath = Path.GetDirectoryName(serverPath);
-                    }
+                    clientPath = GetSafeDirectoryPath(clientPath);
+                    serverPath=GetSafeDirectoryPath(serverPath);
 
                     string iniPath = Path.Combine(clientPath, "Config.ini");
                     parser.WriteFile(iniPath, data);
                 }
-                
 
-                if (Path.HasExtension(clientPath))
-                {
-                    clientPath = Path.GetDirectoryName(clientPath);
-                }
+                clientPath = GetSafeDirectoryPath(clientPath);
+                serverPath = GetSafeDirectoryPath(serverPath);
 
-                if (Path.HasExtension(serverPath))
-                {
-                    serverPath = Path.GetDirectoryName(serverPath);
-                }
-
-
-                // Load sync metadata AFTER clientPath is determined
                 LoadSyncMetadata();
 
                 Console.WriteLine("Ready to sync using loaded configuration.");
@@ -260,9 +240,6 @@ namespace RobustAccessDbSync
             Console.CursorVisible = true;
             Console.ReadKey();
         }
-
-
-
         static void GetServerCredentials()
         {
             while (true)
@@ -297,7 +274,6 @@ namespace RobustAccessDbSync
                     Console.WriteLine("Invalid input. Re-entering...\n");
             }
         }
-
         static void GetClientsServerPath()
         {
             Console.Title = "File Synchronization Tool";
@@ -350,7 +326,6 @@ namespace RobustAccessDbSync
                     Console.WriteLine("Invalid input. Re-entering...\n");
             }
         }
-
         static void GetClientPathCredentials()
         {
             Client_Folders.Clear();
@@ -366,11 +341,11 @@ namespace RobustAccessDbSync
                     if (Client_Folders.Count == 0)
                     {
                         Console.WriteLine("You must enter at least one folder!");
-                        continue; // force user to enter at least one
+                        continue; 
                     }
                     else
                     {
-                        break; // user can stop after entering at least one
+                        break; 
                     }
                 }
 
@@ -385,8 +360,6 @@ namespace RobustAccessDbSync
                 }
             }
         }
-
-        // Fast directory enumeration with progress
         static IEnumerable<string> EnumerateFilesFast(string path, string searchPattern = "*")
         {
             var files = new ConcurrentBag<string>();
@@ -413,7 +386,6 @@ namespace RobustAccessDbSync
 
             return files;
         }
-
         // Load sync metadata from file
         static void LoadSyncMetadata()
         {
@@ -439,7 +411,6 @@ namespace RobustAccessDbSync
                 _syncMetadata = new SyncMetadata();
             }
         }
-
         // Save sync metadata to file
         static void SaveSyncMetadata()
         {
@@ -510,7 +481,6 @@ namespace RobustAccessDbSync
             Console.WriteLine();
             return password;
         }
-
         static bool RunCommand(string command, bool showOutput = true)
         {
             try
@@ -535,7 +505,7 @@ namespace RobustAccessDbSync
                 return false;
             }
         }
-        
+
         static void SyncFiles(string sourceFolder, string targetFolder, string logFile, string direction)
         {
             if (!Directory.Exists(sourceFolder))
@@ -546,21 +516,18 @@ namespace RobustAccessDbSync
 
             PrintInfo($"Scanning {Path.GetFileName(sourceFolder)} for changes...");
 
-            // Get or create folder metadata
             if (!_syncMetadata.Folders.TryGetValue(sourceFolder, out var folderMetadata))
             {
                 folderMetadata = new FolderMetadata { FolderPath = sourceFolder };
                 _syncMetadata.Folders[sourceFolder] = folderMetadata;
             }
 
-            // Fast parallel file enumeration
             var allFiles = EnumerateFilesFast(sourceFolder).ToArray();
             PrintInfo($"Found {allFiles.Length:N0} files total");
 
             // Track current files
-            var currentFiles = new HashSet<string>(); //it store the relative path of current folder path
+            var currentFiles = new HashSet<string>(); 
 
-            // Parallel processing to find changed files
             var changedFiles = new ConcurrentBag<string>();
             var newFileMetadata = new ConcurrentDictionary<string, FileMetadata>();
 
@@ -572,15 +539,6 @@ namespace RobustAccessDbSync
                     string relativePath = Path.GetRelativePath(sourceFolder, file);
                     currentFiles.Add(relativePath);
 
-                    // Check if file should be excluded
-                    // for future purpose
-                    //if (isFullServerToClient && excludeFolders != null)
-                    //{
-                    //    string topLevel = relativePath.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)[0];
-                    //    if (excludeFolders.Contains(topLevel, StringComparer.OrdinalIgnoreCase))
-                    //        return;
-                    //}
-
                     var currentMetadata = new FileMetadata
                     {
                         LastModified = fileInfo.LastWriteTimeUtc,
@@ -589,8 +547,6 @@ namespace RobustAccessDbSync
                     };
 
                     newFileMetadata[relativePath] = currentMetadata;
-
-                    // Check if file has changed
                     bool hasChanged = true;
                     if (folderMetadata.Files.TryGetValue(relativePath, out var oldMetadata))
                     {
@@ -605,12 +561,10 @@ namespace RobustAccessDbSync
                 }
                 catch (Exception ex)
                 {
-                   // PrintError($"Error processing file {file}: {ex.Message}");
+                     PrintError($"Error processing file {file}: {ex.Message}");
                 }
             });
 
-            // Check for files that are in metadata but not in current scan
-            // These files were deleted from source but might exist in target
             var missingFiles = new List<string>();
             foreach (var knownFile in folderMetadata.Files.Keys)
             {
@@ -618,11 +572,9 @@ namespace RobustAccessDbSync
                 {
                     missingFiles.Add(knownFile);
 
-                    // Keep the file in metadata but check if it exists in target
                     if (newFileMetadata.TryGetValue(knownFile, out var fileMeta))
                     {
                         // File was in metadata but not found in current scan
-                        // We'll check if it exists in target location
                     }
                     else
                     {
@@ -638,8 +590,6 @@ namespace RobustAccessDbSync
             }
 
             PrintInfo($"Found {changedFiles.Count:N0} changed file(s)");
-             //PrintInfo($"Found {missingFiles.Count:N0} missing file(s) from source");
-
             // Process missing files - check if they exist in target and copy back to source
             foreach (var relativePath in missingFiles)
             {
@@ -648,14 +598,12 @@ namespace RobustAccessDbSync
                     string targetFile = Path.Combine(targetFolder, relativePath);
                     string sourceFile = Path.Combine(sourceFolder, relativePath);
 
-                    // If file exists in target but not in source, copy it back
                     if (File.Exists(targetFile) && !File.Exists(sourceFile))
                     {
                         Directory.CreateDirectory(Path.GetDirectoryName(sourceFile));
                         File.Copy(targetFile, sourceFile, true);
-                        PrintSuccess($"  [↻] Restored: {relativePath} from {direction}");
+                        PrintSuccess($" Restored: {relativePath} from {direction}");
 
-                        // Update the file info in metadata
                         var fileInfo = new FileInfo(sourceFile);
                         newFileMetadata[relativePath] = new FileMetadata
                         {
@@ -673,13 +621,12 @@ namespace RobustAccessDbSync
                 }
                 catch (Exception ex)
                 {
-                    //PrintError($"Error processing missing file {relativePath}: {ex.Message}");
+                    PrintError($"Error processing missing file {relativePath}: {ex.Message}");
                 }
             }
 
             if (changedFiles.Count == 0 && missingFiles.Count == 0)
             {
-                // Update folder metadata even if no changes
                 folderMetadata.Files = new Dictionary<string, FileMetadata>(newFileMetadata);
                 folderMetadata.LastScanTime = DateTime.UtcNow;
                 return;
@@ -713,23 +660,20 @@ namespace RobustAccessDbSync
 
                         var destInfo = new FileInfo(dest);
                         UpdateFileMetadata(targetFolder, relativePath, destInfo);
-                        // === END ADDED CODE === //
                         Count++;
 
                         Interlocked.Increment(ref copiedFiles);
                         PrintSuccess($"  [✓] Copied: {relativePath} {direction}");
-                        //Console.WriteLine($"File Copied {Count} out of {totalChanges}");
 
                     }
                     catch (Exception ex)
                     {
-                        //PrintError($"Error copying file {src}: {ex.Message}");
+                        PrintError($"Error copying file {src}: {ex.Message}");
                     }
                 });
             }
             // Also sync empty directories
             SyncEmptyDirectories(sourceFolder, targetFolder);
-            // Update folder metadata
             folderMetadata.Files = new Dictionary<string, FileMetadata>(newFileMetadata);
             folderMetadata.LastScanTime = DateTime.UtcNow;
             SaveSyncMetadata();
@@ -751,7 +695,7 @@ namespace RobustAccessDbSync
                 File.AppendAllLines(logPath, logLines);
             }
         }
-        
+
         static void SyncFilesBothDirections()
         {
             try
@@ -760,7 +704,6 @@ namespace RobustAccessDbSync
                 {
                     string logFilePath = Path.Combine(clientPath, "Configlog.ini");
                     string serverFolder = serverPath;
-                  //  var excludeList = new List<string>();
 
                     PrintInfo($"Starting optimized sync (since {_lastSyncTime:yyyy-MM-dd HH:mm:ss})");
 
@@ -768,9 +711,8 @@ namespace RobustAccessDbSync
                     {
                         if (!Directory.Exists(clientFolder)) continue;
 
-           
+
                         string clientFolderName = Path.GetFileName(clientFolder.TrimEnd(Path.DirectorySeparatorChar));
-                       // excludeList.Add(clientFolderName);
 
                         string correspondingServerFolder = Path.Combine(serverFolder, clientFolderName);
 
@@ -784,16 +726,15 @@ namespace RobustAccessDbSync
                         SyncFiles(correspondingServerFolder, clientFolder, logFilePath, "ServerToClient");
                     }
 
-                    // Save metadata after successful sync
                     SaveSyncMetadata();
                 }
             }
             catch (Exception ex)
             {
-                //PrintError($"[!] Error during sync: {ex.Message}");
+                PrintError($"[!] Error during sync: {ex.Message}");
             }
         }
-        
+
         static async Task ContinuousFileSync()
         {
             while (_syncRunning)
@@ -815,8 +756,8 @@ namespace RobustAccessDbSync
                         RunCommand($"net use {DRIVE_LETTER} /delete", false);
                         string connectCmd = $@"net use {DRIVE_LETTER} ""\\{SERVER_IP}\{SHARE_NAME}"" /user:""{USERNAME}"" ""{PASSWORD}"" /persistent:no";
 
-                       
-                        if (RunCommand(connectCmd,false))
+
+                        if (RunCommand(connectCmd, false))
                         {
                             SyncFilesBothDirections();
                             RunCommand($"net use {DRIVE_LETTER} /delete", false);
@@ -893,7 +834,7 @@ namespace RobustAccessDbSync
                 LastModified = fileInfo.LastWriteTimeUtc,
                 FileSize = fileInfo.Length,
                 FilePath = relativePath,
-                LastSyncTime = DateTime.UtcNow  // Add this property to track sync time
+                LastSyncTime = DateTime.UtcNow  
             };
         }
 
@@ -902,25 +843,14 @@ namespace RobustAccessDbSync
         {
             try
             {
-                // Get all directories recursively from the source folder
-                // SearchOption.AllDirectories means include all subdirectories
+              
                 var allDirectories = Directory.GetDirectories(sourceFolder, "*", SearchOption.AllDirectories);
 
-                // Process each directory found in the source
                 foreach (var sourceDir in allDirectories)
                 {
-                    // Get the relative path from the source root to this directory
-                    // Example: if sourceFolder = "C:\Client" and sourceDir = "C:\Client\Documents\Projects"
-                    // then relativePath = "Documents\Projects"
                     string relativePath = Path.GetRelativePath(sourceFolder, sourceDir);
-
-                    // Create the corresponding target directory path
-                    // Example: if targetFolder = "\\Server\Share" and relativePath = "Documents\Projects"
-                    // then targetDir = "\\Server\Share\Documents\Projects"
                     string targetDir = Path.Combine(targetFolder, relativePath);
 
-                    // Create directory in target if it doesn't exist
-                    // This ensures the folder structure is identical even for empty directories
                     if (!Directory.Exists(targetDir))
                     {
                         Directory.CreateDirectory(targetDir);
@@ -930,11 +860,10 @@ namespace RobustAccessDbSync
             }
             catch (Exception ex)
             {
-                // Handle any errors that occur during directory synchronization
                 PrintError($"Error syncing directories: {ex.Message}");
             }
         }
-        
+
         static void PrintHeader()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -986,6 +915,34 @@ namespace RobustAccessDbSync
                 Thread.Sleep(20);
             }
             Console.WriteLine();
+        }
+
+        public static string GetSafeDirectoryPath(string clientPath)
+        {
+            try
+            {
+                if (Path.HasExtension(clientPath))
+                {
+                    clientPath = Path.GetDirectoryName(clientPath);
+                }
+            }
+            catch (PathTooLongException)
+            {
+                Console.WriteLine("The specified path is too long.");
+
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("The specified path has an invalid format or contains illegal characters.");
+                clientPath = null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                
+            }
+
+            return clientPath;
         }
     }
 }

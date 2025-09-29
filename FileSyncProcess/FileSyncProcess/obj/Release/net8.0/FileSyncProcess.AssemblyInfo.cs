@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FileSyncProcess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+794aced1cacc8753c0ac265025dfaaf05db22a0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a256a615febc7db41bafb35aea6ff6c260bdcbfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("FileSyncProcess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FileSyncProcess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

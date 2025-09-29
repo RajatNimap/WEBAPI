@@ -29,16 +29,17 @@ namespace FFCCorp.Services
                         }
                         targetWorksheet.Cells.Clear();
                         
-                        int targetStartRow = 1;
+                        int targetStartRow = 3;
 
                         for (int k = 0; k < sourceFile.Workbook.Worksheets.Count; k++)
                         {
                            // Console.WriteLine(sourceFile.Workbook.Worksheets[k]);
+                            
                             var sourceWorksheet = sourceFile.Workbook.Worksheets[k];
                             string entity = sourceWorksheet.Cells["A1"].Text;
                             if (sourceWorksheet.Dimension == null) continue;
 
-                            int startRow = (k == 0 ? 5 : 7);
+                            //int startRow = (k == 0 ? 5 : 7);
                             int endRow = sourceWorksheet.Dimension.End.Row;
                             int endCol = sourceWorksheet.Dimension.End.Column;
 
@@ -47,11 +48,13 @@ namespace FFCCorp.Services
                             {
                                 continue;
                             }
-                            var range = sourceWorksheet.Cells[$"A{startRow}:F{endRow - 1}"];
+                            var range = sourceWorksheet.Cells[$"A7:F{endRow - 1}"];
                             var entityword = WordSplit(entity);
-                            int startentity = (targetStartRow == 1 ? 3 : targetStartRow);
-                            var rangeofentity = targetWorksheet.Cells[$"H{startentity}:H{startentity + (endRow - 8)}"];
+                            var rangeofentity = targetWorksheet.Cells[$"H{targetStartRow}:H{targetStartRow+range.Rows}"];
+                           //var rangeofentity = targetWorksheet.Cells[$"H{targetStartRow}:H{targetStartRow + (endRow - 8)}"];
+
                             rangeofentity.Value = entityword;
+
                             //var rangeofentity1 = targetWorksheet.Cells[$"J{startentity}:J{startentity + (endRow - 8)}"];
                             //rangeofentity1.Value = entityword; 
                             //for (int i = 1; i <= range.Rows; i++)
