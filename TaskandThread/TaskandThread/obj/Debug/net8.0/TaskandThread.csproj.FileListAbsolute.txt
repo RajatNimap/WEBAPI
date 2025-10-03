@@ -1,0 +1,15 @@
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\bin\Debug\net8.0\TaskandThread.exe
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\bin\Debug\net8.0\TaskandThread.deps.json
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\bin\Debug\net8.0\TaskandThread.runtimeconfig.json
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\bin\Debug\net8.0\TaskandThread.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\bin\Debug\net8.0\TaskandThread.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\TaskandThread.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\TaskandThread.AssemblyInfoInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\TaskandThread.AssemblyInfo.cs
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\TaskandThread.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\TaskandThread.sourcelink.json
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\TaskandThread.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\refint\TaskandThread.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\TaskandThread.pdb
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\TaskandThread.genruntimeconfig.cache
+C:\Users\Nimap\Desktop\Nimap-Learning\TaskandThread\TaskandThread\obj\Debug\net8.0\ref\TaskandThread.dll

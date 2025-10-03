@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\controllers\\basiccrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\controllers\\basiccrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\model\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\model\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\model\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|solutionrelative:crudoperation\\model\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{719BB88B-7C0C-49F5-894D-3E07093A2FD7}|Crudoperation\\Crudoperation.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\crudoperation\\crudoperation\\crudoperation.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
@@ -54,8 +54,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
@@ -70,13 +78,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BasicCrud.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Controllers\\BasicCrud.cs",
               "RelativeDocumentMoniker": "Crudoperation\\Controllers\\BasicCrud.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Controllers\\BasicCrud.cs",
               "RelativeToolTip": "Crudoperation\\Controllers\\BasicCrud.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAswBcAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAADg//////8rwBcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T05:24:36.083Z",
               "EditorCaption": ""
@@ -95,15 +103,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Crudoperation\\Data\\DataContext.cs",
               "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Data\\DataContext.cs",
               "RelativeToolTip": "Crudoperation\\Data\\DataContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAlwAsAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T05:05:14.793Z"
+              "WhenOpened": "2025-05-02T05:05:14.793Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -119,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Emp.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Model\\Emp.cs",
               "RelativeDocumentMoniker": "Crudoperation\\Model\\Emp.cs",
@@ -127,7 +136,8 @@
               "RelativeToolTip": "Crudoperation\\Model\\Emp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T04:44:28.338Z"
+              "WhenOpened": "2025-05-02T04:44:28.338Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -143,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\appsettings.json",
               "RelativeDocumentMoniker": "Crudoperation\\appsettings.json",
@@ -155,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Crudoperation\\Crudoperation\\Program.cs",
               "RelativeDocumentMoniker": "Crudoperation\\Program.cs",
