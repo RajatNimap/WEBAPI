@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\adonet\\adonet\\services\\employeeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|solutionrelative:adonet\\services\\employeeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\adonet\\adonet\\model\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|solutionrelative:adonet\\model\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\adonet\\adonet\\model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|solutionrelative:adonet\\model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\adonet\\adonet\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|solutionrelative:adonet\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\adonet\\adonet\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|solutionrelative:adonet\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\adonet\\adonet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|solutionrelative:adonet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\adonet\\adonet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|solutionrelative:adonet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\adonet\\adonet\\services\\iemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|solutionrelative:adonet\\services\\iemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\adonet\\adonet\\migrations\\20251014090759_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{050AA55C-5636-4581-A262-E60179EE932F}|AdoNet\\AdoNet.csproj|solutionrelative:adonet\\migrations\\20251014090759_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeServices.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Services\\EmployeeServices.cs",
+              "RelativeDocumentMoniker": "AdoNet\\Services\\EmployeeServices.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Services\\EmployeeServices.cs",
+              "RelativeToolTip": "AdoNet\\Services\\EmployeeServices.cs",
+              "ViewState": "AgIAACoAAACAy8zMzIwhwDwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T09:14:06.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "AdoNet\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "AdoNet\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwBIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T09:13:47.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Services\\IEmployee.cs",
+              "RelativeDocumentMoniker": "AdoNet\\Services\\IEmployee.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Services\\IEmployee.cs",
+              "RelativeToolTip": "AdoNet\\Services\\IEmployee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T09:10:54.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20251014090759_initial.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Migrations\\20251014090759_initial.cs",
+              "RelativeDocumentMoniker": "AdoNet\\Migrations\\20251014090759_initial.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Migrations\\20251014090759_initial.cs",
+              "RelativeToolTip": "AdoNet\\Migrations\\20251014090759_initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T09:07:59.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\DataContext.cs",
+              "RelativeDocumentMoniker": "AdoNet\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\DataContext.cs",
+              "RelativeToolTip": "AdoNet\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T09:00:55.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\appsettings.json",
+              "RelativeDocumentMoniker": "AdoNet\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\appsettings.json",
+              "RelativeToolTip": "AdoNet\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAB7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-14T08:58:22.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeModel.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Model\\EmployeeModel.cs",
+              "RelativeDocumentMoniker": "AdoNet\\Model\\EmployeeModel.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Model\\EmployeeModel.cs",
+              "RelativeToolTip": "AdoNet\\Model\\EmployeeModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowAYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T08:57:52.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Model\\Employee.cs",
+              "RelativeDocumentMoniker": "AdoNet\\Model\\Employee.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Model\\Employee.cs",
+              "RelativeToolTip": "AdoNet\\Model\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T08:56:23.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Program.cs",
+              "RelativeDocumentMoniker": "AdoNet\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\AdoNet\\AdoNet\\Program.cs",
+              "RelativeToolTip": "AdoNet\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T08:51:24.482Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

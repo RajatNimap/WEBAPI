@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ODBC_CONN")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66b331df074617f5cbaf7e5590cf69833d2be53b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64d0f10b47030ff4c89aac32f13727a504bcd573")]
 [assembly: System.Reflection.AssemblyProductAttribute("ODBC_CONN")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ODBC_CONN")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
