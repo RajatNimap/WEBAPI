@@ -35,7 +35,7 @@ builder.Services.AddScoped<AuditLog>();
 builder.Services.AddScoped<ResultFIlter>();
 
 builder.Services.AddExceptionHandler<AppExceptionalHandler>();
-builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<DataContext>(options => options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -61,7 +61,7 @@ var app = builder.Build();
     }
 
 app.UseHttpsRedirection();
-app.UseMiddleware<CustomMiddlewarebyDelegate>();
+//app.UseMiddleware<CustomMiddlewarebyDelegate>();
 //app.Use(async (context, next) =>
 //{
 //    Console.WriteLine("Console 1");

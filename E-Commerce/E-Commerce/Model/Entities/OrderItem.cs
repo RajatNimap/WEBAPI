@@ -11,12 +11,12 @@ namespace E_Commerce.Model.Entities
         //Foreign key of product
         public int ProductId { get; set; }
         [JsonIgnore]
-        public Product? Product { get; set; }  
+        public virtual Product? Product { get; set; }  
         
         //Foreign key for  order
         public int OrderId { get; set; }
         [JsonIgnore]
-        public Order Order { get; set; }
+        public virtual Order Order { get; set; }
 
     }
 }

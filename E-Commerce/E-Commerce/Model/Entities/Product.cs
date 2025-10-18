@@ -14,7 +14,7 @@ namespace E_Commerce.Model.Entities
         //foreign key
         public int CategoryID { get; set; }
         [JsonIgnore]
-        public Category? Category { get; set; }    
+        public virtual Category? Category { get; set; }    
 
     }
 }

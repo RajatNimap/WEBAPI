@@ -1,0 +1,11 @@
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\bin\Debug\net8.0\FOOD.MODEL.deps.json
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\bin\Debug\net8.0\FOOD.MODEL.dll
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\bin\Debug\net8.0\FOOD.MODEL.pdb
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\obj\Debug\net8.0\FOOD.MODEL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\obj\Debug\net8.0\FOOD.MODEL.AssemblyInfoInputs.cache
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\obj\Debug\net8.0\FOOD.MODEL.AssemblyInfo.cs
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\obj\Debug\net8.0\FOOD.MODEL.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\obj\Debug\net8.0\FOOD.MODEL.dll
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\obj\Debug\net8.0\refint\FOOD.MODEL.dll
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\obj\Debug\net8.0\FOOD.MODEL.pdb
+C:\Users\Nimap\Desktop\Food Management System\Food Management System\FOOD.MODEL\obj\Debug\net8.0\ref\FOOD.MODEL.dll

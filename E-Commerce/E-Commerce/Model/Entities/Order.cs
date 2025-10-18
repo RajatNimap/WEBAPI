@@ -11,9 +11,9 @@ namespace E_Commerce.Model.Entities
         //Foreign key
         public int UserId { get; set; }
         [JsonIgnore]
-        public User User { get; set; }
+        public virtual User User { get; set; }
         //Foreign key for user
-        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
     }
 }

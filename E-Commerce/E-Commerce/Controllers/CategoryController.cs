@@ -64,8 +64,13 @@ namespace E_Commerce.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetDataParticular(int id)
         {
-            var data = await Database.categories.Include(x => x.products.Where(p=>p.Soft_delete==0)).FirstOrDefaultAsync(x => x.Id == id);
+            //var data = await Database.categories.Include(x => x.products.Where(p=>p.Soft_delete==0)).FirstOrDefaultAsync(x => x.Id == id);
            // var newdata = await Database.categories.Select(x => x.Id == id);
+           var data= await Database.categories.FirstOrDefaultAsync(c => c.Id == id); 
+            foreach(var i in data.products)
+            {
+                Console.WriteLine(i.Name);
+            }
            
             if (data == null)
             {

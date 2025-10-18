@@ -6,7 +6,10 @@ namespace E_Commerce.Model.Entities
     {
         public int Id { get; set; }
         public required string Name { get; set; }
-        public ICollection<Product> products { get; set; } = new List<Product>();
+        public virtual ICollection<Product> products { get; set; } = new List<Product>();
+        
+
+        
 
     }
 

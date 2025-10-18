@@ -147,3 +147,5 @@ C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\BCr
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\Nimap\Desktop\Nimap-Learning\E-Commerce\E-Commerce\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
