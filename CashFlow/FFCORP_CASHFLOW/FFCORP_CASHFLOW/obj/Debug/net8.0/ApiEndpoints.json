@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "FFCORP_CASHFLOW.Controllers.ReportController",
+    "Method": "Cashflow",
+    "RelativePath": "api/Report/Yardi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

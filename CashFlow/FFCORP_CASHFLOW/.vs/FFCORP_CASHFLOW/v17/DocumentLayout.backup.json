@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1577DC39-37A7-424C-9FAA-89240191F242}|FFCORP_CASHFLOW\\FFCORP_CASHFLOW.csproj|c:\\users\\nimap\\desktop\\cashflow\\ffcorp_cashflow\\ffcorp_cashflow\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1577DC39-37A7-424C-9FAA-89240191F242}|FFCORP_CASHFLOW\\FFCORP_CASHFLOW.csproj|solutionrelative:ffcorp_cashflow\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{533AC88F-A578-49B9-ACD3-6AAC70EC1CA2}|FFCCorp.Services\\FFCCorp.Services.csproj|c:\\users\\nimap\\desktop\\cashflow\\ffcorp_cashflow\\ffccorp.services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{533AC88F-A578-49B9-ACD3-6AAC70EC1CA2}|FFCCorp.Services\\FFCCorp.Services.csproj|solutionrelative:ffccorp.services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1577DC39-37A7-424C-9FAA-89240191F242}|FFCORP_CASHFLOW\\FFCORP_CASHFLOW.csproj|c:\\users\\nimap\\desktop\\cashflow\\ffcorp_cashflow\\ffcorp_cashflow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1577DC39-37A7-424C-9FAA-89240191F242}|FFCORP_CASHFLOW\\FFCORP_CASHFLOW.csproj|solutionrelative:ffcorp_cashflow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{533AC88F-A578-49B9-ACD3-6AAC70EC1CA2}|FFCCorp.Services\\FFCCorp.Services.csproj|c:\\users\\nimap\\desktop\\cashflow\\ffcorp_cashflow\\ffccorp.services\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{533AC88F-A578-49B9-ACD3-6AAC70EC1CA2}|FFCCorp.Services\\FFCCorp.Services.csproj|solutionrelative:ffccorp.services\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\FFCORP_CASHFLOW\\Program.cs",
+              "RelativeDocumentMoniker": "FFCORP_CASHFLOW\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\FFCORP_CASHFLOW\\Program.cs",
+              "RelativeToolTip": "FFCORP_CASHFLOW\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T08:28:41.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IReportService.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\FFCCorp.Services\\IReportService.cs",
+              "RelativeDocumentMoniker": "FFCCorp.Services\\IReportService.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\FFCCorp.Services\\IReportService.cs",
+              "RelativeToolTip": "FFCCorp.Services\\IReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T08:28:32.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\FFCCorp.Services\\ReportService.cs",
+              "RelativeDocumentMoniker": "FFCCorp.Services\\ReportService.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\FFCCorp.Services\\ReportService.cs",
+              "RelativeToolTip": "FFCCorp.Services\\ReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T05:44:21.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\FFCORP_CASHFLOW\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "FFCORP_CASHFLOW\\Controllers\\ReportController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\FFCORP_CASHFLOW\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "FFCORP_CASHFLOW\\Controllers\\ReportController.cs",
+              "ViewState": "AgIAAAYAAABAZmZmZiYswBUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T05:44:17.569Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

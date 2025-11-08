@@ -1,0 +1,43 @@
+﻿
+@{
+	Layout = "_Layout2";
+}
+
+<div class="row g-4">
+    <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-primary">👨‍⚕️ Doctors</h5>
+                <p class="card-text">View doctor profiles, availability, and specialties.</p>
+                <a asp-controller="Doctors" asp-action="Index" class="btn btn-sm btn-primary">View Doctors</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">🧑‍🤝‍🧑 Patients</h5>
+                <p class="card-text">Register and manage patient information easily.</p>
+                <a asp-controller="Recap" asp-action="patients" class="btn btn-sm btn-success">Manage Patients</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-warning">📅 Appointments</h5>
+                <p class="card-text">Schedule and track appointments with doctors.</p>
+                <a asp-controller="Appointments" asp-action="Index" class="btn btn-sm btn-warning text-white">Appointments</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-danger">📊 Reports</h5>
+                <p class="card-text">Access hospital reports and dashboard insights.</p>
+                <a asp-controller="Reports" asp-action="Index" class="btn btn-sm btn-danger">View Reports</a>
+            </div>
+        </div>
+    </div>
+</div>

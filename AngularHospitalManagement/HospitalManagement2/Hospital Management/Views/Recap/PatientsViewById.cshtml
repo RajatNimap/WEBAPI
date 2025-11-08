@@ -1,0 +1,57 @@
+﻿@model Hospital_Management.Models.Entities.PatientsModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout2";    
+}
+
+@{
+    ViewData["Title"] = "Patient Details";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4 text-primary">👨‍⚕️ Patient Details</h2>
+
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3 fw-bold">Patient ID</dt>
+                <dd class="col-sm-9">@Model.Id</dd>
+
+                <dt class="col-sm-3 fw-bold">Name</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+                <dt class="col-sm-3 fw-bold">Age</dt>
+                <dd class="col-sm-9">@Model.Age</dd>
+
+                <dt class="col-sm-3 fw-bold">Phone</dt>
+                <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+                <dt class="col-sm-3 fw-bold">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3 fw-bold">Gender</dt>
+                <dd class="col-sm-9">@Model.Gender</dd>
+
+                <dt class="col-sm-3 fw-bold">Address</dt>
+                <dd class="col-sm-9">@Model.Address</dd>
+
+                <dt class="col-sm-3 fw-bold">Disease</dt>
+                <dd class="col-sm-9">@Model.Disease</dd>
+
+                <dt class="col-sm-3 fw-bold">Disease History</dt>
+                <dd class="col-sm-9">@Model.DiseaseHistory</dd>
+
+                <dt class="col-sm-3 fw-bold">Created Date</dt>
+                <dd class="col-sm-9">@Model.Createdate.ToString("dd-MMM-yyyy")</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4 text-center">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning me-2">Edit</a>
+        <a asp-action="GetPatients" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

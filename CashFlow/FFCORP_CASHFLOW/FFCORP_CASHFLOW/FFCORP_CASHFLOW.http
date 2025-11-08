@@ -1,0 +1,6 @@
+@FFCORP_CASHFLOW_HostAddress = http://localhost:5227
+
+GET {{FFCORP_CASHFLOW_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

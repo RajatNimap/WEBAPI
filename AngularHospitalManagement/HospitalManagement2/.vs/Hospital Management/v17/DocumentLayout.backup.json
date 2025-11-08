@@ -1,0 +1,163 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\angularhospitalmanagement\\hospitalmanagement2\\hospital management\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\angularhospitalmanagement\\hospitalmanagement2\\hospital management\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\angularhospitalmanagement\\hospitalmanagement2\\hospital management\\views\\home\\receplogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\views\\home\\receplogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\angularhospitalmanagement\\hospitalmanagement2\\hospital management\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\angularhospitalmanagement\\hospitalmanagement2\\hospital management\\models\\entitiesdto\\doctoravailibilitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entitiesdto\\doctoravailibilitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\angularhospitalmanagement\\hospitalmanagement2\\hospital management\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\angularhospitalmanagement\\hospitalmanagement2\\hospital management\\models\\entities\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\models\\entities\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\angularhospitalmanagement\\hospitalmanagement2\\hospital management\\migrations\\20250722045753_removesession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\migrations\\20250722045753_removesession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Hospital Management\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Hospital Management\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAcAAADg/////38pwDUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-03T06:36:38.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Views\\Home\\Register.cshtml",
+              "RelativeDocumentMoniker": "Hospital Management\\Views\\Home\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Views\\Home\\Register.cshtml",
+              "RelativeToolTip": "Hospital Management\\Views\\Home\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-03T06:36:35.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RecepLogin.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Views\\Home\\RecepLogin.cshtml",
+              "RelativeDocumentMoniker": "Hospital Management\\Views\\Home\\RecepLogin.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Views\\Home\\RecepLogin.cshtml",
+              "RelativeToolTip": "Hospital Management\\Views\\Home\\RecepLogin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-03T06:36:34.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Hospital Management\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Hospital Management\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-03T06:36:31.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DoctorAvailibilityDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Models\\EntitiesDto\\DoctorAvailibilityDTO.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\EntitiesDto\\DoctorAvailibilityDTO.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Models\\EntitiesDto\\DoctorAvailibilityDTO.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\EntitiesDto\\DoctorAvailibilityDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T06:36:27.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Data\\DataContext.cs",
+              "RelativeToolTip": "Hospital Management\\Data\\DataContext.cs",
+              "ViewState": "AgIAAAMAAACAMjMzMzMLwB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T06:35:20.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Register.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Models\\Entities\\Register.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Models\\Entities\\Register.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Models\\Entities\\Register.cs",
+              "RelativeToolTip": "Hospital Management\\Models\\Entities\\Register.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T05:45:01.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20250722045753_removesession.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Migrations\\20250722045753_removesession.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Migrations\\20250722045753_removesession.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\AngularHospitalManagement\\HospitalManagement2\\Hospital Management\\Migrations\\20250722045753_removesession.cs",
+              "RelativeToolTip": "Hospital Management\\Migrations\\20250722045753_removesession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T04:57:53.785Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

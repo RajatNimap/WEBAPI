@@ -1,0 +1,118 @@
+﻿@model Hospital_Management.Models.EntitiesDto.LoginDto;
+@{
+
+    Layout = "_Layout"; 
+}
+
+@{
+    if (!ViewData.ModelState.IsValid)
+    {
+        <div id="error" asp-validation-summary="All"
+             class="alert alert-danger"
+             role="alert">
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const errorEl = document.getElementById("error");
+
+                if (errorEl) {
+                    // Show initially
+                    errorEl.style.display = "block";
+
+                    setTimeout(() => {
+                        errorEl.style.transition = "opacity 0.5s ease";
+                        errorEl.style.opacity = "0";
+                        setTimeout(() => {
+                            errorEl.style.display = "none";
+                        }, 500); // matches fade duration
+                    }, 3000); // 👈 change this to any timestamp in ms
+                }
+            });
+        </script>
+    }
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-primary text-white text-center">
+                <h4 class="mb-0">Login</h4>
+            </div>
+            <div class="card-body">
+                <form id="loginForm"method="POST" asp-controller="Home" asp-action="Login" >
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email address</label>
+                        <input id="Email" name="Email" type="email" class="form-control" required />
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Password</label>
+                        <input id="Password" name="Password" type="password" class="form-control" required />
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-primary w-100" id="btn">Login</button>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <small>
+                    Don’t have an account? <a asp-action="Register" asp-controller="Home">Register here</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script
+{
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
+   
+}
+
+
+<script>    
+
+   // Here we are going for the Validation
+
+   // $(document).ready(function(){
+   //     $("#loginForm").submit(function(e){
+   //          let emailaddress = $("#Email").val().trim();
+   //          let pass=$("#Password").val().trim();
+   //          console.log(emailaddress,pass);
+   //          if(emailaddress == ""){
+   //              e.preventDefault();
+   //              $("#error").text("email address is Required")
+   //          }else if(pass == ""){
+   //                e.preventDefault();
+   //               $("#error").text("password  is Required");
+
+   //          }else{
+   //                  $("#error").text("");
+   //          }
+
+
+   //     })
+
+
+   // })
+
+   // $(document).ready(function(){
+
+   //    if ($.trim($("#error").text()).length > 0) {
+   //   $("#error")
+   //     .fadeIn()
+   //     .delay(3000)   // keep visible for 3 seconds
+   //     .fadeOut();
+
+   //  })
+
+
+</script>
+
+
+

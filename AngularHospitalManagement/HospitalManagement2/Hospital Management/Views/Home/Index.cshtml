@@ -1,0 +1,80 @@
+﻿@{
+
+    Layout = "_Layout";
+}
+
+
+@if(TempData["ErrorMessage"] != null)
+{
+    <div id="log" class="" >
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="row g-4">
+    <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-primary">👨‍⚕️ Doctors</h5>
+                <p class="card-text">View doctor profiles, availability, and specialties.</p>
+                <a asp-controller="Doctors" asp-action="Index" class="btn btn-sm btn-primary">View Doctors</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">🧑‍🤝‍🧑 Patients</h5>
+                <p class="card-text">Register and manage patient information easily.</p>
+                <a asp-controller="Patients" asp-action="Index" class="btn btn-sm btn-success">Manage Patients</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-warning">📅 Appointments</h5>
+                <p class="card-text">Schedule and track appointments with doctors.</p>
+                <a asp-controller="Appointments" asp-action="Index" class="btn btn-sm btn-warning text-white">Appointments</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-danger">📊 Reports</h5>
+                <p class="card-text">Access hospital reports and dashboard insights.</p>
+                <a asp-controller="Reports" asp-action="Index" class="btn btn-sm btn-danger">View Reports</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="mt-5 p-4 bg-white rounded shadow-sm">
+    <h2 class="fw-bold text-primary">About Our System</h2>
+    <p class="text-muted">
+        Our Hospital Management System helps streamline hospital operations —
+        from managing patient records to scheduling doctor appointments,
+        handling billing, and generating reports. Built for efficiency, security,
+        and ease of use.
+    </p>
+</div>
+@section script {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+		$(document).ready(function () {
+			// Check if there is a log message
+			if ($.trim($("#log").text()).length > 0) {
+
+			   console.log("Log message found:", $("#log").text());
+                   $("#log")
+                .addClass("alert alert-success") // Add Bootstrap alert class
+                    .fadeIn()
+                    .delay(3000)
+                    .fadeOut();
+
+			}
+		});
+    </script>
+}
