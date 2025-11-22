@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jpdbuIfhC6U=",
+  "dgSpecHash": "gedyb34D3zk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nimap\\Desktop\\CashFlow\\FFCORP_CASHFLOW\\FFCCorp.Services\\FFCCorp.Services.csproj",
+  "projectFilePath": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\CashFlow\\FFCORP_CASHFLOW\\FFCCorp.Services\\FFCCorp.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nimap\\.nuget\\packages\\epplus\\8.2.0\\epplus.8.2.0.nupkg.sha512",
     "C:\\Users\\Nimap\\.nuget\\packages\\epplus.interfaces\\8.1.0\\epplus.interfaces.8.1.0.nupkg.sha512",

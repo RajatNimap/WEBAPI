@@ -1,9 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\HospitalManagement2\\",
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\HospitalManagement2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\hospitalmanagement2\\hospital management\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\webapi\\hospitalmanagement2\\hospital management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\IIS\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\bin\\Release\\net8.0\\publish\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|c:\\users\\nimap\\desktop\\webapi\\hospitalmanagement2\\hospital management\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{99A3DF45-DC3C-424B-BE06-FE44AE961F2A}|Hospital Management\\Hospital Management.csproj|solutionrelative:hospital management\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -14,28 +27,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.306\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAMwAgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-11-13T11:31:31.369Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\HospitalManagement2\\Hospital Management\\Program.cs",
+              "RelativeDocumentMoniker": "Hospital Management\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\HospitalManagement2\\Hospital Management\\Program.cs",
+              "RelativeToolTip": "Hospital Management\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T11:31:17.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "web.config",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\IIS\\web.config",
+              "RelativeDocumentMoniker": "..\\..\\IIS\\web.config",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\IIS\\web.config",
+              "RelativeToolTip": "..\\..\\IIS\\web.config",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-05T06:38:08.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "web.config",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\bin\\Release\\net8.0\\publish\\web.config",
+              "RelativeDocumentMoniker": "..\\..\\Nimap-Learning\\MvcLearning\\MvcLearning\\bin\\Release\\net8.0\\publish\\web.config",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\MvcLearning\\MvcLearning\\bin\\Release\\net8.0\\publish\\web.config",
+              "RelativeToolTip": "..\\..\\Nimap-Learning\\MvcLearning\\MvcLearning\\bin\\Release\\net8.0\\publish\\web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-05T06:36:42.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\HospitalManagement2\\Hospital Management\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\HospitalManagement2\\Hospital Management\\appsettings.json",
               "RelativeDocumentMoniker": "Hospital Management\\appsettings.json",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\HospitalManagement2\\Hospital Management\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\HospitalManagement2\\Hospital Management\\appsettings.json",
               "RelativeToolTip": "Hospital Management\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-05T04:50:46.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-05T04:50:46.173Z"
             }
           ]
         }

@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\",
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\E-Commerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\e-commerce\\e-commerce\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\webapi\\e-commerce\\e-commerce\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\nimap-learning\\e-commerce\\e-commerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\webapi\\e-commerce\\e-commerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\webapi\\e-commerce\\e-commerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|c:\\users\\nimap\\desktop\\webapi\\e-commerce\\e-commerce\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B547C59-840C-4642-BE5C-147D8A0A6A31}|E-Commerce\\E-Commerce.csproj|solutionrelative:e-commerce\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,41 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\Controllers\\CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\E-Commerce\\E-Commerce\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "E-Commerce\\Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\E-Commerce\\E-Commerce\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "E-Commerce\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAACIAAACAmZmZmRktwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAEwDUAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T09:09:05.154Z",
+              "WhenOpened": "2025-11-08T07:30:07.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\E-Commerce\\E-Commerce\\appsettings.json",
+              "RelativeDocumentMoniker": "E-Commerce\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\E-Commerce\\E-Commerce\\appsettings.json",
+              "RelativeToolTip": "E-Commerce\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-08T07:29:27.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\E-Commerce\\E-Commerce\\Program.cs",
               "RelativeDocumentMoniker": "E-Commerce\\Program.cs",
-              "ToolTip": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\E-Commerce\\E-Commerce\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\E-Commerce\\E-Commerce\\Program.cs",
               "RelativeToolTip": "E-Commerce\\Program.cs",
-              "ViewState": "AgIAABsAAACA/////78twAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T11:08:21.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T07:29:14.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Helper.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\E-Commerce\\E-Commerce\\Helper.cs",
+              "RelativeDocumentMoniker": "E-Commerce\\Helper.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\E-Commerce\\E-Commerce\\Helper.cs",
+              "RelativeToolTip": "E-Commerce\\Helper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T07:29:13.314Z"
             }
           ]
         }

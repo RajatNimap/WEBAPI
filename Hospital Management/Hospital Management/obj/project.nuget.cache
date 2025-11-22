@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I6PjcquMdXU=",
+  "dgSpecHash": "Ovpwp9PsTGo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nimap\\Desktop\\Nimap-Learning\\Hospital Management\\Hospital Management\\Hospital Management.csproj",
+  "projectFilePath": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Hospital Management\\Hospital Management\\Hospital Management.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nimap\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Nimap\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -1,0 +1,534 @@
+2025-11-13 17:03:54.730 +05:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-11-13 17:03:55.047 +05:30 [DBG] Hosting starting
+2025-11-13 17:03:55.128 +05:30 [INF] User profile is available. Using 'C:\Users\Nimap\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-13 17:03:55.143 +05:30 [DBG] Reading data from file 'C:\Users\Nimap\AppData\Local\ASP.NET\DataProtection-Keys\key-fa57760b-5756-496c-94d9-4b75353bd6b9.xml'.
+2025-11-13 17:03:55.179 +05:30 [DBG] Found key {fa57760b-5756-496c-94d9-4b75353bd6b9}.
+2025-11-13 17:03:55.201 +05:30 [DBG] Considering key {fa57760b-5756-496c-94d9-4b75353bd6b9} with expiration date 2026-02-06 05:36:32Z as default key.
+2025-11-13 17:03:55.207 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-13 17:03:55.210 +05:30 [DBG] Decrypting secret element using Windows DPAPI.
+2025-11-13 17:03:55.213 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-13 17:03:55.221 +05:30 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-11-13 17:03:55.224 +05:30 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-11-13 17:03:55.229 +05:30 [DBG] Using key {fa57760b-5756-496c-94d9-4b75353bd6b9} as the default key.
+2025-11-13 17:03:55.232 +05:30 [DBG] Key ring with default key {fa57760b-5756-496c-94d9-4b75353bd6b9} was loaded during application startup.
+2025-11-13 17:03:55.246 +05:30 [DBG] Middleware loaded
+2025-11-13 17:03:55.250 +05:30 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16523 B).
+2025-11-13 17:03:55.254 +05:30 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-11-13 17:03:55.455 +05:30 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-11-13 17:03:55.687 +05:30 [DBG] Connection id "0HNH2L23OFLD5" accepted.
+2025-11-13 17:03:55.689 +05:30 [INF] Now listening on: https://localhost:7198
+2025-11-13 17:03:55.690 +05:30 [DBG] Connection id "0HNH2L23OFLD5" started.
+2025-11-13 17:03:55.690 +05:30 [INF] Now listening on: http://localhost:5105
+2025-11-13 17:03:55.693 +05:30 [DBG] Loaded hosting startup assembly Hospital Management
+2025-11-13 17:03:55.695 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-11-13 17:03:55.696 +05:30 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-11-13 17:03:55.697 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-11-13 17:03:55.721 +05:30 [DBG] Connection id "0HNH2L23OFLD5" received FIN.
+2025-11-13 17:03:55.738 +05:30 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-11-13 17:03:55.815 +05:30 [DBG] Connection id "0HNH2L23OFLD5" stopped.
+2025-11-13 17:03:55.820 +05:30 [DBG] Connection id "0HNH2L23OFLD5" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-11-13 17:03:55.865 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-13 17:03:55.867 +05:30 [INF] Hosting environment: Development
+2025-11-13 17:03:55.868 +05:30 [INF] Content root path: C:\Users\Nimap\Desktop\WEBAPI\Hospital Management\Hospital Management
+2025-11-13 17:03:55.870 +05:30 [DBG] Hosting started
+2025-11-13 17:03:56.296 +05:30 [DBG] Connection id "0HNH2L23OFLD6" accepted.
+2025-11-13 17:03:56.298 +05:30 [DBG] Connection id "0HNH2L23OFLD6" started.
+2025-11-13 17:03:56.383 +05:30 [DBG] Connection 0HNH2L23OFLD6 established using the following protocol: "Tls12"
+2025-11-13 17:03:56.499 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger - null null
+2025-11-13 17:03:56.742 +05:30 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-11-13 17:03:56.795 +05:30 [DBG] No candidates found for the request path '/swagger'
+2025-11-13 17:03:56.803 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 17:03:56.832 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger - 301 0 null 339.63ms
+2025-11-13 17:03:56.847 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/index.html - null null
+2025-11-13 17:03:56.870 +05:30 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-11-13 17:03:56.873 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 17:03:56.989 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-11-13 17:03:56.996 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-11-13 17:03:57.045 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/swagger-ui.css - null null
+2025-11-13 17:03:57.158 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-13 17:03:57.163 +05:30 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2025-11-13 17:03:57.050 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/swagger-ui-bundle.js - null null
+2025-11-13 17:03:57.180 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 17:03:57.045 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/swagger-ui-standalone-preset.js - null null
+2025-11-13 17:03:57.162 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/_vs/browserLink - null null
+2025-11-13 17:03:57.191 +05:30 [DBG] No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2025-11-13 17:03:57.199 +05:30 [DBG] No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2025-11-13 17:03:57.210 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 17:03:57.215 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 17:03:57.171 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2025-11-13 17:03:57.190 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-11-13 17:03:57.240 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2025-11-13 17:03:57.253 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/_framework/aspnetcore-browser-refresh.js - 200 16523 application/javascript; charset=utf-8 96.58ms
+2025-11-13 17:03:57.254 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/index.html - 200 null text/html;charset=utf-8 407.3109ms
+2025-11-13 17:03:57.381 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-11-13 17:03:57.381 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-11-13 17:03:57.434 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/swagger-ui.css - 200 152034 text/css 388.6241ms
+2025-11-13 17:03:57.444 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 398.2332ms
+2025-11-13 17:03:57.472 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-11-13 17:03:57.484 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/_vs/browserLink - 200 null text/javascript; charset=UTF-8 324.9292ms
+2025-11-13 17:03:57.486 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 439.098ms
+2025-11-13 17:03:57.749 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/v1/swagger.json - null null
+2025-11-13 17:03:57.753 +05:30 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-11-13 17:03:57.755 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 17:03:57.782 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/favicon-32x32.png - null null
+2025-11-13 17:03:57.786 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.3079ms
+2025-11-13 17:03:57.788 +05:30 [DBG] No candidates found for the request path '/swagger/favicon-32x32.png'
+2025-11-13 17:03:57.794 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 17:03:57.796 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-11-13 17:03:57.798 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/favicon-32x32.png - 200 628 image/png 16.0319ms
+2025-11-13 17:03:57.986 +05:30 [DBG] Connection id "0HNH2L23OFLD6" received FIN.
+2025-11-13 17:03:57.991 +05:30 [DBG] The connection queue processing loop for 0HNH2L23OFLD6 completed.
+2025-11-13 17:03:57.994 +05:30 [DBG] Connection id "0HNH2L23OFLD6" is closed. The last processed stream ID was 17.
+2025-11-13 17:03:57.996 +05:30 [DBG] Connection id "0HNH2L23OFLD6" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-11-13 17:03:58.000 +05:30 [DBG] Connection id "0HNH2L23OFLD6" stopped.
+2025-11-13 17:37:20.631 +05:30 [DBG] Connection id "0HNH2L23OFLD7" accepted.
+2025-11-13 17:37:20.637 +05:30 [DBG] Connection id "0HNH2L23OFLD7" started.
+2025-11-13 17:37:20.648 +05:30 [DBG] Connection 0HNH2L23OFLD7 established using the following protocol: "Tls12"
+2025-11-13 17:37:20.658 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7198/api/Authentication/Login - application/json 55
+2025-11-13 17:37:20.664 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/Login'
+2025-11-13 17:37:20.667 +05:30 [DBG] Endpoint 'Hospital_Management.Controllers.AuthenticationController.LoginUser (Hospital Management)' with route pattern 'api/Authentication/Login' is valid for the request path '/api/Authentication/Login'
+2025-11-13 17:37:20.670 +05:30 [DBG] Request matched endpoint 'Hospital_Management.Controllers.AuthenticationController.LoginUser (Hospital Management)'
+2025-11-13 17:37:20.673 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-11-13 17:37:20.684 +05:30 [INF] handling request POST /api/Authentication/Login GUID 2452556d-bc12-4648-9735-7d4da0ace35b 11/13/2025 5:37:20 PM 
+2025-11-13 17:37:20.825 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-11-13 17:37:20.833 +05:30 [INF] Executing endpoint 'Hospital_Management.Controllers.AuthenticationController.LoginUser (Hospital Management)'
+2025-11-13 17:37:20.876 +05:30 [INF] Route matched with {action = "LoginUser", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginUser(Hospital_Management.Models.EntitiesDto.LoginDto) on controller Hospital_Management.Controllers.AuthenticationController (Hospital Management).
+2025-11-13 17:37:20.882 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-11-13 17:37:20.883 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-11-13 17:37:20.885 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-11-13 17:37:20.887 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-11-13 17:37:20.890 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-11-13 17:37:20.894 +05:30 [DBG] Executing controller factory for controller Hospital_Management.Controllers.AuthenticationController (Hospital Management)
+2025-11-13 17:37:21.099 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-11-13 17:37:21.126 +05:30 [DBG] Executed controller factory for controller Hospital_Management.Controllers.AuthenticationController (Hospital Management)
+2025-11-13 17:37:21.156 +05:30 [DBG] Attempting to bind parameter 'loginDto' of type 'Hospital_Management.Models.EntitiesDto.LoginDto' ...
+2025-11-13 17:37:21.160 +05:30 [DBG] Attempting to bind parameter 'loginDto' of type 'Hospital_Management.Models.EntitiesDto.LoginDto' using the name '' in request data ...
+2025-11-13 17:37:21.164 +05:30 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-11-13 17:37:21.177 +05:30 [DBG] Connection id "0HNH2L23OFLD7", Request id "0HNH2L23OFLD7:00000001": started reading request body.
+2025-11-13 17:37:21.180 +05:30 [DBG] Connection id "0HNH2L23OFLD7", Request id "0HNH2L23OFLD7:00000001": done reading request body.
+2025-11-13 17:37:21.194 +05:30 [DBG] JSON input formatter succeeded, deserializing to type 'Hospital_Management.Models.EntitiesDto.LoginDto'
+2025-11-13 17:37:21.196 +05:30 [DBG] Done attempting to bind parameter 'loginDto' of type 'Hospital_Management.Models.EntitiesDto.LoginDto'.
+2025-11-13 17:37:21.198 +05:30 [DBG] Done attempting to bind parameter 'loginDto' of type 'Hospital_Management.Models.EntitiesDto.LoginDto'.
+2025-11-13 17:37:21.200 +05:30 [DBG] Attempting to validate the bound parameter 'loginDto' of type 'Hospital_Management.Models.EntitiesDto.LoginDto' ...
+2025-11-13 17:37:21.213 +05:30 [DBG] Done attempting to validate the bound parameter 'loginDto' of type 'Hospital_Management.Models.EntitiesDto.LoginDto'.
+2025-11-13 17:37:22.139 +05:30 [DBG] Entity Framework Core 8.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.0' with options: None
+2025-11-13 17:37:22.228 +05:30 [DBG] Compiling query expression: 
+'DbSet<Register>()
+    .FirstOrDefault(x => x.Email == __email_0)'
+2025-11-13 17:37:22.423 +05:30 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Register>(
+    asyncEnumerable: new SingleQueryingEnumerable<Register>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Register.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Register.Email (string) Required, 1], [Property: Register.Password (string) Required, 2], [Property: Register.Role (string) Required, 3], [Property: Register.Username (string) Required, 4] }
+            SELECT TOP(1) r.Id, r.Email, r.Password, r.Role, r.Username
+            FROM registers AS r
+            WHERE r.Email == @__email_0), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Register>, 
+        Hospital_Management.Data.DataContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-11-13 17:37:22.475 +05:30 [DBG] Creating DbConnection.
+2025-11-13 17:37:22.503 +05:30 [DBG] Created DbConnection. (30ms).
+2025-11-13 17:37:22.513 +05:30 [DBG] Opening connection to database 'HospitalDB' on server 'DESKTOP-BQ5HJVF'.
+2025-11-13 17:37:38.062 +05:30 [ERR] An error occurred using the connection to database 'HospitalDB' on server 'DESKTOP-BQ5HJVF'.
+2025-11-13 17:37:38.078 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Hospital_Management.Data.DataContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2025-11-13 17:37:38.306 +05:30 [INF] Executed action Hospital_Management.Controllers.AuthenticationController.LoginUser (Hospital Management) in 17411.6376ms
+2025-11-13 17:37:38.318 +05:30 [INF] Executed endpoint 'Hospital_Management.Controllers.AuthenticationController.LoginUser (Hospital Management)'
+2025-11-13 17:37:38.448 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Hospital_Management.Interfaces.Implementation.AuthenticationImplementation.Login(String email, String password) in C:\Users\Nimap\Desktop\WEBAPI\Hospital Management\Hospital Management\Interfaces\Implementation\AuthenticationImplementaion.cs:line 41
+   at Hospital_Management.Controllers.AuthenticationController.LoginUser(LoginDto loginDto) in C:\Users\Nimap\Desktop\WEBAPI\Hospital Management\Hospital Management\Controllers\AuthenticationController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Hospital_Management.Middleware.LoggingMiddleware.Invoke(HttpContext context) in C:\Users\Nimap\Desktop\WEBAPI\Hospital Management\Hospital Management\Middleware\LoggingMiddleware.cs:line 46
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2025-11-13 17:37:38.567 +05:30 [DBG] 'DataContext' disposed.
+2025-11-13 17:37:38.576 +05:30 [DBG] Disposing connection to database 'HospitalDB' on server 'DESKTOP-BQ5HJVF'.
+2025-11-13 17:37:38.583 +05:30 [DBG] Disposed connection to database '' on server '' (3ms).
+2025-11-13 17:37:38.585 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7198/api/Authentication/Login - 500 null text/plain; charset=utf-8 17927.5948ms
+2025-11-13 17:40:37.315 +05:30 [DBG] Config reload token fired. Checking for changes...
+2025-11-13 17:40:37.582 +05:30 [DBG] Config reload token fired. Checking for changes...
+2025-11-13 17:40:37.926 +05:30 [DBG] Config reload token fired. Checking for changes...
+2025-11-13 17:40:38.192 +05:30 [DBG] Config reload token fired. Checking for changes...
+2025-11-13 17:40:38.463 +05:30 [DBG] Config reload token fired. Checking for changes...
+2025-11-13 17:40:53.435 +05:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-11-13 17:40:53.571 +05:30 [DBG] Hosting starting
+2025-11-13 17:40:53.619 +05:30 [INF] User profile is available. Using 'C:\Users\Nimap\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-13 17:40:53.626 +05:30 [DBG] Reading data from file 'C:\Users\Nimap\AppData\Local\ASP.NET\DataProtection-Keys\key-fa57760b-5756-496c-94d9-4b75353bd6b9.xml'.
+2025-11-13 17:40:53.641 +05:30 [DBG] Found key {fa57760b-5756-496c-94d9-4b75353bd6b9}.
+2025-11-13 17:40:53.651 +05:30 [DBG] Considering key {fa57760b-5756-496c-94d9-4b75353bd6b9} with expiration date 2026-02-06 05:36:32Z as default key.
+2025-11-13 17:40:53.655 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-13 17:40:53.658 +05:30 [DBG] Decrypting secret element using Windows DPAPI.
+2025-11-13 17:40:53.660 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-13 17:40:53.666 +05:30 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-11-13 17:40:53.670 +05:30 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-11-13 17:40:53.673 +05:30 [DBG] Using key {fa57760b-5756-496c-94d9-4b75353bd6b9} as the default key.
+2025-11-13 17:40:53.675 +05:30 [DBG] Key ring with default key {fa57760b-5756-496c-94d9-4b75353bd6b9} was loaded during application startup.
+2025-11-13 17:40:53.684 +05:30 [DBG] Middleware loaded
+2025-11-13 17:40:53.687 +05:30 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16523 B).
+2025-11-13 17:40:53.689 +05:30 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-11-13 17:40:53.854 +05:30 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-11-13 17:40:53.964 +05:30 [INF] Now listening on: https://localhost:7198
+2025-11-13 17:40:53.967 +05:30 [INF] Now listening on: http://localhost:5105
+2025-11-13 17:40:53.969 +05:30 [DBG] Loaded hosting startup assembly Hospital Management
+2025-11-13 17:40:53.972 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-11-13 17:40:53.974 +05:30 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-11-13 17:40:53.975 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-11-13 17:40:53.978 +05:30 [DBG] Connection id "0HNH2LMOROK0S" accepted.
+2025-11-13 17:40:53.978 +05:30 [DBG] Connection id "0HNH2LMOROK0T" accepted.
+2025-11-13 17:40:53.980 +05:30 [DBG] Connection id "0HNH2LMOROK0S" started.
+2025-11-13 17:40:53.983 +05:30 [DBG] Connection id "0HNH2LMOROK0T" started.
+2025-11-13 17:40:53.992 +05:30 [DBG] Connection id "0HNH2LMOROK0S" received FIN.
+2025-11-13 17:40:53.992 +05:30 [DBG] Connection id "0HNH2LMOROK0T" received FIN.
+2025-11-13 17:40:54.012 +05:30 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-11-13 17:40:54.012 +05:30 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-11-13 17:40:54.058 +05:30 [DBG] Connection id "0HNH2LMOROK0T" stopped.
+2025-11-13 17:40:54.058 +05:30 [DBG] Connection id "0HNH2LMOROK0S" stopped.
+2025-11-13 17:40:54.065 +05:30 [DBG] Connection id "0HNH2LMOROK0S" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-11-13 17:40:54.065 +05:30 [DBG] Connection id "0HNH2LMOROK0T" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-11-13 17:40:54.118 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-13 17:40:54.120 +05:30 [INF] Hosting environment: Development
+2025-11-13 17:40:54.123 +05:30 [INF] Content root path: C:\Users\Nimap\Desktop\WEBAPI\Hospital Management\Hospital Management
+2025-11-13 17:40:54.124 +05:30 [DBG] Hosting started
+2025-11-13 17:40:54.229 +05:30 [DBG] Connection id "0HNH2LMOROK0U" accepted.
+2025-11-13 17:40:54.232 +05:30 [DBG] Connection id "0HNH2LMOROK0U" started.
+2025-11-13 17:40:54.374 +05:30 [DBG] Connection 0HNH2LMOROK0U established using the following protocol: "Tls12"
+2025-11-13 17:40:54.526 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/index.html - null null
+2025-11-13 17:40:54.693 +05:30 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-11-13 17:40:54.717 +05:30 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-11-13 17:40:54.721 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 17:40:54.779 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-11-13 17:40:54.786 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-11-13 17:40:54.815 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2025-11-13 17:40:54.818 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2025-11-13 17:40:54.822 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/index.html - 200 null text/html;charset=utf-8 303.2135ms
+2025-11-13 17:40:54.837 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/_vs/browserLink - null null
+2025-11-13 17:40:54.837 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-13 17:40:54.870 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-11-13 17:40:54.874 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/_framework/aspnetcore-browser-refresh.js - 200 16523 application/javascript; charset=utf-8 37.3848ms
+2025-11-13 17:40:55.456 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/_vs/browserLink - 200 null text/javascript; charset=UTF-8 618.8199ms
+2025-11-13 17:40:55.599 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/v1/swagger.json - null null
+2025-11-13 17:40:55.607 +05:30 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-11-13 17:40:55.610 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 17:40:55.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 40.1008ms
+2025-11-13 17:41:06.929 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/api/Doctor - null null
+2025-11-13 17:41:06.940 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Doctor'
+2025-11-13 17:41:06.948 +05:30 [DBG] Endpoint 'Hospital_Management.Controllers.DoctorController.GetData (Hospital Management)' with route pattern 'api/Doctor' is valid for the request path '/api/Doctor'
+2025-11-13 17:41:06.956 +05:30 [DBG] Request matched endpoint 'Hospital_Management.Controllers.DoctorController.GetData (Hospital Management)'
+2025-11-13 17:41:06.960 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-11-13 17:41:06.969 +05:30 [INF] handling request GET /api/Doctor GUID 36cf8f44-7caf-40ff-b322-0cc0fa38b010 11/13/2025 5:41:06 PM 
+2025-11-13 17:41:07.055 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-11-13 17:41:07.065 +05:30 [INF] Executing endpoint 'Hospital_Management.Controllers.DoctorController.GetData (Hospital Management)'
+2025-11-13 17:41:07.104 +05:30 [INF] Route matched with {action = "GetData", controller = "Doctor"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetData() on controller Hospital_Management.Controllers.DoctorController (Hospital Management).
+2025-11-13 17:41:07.114 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-11-13 17:41:07.118 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-11-13 17:41:07.123 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-11-13 17:41:07.125 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-11-13 17:41:07.127 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-11-13 17:41:07.132 +05:30 [DBG] Executing controller factory for controller Hospital_Management.Controllers.DoctorController (Hospital Management)
+2025-11-13 17:41:07.290 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-11-13 17:41:07.321 +05:30 [DBG] Executed controller factory for controller Hospital_Management.Controllers.DoctorController (Hospital Management)
+2025-11-13 17:41:08.435 +05:30 [DBG] Entity Framework Core 8.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.0' with options: None
+2025-11-13 17:41:08.489 +05:30 [DBG] Compiling query expression: 
+'DbSet<Doctors>()'
+2025-11-13 17:41:08.761 +05:30 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Doctors>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Doctors.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Doctors.DepartmentId (int) Required FK Index, 1], [Property: Doctors.Email (string) Required, 2], [Property: Doctors.IsActive (bool) Required, 3], [Property: Doctors.IsCreated (DateTime) Required, 4], [Property: Doctors.Name (string) Required, 5], [Property: Doctors.Phoneno (long) Required, 6], [Property: Doctors.Specialization (string) Required, 7] }
+        SELECT d.Id, d.DepartmentId, d.Email, d.IsActive, d.IsCreated, d.Name, d.Phoneno, d.Specialization
+        FROM doctors AS d), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Doctors>, 
+    Hospital_Management.Data.DataContext, 
+    False, 
+    False, 
+    True
+)'
+2025-11-13 17:41:08.816 +05:30 [DBG] Creating DbConnection.
+2025-11-13 17:41:08.850 +05:30 [DBG] Created DbConnection. (32ms).
+2025-11-13 17:41:08.856 +05:30 [DBG] Opening connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 17:41:09.237 +05:30 [DBG] Opened connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 17:41:09.246 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-11-13 17:41:09.262 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (13ms).
+2025-11-13 17:41:09.269 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (24ms).
+2025-11-13 17:41:09.289 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DepartmentId], [d].[Email], [d].[IsActive], [d].[IsCreated], [d].[Name], [d].[Phoneno], [d].[Specialization]
+FROM [doctors] AS [d]
+2025-11-13 17:41:09.458 +05:30 [INF] Executed DbCommand (167ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DepartmentId], [d].[Email], [d].[IsActive], [d].[IsCreated], [d].[Name], [d].[Phoneno], [d].[Specialization]
+FROM [doctors] AS [d]
+2025-11-13 17:41:09.556 +05:30 [DBG] Context 'DataContext' started tracking 'Doctors' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-11-13 17:41:09.619 +05:30 [DBG] Closing data reader to 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 17:41:09.631 +05:30 [DBG] A data reader for 'HospitalDB' on server 'DESKTOP-4J2QI9T' is being disposed after spending 157ms reading results.
+2025-11-13 17:41:09.638 +05:30 [DBG] Closing connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 17:41:09.649 +05:30 [DBG] Closed connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T' (10ms).
+2025-11-13 17:41:09.662 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-11-13 17:41:09.672 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-11-13 17:41:09.675 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-11-13 17:41:09.677 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-11-13 17:41:09.684 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-11-13 17:41:09.689 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital_Management.Models.Entities.Doctors, Hospital Management, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-13 17:41:09.723 +05:30 [INF] Executed action Hospital_Management.Controllers.DoctorController.GetData (Hospital Management) in 2587.2336ms
+2025-11-13 17:41:09.732 +05:30 [INF] Executed endpoint 'Hospital_Management.Controllers.DoctorController.GetData (Hospital Management)'
+2025-11-13 17:41:09.736 +05:30 [INF] finished handling request GET /api/Doctor with status code 200  GUID 36cf8f44-7caf-40ff-b322-0cc0fa38b010 11/13/2025 5:41:09 PM  2772
+2025-11-13 17:41:09.744 +05:30 [DBG] 'DataContext' disposed.
+2025-11-13 17:41:09.752 +05:30 [DBG] Disposing connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 17:41:09.757 +05:30 [DBG] Disposed connection to database '' on server '' (6ms).
+2025-11-13 17:41:09.762 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/api/Doctor - 200 null application/json; charset=utf-8 2834.6607ms
+2025-11-13 17:41:15.660 +05:30 [DBG] Connection id "0HNH2LMOROK0U" received FIN.
+2025-11-13 17:41:15.666 +05:30 [DBG] Connection id "0HNH2LMOROK0U" is closed. The last processed stream ID was 9.
+2025-11-13 17:41:15.667 +05:30 [DBG] The connection queue processing loop for 0HNH2LMOROK0U completed.
+2025-11-13 17:41:15.670 +05:30 [DBG] Connection id "0HNH2LMOROK0U" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-11-13 17:41:15.698 +05:30 [DBG] Connection id "0HNH2LMOROK0U" stopped.
+2025-11-13 18:02:32.037 +05:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-11-13 18:02:32.194 +05:30 [DBG] Hosting starting
+2025-11-13 18:02:32.280 +05:30 [INF] User profile is available. Using 'C:\Users\Nimap\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-13 18:02:32.291 +05:30 [DBG] Reading data from file 'C:\Users\Nimap\AppData\Local\ASP.NET\DataProtection-Keys\key-fa57760b-5756-496c-94d9-4b75353bd6b9.xml'.
+2025-11-13 18:02:32.329 +05:30 [DBG] Found key {fa57760b-5756-496c-94d9-4b75353bd6b9}.
+2025-11-13 18:02:32.352 +05:30 [DBG] Considering key {fa57760b-5756-496c-94d9-4b75353bd6b9} with expiration date 2026-02-06 05:36:32Z as default key.
+2025-11-13 18:02:32.360 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-13 18:02:32.363 +05:30 [DBG] Decrypting secret element using Windows DPAPI.
+2025-11-13 18:02:32.365 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-11-13 18:02:32.372 +05:30 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-11-13 18:02:32.375 +05:30 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-11-13 18:02:32.379 +05:30 [DBG] Using key {fa57760b-5756-496c-94d9-4b75353bd6b9} as the default key.
+2025-11-13 18:02:32.381 +05:30 [DBG] Key ring with default key {fa57760b-5756-496c-94d9-4b75353bd6b9} was loaded during application startup.
+2025-11-13 18:02:32.387 +05:30 [DBG] Middleware loaded
+2025-11-13 18:02:32.389 +05:30 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16523 B).
+2025-11-13 18:02:32.391 +05:30 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-11-13 18:02:32.566 +05:30 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-11-13 18:02:32.732 +05:30 [INF] Now listening on: https://localhost:7198
+2025-11-13 18:02:32.739 +05:30 [INF] Now listening on: http://localhost:5105
+2025-11-13 18:02:32.746 +05:30 [DBG] Loaded hosting startup assembly Hospital Management
+2025-11-13 18:02:32.747 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-11-13 18:02:32.750 +05:30 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-11-13 18:02:32.751 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-11-13 18:02:32.869 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-13 18:02:32.873 +05:30 [INF] Hosting environment: Development
+2025-11-13 18:02:32.877 +05:30 [INF] Content root path: C:\Users\Nimap\Desktop\WEBAPI\Hospital Management\Hospital Management
+2025-11-13 18:02:32.878 +05:30 [DBG] Hosting started
+2025-11-13 18:02:33.092 +05:30 [DBG] Connection id "0HNH2M2S128N4" accepted.
+2025-11-13 18:02:33.100 +05:30 [DBG] Connection id "0HNH2M2S128N5" accepted.
+2025-11-13 18:02:33.100 +05:30 [DBG] Connection id "0HNH2M2S128N4" started.
+2025-11-13 18:02:33.105 +05:30 [DBG] Connection id "0HNH2M2S128N5" started.
+2025-11-13 18:02:33.138 +05:30 [DBG] Connection id "0HNH2M2S128N4" received FIN.
+2025-11-13 18:02:33.138 +05:30 [DBG] Connection id "0HNH2M2S128N5" received FIN.
+2025-11-13 18:02:33.165 +05:30 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-11-13 18:02:33.165 +05:30 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-11-13 18:02:33.246 +05:30 [DBG] Connection id "0HNH2M2S128N5" stopped.
+2025-11-13 18:02:33.246 +05:30 [DBG] Connection id "0HNH2M2S128N4" stopped.
+2025-11-13 18:02:33.250 +05:30 [DBG] Connection id "0HNH2M2S128N5" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-11-13 18:02:33.250 +05:30 [DBG] Connection id "0HNH2M2S128N4" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-11-13 18:02:33.282 +05:30 [DBG] Connection id "0HNH2M2S128N6" accepted.
+2025-11-13 18:02:33.284 +05:30 [DBG] Connection id "0HNH2M2S128N6" started.
+2025-11-13 18:02:33.386 +05:30 [DBG] Connection 0HNH2M2S128N6 established using the following protocol: "Tls12"
+2025-11-13 18:02:33.486 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/index.html - null null
+2025-11-13 18:02:33.657 +05:30 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-11-13 18:02:33.699 +05:30 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-11-13 18:02:33.700 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 18:02:33.757 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-11-13 18:02:33.759 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-11-13 18:02:33.781 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2025-11-13 18:02:33.783 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2025-11-13 18:02:33.790 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-13 18:02:33.790 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/_vs/browserLink - null null
+2025-11-13 18:02:33.791 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/index.html - 200 null text/html;charset=utf-8 310.4311ms
+2025-11-13 18:02:33.813 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-11-13 18:02:33.832 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/_framework/aspnetcore-browser-refresh.js - 200 16523 application/javascript; charset=utf-8 41.9862ms
+2025-11-13 18:02:33.875 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/_vs/browserLink - 200 null text/javascript; charset=UTF-8 85.1304ms
+2025-11-13 18:02:33.915 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/v1/swagger.json - null null
+2025-11-13 18:02:33.918 +05:30 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-11-13 18:02:33.919 +05:30 [DBG] Request did not match any endpoints
+2025-11-13 18:02:33.942 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.9421ms
+2025-11-13 18:02:42.668 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7198/api/Doctor - null null
+2025-11-13 18:02:42.679 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Doctor'
+2025-11-13 18:02:42.683 +05:30 [DBG] Endpoint 'Hospital_Management.Controllers.DoctorController.GetData (Hospital Management)' with route pattern 'api/Doctor' is valid for the request path '/api/Doctor'
+2025-11-13 18:02:42.685 +05:30 [DBG] Request matched endpoint 'Hospital_Management.Controllers.DoctorController.GetData (Hospital Management)'
+2025-11-13 18:02:42.690 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-11-13 18:02:42.697 +05:30 [INF] handling request GET /api/Doctor GUID dad4318f-93f7-4788-901b-f0e93915414d 11/13/2025 6:02:42 PM 
+2025-11-13 18:02:42.761 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-11-13 18:02:42.764 +05:30 [INF] Executing endpoint 'Hospital_Management.Controllers.DoctorController.GetData (Hospital Management)'
+2025-11-13 18:02:42.784 +05:30 [INF] Route matched with {action = "GetData", controller = "Doctor"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetData() on controller Hospital_Management.Controllers.DoctorController (Hospital Management).
+2025-11-13 18:02:42.796 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-11-13 18:02:42.797 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-11-13 18:02:42.799 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-11-13 18:02:42.800 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-11-13 18:02:42.804 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-11-13 18:02:42.808 +05:30 [DBG] Executing controller factory for controller Hospital_Management.Controllers.DoctorController (Hospital Management)
+2025-11-13 18:02:42.997 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-11-13 18:02:43.032 +05:30 [DBG] Executed controller factory for controller Hospital_Management.Controllers.DoctorController (Hospital Management)
+2025-11-13 18:02:43.726 +05:30 [DBG] Entity Framework Core 8.0.0 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.0' with options: None
+2025-11-13 18:02:43.781 +05:30 [DBG] Compiling query expression: 
+'DbSet<Doctors>()'
+2025-11-13 18:02:43.947 +05:30 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Doctors>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Doctors.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Doctors.DepartmentId (int) Required FK Index, 1], [Property: Doctors.Email (string) Required, 2], [Property: Doctors.IsActive (bool) Required, 3], [Property: Doctors.IsCreated (DateTime) Required, 4], [Property: Doctors.Name (string) Required, 5], [Property: Doctors.Phoneno (long) Required, 6], [Property: Doctors.Specialization (string) Required, 7] }
+        SELECT d.Id, d.DepartmentId, d.Email, d.IsActive, d.IsCreated, d.Name, d.Phoneno, d.Specialization
+        FROM doctors AS d), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Doctors>, 
+    Hospital_Management.Data.DataContext, 
+    False, 
+    False, 
+    True
+)'
+2025-11-13 18:02:43.982 +05:30 [DBG] Creating DbConnection.
+2025-11-13 18:02:44.008 +05:30 [DBG] Created DbConnection. (24ms).
+2025-11-13 18:02:44.021 +05:30 [DBG] Opening connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 18:02:44.319 +05:30 [DBG] Opened connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 18:02:44.329 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-11-13 18:02:44.341 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (10ms).
+2025-11-13 18:02:44.350 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (21ms).
+2025-11-13 18:02:44.357 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DepartmentId], [d].[Email], [d].[IsActive], [d].[IsCreated], [d].[Name], [d].[Phoneno], [d].[Specialization]
+FROM [doctors] AS [d]
+2025-11-13 18:02:44.427 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DepartmentId], [d].[Email], [d].[IsActive], [d].[IsCreated], [d].[Name], [d].[Phoneno], [d].[Specialization]
+FROM [doctors] AS [d]
+2025-11-13 18:02:44.479 +05:30 [DBG] Context 'DataContext' started tracking 'Doctors' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-11-13 18:02:44.518 +05:30 [DBG] Closing data reader to 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 18:02:44.531 +05:30 [DBG] A data reader for 'HospitalDB' on server 'DESKTOP-4J2QI9T' is being disposed after spending 88ms reading results.
+2025-11-13 18:02:44.542 +05:30 [DBG] Closing connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 18:02:44.553 +05:30 [DBG] Closed connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T' (8ms).
+2025-11-13 18:02:44.560 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-11-13 18:02:44.565 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-11-13 18:02:44.566 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-11-13 18:02:44.568 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-11-13 18:02:44.570 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-11-13 18:02:44.572 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital_Management.Models.Entities.Doctors, Hospital Management, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-13 18:02:44.593 +05:30 [INF] Executed action Hospital_Management.Controllers.DoctorController.GetData (Hospital Management) in 1783.042ms
+2025-11-13 18:02:44.595 +05:30 [INF] Executed endpoint 'Hospital_Management.Controllers.DoctorController.GetData (Hospital Management)'
+2025-11-13 18:02:44.597 +05:30 [INF] finished handling request GET /api/Doctor with status code 200  GUID dad4318f-93f7-4788-901b-f0e93915414d 11/13/2025 6:02:44 PM  1905
+2025-11-13 18:02:44.600 +05:30 [DBG] 'DataContext' disposed.
+2025-11-13 18:02:44.606 +05:30 [DBG] Disposing connection to database 'HospitalDB' on server 'DESKTOP-4J2QI9T'.
+2025-11-13 18:02:44.610 +05:30 [DBG] Disposed connection to database '' on server '' (3ms).
+2025-11-13 18:02:44.612 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7198/api/Doctor - 200 null application/json; charset=utf-8 1944.2953ms
+2025-11-13 18:02:50.370 +05:30 [DBG] Connection id "0HNH2M2S128N6" received FIN.
+2025-11-13 18:02:50.381 +05:30 [DBG] Connection id "0HNH2M2S128N6" is closed. The last processed stream ID was 9.
+2025-11-13 18:02:50.382 +05:30 [DBG] The connection queue processing loop for 0HNH2M2S128N6 completed.
+2025-11-13 18:02:50.385 +05:30 [DBG] Connection id "0HNH2M2S128N6" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-11-13 18:02:50.404 +05:30 [DBG] Connection id "0HNH2M2S128N6" stopped.
