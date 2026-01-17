@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\TextToCsv\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F1DF5B4D-E520-4177-96AB-8C4DA228B81E}|TextToCsv\\TextToCsv.csproj|c:\\users\\nimap\\desktop\\webapicore\\texttocsv\\texttocsv\\conversion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1DF5B4D-E520-4177-96AB-8C4DA228B81E}|TextToCsv\\TextToCsv.csproj|solutionrelative:texttocsv\\conversion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1DF5B4D-E520-4177-96AB-8C4DA228B81E}|TextToCsv\\TextToCsv.csproj|c:\\users\\nimap\\desktop\\webapicore\\texttocsv\\texttocsv\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1DF5B4D-E520-4177-96AB-8C4DA228B81E}|TextToCsv\\TextToCsv.csproj|solutionrelative:texttocsv\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 182,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Conversion.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\TextToCsv\\TextToCsv\\Conversion.cs",
+              "RelativeDocumentMoniker": "TextToCsv\\Conversion.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\TextToCsv\\TextToCsv\\Conversion.cs",
+              "RelativeToolTip": "TextToCsv\\Conversion.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAApwD8AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T04:51:11.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\TextToCsv\\TextToCsv\\Program.cs",
+              "RelativeDocumentMoniker": "TextToCsv\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\TextToCsv\\TextToCsv\\Program.cs",
+              "RelativeToolTip": "TextToCsv\\Program.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwC0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T06:48:53.923Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

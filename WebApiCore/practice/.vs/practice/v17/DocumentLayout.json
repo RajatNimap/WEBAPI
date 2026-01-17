@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|c:\\users\\nimap\\desktop\\webapicore\\practice\\practice\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|solutionrelative:practice\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|c:\\users\\nimap\\desktop\\webapicore\\practice\\practice\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|solutionrelative:practice\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|c:\\users\\nimap\\desktop\\webapicore\\practice\\practice\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|solutionrelative:practice\\emp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|c:\\users\\nimap\\desktop\\webapicore\\practice\\practice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|solutionrelative:practice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|c:\\users\\nimap\\desktop\\webapicore\\practice\\practice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|solutionrelative:practice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|c:\\users\\nimap\\desktop\\webapicore\\practice\\practice\\practice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{D67E1FD5-F884-4EB0-A9D5-EA2F84DE9D86}|practice\\practice.csproj|solutionrelative:practice\\practice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Migrations\\20260116064009_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:practice\\Migrations\\20260116064009_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Migrations\\20260116053308_ded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:practice\\Migrations\\20260116053308_ded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "practice.http",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\practice.http",
+              "RelativeDocumentMoniker": "practice\\practice.http",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\practice.http",
+              "RelativeToolTip": "practice\\practice.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-01-16T06:41:04.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "practice\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "practice\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwA8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T05:36:44.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "emp.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\emp.cs",
+              "RelativeDocumentMoniker": "practice\\emp.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\emp.cs",
+              "RelativeToolTip": "practice\\emp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T05:28:22.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\DataContext.cs",
+              "RelativeDocumentMoniker": "practice\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\DataContext.cs",
+              "RelativeToolTip": "practice\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T05:27:06.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Program.cs",
+              "RelativeDocumentMoniker": "practice\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Program.cs",
+              "RelativeToolTip": "practice\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T05:18:26.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\appsettings.json",
+              "RelativeDocumentMoniker": "practice\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\appsettings.json",
+              "RelativeToolTip": "practice\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-16T05:18:33.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20260116064009_init.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Migrations\\20260116064009_init.cs",
+              "RelativeDocumentMoniker": "practice\\Migrations\\20260116064009_init.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Migrations\\20260116064009_init.cs",
+              "RelativeToolTip": "practice\\Migrations\\20260116064009_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T06:40:09.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20260116053308_ded.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Migrations\\20260116053308_ded.cs",
+              "RelativeDocumentMoniker": "practice\\Migrations\\20260116053308_ded.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WebApiCore\\practice\\practice\\Migrations\\20260116053308_ded.cs",
+              "RelativeToolTip": "practice\\Migrations\\20260116053308_ded.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T05:33:09.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

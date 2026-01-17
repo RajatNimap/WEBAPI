@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PracticeLinque": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

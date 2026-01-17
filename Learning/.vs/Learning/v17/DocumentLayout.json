@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|c:\\users\\nimap\\desktop\\webapi\\learning\\learning\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|solutionrelative:learning\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|c:\\users\\nimap\\desktop\\webapi\\learning\\learning\\context\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|solutionrelative:learning\\context\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Migrations\\20251205122628_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Learning\\Migrations\\20251205122628_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|c:\\users\\nimap\\desktop\\webapi\\learning\\learning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|solutionrelative:learning\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|c:\\users\\nimap\\desktop\\webapi\\learning\\learning\\context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|solutionrelative:learning\\context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|c:\\users\\nimap\\desktop\\webapi\\learning\\learning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{22B4CC04-AC7B-48E5-914D-DE0C1AB3F707}|Learning\\Learning.csproj|solutionrelative:learning\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 182,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Learning\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Learning\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwB0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T12:28:51.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20251205122628_initial.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Migrations\\20251205122628_initial.cs",
+              "RelativeDocumentMoniker": "Learning\\Migrations\\20251205122628_initial.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Migrations\\20251205122628_initial.cs",
+              "RelativeToolTip": "Learning\\Migrations\\20251205122628_initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T12:26:28.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Context\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Learning\\Context\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Context\\Entities\\User.cs",
+              "RelativeToolTip": "Learning\\Context\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T12:11:54.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Context\\DataContext.cs",
+              "RelativeDocumentMoniker": "Learning\\Context\\DataContext.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Context\\DataContext.cs",
+              "RelativeToolTip": "Learning\\Context\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T12:01:44.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\appsettings.json",
+              "RelativeDocumentMoniker": "Learning\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\appsettings.json",
+              "RelativeToolTip": "Learning\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-05T11:56:49.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Program.cs",
+              "RelativeDocumentMoniker": "Learning\\Program.cs",
+              "ToolTip": "C:\\Users\\Nimap\\Desktop\\WEBAPI\\Learning\\Learning\\Program.cs",
+              "RelativeToolTip": "Learning\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:56:06.399Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

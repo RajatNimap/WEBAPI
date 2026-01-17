@@ -1,0 +1,14 @@
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\obj\Debug\net8.0\TextToCsv.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\obj\Debug\net8.0\TextToCsv.AssemblyInfoInputs.cache
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\obj\Debug\net8.0\TextToCsv.AssemblyInfo.cs
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\obj\Debug\net8.0\TextToCsv.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\bin\Debug\net8.0\TextToCsv.exe
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\bin\Debug\net8.0\TextToCsv.deps.json
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\bin\Debug\net8.0\TextToCsv.runtimeconfig.json
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\bin\Debug\net8.0\TextToCsv.dll
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\bin\Debug\net8.0\TextToCsv.pdb
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\obj\Debug\net8.0\TextToCsv.dll
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\obj\Debug\net8.0\refint\TextToCsv.dll
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\obj\Debug\net8.0\TextToCsv.pdb
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\obj\Debug\net8.0\TextToCsv.genruntimeconfig.cache
+C:\Users\Nimap\Desktop\WebApiCore\TextToCsv\TextToCsv\obj\Debug\net8.0\ref\TextToCsv.dll
